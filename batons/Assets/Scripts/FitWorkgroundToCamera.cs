@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FitWorkgroundToCamera : MonoBehaviour
 {
-    private Camera mainCamera;
+   public Camera mainCamera;
 
     void Start()
     {
