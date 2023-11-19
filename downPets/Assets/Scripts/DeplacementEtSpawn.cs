@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DeplacementEtSpawn : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class DeplacementEtSpawn : MonoBehaviour
 
     void Update()
     {
+        // Vérifier si un bouton d'UI est en cours d'interaction
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return; // Ne rien faire si le clic est sur un bouton d'UI
+        }
         if (objetSpawned == null)
         {
             SpawnObjet();
@@ -55,11 +61,15 @@ public class DeplacementEtSpawn : MonoBehaviour
 
     void CommencerTenir()
     {
-        estEnTrainDeTenir = true;
-        // Utiliser la position du clic en X comme nouvelle position X du spawner
-        Vector3 positionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        positionInitiale = new Vector3(positionSouris.x, transform.position.y, transform.position.z);
-        transform.position = positionInitiale; // Mettre à jour la position immédiatement
+        // Vérifier si le bouton est toujours enfoncé
+        if (Input.GetMouseButton(0))
+        {
+            estEnTrainDeTenir = true;
+            // Utiliser la position du clic en X comme nouvelle position X du spawner
+            Vector3 positionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            positionInitiale = new Vector3(positionSouris.x, transform.position.y, transform.position.z);
+            transform.position = positionInitiale; // Mettre à jour la position immédiatement
+        }
 
     }
 

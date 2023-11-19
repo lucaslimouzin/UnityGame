@@ -15,6 +15,7 @@ TagManager:
   - 9
   - 10
   - 11
+  - gameOver
   layers:
   - Default
   - TransparentFX

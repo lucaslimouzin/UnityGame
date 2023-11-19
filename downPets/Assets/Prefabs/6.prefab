@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagObjetCible: 6
   objetCiblePrefab: {fileID: 4286527866146148824, guid: 4401281a916863c4581146a520701bc5, type: 3}
+  points: 21
