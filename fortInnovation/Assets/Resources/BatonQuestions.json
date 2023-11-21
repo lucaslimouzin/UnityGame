@@ -1,0 +1,32 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "Quelle est la capitale de la France?",
+        "propositions": ["Berlin", "Paris", "Londres"],
+        "reponseCorrecte": "B",
+        "nbRetraitBaton": 3
+      },
+      {
+        "id": 2,
+        "question": "Quel est le plus grand océan du monde?",
+        "propositions": ["Océan Atlantique", "Océan Indien", "Océan Pacifique"],
+        "reponseCorrecte": "C",
+        "nbRetraitBaton": 3
+      },
+      { 
+        "id": 3,
+        "question": "Quelle est la couleur du ciel par temps clair?",
+        "propositions": ["Vert", "Bleu", "Rouge"],
+        "reponseCorrecte": "B",
+        "nbRetraitBaton": 3
+      },
+      {
+        "id": 4,
+        "question": "Quel est le nombre de planètes dans notre système solaire?",
+        "propositions": ["7", "8", "9"],
+        "reponseCorrecte": "B",
+        "nbRetraitBaton": 2
+      }
+    ]
+  }
