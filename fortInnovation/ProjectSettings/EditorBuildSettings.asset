@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/salleBatons.unity
     guid: fb93ae2d732bf9d42bb0e1b6722274f2
+  - enabled: 1
+    path: Assets/Scenes/jeuBatonQuestions.unity
+    guid: 459f5f0cf72c06f40a76fcca5b4e1870
   m_configObjects: {}

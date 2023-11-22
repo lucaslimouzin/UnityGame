@@ -11,7 +11,7 @@ public class GameManagerBaton : MonoBehaviour
     public GameObject[] baton; 
     public GameObject panelInstruction;
     public GameObject panelQuestions;
-    private Vector3 batonPosition;
+    public GameObject panelInfoMJ;
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
@@ -19,10 +19,13 @@ public class GameManagerBaton : MonoBehaviour
     public TextMeshProUGUI propositionAtext;
     public TextMeshProUGUI propositionBtext;
     public TextMeshProUGUI propositionCtext;
+    public TextMeshProUGUI nbBatonRetraitText;
+    public TextMeshProUGUI MJText;
     private bool aJuste = false;
     private bool isMoving = false;
     private int numQuestions = 0;
-    
+    private int batonTailleTab = 0;
+    private bool win = false;
 
     
 
@@ -47,10 +50,12 @@ public class GameManagerBaton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
         TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
         // Désérialiser les données JSON
         listBatonQuestions = JsonUtility.FromJson<BatonQuestions>(jsonFile.ToString());
+        batonTailleTab = baton.Length;
       //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -72,18 +77,22 @@ public class GameManagerBaton : MonoBehaviour
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
         //On affiche la question
-        Invoke("AfficherPanneauQuestions",1f);
+        Invoke("AfficherPanneauQuestions",0.5f);
     }
 
 
     //affichage de la question
     private void AfficherPanneauQuestions(){
+        Questions(numQuestions);
         Debug.Log("lancement de la fonction AfficherPanneauQuestions");
         if (panelInstruction.activeSelf){
             panelInstruction.SetActive(false);
         }
+        if (panelInfoMJ.activeSelf){
+            panelInfoMJ.SetActive(false);
+        }
         panelQuestions.SetActive(true);
-        Questions(numQuestions);
+        
 
     }
 
@@ -98,6 +107,7 @@ public class GameManagerBaton : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+        nbBatonRetraitText.text = question.nbRetraitBaton.ToString();
 
         buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte, question.nbRetraitBaton));
         buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte, question.nbRetraitBaton));
@@ -107,6 +117,11 @@ public class GameManagerBaton : MonoBehaviour
 
     //fonction qui check le bouton enfoncé
     private void OnButtonClick(String choix, string reponseCorrecte, int nbRetraitBaton){
+        // Supprimer tous les écouteurs d'événements du bouton
+        buttonA.onClick.RemoveAllListeners();
+        buttonB.onClick.RemoveAllListeners();
+        buttonC.onClick.RemoveAllListeners();
+
         if (choix == reponseCorrecte){
             aJuste = true;
         }
@@ -120,11 +135,14 @@ public class GameManagerBaton : MonoBehaviour
     //retrait panneau Question
     private void RetraitPanneauQuestions(bool reponseJuste, int nbRetraitBaton){
         panelQuestions.SetActive(false);
+        panelInfoMJ.SetActive(true);
+        
         MoveBaton(reponseJuste, nbRetraitBaton);
     }
 
     private void MoveBaton(bool reponseJuste, int nbRetraitBaton)
     {
+        Debug.Log(nbRetraitBaton);
         if (!isMoving)
         {
             isMoving = true;
@@ -134,12 +152,15 @@ public class GameManagerBaton : MonoBehaviour
 
     private IEnumerator MoveBatonCoroutine(bool reponseJuste, int nbRetraitBaton)
     {
+        Debug.Log(nbRetraitBaton);
         float moveSpeed = 2f;
         float elapsedTime = 0f;
 
+        Debug.Log("startIndex = " + (batonTailleTab - nbRetraitBaton));
+        Debug.Log("Nb retrait baton " + nbRetraitBaton);
         // Calculer l'indice de départ pour le retrait des batons
-        int startIndex = baton.Length - nbRetraitBaton;
-
+        int startIndex = batonTailleTab - nbRetraitBaton;
+    
         // Vérifier si l'indice de départ est valide
         if (startIndex < 0)
         {
@@ -150,13 +171,18 @@ public class GameManagerBaton : MonoBehaviour
         while (elapsedTime < 1f) // Modifier le temps selon vos besoins
         {
             // Déplacer les batons à partir de l'indice de départ
-            for (int i = startIndex; i < baton.Length; i++)
+            for (int i = startIndex; i < batonTailleTab; i++)
             {
+                
                 if(reponseJuste){
+                    MJText.text = "Maitre du jeu : Bien répondu, vous retirez des bâtons !";
                     baton[i].transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+                    win = true;
                 } 
                 else {
+                    MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, je retire des bâtons !";
                     baton[i].transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+                    win = false;
                 }
                 
             }
@@ -166,7 +192,7 @@ public class GameManagerBaton : MonoBehaviour
         }
 
         // Détruire les batons à partir de l'indice de départ
-        for (int i = startIndex; i < baton.Length; i++)
+        for (int i = startIndex; i < batonTailleTab; i++)
         {
             Destroy(baton[i]);
         }
@@ -178,11 +204,18 @@ public class GameManagerBaton : MonoBehaviour
         numQuestions++;
         if (numQuestions < listBatonQuestions.questions.Length)
         {
+            batonTailleTab = startIndex;
             // Il reste des questions, affichez la suivante
-            Invoke("AfficherPanneauQuestions",1f);
+            Invoke("AfficherPanneauQuestions",2.5f);
         }
         else
         {
+            if (win){
+                MJText.text = "Maitre du jeu : bravo vous avez remporté l'Epreuve !";
+            }
+            else {
+                MJText.text = "Maitre du jeu : Dommage, vous avez échoué si prêt du but !";
+            }
             // Toutes les questions ont été posées, fin du jeu
             FinDuJeu();
         }
