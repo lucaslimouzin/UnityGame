@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class GameManagerBaton : MonoBehaviour
 {
     public GameObject[] baton; 
@@ -26,6 +26,7 @@ public class GameManagerBaton : MonoBehaviour
     private int numQuestions = 0;
     private int batonTailleTab = 0;
     private bool win = false;
+    
 
     
 
@@ -51,6 +52,7 @@ public class GameManagerBaton : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        
         // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
         TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
         // Désérialiser les données JSON
@@ -217,13 +219,13 @@ public class GameManagerBaton : MonoBehaviour
                 MJText.text = "Maitre du jeu : Dommage, vous avez échoué si prêt du but !";
             }
             // Toutes les questions ont été posées, fin du jeu
-            FinDuJeu();
+            Invoke("FinDuJeu", 3f);
         }
     }
 
     //fin du jeu 
     private void FinDuJeu(){
-        Debug.Log("fin du jeu");
+       SceneManager.LoadScene("salleBatons");
 
     }
 }

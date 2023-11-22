@@ -8,7 +8,12 @@ public class MjAction : MonoBehaviour
     public GameObject panelMjInfo;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        Cursor.lockState = CursorLockMode.Locked;
+        #if !UNITY_EDITOR && UNITY_WEBGL
+            // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
+            WebGLInput.stickyCursorLock = true;
+        #endif
        
     }
 
