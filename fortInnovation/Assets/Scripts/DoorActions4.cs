@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class DoorActions : MonoBehaviour
+public class DoorActions4 : MonoBehaviour
 {
      public GameObject panelDoor;
+     public GameObject objetADeplacer;
     public float distanceDuDeplacement = 5f; // Distance à déplacer sur l'axe Y
     public float dureeDuDeplacement = 3f;
     // Start is called before the first frame update
@@ -45,7 +46,7 @@ public class DoorActions : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         //mettre un delai
-        StartCoroutine(DeplacerGameObject());
+        StartCoroutine(DeplacerGameObject(objetADeplacer));
         Invoke("ChangerDeSceneVersBaton", 2f);
         
     }
@@ -55,7 +56,7 @@ public class DoorActions : MonoBehaviour
     }
 
 
-    private IEnumerator DeplacerGameObject()
+    private IEnumerator DeplacerGameObject(GameObject objet)
     {
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + new Vector3(0f, distanceDuDeplacement, 0f);
@@ -64,7 +65,7 @@ public class DoorActions : MonoBehaviour
         while (elapsedTime < dureeDuDeplacement)
         {
             // Interpoler la position entre le point de départ et la position cible
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / dureeDuDeplacement);
+            objet.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / dureeDuDeplacement);
 
             // Mettre à jour le temps écoulé
             elapsedTime += Time.deltaTime;
@@ -74,7 +75,7 @@ public class DoorActions : MonoBehaviour
         }
 
         // Assurez-vous que l'objet soit bien positionné à la position cible à la fin
-        transform.position = targetPosition;
+        objet.transform.position = targetPosition;
 
        
     }

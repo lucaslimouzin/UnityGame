@@ -46,4 +46,8 @@ public class MjAction : MonoBehaviour
      public void PlayGameBaton() {
         SceneManager.LoadScene("jeuBatonQuestions");
     }
+
+    public void GoAccueil(){
+        SceneManager.LoadScene("FortAccueil");
+    }
 }
