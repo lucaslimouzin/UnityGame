@@ -854,9 +854,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31d822f3eaf86f34db4f87447a5671be, type: 2}
-  - {fileID: 2100000, guid: cf819862866b8e840bf0bd0e14f33607, type: 2}
-  - {fileID: 2100000, guid: 31d822f3eaf86f34db4f87447a5671be, type: 2}
+  - {fileID: 2100000, guid: d865ef2dd123ee944ae79f95e22326e4, type: 2}
+  - {fileID: 2100000, guid: 70580a2acecb59844a8b415a38d76927, type: 2}
+  - {fileID: 2100000, guid: d865ef2dd123ee944ae79f95e22326e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2174,7 +2174,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1222168289}
         m_TargetAssemblyTypeName: MjAction, Assembly-CSharp
-        m_MethodName: PlayGameBaton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
