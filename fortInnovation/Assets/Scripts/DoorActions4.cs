@@ -47,12 +47,12 @@ public class DoorActions4 : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         //mettre un delai
         StartCoroutine(DeplacerGameObject(objetADeplacer));
-        Invoke("ChangerDeSceneVersBaton", 2f);
+        Invoke("ChangerDeScene", 2f);
         
     }
 
-    private void ChangerDeSceneVersBaton(){
-        SceneManager.LoadScene("jeuBatonQuestions");
+    private void ChangerDeScene(){
+        SceneManager.LoadScene("ClouEnfonce");
     }
 
 
