@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DeplacementEtSpawn : MonoBehaviour
 {
@@ -7,14 +8,21 @@ public class DeplacementEtSpawn : MonoBehaviour
     private Vector3 positionInitiale;
     private float dernierClicTime;
     public GameObject[] objetsPossibles;
-    public float delaiEntreClics = 2f;
+    public float delaiEntreClics = 2.8f;
     private GameObject objetSpawned;
     private Rigidbody2D objetRigidbody;
     private GameObject prochainObjet;
     private bool clicAutorise = true;
+    public Image nextImage;
+    public Sprite[] spritePossibles;
+    private int num;
 
     void Start()
     {
+        // Trouver le GameObject par son nom
+        GameObject objetAvecImage = GameObject.Find("nextImage");
+        // Récupérer le composant SpriteRenderer attaché au GameObject
+        nextImage= objetAvecImage.GetComponent<Image>();
         ChoisirProchainObjet();
     }
 
@@ -35,9 +43,9 @@ public class DeplacementEtSpawn : MonoBehaviour
             if (!estEnTrainDeTenir)
             {
                 CommencerTenir();
-            }
+            } 
 
-            DeplacerObjet();
+           // DeplacerObjet();
         }
         else
         {
@@ -98,12 +106,12 @@ public class DeplacementEtSpawn : MonoBehaviour
 
             // Désactiver le clic de la souris pendant 1.5 secondes
             clicAutorise = false;
-            Invoke("AutoriserClic", 0.5f);
+            Invoke("AutoriserClic",1f);
 
             // Si le délai entre les clics a été respecté, spawn un nouvel objet après 0.5 secondes
             if ((Time.time - dernierClicTime) < delaiEntreClics)
             {
-                Invoke("SpawnObjet", 0.5f);
+                Invoke("SpawnObjet", 0.8f);
                 dernierClicTime = Time.time;
             }
         }
@@ -111,7 +119,9 @@ public class DeplacementEtSpawn : MonoBehaviour
 
     void ChoisirProchainObjet()
     {
-        prochainObjet = objetsPossibles[Random.Range(0, objetsPossibles.Length)];
+        num = Random.Range(0, objetsPossibles.Length);
+        nextImage.sprite = spritePossibles[num];
+        prochainObjet = objetsPossibles[num];
     }
 
     void SpawnObjet()

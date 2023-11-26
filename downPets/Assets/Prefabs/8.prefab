@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6673992239083937543}
   - component: {fileID: 5873519117499097126}
   - component: {fileID: -6868952118408363135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 8
   m_TagString: 8
   m_Icon: {fileID: 0}
@@ -163,4 +163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagObjetCible: 8
   objetCiblePrefab: {fileID: 8444875261288122654, guid: 36ae403140f75b64a88abc6a0c9e2c1e, type: 3}
+  seuilGameOver: 3
+  couleurGameOver: {r: 1, g: 0, b: 0, a: 1}
+  tempsDepassementMax: 1.5
   points: 50
+  spriteRenderer: {fileID: 0}
