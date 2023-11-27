@@ -7,10 +7,12 @@ public class InteractionObjet : MonoBehaviour
     public float seuilGameOver = 3f; // Seuil de déclenchement du game over en secondes
     public Color couleurGameOver = Color.red; // Couleur du game over
     public float tempsDepassementMax = 1.5f; // Seuil de temps pour changer la couleur
+    private Rigidbody2D objetRigidbody;
     public int points;
 
     private bool enCollision = false;
     private float tempsDepassement = 0f;
+    private float tempsDepassementZoneSpawn = 0f;
     public SpriteRenderer spriteRenderer;
 
     void Start()
@@ -24,6 +26,22 @@ public class InteractionObjet : MonoBehaviour
 
     void Update()
     {
+        if (gameObject.layer == LayerMask.NameToLayer("Default")) {
+            tempsDepassementZoneSpawn += Time.deltaTime;
+            // Vérifier si le seuil de dépassement du temps est atteint
+            if (tempsDepassementZoneSpawn >= 5.0f)
+            {
+                objetRigidbody =gameObject.GetComponent<Rigidbody2D>();
+                objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
+                // Changer la couche à "ObjetSpawned"
+                objetRigidbody.gameObject.layer = LayerMask.NameToLayer("ObjetSpawned");
+            }
+        }
+        else
+        {
+            tempsDepassementZoneSpawn = 0f;
+        }
+        
         // Si l'objet est en collision avec la limite
         if (enCollision)
         {
@@ -61,6 +79,8 @@ public class InteractionObjet : MonoBehaviour
             enCollision = true;
         }
     }
+
+    
 
     private void OnTriggerExit2D(Collider2D collision)
     {

@@ -11,6 +11,7 @@ public class GestionInteractions : MonoBehaviour
 
     private GameObject premierObjetEnCollision;
     private GameObject deuxiemeObjetEnCollision;
+    private Rigidbody2D objetRigidbody;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI finalScoreText;
     public TextMeshProUGUI scoreText;
@@ -18,7 +19,12 @@ public class GestionInteractions : MonoBehaviour
     private int bestScore = 0;
     private bool isGamePaused = false;
     public GameObject gameOverPanel;
+    public AudioClip sonSpawn;
 
+    private void Start()
+    {
+        bestScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
     private void Awake()
     {
         if (instance == null)
@@ -71,8 +77,18 @@ public class GestionInteractions : MonoBehaviour
 
     private void SpawnObjetCible(GameObject objetCiblePrefab, Vector3 positionSpawn)
     {
+        // récupère composant AudioSource
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        // Configurer les paramètres audio
+        audioSource.clip = sonSpawn;
+        audioSource.playOnAwake = false; // Ne pas jouer automatiquement lors de la création
+        audioSource.Play(); // Jouer le son maintenant
         // Spawner l'objet cible à la position du premier objet en collision
         Instantiate(objetCiblePrefab, positionSpawn, Quaternion.identity);
+        objetRigidbody = objetCiblePrefab.GetComponent<Rigidbody2D>();
+        objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
+        // Changer la couche à "ObjetSpawned"
+        objetRigidbody.gameObject.layer = LayerMask.NameToLayer("ObjetSpawned");
     }
 
     public void GameOver()
@@ -81,6 +97,7 @@ public class GestionInteractions : MonoBehaviour
         if (score > bestScore)
         {
             bestScoreText.text = "" + score.ToString();
+            PlayerPrefs.SetInt("HighScore", score);
         }
         //gestion du score final 
         finalScoreText.text = "" + score.ToString();
