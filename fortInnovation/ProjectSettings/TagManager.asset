@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - SIDE1
+  - SIDE2
+  - SIDE3
+  - SIDE4
+  - SIDE5
+  - SIDE6
+  - SIDEMJ1
+  - SIDEMJ2
+  - SIDEMJ3
+  - SIDEMJ4
+  - SIDEMJ5
+  - SIDEMJ6
   layers:
   - Default
   - TransparentFX

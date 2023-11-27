@@ -9,6 +9,10 @@ public class MainGameManager : MonoBehaviour
     private TextMeshProUGUI scoreTextReco;
     public int scoreReco = 0;
     public bool gameBatonFait = false;
+    public bool checkFaitDesMj = true;
+    public bool checkFaitDesPlayer = true;
+    public int scoreDesMj;
+    public int scoreDesPlayer;
 
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScore);
@@ -27,6 +31,8 @@ public class MainGameManager : MonoBehaviour
 
     private void Start()
     {
+        checkFaitDesMj = true;
+        checkFaitDesPlayer = true;
         // Trouver le GameObject avec le nom "scoreTextReco" au démarrage
         FindScoreTextObject();
         UpdateScoreText();

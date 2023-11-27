@@ -59,7 +59,7 @@ public class MjActionBaton : MonoBehaviour
     }
 
      public void PlayGameBaton() {
-        SceneManager.LoadScene("jeuBatonQuestions");
+        SceneManager.LoadScene("salleDes");
     }
 
     public void GoAccueil(){

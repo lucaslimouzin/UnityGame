@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CelluleEnigmes.unity
     guid: 06474ebb413204640a49b82707289df4
+  - enabled: 1
+    path: Assets/Scenes/salleDes.unity
+    guid: d6e292a43be2e8249872d329acfea44c
   m_configObjects: {}
