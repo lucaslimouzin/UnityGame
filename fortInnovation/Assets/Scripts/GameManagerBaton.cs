@@ -48,6 +48,27 @@ public class GameManagerBaton : MonoBehaviour
 
     private BatonQuestions listBatonQuestions; 
 
+    //--------pour mettre à jour le score --------------------------------------
+    private void OnEnable()
+    {
+        // S'abonner à l'événement OnScoreUpdated
+        MainGameManager.OnScoreUpdated += HandleScoreUpdated;
+    }
+
+    private void OnDisable()
+    {
+        // Se désabonner de l'événement OnScoreUpdated lors de la désactivation du script
+        MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
+    }
+
+    // Méthode appelée lorsque le score est mis à jour
+    private void HandleScoreUpdated(int newScore)
+    {
+        // Faire quelque chose avec le nouveau score
+        Debug.Log("Nouveau score : " + newScore);
+    }
+    //-------------------------------------------------------------------
+
     // Start is called before the first frame update
     void Start()
     {
@@ -127,6 +148,9 @@ public class GameManagerBaton : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            
+            //envoi vers le Main Game Manager le score 
+            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreReco += 1);
         }
         else {
             aJuste = false;
@@ -226,6 +250,7 @@ public class GameManagerBaton : MonoBehaviour
 
     //fin du jeu 
     private void FinDuJeu(){
+        MainGameManager.Instance.gameBatonFait = true;
        SceneManager.LoadScene("salleBatons");
 
     }
