@@ -8,11 +8,25 @@ public class MainGameManager : MonoBehaviour
     public static MainGameManager Instance;
     private TextMeshProUGUI scoreTextReco;
     public int scoreReco = 0;
+
+    // variables pour jeu du baton
+    public int scoreRecoBaton = 0;
+    public int nbPartieBatonJoue = 0;
     public bool gameBatonFait = false;
+
+    // variables pour jeu du clou
+    public int scoreRecoClou = 0;
+    public int nbPartieClouJoue = 0;
+    public bool gameClouFait = false;
+
+    //variables pour les dés afin de déterminer qui commence
     public bool checkFaitDesMj = true;
     public bool checkFaitDesPlayer = true;
     public int scoreDesMj;
     public int scoreDesPlayer;
+    public string quiCommence;
+    //--------------------------------
+    public string jeuEnCours;
 
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScore);
@@ -68,6 +82,7 @@ public class MainGameManager : MonoBehaviour
     {
         if (scoreTextReco != null)
         {
+            
             scoreTextReco.text = scoreReco.ToString() + "/17";
         }
         else
