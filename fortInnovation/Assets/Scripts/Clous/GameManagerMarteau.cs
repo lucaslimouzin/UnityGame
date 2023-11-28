@@ -8,12 +8,17 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GameManagerMarteau : MonoBehaviour
 {
-    public GameObject[] baton; 
+    public GameObject clou; 
+    public GameObject marteauPlayer;
+    public GameObject marteauMj;
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelJauge;
     public TextMeshProUGUI MJText;
     public Button buttonJauge;
+
+    public float Force;
+    public Slider forceMarteau;
     private bool aJuste = false;
     private bool win = false;
     private bool firstTimeMj;
@@ -46,6 +51,8 @@ public class GameManagerMarteau : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         firstTimeMj = false;
+        forceMarteau.value = 0;
+        Force = 0;
       //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -53,7 +60,28 @@ public class GameManagerMarteau : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if (Input.GetKey(KeyCode.Space)){
+        Force++;
+        Slider();
+       } 
+       if (Input.GetKeyUp(KeyCode.Space)){
+        Force++;
+        //relacheMarteau();
+        StartCoroutine(Wait());
+       }
+    }
+
+    public void Slider() {
+        forceMarteau.value = Force;
+    }
+
+    public void ResetGauge(){
+        Force = 0;
+        forceMarteau.value = 0;
+    }
+    IEnumerator Wait(){
+        yield return new WaitForSeconds(1.5f);
+        ResetGauge();
     }
 
 
