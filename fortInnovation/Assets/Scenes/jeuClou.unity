@@ -154,7 +154,7 @@ RectTransform:
   m_GameObject: {fileID: 45022281}
   m_LocalRotation: {x: -0.16349797, y: -0, z: -0, w: 0.98654366}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5572944, y: 1.5572944, z: 1.5572944}
+  m_LocalScale: {x: 1.3370618, y: 1.3370618, z: 1.3370618}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1114535178}
@@ -162,8 +162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -18.82, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -114}
-  m_SizeDelta: {x: 350.3652, y: 68.5713}
+  m_AnchoredPosition: {x: 8, y: -114}
+  m_SizeDelta: {x: 333.2185, y: 68.5713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45022283
 MonoBehaviour:
@@ -520,6 +520,7 @@ MonoBehaviour:
   panelInstruction: {fileID: 1405357918}
   panelInfoMJ: {fileID: 712702743}
   panelJauge: {fileID: 230284473}
+  buttonTextMarteau: {fileID: 45022281}
   MJText: {fileID: 458034346}
   buttonJauge: {fileID: 45022283}
   pivotPointMarteauPlayer: {fileID: 951108087}
@@ -718,18 +719,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509968257}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.66336185, w: 0.74829876}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.0847201, y: 3.0847201, z: 3.0847201}
+  m_LocalScale: {x: 2.5829904, y: 2.5829904, z: 2.5829904}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1474659715}
   - {fileID: 1987708173}
   m_Father: {fileID: 230284474}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 83.114}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 591, y: 211}
+  m_AnchoredPosition: {x: 462, y: 173}
   m_SizeDelta: {x: 90.5475, y: 40.0569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509968259

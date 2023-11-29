@@ -29,10 +29,6 @@ public class GameManagerMarteau : MonoBehaviour
     private bool tourJoueur = true;
     private bool aRelacher = false;
     private float vieDuClou;
-    private bool aJuste = false;
-    private bool win = false;
-    private bool firstTimeMj;
-    private bool debutDuTour = false;
     private bool finDuJeu = false;
     public bool isMoving = false;
 
@@ -41,13 +37,13 @@ public class GameManagerMarteau : MonoBehaviour
     private void OnEnable()
     {
         // S'abonner à l'événement OnScoreUpdated
-       // MainGameManager.OnScoreUpdated += HandleScoreUpdated;
+        MainGameManager.OnScoreUpdated += HandleScoreUpdated;
     }
 
     private void OnDisable()
     {
         // Se désabonner de l'événement OnScoreUpdated lors de la désactivation du script
-       // MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
+         MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
     }
 
     // Méthode appelée lorsque le score est mis à jour
@@ -63,7 +59,6 @@ public class GameManagerMarteau : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        firstTimeMj = false;
         forceMarteau.value = 0;
         playerForce = 0;
         vieDuClou = 800f;
@@ -126,18 +121,16 @@ public class GameManagerMarteau : MonoBehaviour
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
         TourDuJoueur();
-       /* if (MainGameManager.Instance.quiCommence == "Player"){
+       if (MainGameManager.Instance.quiCommence == "Player"){
             //tour du player
             TourDuJoueur();
             
         }
         else {
             panelInfoMJ.SetActive(true);
-            firstTimeMj = true;
-            MJText.text = "Maitre du jeu : Je commence à retirer des bâtons !";
+            tourJoueur = false;
             TourDuMj();
-        } */
-        
+        } 
     }
 
 
@@ -177,8 +170,32 @@ public class GameManagerMarteau : MonoBehaviour
         }
     }
 
-    private void MoveClou (){
-        
+    private void MoveClou (float currentHP){
+        // Assurez-vous que votre objet clou existe
+    if (clou != null)
+    {   float minY = 0.926f;
+        float maxY = 1.498f;
+        float maxHP = 1000;
+        // Calculez la position Y en utilisant une règle de trois
+        float normalizedY = Mathf.Lerp(minY, maxY, currentHP / maxHP);
+
+        // Récupérez la position actuelle du clou
+        Vector3 newPosition = clou.transform.position;
+
+        //si le clou dépasse la zone cible alors on le met au minY
+        if (currentHP <= 0){
+            normalizedY = minY;
+        }
+        // Modifiez la position Y avec la valeur souhaitée
+        newPosition.y = normalizedY;
+
+        // Appliquez la nouvelle position au clou
+        clou.transform.position = newPosition;
+    }
+    else
+    {
+        Debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
+    }
     }
 
     private IEnumerator MoveMarteauCoroutine(){
@@ -192,6 +209,9 @@ public class GameManagerMarteau : MonoBehaviour
                     pivotPointMarteauPlayer.localEulerAngles = currentEulerAnglesPlayer;
                     yield return null; //Attendre la prochaine trame
                 }
+                //on descend la vie du clou 
+                vieDuClou -= playerForce; 
+                MoveClou(vieDuClou);
             }
             //faire tourner le marteau du Mj
             else {
@@ -201,6 +221,9 @@ public class GameManagerMarteau : MonoBehaviour
                     pivotPointMarteauMj.localEulerAngles = currentEulerAnglesMj;
                     yield return null; //Attendre la prochaine trame
                 }
+                //on descend la vie du clou
+                vieDuClou -= mjForce; 
+                MoveClou(vieDuClou);
             }
         //quand c fini replace les marteaux
         //faire remonter le marteau du player
@@ -228,8 +251,6 @@ public class GameManagerMarteau : MonoBehaviour
             Debug.Log("Tour joueur : " + tourJoueur);
             if (tourJoueur) {
                 tourJoueur = false;
-                vieDuClou -= playerForce; 
-                Debug.Log(vieDuClou);
                 if (vieDuClou <= 0){
                     FinDuJeu();
                 } else {
@@ -240,8 +261,6 @@ public class GameManagerMarteau : MonoBehaviour
             else {
                 tourJoueur = true;
                 aRelacher = false;
-                vieDuClou -= mjForce; 
-                Debug.Log(vieDuClou);
                 if (vieDuClou <= 0){
                     FinDuJeu();
                 }
@@ -260,18 +279,28 @@ public class GameManagerMarteau : MonoBehaviour
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            //envoi vers le Main Game Manager le scoreClou 
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
         }
         else {
             MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
         }
-        /*
+        MainGameManager.Instance.nbPartieClouJoue += 1;
+        
         if(MainGameManager.Instance.nbPartieClouJoue == 3 ){
             MainGameManager.Instance.gameClouFait = true;
-            SceneManager.LoadScene("ClouEnfonce");
+            StartCoroutine(LoadSceneAfterDelay("ClouEnfonce", 2f));
         }
-        else {
-            SceneManager.LoadScene("salleDes");
+        else
+        {
+            StartCoroutine(LoadSceneAfterDelay("salleDes", 2f));
         }
-        */
+
+    }
+    // Coroutine pour charger la scène après un délai
+    private IEnumerator LoadSceneAfterDelay(string sceneName, float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+        SceneManager.LoadScene(sceneName);
     }
 }
