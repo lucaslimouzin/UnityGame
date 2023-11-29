@@ -43,7 +43,7 @@ public class GameManagerMarteau : MonoBehaviour
     private void OnDisable()
     {
         // Se désabonner de l'événement OnScoreUpdated lors de la désactivation du script
-         MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
+        // MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
     }
 
     // Méthode appelée lorsque le score est mis à jour
@@ -199,7 +199,7 @@ public class GameManagerMarteau : MonoBehaviour
     }
 
     private IEnumerator MoveMarteauCoroutine(){
-       int mjForce = UnityEngine.Random.Range(1,101);
+       int mjForce = UnityEngine.Random.Range(10,101);
             //faire tourner le marteau du player
             if (tourJoueur){
                 //on attribue la valeur de la Force à Z
