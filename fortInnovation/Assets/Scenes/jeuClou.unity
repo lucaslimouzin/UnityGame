@@ -162,8 +162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -18.82, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -99}
-  m_SizeDelta: {x: 113.4094, y: 51.4088}
+  m_AnchoredPosition: {x: 4, y: -114}
+  m_SizeDelta: {x: 350.3652, y: 68.5713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45022283
 MonoBehaviour:
@@ -208,7 +208,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 45022284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 260763175}
+        m_TargetAssemblyTypeName: GameManagerMarteau, Assembly-CSharp
+        m_MethodName: TurnX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &45022284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,8 +522,11 @@ MonoBehaviour:
   panelJauge: {fileID: 230284473}
   MJText: {fileID: 458034346}
   buttonJauge: {fileID: 45022283}
-  Force: 0
+  pivotPointMarteauPlayer: {fileID: 951108087}
+  pivotPointMarteauMj: {fileID: 475281451}
+  playerForce: 0
   forceMarteau: {fileID: 509968259}
+  isMoving: 0
 --- !u!1 &458034344
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Maitre du jeu : \xE0 votre tour !"
+  m_text: "Ma\xEEtre du jeu : Vous avez \xE9chou\xE9, je d\xE9truis une recommandation"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -596,8 +611,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 48.56
+  m_fontSizeBase: 48.56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -632,7 +647,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -594.2313, y: 0, z: -621.67285, w: -164.41167}
+  m_margin: {x: -685.091, y: 0, z: -621.67285, w: -94.66804}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -670,7 +685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475281450}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08124272, y: -0.9966944, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -0.53, y: 1.38, z: -4.533}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
@@ -678,7 +693,7 @@ Transform:
   - {fileID: 832179546}
   - {fileID: 1298425555}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 9.32}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &509968257
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +720,7 @@ RectTransform:
   m_GameObject: {fileID: 509968257}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.8247, y: 4.8247, z: 4.8247}
+  m_LocalScale: {x: 3.0847201, y: 3.0847201, z: 3.0847201}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1474659715}
@@ -714,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 607, y: 294}
+  m_AnchoredPosition: {x: 591, y: 211}
   m_SizeDelta: {x: 90.5475, y: 40.0569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509968259
@@ -1004,8 +1019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 40.16531, y: -0}
-  m_SizeDelta: {x: 90.33057, y: 0.00007}
+  m_AnchoredPosition: {x: -1.4137611, y: 0.000009536743}
+  m_SizeDelta: {x: 7.17242, y: 0.00008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &615506208
 MonoBehaviour:
@@ -1795,7 +1810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951108086}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.08124272, w: 0.9966944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.48, y: 1.38, z: -4.533}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
@@ -1803,7 +1818,7 @@ Transform:
   - {fileID: 784538192}
   - {fileID: 1454086342}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.32}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044708541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,7 +2010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1 b\xE2ton"
+  m_text: "appuyer et relacher \nla barre d'espace pour frapper"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2709,8 +2724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -9.352899, y: -72.82163}
-  m_SizeDelta: {x: 1483.0215, y: 103.4564}
+  m_AnchoredPosition: {x: -43.13804, y: -99.1848}
+  m_SizeDelta: {x: 1560.5952, y: 163.9887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575409577
 MonoBehaviour:
@@ -3144,12 +3159,12 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.68
+      value: 5.23
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.53
+      value: -10.33
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -3441,5 +3456,5 @@ SceneRoots:
   - {fileID: 538046831}
   - {fileID: 260763174}
   - {fileID: 761741603}
-  - {fileID: 951108087}
   - {fileID: 475281451}
+  - {fileID: 951108087}
