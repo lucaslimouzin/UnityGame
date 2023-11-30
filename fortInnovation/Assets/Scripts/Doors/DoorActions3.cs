@@ -52,7 +52,7 @@ public class DoorActions3 : MonoBehaviour
     }
 
     private void ChangerDeScene(){
-        SceneManager.LoadScene("BassinsCoulant");
+        SceneManager.LoadScene("SalleBassins");
     }
 
 

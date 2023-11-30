@@ -78,8 +78,8 @@ public class MjActionClou : MonoBehaviour
     }
 
      public void PlayGameBaton() {
-        MainGameManager.Instance.jeuEnCours = "jeuClou";
-        SceneManager.LoadScene("salleDes");
+        MainGameManager.Instance.jeuEnCours = "JeuClous";
+        SceneManager.LoadScene("SalleDes");
     }
 
     public void GoAccueil(){

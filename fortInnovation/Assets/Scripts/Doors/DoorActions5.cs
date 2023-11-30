@@ -52,7 +52,7 @@ public class DoorActions5 : MonoBehaviour
     }
 
     private void ChangerDeScene(){
-        SceneManager.LoadScene("CelluleEnigmes");
+        SceneManager.LoadScene("SalleEnigmes");
     }
 
 

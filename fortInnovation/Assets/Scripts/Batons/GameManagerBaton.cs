@@ -327,10 +327,10 @@ public class GameManagerBaton : MonoBehaviour
     private void FinDuJeu(){
         if(MainGameManager.Instance.nbPartieBatonJoue == 4 ){
             MainGameManager.Instance.gameBatonFait = true;
-            SceneManager.LoadScene("salleBatons");
+            SceneManager.LoadScene("SalleBatons");
         }
         else {
-            SceneManager.LoadScene("salleDes");
+            SceneManager.LoadScene("SalleDes");
         }
         
 

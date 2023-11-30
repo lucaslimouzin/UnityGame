@@ -52,7 +52,7 @@ public class DoorActions2 : MonoBehaviour
     }
 
     private void ChangerDeScene(){
-        SceneManager.LoadScene("salleBatons");
+        SceneManager.LoadScene("SalleBatons");
     }
 
 

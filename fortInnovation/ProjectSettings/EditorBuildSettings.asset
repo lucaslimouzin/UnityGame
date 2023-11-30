@@ -9,27 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/FortAccueil.unity
     guid: 91d078250fd66dc4587cdee76cf95f01
   - enabled: 1
-    path: Assets/Scenes/JarresDegoutantes.unity
+    path: Assets/Scenes/SalleJarres.unity
     guid: 46e4e62ac1544db45ab23e2936fb3fa7
   - enabled: 1
-    path: Assets/Scenes/salleBatons.unity
+    path: Assets/Scenes/SalleBatons.unity
     guid: fb93ae2d732bf9d42bb0e1b6722274f2
   - enabled: 1
-    path: Assets/Scenes/jeuBatonQuestions.unity
+    path: Assets/Scenes/JeuBatons.unity
     guid: 459f5f0cf72c06f40a76fcca5b4e1870
   - enabled: 1
-    path: Assets/Scenes/ClouEnfonce.unity
+    path: Assets/Scenes/SalleClous.unity
     guid: 40568c0082aae2745bba959f47ff01d8
   - enabled: 1
-    path: Assets/Scenes/BassinsCoulant.unity
+    path: Assets/Scenes/Sallebassins.unity
     guid: 396ddf2307c9d1644b3aeef732457254
   - enabled: 1
-    path: Assets/Scenes/CelluleEnigmes.unity
+    path: Assets/Scenes/SalleEnigmes.unity
     guid: 06474ebb413204640a49b82707289df4
   - enabled: 1
-    path: Assets/Scenes/salleDes.unity
+    path: Assets/Scenes/SalleDes.unity
     guid: d6e292a43be2e8249872d329acfea44c
   - enabled: 1
-    path: Assets/Scenes/jeuClou.unity
+    path: Assets/Scenes/JeuClous.unity
     guid: f7688385268ff804ab45ee1d6e6e1ea1
   m_configObjects: {}

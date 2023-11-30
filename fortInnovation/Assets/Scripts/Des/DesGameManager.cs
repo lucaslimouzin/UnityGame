@@ -14,10 +14,10 @@ public class DesGameManager : MonoBehaviour
     panelQuiCommence.SetActive(false);
     panelTirageDesDes.SetActive(true);
     switch (MainGameManager.Instance.jeuEnCours){
-        case "jeuBatonQuestions":
+        case "JeuBatons":
             textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBatonJoue.ToString() + "/" + MainGameManager.Instance.nbPartieBaton.ToString();
             break;
-        case "jeuClou":
+        case "JeuClous":
             textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieClouJoue.ToString() + "/" + MainGameManager.Instance.nbPartieClou.ToString();
             break;
     }

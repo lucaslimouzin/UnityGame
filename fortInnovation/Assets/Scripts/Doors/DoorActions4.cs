@@ -52,7 +52,7 @@ public class DoorActions4 : MonoBehaviour
     }
 
     private void ChangerDeScene(){
-        SceneManager.LoadScene("ClouEnfonce");
+        SceneManager.LoadScene("SalleClous");
     }
 
 

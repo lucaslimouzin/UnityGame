@@ -16,6 +16,7 @@ public class GameManagerMarteau : MonoBehaviour
     public GameObject panelJauge;
     public GameObject buttonTextMarteau;
     public TextMeshProUGUI MJText;
+    public TextMeshProUGUI textVieClou;
     public Button buttonJauge;
     public Transform pivotPointMarteauPlayer;
     public Transform pivotPointMarteauMj;
@@ -63,7 +64,9 @@ public class GameManagerMarteau : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         forceMarteau.value = 0;
         playerForce = 0;
-        vieDuClou = 800f;
+        vieDuClou = 1000f;
+        //affichage de la vie du clou
+        textVieClou.text = vieDuClou.ToString();
         ResetGauge();
       //on affiche le panneau des régles
         PanneauRegle();
@@ -135,14 +138,6 @@ public class GameManagerMarteau : MonoBehaviour
         } 
     }
 
-
-    //fonction qui check le bouton enfoncé
-    private void OnButtonClick(){
-        // Supprimer tous les écouteurs d'événements du bouton
-        buttonJauge.onClick.RemoveAllListeners();
-    }
-
-
     private void TourDuJoueur(){
         if(tourJoueur) {
             buttonTextMarteau.SetActive(true);
@@ -193,6 +188,9 @@ public class GameManagerMarteau : MonoBehaviour
 
         // Appliquez la nouvelle position au clou
         clou.transform.position = newPosition;
+        
+        //affichage de la vie du clou
+        textVieClou.text = vieDuClou.ToString();
     }
     else
     {
@@ -291,11 +289,11 @@ public class GameManagerMarteau : MonoBehaviour
         
         if(MainGameManager.Instance.nbPartieClouJoue == 3 ){
             MainGameManager.Instance.gameClouFait = true;
-            StartCoroutine(LoadSceneAfterDelay("ClouEnfonce", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleClous", 2f));
         }
         else
         {
-            StartCoroutine(LoadSceneAfterDelay("salleDes", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleDes", 2f));
         }
 
     }
