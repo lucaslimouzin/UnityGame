@@ -24,7 +24,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                             
                             compteurDesMj = 0;
                             MainGameManager.Instance.checkFaitDesMj = true;
-                            Debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
+                            //debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
                         }        
                         break;
                     case "SIDEMJ2":
@@ -33,7 +33,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                             
                             compteurDesMj = 0;
                             MainGameManager.Instance.checkFaitDesMj = true;
-                            Debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
+                            //debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
                         }
                         break;
                     case "SIDEMJ3":
@@ -42,7 +42,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                             
                             compteurDesMj = 0;
                             MainGameManager.Instance.checkFaitDesMj = true;
-                            Debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
+                            //debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
                         }
                         break;
                     case "SIDEMJ4":
@@ -51,7 +51,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                             
                             compteurDesMj = 0;
                             MainGameManager.Instance.checkFaitDesMj = true;
-                            Debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
+                            //debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
                         }
                         break;
                     case "SIDEMJ5":
@@ -60,7 +60,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                             
                             compteurDesMj = 0;
                             MainGameManager.Instance.checkFaitDesMj = true;
-                            Debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
+                            //debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
                         }
                         break;
                     case "SIDEMJ6":
@@ -69,7 +69,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                             
                             compteurDesMj = 0;
                             MainGameManager.Instance.checkFaitDesMj = true;
-                            Debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
+                            //debug.Log("Mj = " + MainGameManager.Instance.scoreDesMj);
                         }
                         break;
                 }

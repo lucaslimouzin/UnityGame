@@ -63,7 +63,7 @@ public class GameManagerMarteau : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         forceMarteau.value = 0;
-        playerForce = 0;
+        playerForce = 10;
         vieDuClou = 1000f;
         //affichage de la vie du clou
         textVieClou.text = vieDuClou.ToString();
@@ -105,7 +105,7 @@ public class GameManagerMarteau : MonoBehaviour
     }
 
     public void ResetGauge(){
-        playerForce = 0;
+        playerForce = 10;
         forceMarteau.value = 0;
     }
     IEnumerator Wait(){
@@ -141,7 +141,7 @@ public class GameManagerMarteau : MonoBehaviour
     private void TourDuJoueur(){
         if(tourJoueur) {
             buttonTextMarteau.SetActive(true);
-            Debug.Log("Debut tour joueur");
+            ////debug.Log("Debut tour joueur");
             MJText.text = "Maître du jeu : A vous de jouer";
             if(aRelacher){
                 Invoke("MoveMarteau",1f);
@@ -152,7 +152,7 @@ public class GameManagerMarteau : MonoBehaviour
     private void TourDuMj(){
         if (!tourJoueur) {
             buttonTextMarteau.SetActive(false);
-            Debug.Log("Debut tour Mj");
+            ////debug.Log("Debut tour Mj");
             MJText.text = "Maître du jeu : A mon tour de jouer";
             ResetGauge();
             Invoke("MoveMarteau",1f);
@@ -197,7 +197,7 @@ public class GameManagerMarteau : MonoBehaviour
     }
     else
     {
-        Debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
+        ////debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
     }
     }
 
@@ -250,8 +250,8 @@ public class GameManagerMarteau : MonoBehaviour
             //on attend 2 secondes la fin de la coroutine 
             yield return new WaitForSeconds(1f); 
             isMoving = false;
-            Debug.Log(isMoving);
-            Debug.Log("Tour joueur : " + tourJoueur);
+            ////debug.Log(isMoving);
+            ////debug.Log("Tour joueur : " + tourJoueur);
             if (tourJoueur) {
                 tourJoueur = false;
                 if (vieDuClou <= 0){
@@ -259,7 +259,7 @@ public class GameManagerMarteau : MonoBehaviour
                 } else {
                     TourDuMj()
 ;                }
-                Debug.Log("Tour joueur : " + tourJoueur);
+                ////debug.Log("Tour joueur : " + tourJoueur);
             }
             else {
                 tourJoueur = true;
@@ -276,7 +276,7 @@ public class GameManagerMarteau : MonoBehaviour
     
     //fin du jeu 
     private void FinDuJeu(){
-        Debug.Log("GameOver");
+        ////debug.Log("GameOver");
         buttonTextMarteau.SetActive(false);
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné

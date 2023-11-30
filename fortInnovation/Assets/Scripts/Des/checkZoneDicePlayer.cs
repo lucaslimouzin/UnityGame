@@ -24,7 +24,7 @@ public class CheckZoneDicePlayer : MonoBehaviour
                             MainGameManager.Instance.scoreDesPlayer = 6;
                             compteurDesPlayer = 0;
                             MainGameManager.Instance.checkFaitDesPlayer = true;
-                            Debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
+                            //debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
                         }                   
                         break;
                     case "SIDE2":
@@ -33,7 +33,7 @@ public class CheckZoneDicePlayer : MonoBehaviour
                             MainGameManager.Instance.scoreDesPlayer = 5;
                             compteurDesPlayer = 0;
                             MainGameManager.Instance.checkFaitDesPlayer = true;
-                            Debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
+                            //debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
                         }        
                         break;
                     case "SIDE3":
@@ -42,7 +42,7 @@ public class CheckZoneDicePlayer : MonoBehaviour
                             MainGameManager.Instance.scoreDesPlayer = 4;
                             compteurDesPlayer = 0;
                             MainGameManager.Instance.checkFaitDesPlayer = true;
-                            Debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
+                            //debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
                         }        
                         break;
                     case "SIDE4":
@@ -51,7 +51,7 @@ public class CheckZoneDicePlayer : MonoBehaviour
                             MainGameManager.Instance.scoreDesPlayer = 3;
                             compteurDesPlayer = 0;
                             MainGameManager.Instance.checkFaitDesPlayer = true;
-                            Debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
+                            //debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
                         }        
                         break;
                     case "SIDE5":
@@ -60,7 +60,7 @@ public class CheckZoneDicePlayer : MonoBehaviour
                             MainGameManager.Instance.scoreDesPlayer = 2;
                             compteurDesPlayer = 0;
                             MainGameManager.Instance.checkFaitDesPlayer = true;
-                            Debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
+                            //debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
                         }        
                         break;
                     case "SIDE6":
@@ -69,7 +69,7 @@ public class CheckZoneDicePlayer : MonoBehaviour
                             MainGameManager.Instance.scoreDesPlayer = 1;
                             compteurDesPlayer = 0;
                             MainGameManager.Instance.checkFaitDesPlayer = true;
-                            Debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
+                            //debug.Log("Player = " + MainGameManager.Instance.scoreDesPlayer);
                         }        
                         break;
                     

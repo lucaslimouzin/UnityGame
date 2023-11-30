@@ -76,7 +76,7 @@ public class MainGameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("GameObject avec le nom 'scoreTextReco' non trouvé.");
+            //debug.LogError("GameObject avec le nom 'scoreTextReco' non trouvé.");
         }
     }
 
@@ -89,7 +89,7 @@ public class MainGameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("TextMeshProUGUI non trouvé. Assurez-vous que le GameObject 'scoreTextReco' a un composant TextMeshProUGUI.");
+            //debug.LogError("TextMeshProUGUI non trouvé. Assurez-vous que le GameObject 'scoreTextReco' a un composant TextMeshProUGUI.");
         }
     }
 

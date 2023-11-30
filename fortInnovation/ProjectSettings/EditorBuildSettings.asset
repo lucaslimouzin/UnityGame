@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JeuClous.unity
     guid: f7688385268ff804ab45ee1d6e6e1ea1
+  - enabled: 1
+    path: Assets/Scenes/JeuBassins.unity
+    guid: edf964f38d3ea0241a519905b845fa32
   m_configObjects: {}

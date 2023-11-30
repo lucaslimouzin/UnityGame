@@ -125,7 +125,7 @@ public class GameManagerBaton : MonoBehaviour
         numQuestions = UnityEngine.Random.Range(0, 20);
 
         Questions(numQuestions);
-        Debug.Log("lancement de la fonction AfficherPanneauQuestions");
+        //////debug.Log("lancement de la fonction AfficherPanneauQuestions");
         if (panelInstruction.activeSelf){
             panelInstruction.SetActive(false);
         }
@@ -140,7 +140,7 @@ public class GameManagerBaton : MonoBehaviour
     
 
     private void Questions(int num){
-        Debug.Log("lancement de la fonction Questions");
+        ////debug.Log("lancement de la fonction Questions");
         QuestionData question = listBatonQuestions.questions[num];
 
         //affichage des données
@@ -249,19 +249,19 @@ public class GameManagerBaton : MonoBehaviour
 
     private IEnumerator MoveBatonCoroutine(bool reponseJuste, int nbRetraitBaton)
     {
-        Debug.Log(nbRetraitBaton);
+        ////debug.Log(nbRetraitBaton);
         float moveSpeed = 2f;
         float elapsedTime = 0f;
 
-        Debug.Log("startIndex = " + (batonTailleTab - nbRetraitBaton));
-        Debug.Log("Nb retrait baton " + nbRetraitBaton);
+        ////debug.Log("startIndex = " + (batonTailleTab - nbRetraitBaton));
+        ////debug.Log("Nb retrait baton " + nbRetraitBaton);
         // Calculer l'indice de départ pour le retrait des batons
         int startIndex = batonTailleTab - nbRetraitBaton;
     
         // Vérifier si l'indice de départ est valide
         if (startIndex < 0)
         {
-            Debug.LogError("Nombre de batons à retirer supérieur au nombre total de batons.");
+            ////debug.LogError("Nombre de batons à retirer supérieur au nombre total de batons.");
             yield break; // Sortir de la coroutine si l'indice de départ n'est pas valide
         }
 
@@ -294,7 +294,7 @@ public class GameManagerBaton : MonoBehaviour
 
         // Arrêter le mouvement après 5 secondes
         isMoving = false;
-        Debug.Log("Mouvement terminé");
+        //debug.Log("Mouvement terminé");
         button1Baton.onClick.RemoveAllListeners();
         button2Baton.onClick.RemoveAllListeners();
         button3Baton.onClick.RemoveAllListeners();
