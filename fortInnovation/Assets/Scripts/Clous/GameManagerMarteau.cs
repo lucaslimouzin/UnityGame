@@ -189,6 +189,9 @@ public class GameManagerMarteau : MonoBehaviour
         // Appliquez la nouvelle position au clou
         clou.transform.position = newPosition;
         
+        if (vieDuClou <=0) {
+            vieDuClou = 0;
+        }
         //affichage de la vie du clou
         textVieClou.text = vieDuClou.ToString();
     }
