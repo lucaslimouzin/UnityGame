@@ -12,11 +12,13 @@ public class MainGameManager : MonoBehaviour
     // variables pour jeu du baton
     public int scoreRecoBaton = 0;
     public int nbPartieBatonJoue = 0;
+    public int nbPartieBaton = 4;
     public bool gameBatonFait = false;
 
     // variables pour jeu du clou
     public int scoreRecoClou = 0;
     public int nbPartieClouJoue = 0;
+    public int nbPartieClou = 3;
     public bool gameClouFait = false;
 
     //variables pour les dés afin de déterminer qui commence
@@ -29,7 +31,7 @@ public class MainGameManager : MonoBehaviour
     public string jeuEnCours;
 
     // Définir un événement pour signaler les mises à jour du score
-    public delegate void ScoreUpdated(int newScore);
+    public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou);
     public static event ScoreUpdated OnScoreUpdated;
 
     private void Awake()
@@ -94,9 +96,9 @@ public class MainGameManager : MonoBehaviour
     // Méthode pour mettre à jour le score
     public void UpdateScore(int newScore)
     {
-        scoreReco = newScore;
+        //scoreReco = newScore;
 
         // Déclencher l'événement OnScoreUpdated
-        OnScoreUpdated?.Invoke(scoreReco);
+        OnScoreUpdated?.Invoke(scoreRecoBaton, scoreRecoClou);
     }
 }

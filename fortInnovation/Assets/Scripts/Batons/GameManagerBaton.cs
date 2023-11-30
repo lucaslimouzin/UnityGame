@@ -64,10 +64,11 @@ public class GameManagerBaton : MonoBehaviour
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    private void HandleScoreUpdated(int newScore)
+    private void HandleScoreUpdated(int scoreBaton, int scoreClou)
     {
         // Faire quelque chose avec le nouveau score
-        Debug.Log("Nouveau score : " + newScore);
+        MainGameManager.Instance.scoreReco = scoreBaton + scoreClou; 
+       
     }
     //-------------------------------------------------------------------
 

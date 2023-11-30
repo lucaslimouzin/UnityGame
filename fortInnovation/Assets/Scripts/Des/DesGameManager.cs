@@ -7,12 +7,21 @@ using UnityEngine.SceneManagement;
 
 public class DesGameManager : MonoBehaviour
 {
-    public GameObject panelInstructions;
+    public GameObject panelQuiCommence;
     public GameObject panelTirageDesDes;
+    public TextMeshProUGUI textNbParties;
    void Start() {
-    panelInstructions.SetActive(false);
+    panelQuiCommence.SetActive(false);
     panelTirageDesDes.SetActive(true);
-
+    switch (MainGameManager.Instance.jeuEnCours){
+        case "jeuBatonQuestions":
+            textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBatonJoue.ToString() + "/" + MainGameManager.Instance.nbPartieBaton.ToString();
+            break;
+        case "jeuClou":
+            textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieClouJoue.ToString() + "/" + MainGameManager.Instance.nbPartieClou.ToString();
+            break;
+    }
+        
    }
 
    public void ChoixDuJeu(){

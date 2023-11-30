@@ -43,14 +43,16 @@ public class GameManagerMarteau : MonoBehaviour
     private void OnDisable()
     {
         // Se désabonner de l'événement OnScoreUpdated lors de la désactivation du script
-        // MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
+         MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    private void HandleScoreUpdated(int newScore)
+    // Méthode appelée lorsque le score est mis à jour
+    private void HandleScoreUpdated(int scoreBaton, int scoreClou)
     {
         // Faire quelque chose avec le nouveau score
-        Debug.Log("Nouveau score : " + newScore);
+        MainGameManager.Instance.scoreReco = scoreBaton + scoreClou; 
+       
     }
     //-------------------------------------------------------------------
 
