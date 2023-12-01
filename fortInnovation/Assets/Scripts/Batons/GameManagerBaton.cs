@@ -10,27 +10,31 @@ public class GameManagerBaton : MonoBehaviour
 {
     public GameObject[] baton; 
     public GameObject panelInstruction;
-    public GameObject panelQuestions;
     public GameObject panelInfoMJ;
     public GameObject panelButtonBaton;
-    public Button buttonA;
-    public Button buttonB;
-    public Button buttonC;
+
     public Button button1Baton;
     public Button button2Baton;
     public Button button3Baton;
-    public TextMeshProUGUI questionText;
-    public TextMeshProUGUI propositionAtext;
-    public TextMeshProUGUI propositionBtext;
-    public TextMeshProUGUI propositionCtext;
     public TextMeshProUGUI MJText;
-    private bool aJuste = false;
+   
     private bool isMoving = false;
-    private int numQuestions = 0;
+   
     private int batonTailleTab = 0;
     private bool win = false;
     private bool firstTimeMj;
     
+    //variables pour les questions//////////////////////
+    public GameObject panelQuestions;
+    public TextMeshProUGUI questionText;
+    public TextMeshProUGUI propositionAtext;
+    public TextMeshProUGUI propositionBtext;
+    public TextMeshProUGUI propositionCtext;
+    public Button buttonA;
+    public Button buttonB;
+    public Button buttonC;
+    private bool aJuste = false;
+    private int numQuestions = 0;
 
     [System.Serializable]
     public class QuestionData
@@ -49,6 +53,8 @@ public class GameManagerBaton : MonoBehaviour
     }
 
     private BatonQuestions listBatonQuestions; 
+
+    //fin variables pour les questions ////////////////////
 
     //--------pour mettre à jour le score --------------------------------------
     private void OnEnable()

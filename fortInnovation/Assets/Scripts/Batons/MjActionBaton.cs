@@ -78,7 +78,7 @@ public class MjActionBaton : MonoBehaviour
     }
 
      public void PlayGameBaton() {
-        MainGameManager.Instance.jeuEnCours = "SalleBatons";
+        MainGameManager.Instance.jeuEnCours = "JeuBatons";
         SceneManager.LoadScene("SalleDes");
     }
 

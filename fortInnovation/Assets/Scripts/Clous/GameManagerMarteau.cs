@@ -64,7 +64,7 @@ public class GameManagerMarteau : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         forceMarteau.value = 0;
         playerForce = 10;
-        vieDuClou = 1000f;
+        vieDuClou = 800f;
         //affichage de la vie du clou
         textVieClou.text = vieDuClou.ToString();
         ResetGauge();
@@ -172,7 +172,7 @@ public class GameManagerMarteau : MonoBehaviour
     if (clou != null)
     {   float minY = 0.926f;
         float maxY = 1.498f;
-        float maxHP = 1000;
+        float maxHP = 800f;
         // Calculez la position Y en utilisant une règle de trois
         float normalizedY = Mathf.Lerp(minY, maxY, currentHP / maxHP);
 
