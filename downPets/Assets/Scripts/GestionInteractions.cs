@@ -20,10 +20,19 @@ public class GestionInteractions : MonoBehaviour
     private bool isGamePaused = false;
     public GameObject gameOverPanel;
     public AudioClip sonSpawn;
+    Interstitial interstitial;
 
     private void Start()
     {
+        interstitial = GameObject.FindGameObjectWithTag("TagAds").GetComponent<Interstitial>();
         bestScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        if (gameObject.layer == LayerMask.NameToLayer("ObjetSpawned"))
+        {
+
+            objetRigidbody = gameObject.GetComponent<Rigidbody2D>();
+            objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
+            objetRigidbody.gravityScale = 1; 
+        }
     }
     private void Awake()
     {
@@ -41,7 +50,14 @@ public class GestionInteractions : MonoBehaviour
         // Mettre à jour le texte du score à chaque frame
 
         scoreText.text = "" + score.ToString();
-        
+        if (gameObject.layer == LayerMask.NameToLayer("ObjetSpawned"))
+        {
+
+            objetRigidbody = gameObject.GetComponent<Rigidbody2D>();
+            objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
+            objetRigidbody.gravityScale = 1;
+        }
+
     }
 
     public void GererCollisionObjet(GameObject objetEnCollision, GameObject objetCiblePrefab, int points)
@@ -86,9 +102,14 @@ public class GestionInteractions : MonoBehaviour
         // Spawner l'objet cible à la position du premier objet en collision
         Instantiate(objetCiblePrefab, positionSpawn, Quaternion.identity);
         objetRigidbody = objetCiblePrefab.GetComponent<Rigidbody2D>();
-        objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
-        // Changer la couche à "ObjetSpawned"
-        objetRigidbody.gameObject.layer = LayerMask.NameToLayer("ObjetSpawned");
+        if (objetRigidbody != null)
+        {
+            objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
+            // Changer la couche à "ObjetSpawned"
+            objetRigidbody.gameObject.layer = LayerMask.NameToLayer("ObjetSpawned");
+            objetRigidbody.gravityScale = 1;
+        }
+       
     }
 
     public void GameOver()
@@ -126,11 +147,25 @@ public class GestionInteractions : MonoBehaviour
 
     public void RechargerNiveau()
     {
+        // Vérifiez si l'action doit être exécutée avec une chance sur 4
+        if (ShouldShowInterstitialAd())
+        {
+            interstitial.ShowAd();
+        }
         // Obtenez l'index du niveau actuel
         int indexNiveauActuel = SceneManager.GetActiveScene().buildIndex;
 
         // Rechargez le niveau actuel
         SceneManager.LoadScene(indexNiveauActuel);
+    }
+
+    private bool ShouldShowInterstitialAd()
+    {
+        // Génère un nombre aléatoire entre 1 et 3 (inclus)
+        int randomValue = Random.Range(1, 4);
+
+        // Si le nombre aléatoire est égal à 2, retourne true (1 chance sur 3)
+        return randomValue == 2;
     }
 
     public void QuitterJeu()

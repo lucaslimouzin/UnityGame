@@ -6,6 +6,7 @@ public class InteractionObjet : MonoBehaviour
     public GameObject objetCiblePrefab;
     public float seuilGameOver = 3f; // Seuil de déclenchement du game over en secondes
     public Color couleurGameOver = Color.red; // Couleur du game over
+    public Color couleurBase = Color.black;
     public float tempsDepassementMax = 1.5f; // Seuil de temps pour changer la couleur
     private Rigidbody2D objetRigidbody;
     public int points;
@@ -21,26 +22,12 @@ public class InteractionObjet : MonoBehaviour
         GameObject objetAvecSpriteRenderer = GameObject.Find("ligneGameOver");
         // Récupérer le composant SpriteRenderer attaché au GameObject
         spriteRenderer = objetAvecSpriteRenderer.GetComponent<SpriteRenderer>();
-       
+        spriteRenderer.color = couleurBase;
+
     }
 
     void Update()
     {
-        if (gameObject.layer == LayerMask.NameToLayer("Default")) {
-            tempsDepassementZoneSpawn += Time.deltaTime;
-            // Vérifier si le seuil de dépassement du temps est atteint
-            if (tempsDepassementZoneSpawn >= 5.0f)
-            {
-                objetRigidbody =gameObject.GetComponent<Rigidbody2D>();
-                objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
-                // Changer la couche à "ObjetSpawned"
-                objetRigidbody.gameObject.layer = LayerMask.NameToLayer("ObjetSpawned");
-            }
-        }
-        else
-        {
-            tempsDepassementZoneSpawn = 0f;
-        }
         
         // Si l'objet est en collision avec la limite
         if (enCollision)
@@ -59,13 +46,16 @@ public class InteractionObjet : MonoBehaviour
             {
                 spriteRenderer.color = couleurGameOver;
             }
+            else
+            {
+                spriteRenderer.color = couleurBase;
+            }
         }
         else
         {
             // Réinitialiser le compteur si l'objet ne dépasse pas la limite
             tempsDepassement = 0f;
-            // Réinitialiser la couleur à sa valeur par défaut
-            //spriteRenderer.color = Color.white;
+
         }
     }
 

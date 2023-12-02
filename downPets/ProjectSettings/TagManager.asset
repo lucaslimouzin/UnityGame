@@ -17,6 +17,7 @@ TagManager:
   - 11
   - gameOver
   - spawnZone
+  - TagAds
   layers:
   - Default
   - TransparentFX

@@ -162,9 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagObjetCible: 11
-  objetCiblePrefab: {fileID: 6548071104660630864}
+  objetCiblePrefab: {fileID: 6548071104660630864, guid: 9b75be5b50851e546b49ccdb912a9bbc, type: 3}
   seuilGameOver: 3
   couleurGameOver: {r: 1, g: 0, b: 0, a: 1}
+  couleurBase: {r: 0.047169805, g: 0.044722315, b: 0.044722315, a: 0.30588236}
   tempsDepassementMax: 1.5
   points: 400
   spriteRenderer: {fileID: 0}

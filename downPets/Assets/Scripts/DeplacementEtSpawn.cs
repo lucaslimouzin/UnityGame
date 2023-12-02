@@ -16,6 +16,7 @@ public class DeplacementEtSpawn : MonoBehaviour
     public Image nextImage;
     public Sprite[] spritePossibles;
     private int num;
+    private bool firstTime = true;
 
     void Start()
     {
@@ -33,61 +34,21 @@ public class DeplacementEtSpawn : MonoBehaviour
         {
             return; // Ne rien faire si le clic est sur un bouton d'UI
         }
-        if (objetSpawned == null)
+        if (objetSpawned == null && firstTime)
         {
+            firstTime = false;
             SpawnObjet();
+            
         }
 
         if (Input.GetMouseButton(0) && clicAutorise)
         {
-            if (!estEnTrainDeTenir)
-            {
-                CommencerTenir();
-            } 
-
-           // DeplacerObjet();
+            RelacherObjet();
         }
-        else
-        {
-            if (estEnTrainDeTenir)
-            {
-                dernierClicTime = Time.time;
-                RelacherObjet();
-            }
-        }
-
-        if (Input.GetMouseButtonDown(0) && !estEnTrainDeTenir && (Time.time - dernierClicTime) > delaiEntreClics && clicAutorise)
-        {
-            dernierClicTime = Time.time;
-        }
-
-        if (objetSpawned != null && estEnTrainDeTenir)
-        {
-            objetSpawned.transform.position = transform.position + new Vector3(0, -1, 0);
-        }
+        
     }
 
-    void CommencerTenir()
-    {
-        // Vérifier si le bouton est toujours enfoncé
-        if (Input.GetMouseButton(0))
-        {
-            estEnTrainDeTenir = true;
-            // Utiliser la position du clic en X comme nouvelle position X du spawner
-            Vector3 positionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            positionInitiale = new Vector3(positionSouris.x, transform.position.y, transform.position.z);
-            transform.position = positionInitiale; // Mettre à jour la position immédiatement
-        }
-
-    }
-
-    void DeplacerObjet()
-    {
-        Vector3 positionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        float deplacementX = positionSouris.x - positionInitiale.x;
-        transform.position += new Vector3(deplacementX, 0, 0);
-        positionInitiale = positionSouris;
-    }
+   
 
     void RelacherObjet()
     {
@@ -95,6 +56,10 @@ public class DeplacementEtSpawn : MonoBehaviour
         if (clicAutorise)
         {
             estEnTrainDeTenir = false;
+            // Utiliser la position du clic en X comme nouvelle position X du spawner
+            Vector3 positionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            positionInitiale = new Vector3(positionSouris.x, transform.position.y, transform.position.z);
+            transform.position = positionInitiale; // Mettre à jour la position immédiatement
 
             // Activer le Rigidbody2D lorsqu'on relâche
             if (objetRigidbody != null)
@@ -102,18 +67,13 @@ public class DeplacementEtSpawn : MonoBehaviour
                 objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
                 // Changer la couche à "ObjetSpawned"
                 objetRigidbody.gameObject.layer = LayerMask.NameToLayer("ObjetSpawned");
+                objetRigidbody.gravityScale = 1;
             }
-
+            objetSpawned.transform.position = transform.position + new Vector3(0, -1, 0);
             // Désactiver le clic de la souris pendant 1.5 secondes
             clicAutorise = false;
+            Invoke("SpawnObjet", 0.8f);
             Invoke("AutoriserClic",1f);
-
-            // Si le délai entre les clics a été respecté, spawn un nouvel objet après 0.5 secondes
-            if ((Time.time - dernierClicTime) < delaiEntreClics)
-            {
-                Invoke("SpawnObjet", 0.8f);
-                dernierClicTime = Time.time;
-            }
         }
     }
 
@@ -133,9 +93,10 @@ public class DeplacementEtSpawn : MonoBehaviour
         objetRigidbody = objetSpawned.GetComponent<Rigidbody2D>();
         if (objetRigidbody != null)
         {
-            objetRigidbody.bodyType = RigidbodyType2D.Static;
+            objetRigidbody.bodyType = RigidbodyType2D.Dynamic;
             // Changer la couche à "Default"
             objetRigidbody.gameObject.layer = LayerMask.NameToLayer("Default");
+            objetRigidbody.gravityScale = 0;
         }
 
         // Choisir le prochain objet à spawner
@@ -144,6 +105,8 @@ public class DeplacementEtSpawn : MonoBehaviour
 
     void AutoriserClic()
     {
+        
+        dernierClicTime = Time.time;
         // Autoriser à nouveau le clic après le délai
         clicAutorise = true;
     }

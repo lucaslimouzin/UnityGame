@@ -165,6 +165,7 @@ MonoBehaviour:
   objetCiblePrefab: {fileID: 4334419635995563983, guid: 2a62f69bca7d0844fbc5a3fdc4fed529, type: 3}
   seuilGameOver: 3
   couleurGameOver: {r: 1, g: 0, b: 0, a: 1}
+  couleurBase: {r: 0.047169805, g: 0.044722315, b: 0.044722315, a: 0.30588236}
   tempsDepassementMax: 1.5
   points: 36
   spriteRenderer: {fileID: 0}
