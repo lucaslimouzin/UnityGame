@@ -124,7 +124,7 @@ public class GestionInteractions : MonoBehaviour
         finalScoreText.text = "" + score.ToString();
         // Ajoutez le code pour afficher le panel et mettre le jeu en pause
         DisplayGameOverPanel();
-        PauseGame();
+        //PauseGame();
     }
 
     private void DisplayGameOverPanel()
@@ -154,7 +154,10 @@ public class GestionInteractions : MonoBehaviour
         }
         // Obtenez l'index du niveau actuel
         int indexNiveauActuel = SceneManager.GetActiveScene().buildIndex;
-
+        // Inverser l'état de la pause
+        isGamePaused = false;
+        // Mettre en pause ou reprendre le temps selon l'état actuel
+        Time.timeScale = 1f;
         // Rechargez le niveau actuel
         SceneManager.LoadScene(indexNiveauActuel);
     }
