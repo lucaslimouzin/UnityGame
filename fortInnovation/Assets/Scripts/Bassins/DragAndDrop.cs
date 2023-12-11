@@ -17,8 +17,11 @@ public class DragAndDrop : MonoBehaviour
         // Obtenir la nouvelle position de la souris dans le monde
         Vector3 newPosition = GetMouseWorldPos() + offset;
 
-        // Assurez-vous que la position Z reste constante
+        // maintenir la position Z reste constante
         newPosition.z = transform.position.z;
+
+        // maintenir la position Z reste constante
+        newPosition.y = 2.00f; 
 
         // Mettre à jour la position de l'objet
         transform.position = newPosition;
@@ -29,6 +32,7 @@ public class DragAndDrop : MonoBehaviour
         // Convertir la position de la souris en coordonnées mondiales
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = -Camera.main.transform.position.z;
+        //mousePos.y = -Camera.main.transform.position.y;
         return Camera.main.ScreenToWorldPoint(mousePos);
     }
 }

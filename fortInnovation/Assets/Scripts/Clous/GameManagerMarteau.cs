@@ -236,6 +236,7 @@ public class GameManagerMarteau : MonoBehaviour
             MainGameManager.Instance.questionsClouPosees.Clear();
         }
 
+        //gestion des panneaux
         if (panelInstruction.activeSelf){
             panelInstruction.SetActive(false);
         }
@@ -245,7 +246,6 @@ public class GameManagerMarteau : MonoBehaviour
         panelQuestions.SetActive(true);
 
         QuestionData question = listQuestions.questions[numQuestions];
-
         //affichage des données
         questionText.text = question.question;
         propositionAtext.text = question.propositions[0];
