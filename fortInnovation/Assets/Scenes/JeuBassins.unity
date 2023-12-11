@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 260763174}
   - component: {fileID: 260763175}
   m_Layer: 0
-  m_Name: GameManagerMarteau
+  m_Name: GameManagerBassin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3268,7 +3268,7 @@ GameObject:
   - component: {fileID: 1008610508}
   - component: {fileID: 1008610507}
   m_Layer: 0
-  m_Name: Sphere (8)
+  m_Name: PlayerSphere5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3548,7 +3548,7 @@ GameObject:
   - component: {fileID: 1068970540}
   - component: {fileID: 1068970545}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: PlayerSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4358,7 +4358,7 @@ GameObject:
   - component: {fileID: 1382432453}
   - component: {fileID: 1382432452}
   m_Layer: 0
-  m_Name: Sphere (10)
+  m_Name: PlayerSphere6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4837,7 +4837,7 @@ GameObject:
   - component: {fileID: 1614062627}
   - component: {fileID: 1614062626}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: PlayerSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5111,7 +5111,7 @@ GameObject:
   - component: {fileID: 1649668370}
   - component: {fileID: 1649668369}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: PlayerSphere4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5257,7 +5257,7 @@ GameObject:
   - component: {fileID: 1743938175}
   - component: {fileID: 1743938174}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: PlayerSphere3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5976,7 +5976,7 @@ GameObject:
   - component: {fileID: 2090634551}
   - component: {fileID: 2090634550}
   m_Layer: 0
-  m_Name: Sphere (12)
+  m_Name: PlayerSphere7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
