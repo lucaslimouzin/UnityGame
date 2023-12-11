@@ -10,7 +10,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
-
+    public GameObject[] playerSpheres;
+    public GameObject[] mjSpheres;
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelJauge;
@@ -231,9 +232,7 @@ public class GameManagerBassin : MonoBehaviour
             buttonTextBassin.SetActive(true);
             ////debug.Log("Debut tour joueur");
             //MJText.text = "Maître du jeu : A vous de jouer";
-            if(aRelacher){
-                Invoke("MoveMarteau",1f);
-            }
+            ActiveLeScriptDeplacement(playerSpheres[0], "DragAndDrop", true);
         }  
     }
 
@@ -241,11 +240,22 @@ public class GameManagerBassin : MonoBehaviour
         if (!tourJoueur) {
             buttonTextBassin.SetActive(false);
             ////debug.Log("Debut tour Mj");
-            MJText.text = "Maître du jeu : A mon tour de jouer";
-            Invoke("MoveMarteau",1f);
+            
         }        
     }  
     
+
+    // Fonction pour désactiver temporairement un script sur un prefab
+    private void ActiveLeScriptDeplacement(GameObject prefab, string scriptName, bool disable)
+    {
+        MonoBehaviour script = prefab.GetComponent(scriptName) as MonoBehaviour;
+        if (script != null)
+        {
+            script.enabled = !disable;
+        }
+    }
+
+
     //fin du jeu 
     private void FinDuJeu(){
         ////debug.Log("GameOver");
