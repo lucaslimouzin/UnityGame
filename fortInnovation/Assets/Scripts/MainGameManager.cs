@@ -14,6 +14,7 @@ public class MainGameManager : MonoBehaviour
     public int nbPartieBatonJoue = 0;
     public int nbPartieBaton = 4;
     public bool gameBatonFait = false;
+    public List<int> questionsBatonPosees = new List<int>();
 
     // variables pour jeu du clou
     public int scoreRecoClou = 0;

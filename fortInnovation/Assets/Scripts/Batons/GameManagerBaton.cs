@@ -155,11 +155,23 @@ public class GameManagerBaton : MonoBehaviour
     //affichage de la question   
     private void AfficheLaQuestion(){
 
-        //choisi les questions de 1 à 20 (inclus)
+        //choisi les questions de 1 à taille Json
         //comme on vise un tableau on est obligé de commencer à 0
-        //et pour range on va jusqu'à 20, car on vise l'indice 19 du tableau
-        numQuestions = UnityEngine.Random.Range(0, 20);
-        //////debug.Log("lancement de la fonction AfficherPanneauQuestions");
+        //et pour range on va jusqu'à taille Json
+        do
+        {
+            numQuestions = UnityEngine.Random.Range(0, listQuestions.questions.Length);
+        } while (MainGameManager.Instance.questionsBatonPosees.Contains(numQuestions));
+
+        MainGameManager.Instance.questionsBatonPosees.Add(numQuestions);
+        // Restreindre le nombre total de questions posées
+        if (MainGameManager.Instance.questionsBatonPosees.Count >= listQuestions.questions.Length)
+        {
+            // Si toutes les questions ont été posées, réinitalisation de la liste
+            MainGameManager.Instance.questionsBatonPosees.Clear();
+        }
+
+        //gestion des panneaux
         if (panelInstruction.activeSelf){
             panelInstruction.SetActive(false);
         }
@@ -168,9 +180,7 @@ public class GameManagerBaton : MonoBehaviour
         }
         panelQuestions.SetActive(true);
 
-        ////debug.Log("lancement de la fonction Questions");
         QuestionData question = listQuestions.questions[numQuestions];
-
         //affichage des données
         questionText.text = question.question;
         propositionAtext.text = question.propositions[0];
