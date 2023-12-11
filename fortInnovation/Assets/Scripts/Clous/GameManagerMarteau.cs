@@ -49,7 +49,7 @@ public class GameManagerMarteau : MonoBehaviour
     public Button buttonC;
     private bool aJuste = false;
     private int numQuestions = 0;
-    private List<int> questionsPosees = new List<int>();
+    
 
     [System.Serializable]
     public class QuestionData
@@ -160,7 +160,7 @@ public class GameManagerMarteau : MonoBehaviour
         if (playerForce == maxForce) {
            up = false; 
         } 
-        else if (playerForce == 0) {
+        else if (playerForce == 10) {
             up = true;
         }
         if (up){
@@ -226,15 +226,15 @@ public class GameManagerMarteau : MonoBehaviour
         do
         {
             numQuestions = UnityEngine.Random.Range(0, listQuestions.questions.Length);
-        } while (questionsPosees.Contains(numQuestions));
+        } while (MainGameManager.Instance.questionsClouPosees.Contains(numQuestions));
 
-        questionsPosees.Add(numQuestions);
-
+        MainGameManager.Instance.questionsClouPosees.Add(numQuestions);
+        Debug.Log(MainGameManager.Instance.questionsClouPosees.Count);
         // Restreindre le nombre total de questions posées
-        if (questionsPosees.Count >= listQuestions.questions.Length)
+        if (MainGameManager.Instance.questionsClouPosees.Count >= listQuestions.questions.Length)
         {
             // Si toutes les questions ont été posées, vous pouvez réinitialiser la liste des questions posées ici
-            questionsPosees.Clear();
+            MainGameManager.Instance.questionsClouPosees.Clear();
             // Vous pouvez également ajouter une logique supplémentaire ici, selon vos besoins
         }
 

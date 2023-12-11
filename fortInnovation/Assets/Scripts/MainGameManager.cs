@@ -20,6 +20,7 @@ public class MainGameManager : MonoBehaviour
     public int nbPartieClouJoue = 0;
     public int nbPartieClou = 3;
     public bool gameClouFait = false;
+    public List<int> questionsClouPosees = new List<int>();
 
     //variables pour les dés afin de déterminer qui commence
     public bool checkFaitDesMj = true;
