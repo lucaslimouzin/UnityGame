@@ -24,6 +24,8 @@ public class GameManagerBassin : MonoBehaviour
     private bool finDuJeu = false;
     public bool isMoving = false;
 
+    private DragAndDrop scriptDragAndDrop;
+ 
    //variables pour les questions//////////////////////
    // URL du fichier JSON sur le réseau
     private string jsonURL = "https://givrosgaming.fr/fortInnov/BatonQuestions.json";
@@ -91,12 +93,7 @@ public class GameManagerBassin : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
 
-        //desactivation des scripts
-        MonoBehaviour script = playerSpheres[0].GetComponent("DragAndDrop") as MonoBehaviour;
-        if (script != null)
-        {
-            script.enabled = false;
-        }
+        ActiveLeScriptDeplacement(playerSpheres[0], "DragAndDrop");
         //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -258,8 +255,14 @@ public class GameManagerBassin : MonoBehaviour
         if (script != null)
         {
             script.enabled = false;
+            Debug.Log("script desactivé");
+        }
+        else
+        {
+            Debug.LogError($"Le script {scriptName} n'a pas été trouvé sur l'objet {prefab.name}.");
         }
     }
+    
 
 
     //fin du jeu 
@@ -295,3 +298,4 @@ public class GameManagerBassin : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 }
+

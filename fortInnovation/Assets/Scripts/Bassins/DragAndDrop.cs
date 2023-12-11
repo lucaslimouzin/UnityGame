@@ -6,6 +6,16 @@ public class DragAndDrop : MonoBehaviour
 {
     private Vector3 offset;
 
+    void Start()
+    {
+        Debug.Log("Script DragAndDrop activé");
+    }
+    // Méthode pour désactiver le script
+    public void DisableScript()
+    {
+        enabled = false;
+    }
+
     private void OnMouseDown()
     {
         // Calculer la différence entre la position de la souris et la position de l'objet
