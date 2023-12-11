@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 19196532}
   - component: {fileID: 19196531}
   m_Layer: 5
-  m_Name: reponseC
+  m_Name: ButtonReponseC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 213750610}
   - component: {fileID: 213750609}
   m_Layer: 5
-  m_Name: TexteQuestions
+  m_Name: TexteInstructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,20 +846,20 @@ MonoBehaviour:
   - {fileID: 884126580}
   - {fileID: 258405003}
   panelInstruction: {fileID: 1405357918}
-  panelQuestions: {fileID: 899309055}
   panelInfoMJ: {fileID: 712702743}
   panelButtonBaton: {fileID: 230284473}
-  buttonA: {fileID: 464950316}
-  buttonB: {fileID: 2077134181}
-  buttonC: {fileID: 19196531}
   button1Baton: {fileID: 45022283}
   button2Baton: {fileID: 1999010041}
   button3Baton: {fileID: 596406686}
+  MJText: {fileID: 458034346}
+  panelQuestions: {fileID: 899309055}
   questionText: {fileID: 337426348}
   propositionAtext: {fileID: 1570739979}
   propositionBtext: {fileID: 721785921}
   propositionCtext: {fileID: 1568493717}
-  MJText: {fileID: 458034346}
+  buttonA: {fileID: 464950316}
+  buttonB: {fileID: 2077134181}
+  buttonC: {fileID: 19196531}
 --- !u!1 &337426346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 464950317}
   - component: {fileID: 464950316}
   m_Layer: 5
-  m_Name: reponseA
+  m_Name: ButtonReponseA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,7 +1263,7 @@ GameObject:
   - component: {fileID: 474718215}
   - component: {fileID: 474718214}
   m_Layer: 5
-  m_Name: B
+  m_Name: textButtonB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3850,7 +3850,7 @@ GameObject:
   - component: {fileID: 1493683381}
   - component: {fileID: 1493683380}
   m_Layer: 5
-  m_Name: A
+  m_Name: textButtonC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3984,7 +3984,7 @@ GameObject:
   - component: {fileID: 1513903340}
   - component: {fileID: 1513903339}
   m_Layer: 5
-  m_Name: A
+  m_Name: textButtonA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4920,7 +4920,7 @@ GameObject:
   - component: {fileID: 2077134182}
   - component: {fileID: 2077134181}
   m_Layer: 5
-  m_Name: reponseB
+  m_Name: ButtonReponseB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

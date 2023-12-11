@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+//pour récupérer en réseau le fichier Json
+using UnityEngine.Networking;
 public class GameManagerMarteau : MonoBehaviour
 {
     public GameObject clou; 
@@ -33,6 +35,38 @@ public class GameManagerMarteau : MonoBehaviour
     private bool finDuJeu = false;
     public bool isMoving = false;
 
+   //variables pour les questions//////////////////////
+   // URL du fichier JSON sur le réseau
+    private string jsonURL = "https://givrosgaming.fr/fortInnov/BatonQuestions.json";
+    public GameObject panelQuestions;
+    public TextMeshProUGUI questionText;
+    public TextMeshProUGUI propositionAtext;
+    public TextMeshProUGUI propositionBtext;
+    public TextMeshProUGUI propositionCtext;
+    public Button buttonA;
+    public Button buttonB;
+    public Button buttonC;
+    private bool aJuste = false;
+    private int numQuestions = 0;
+
+    [System.Serializable]
+    public class QuestionData
+    {
+        public int idQuestion;
+        public string question;
+        public string[] propositions;
+        public string reponseCorrecte;
+    }
+
+    [System.Serializable]
+    public class Questions
+    {
+        public QuestionData[] questions;
+    }
+
+    private Questions listQuestions; 
+
+    //fin variables pour les questions ////////////////////
 
     //--------pour mettre à jour le score --------------------------------------
     private void OnEnable()
@@ -48,7 +82,6 @@ public class GameManagerMarteau : MonoBehaviour
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    // Méthode appelée lorsque le score est mis à jour
     private void HandleScoreUpdated(int scoreBaton, int scoreClou)
     {
         // Faire quelque chose avec le nouveau score
@@ -62,6 +95,12 @@ public class GameManagerMarteau : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        //charge la coroutine qui va récupérer le fichier Json 
+        //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
+        //charge la coroutine qui va récupérer le fichier Json 
+        StartCoroutine(LoadJsonFromLocal());
+
         forceMarteau.value = 0;
         playerForce = 10;
         vieDuClou = 800f;
@@ -70,6 +109,36 @@ public class GameManagerMarteau : MonoBehaviour
         ResetGauge();
       //on affiche le panneau des régles
         PanneauRegle();
+    }
+
+    //fonction qui charge les questions depuis local
+    IEnumerator LoadJsonFromLocal(){
+        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
+        TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
+        // Désérialiser les données JSON
+        listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
+        yield return null;
+    }
+    //fonction qui charge les questions depuis le réseau
+    IEnumerator LoadJsonFromNetwork()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(jsonURL))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Erreur lors du chargement du fichier JSON depuis le réseau: " + www.error);
+            }
+            else
+            {
+                // Les données JSON ont été téléchargées avec succès
+                string jsonText = www.downloadHandler.text;
+
+                // Désérialiser les données JSON
+                listQuestions = JsonUtility.FromJson<Questions>(jsonText);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -137,6 +206,9 @@ public class GameManagerMarteau : MonoBehaviour
             TourDuMj();
         } 
     }
+
+    
+
 
     private void TourDuJoueur(){
         if(tourJoueur) {

@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+//pour récupérer en réseau le fichier Json
+using UnityEngine.Networking;
 public class GameManagerBaton : MonoBehaviour
 {
     public GameObject[] baton; 
@@ -25,6 +27,8 @@ public class GameManagerBaton : MonoBehaviour
     private bool firstTimeMj;
     
     //variables pour les questions//////////////////////
+    // URL du fichier JSON sur le réseau
+    private string jsonURL = "https://givrosgaming.fr/fortInnov/BatonQuestions.json";
     public GameObject panelQuestions;
     public TextMeshProUGUI questionText;
     public TextMeshProUGUI propositionAtext;
@@ -43,16 +47,15 @@ public class GameManagerBaton : MonoBehaviour
         public string question;
         public string[] propositions;
         public string reponseCorrecte;
-        public int nbRetraitBaton;
     }
 
     [System.Serializable]
-    public class BatonQuestions
+    public class Questions
     {
         public QuestionData[] questions;
     }
 
-    private BatonQuestions listBatonQuestions; 
+    private Questions listQuestions; 
 
     //fin variables pour les questions ////////////////////
 
@@ -83,23 +86,47 @@ public class GameManagerBaton : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        //charge la coroutine qui va récupérer le fichier Json 
+        //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
+        //charge la coroutine qui va récupérer le fichier Json 
+        StartCoroutine(LoadJsonFromLocal());
         
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
-        // Désérialiser les données JSON
-        listBatonQuestions = JsonUtility.FromJson<BatonQuestions>(jsonFile.ToString());
         batonTailleTab = baton.Length;
         firstTimeMj = false;
       //on affiche le panneau des régles
         PanneauRegle();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    //fonction qui charge les questions depuis local
+    IEnumerator LoadJsonFromLocal(){
+        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
+        TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
+        // Désérialiser les données JSON
+        listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
+        yield return null;
     }
+    //fonction qui charge les questions depuis le réseau
+    IEnumerator LoadJsonFromNetwork()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(jsonURL))
+        {
+            yield return www.SendWebRequest();
 
+            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Erreur lors du chargement du fichier JSON depuis le réseau: " + www.error);
+            }
+            else
+            {
+                // Les données JSON ont été téléchargées avec succès
+                string jsonText = www.downloadHandler.text;
+
+                // Désérialiser les données JSON
+                listQuestions = JsonUtility.FromJson<Questions>(jsonText);
+            }
+        }
+    }
 
     //affichage du panneau des règles
     private void PanneauRegle (){
@@ -113,7 +140,7 @@ public class GameManagerBaton : MonoBehaviour
 
         if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
-            Invoke("AfficherPanneauQuestions",0f);
+            Invoke("AfficheLaQuestion",0f);
         }
         else {
             panelInfoMJ.SetActive(true);
@@ -125,12 +152,11 @@ public class GameManagerBaton : MonoBehaviour
     }
 
 
-    //affichage de la question
-    private void AfficherPanneauQuestions(){
+    //affichage de la question   
+    private void AfficheLaQuestion(){
+
         //choisi les questions de 0 à 19 (inclus)
         numQuestions = UnityEngine.Random.Range(0, 20);
-
-        Questions(numQuestions);
         //////debug.Log("lancement de la fonction AfficherPanneauQuestions");
         if (panelInstruction.activeSelf){
             panelInstruction.SetActive(false);
@@ -139,15 +165,9 @@ public class GameManagerBaton : MonoBehaviour
             panelInfoMJ.SetActive(false);
         }
         panelQuestions.SetActive(true);
-        
 
-    }
-
-    
-
-    private void Questions(int num){
         ////debug.Log("lancement de la fonction Questions");
-        QuestionData question = listBatonQuestions.questions[num];
+        QuestionData question = listQuestions.questions[numQuestions];
 
         //affichage des données
         questionText.text = question.question;
@@ -311,7 +331,7 @@ public class GameManagerBaton : MonoBehaviour
         if (batonTailleTab > 1)
         {
             // Il reste des batons
-            Invoke("AfficherPanneauQuestions",1f);
+            Invoke("AfficheLaQuestion",1f);
         }
         else
         {
