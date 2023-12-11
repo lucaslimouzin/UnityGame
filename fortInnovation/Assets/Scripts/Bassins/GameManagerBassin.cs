@@ -91,7 +91,13 @@ public class GameManagerBassin : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
 
-      //on affiche le panneau des régles
+        //desactivation des scripts
+        MonoBehaviour script = playerSpheres[0].GetComponent("DragAndDrop") as MonoBehaviour;
+        if (script != null)
+        {
+            script.enabled = false;
+        }
+        //on affiche le panneau des régles
         PanneauRegle();
     }
 

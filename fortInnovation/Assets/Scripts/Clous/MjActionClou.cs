@@ -9,7 +9,7 @@ public class MjActionClou : MonoBehaviour
     public GameObject panelMjInfo;
     public GameObject panelReco;
     public GameObject panelRoom;
-    public TextMeshProUGUI textMj;
+    public TextMeshProUGUI textMjRoom;
     public GameObject chest;
     // Start is called before the first frame update
     void Start()
@@ -23,13 +23,13 @@ public class MjActionClou : MonoBehaviour
         if (MainGameManager.Instance.gameClouFait) {
                 //active le coffre
                 chest.SetActive(true);
-                textMj.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
+                textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
         }
         else {
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMj.text = "Maître du jeu : Bienvenue dans la cellule aux clous enfoncés. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Maître du jeu : Bienvenue dans la cellule aux clous enfoncés. Approche toi pour lancer le jeu";
         }
        
     }
@@ -77,7 +77,7 @@ public class MjActionClou : MonoBehaviour
         }   
     }
 
-     public void PlayGameBaton() {
+     public void PlayGame() {
         MainGameManager.Instance.jeuEnCours = "JeuClous";
         SceneManager.LoadScene("SalleDes");
     }

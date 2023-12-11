@@ -3774,7 +3774,7 @@ MonoBehaviour:
   panelMjInfo: {fileID: 519539487}
   panelReco: {fileID: 1618895452}
   panelRoom: {fileID: 717378988}
-  textMj: {fileID: 846306231}
+  textMjRoom: {fileID: 846306231}
   chest: {fileID: 1641656401}
 --- !u!1 &1224835353
 GameObject:

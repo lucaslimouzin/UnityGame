@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MjActionBaton : MonoBehaviour
+public class MjActionBassin : MonoBehaviour
 {
     public GameObject panelMjInfo;
     public GameObject panelReco;
@@ -20,7 +20,7 @@ public class MjActionBaton : MonoBehaviour
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
         #endif
-        if (MainGameManager.Instance.gameBatonFait) {
+        if (MainGameManager.Instance.gameClouFait) {
                 //active le coffre
                 chest.SetActive(true);
                 textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
@@ -29,7 +29,7 @@ public class MjActionBaton : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la salle aux batonnets. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Maître du jeu : Bienvenue dans la cellule des bassins coulants. Approche toi pour lancer le jeu";
         }
        
     }
@@ -43,7 +43,7 @@ public class MjActionBaton : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameBatonFait) {
+            if (!MainGameManager.Instance.gameClouFait) {
                 panelMjInfo.SetActive(true);
                 //Set Cursor to not be visible
                 Cursor.visible = true;
@@ -56,7 +56,7 @@ public class MjActionBaton : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameBatonFait) {
+            if (!MainGameManager.Instance.gameClouFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
                     //Set Cursor to not be visible
@@ -77,8 +77,8 @@ public class MjActionBaton : MonoBehaviour
         }   
     }
 
-     public void PlayGameBaton() {
-        MainGameManager.Instance.jeuEnCours = "JeuBatons";
+     public void PlayGame() {
+        MainGameManager.Instance.jeuEnCours = "JeuBassins";
         SceneManager.LoadScene("SalleDes");
     }
 

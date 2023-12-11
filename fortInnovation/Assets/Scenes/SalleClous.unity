@@ -4225,7 +4225,7 @@ MonoBehaviour:
   panelMjInfo: {fileID: 519539487}
   panelReco: {fileID: 1918065497}
   panelRoom: {fileID: 2089457959}
-  textMj: {fileID: 351396731}
+  textMjRoom: {fileID: 351396731}
   chest: {fileID: 882537662}
 --- !u!1 &1260159065
 GameObject:
@@ -7305,7 +7305,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1222168289}
         m_TargetAssemblyTypeName: MjActionClou, Assembly-CSharp
-        m_MethodName: PlayGameBaton
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -20,6 +20,9 @@ public class DesGameManager : MonoBehaviour
         case "JeuClous":
             textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieClouJoue.ToString() + "/" + MainGameManager.Instance.nbPartieClou.ToString();
             break;
+        case "JeuBassins":
+            textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBassinJoue.ToString() + "/" + MainGameManager.Instance.nbPartieBassin.ToString();
+            break;
     }
         
    }

@@ -23,6 +23,13 @@ public class MainGameManager : MonoBehaviour
     public bool gameClouFait = false;
     public List<int> questionsClouPosees = new List<int>();
 
+    // variables pour jeu du Bassin
+    public int scoreRecobassin = 0;
+    public int nbPartieBassinJoue = 0;
+    public int nbPartieBassin = 3;
+    public bool gameBassinFait = false;
+    public List<int> questionsBassinPosees = new List<int>();
+
     //variables pour les dés afin de déterminer qui commence
     public bool checkFaitDesMj = true;
     public bool checkFaitDesPlayer = true;

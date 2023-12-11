@@ -6312,8 +6312,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManagerMarteau, Assembly-CSharp
+      - m_Target: {fileID: 260763175}
+        m_TargetAssemblyTypeName: GameManagerBassin, Assembly-CSharp
         m_MethodName: RetraitPanneauRegle
         m_Mode: 1
         m_Arguments:
