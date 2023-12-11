@@ -72,10 +72,10 @@ public class GameManagerBassin : MonoBehaviour
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    private void HandleScoreUpdated(int scoreBaton, int scoreClou)
+    private void HandleScoreUpdated(int scoreBaton, int scoreClou, int scoreBassin)
     {
         // Faire quelque chose avec le nouveau score
-        MainGameManager.Instance.scoreReco = scoreBaton + scoreClou; 
+        MainGameManager.Instance.scoreReco = scoreBaton + scoreClou + scoreBassin; 
        
     }
     //-------------------------------------------------------------------
@@ -257,7 +257,7 @@ public class GameManagerBassin : MonoBehaviour
         MonoBehaviour script = prefab.GetComponent(scriptName) as MonoBehaviour;
         if (script != null)
         {
-            script.enabled = true;
+            script.enabled = false;
         }
     }
 

@@ -84,10 +84,10 @@ public class GameManagerMarteau : MonoBehaviour
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    private void HandleScoreUpdated(int scoreBaton, int scoreClou)
+    private void HandleScoreUpdated(int scoreBaton, int scoreClou, int scoreBassin)
     {
         // Faire quelque chose avec le nouveau score
-        MainGameManager.Instance.scoreReco = scoreBaton + scoreClou; 
+        MainGameManager.Instance.scoreReco = scoreBaton + scoreClou + scoreBassin; 
        
     }
     //-------------------------------------------------------------------

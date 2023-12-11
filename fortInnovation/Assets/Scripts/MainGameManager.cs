@@ -40,7 +40,7 @@ public class MainGameManager : MonoBehaviour
     public string jeuEnCours;
 
     // Définir un événement pour signaler les mises à jour du score
-    public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou);
+    public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou, int newScoreBassin);
     public static event ScoreUpdated OnScoreUpdated;
 
     private void Awake()
@@ -108,6 +108,6 @@ public class MainGameManager : MonoBehaviour
         //scoreReco = newScore;
 
         // Déclencher l'événement OnScoreUpdated
-        OnScoreUpdated?.Invoke(scoreRecoBaton, scoreRecoClou);
+        OnScoreUpdated?.Invoke(scoreRecoBaton, scoreRecoClou, scoreRecobassin);
     }
 }
