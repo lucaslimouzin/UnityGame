@@ -14,7 +14,7 @@ public class GameManagerBassin : MonoBehaviour
     public GameObject[] mjSpheres;
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
-    public GameObject panelJauge;
+    public GameObject panelBassin;
     public GameObject buttonTextBassin;
     public TextMeshProUGUI MJText;
 
@@ -232,7 +232,7 @@ public class GameManagerBassin : MonoBehaviour
             buttonTextBassin.SetActive(true);
             ////debug.Log("Debut tour joueur");
             //MJText.text = "Maître du jeu : A vous de jouer";
-            ActiveLeScriptDeplacement(playerSpheres[0], "DragAndDrop", true);
+            ActiveLeScriptDeplacement(playerSpheres[0], "DragAndDrop");
         }  
     }
 
@@ -246,12 +246,12 @@ public class GameManagerBassin : MonoBehaviour
     
 
     // Fonction pour désactiver temporairement un script sur un prefab
-    private void ActiveLeScriptDeplacement(GameObject prefab, string scriptName, bool disable)
+    private void ActiveLeScriptDeplacement(GameObject prefab, string scriptName)
     {
         MonoBehaviour script = prefab.GetComponent(scriptName) as MonoBehaviour;
         if (script != null)
         {
-            script.enabled = !disable;
+            script.enabled = true;
         }
     }
 
