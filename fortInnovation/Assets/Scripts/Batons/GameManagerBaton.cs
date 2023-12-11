@@ -155,7 +155,9 @@ public class GameManagerBaton : MonoBehaviour
     //affichage de la question   
     private void AfficheLaQuestion(){
 
-        //choisi les questions de 0 à 19 (inclus)
+        //choisi les questions de 1 à 20 (inclus)
+        //comme on vise un tableau on est obligé de commencer à 0
+        //et pour range on va jusqu'à 20, car on vise l'indice 19 du tableau
         numQuestions = UnityEngine.Random.Range(0, 20);
         //////debug.Log("lancement de la fonction AfficherPanneauQuestions");
         if (panelInstruction.activeSelf){
@@ -325,8 +327,6 @@ public class GameManagerBaton : MonoBehaviour
         button2Baton.onClick.RemoveAllListeners();
         button3Baton.onClick.RemoveAllListeners();
 
-        //choisi les questions de 0 à 19 (inclus)
-        numQuestions = UnityEngine.Random.Range(0, 20);
         batonTailleTab = startIndex;
         if (batonTailleTab > 1)
         {
