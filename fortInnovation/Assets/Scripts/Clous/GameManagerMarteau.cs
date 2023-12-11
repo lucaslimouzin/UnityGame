@@ -28,6 +28,7 @@ public class GameManagerMarteau : MonoBehaviour
     float z;
     public float playerForce;
     public Slider forceMarteau;
+    private int maxForce = 100;
     private bool up =false;
     private bool tourJoueur = true;
     private bool aRelacher = false;
@@ -103,7 +104,7 @@ public class GameManagerMarteau : MonoBehaviour
 
         forceMarteau.value = 0;
         playerForce = 10;
-        vieDuClou = 800f;
+        vieDuClou = 500f;
         //affichage de la vie du clou
         textVieClou.text = vieDuClou.ToString();
         ResetGauge();
@@ -146,7 +147,16 @@ public class GameManagerMarteau : MonoBehaviour
     {
        if (Input.GetKey(KeyCode.Space) && !aRelacher && tourJoueur && !finDuJeu){
         
-        if (playerForce ==100) {
+        //si on a juste alors on peut taper jusqu'à 100%
+        if (aJuste) {
+            maxForce = 100;
+        } 
+        else {
+            //si on a faux  alors on peut taper que jusqu'à 50%
+            maxForce = 50;
+        }
+
+        if (playerForce == maxForce) {
            up = false; 
         } 
         else if (playerForce == 0) {
@@ -194,11 +204,10 @@ public class GameManagerMarteau : MonoBehaviour
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
-        TourDuJoueur();
        if (MainGameManager.Instance.quiCommence == "Player"){
-            //tour du player
-            TourDuJoueur();
-            
+            //On affiche la question
+            Invoke("AfficheLaQuestion",0f);
+            //tour du player     
         }
         else {
             panelInfoMJ.SetActive(true);
@@ -207,14 +216,74 @@ public class GameManagerMarteau : MonoBehaviour
         } 
     }
 
-    
+    //affichage de la question   
+    private void AfficheLaQuestion(){
+
+        //choisi les questions de 0 à 19 (inclus)
+        numQuestions = UnityEngine.Random.Range(0, 20);
+        //////debug.Log("lancement de la fonction AfficherPanneauQuestions");
+        if (panelInstruction.activeSelf){
+            panelInstruction.SetActive(false);
+        }
+        if (panelInfoMJ.activeSelf){
+            panelInfoMJ.SetActive(false);
+        }
+        panelQuestions.SetActive(true);
+
+        ////debug.Log("lancement de la fonction Questions");
+        QuestionData question = listQuestions.questions[numQuestions];
+
+        //affichage des données
+        questionText.text = question.question;
+        propositionAtext.text = question.propositions[0];
+        propositionBtext.text = question.propositions[1];
+        propositionCtext.text = question.propositions[2];
+
+        buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
+        buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
+        buttonC.onClick.AddListener(() => OnButtonClick("C", question.reponseCorrecte));
+        
+    }
+
+    //fonction qui check le bouton enfoncé
+    private void OnButtonClick(String choix, string reponseCorrecte){
+        // Supprimer tous les écouteurs d'événements du bouton
+        buttonA.onClick.RemoveAllListeners();
+        buttonB.onClick.RemoveAllListeners();
+        buttonC.onClick.RemoveAllListeners();
+
+        if (choix == reponseCorrecte){
+            aJuste = true;
+        }
+        else {
+            aJuste = false;
+        }
+        //on enlève le panneau des questions
+        RetraitPanneauQuestions(aJuste);
+    }
+
+    //retrait panneau Question
+    private void RetraitPanneauQuestions(bool reponseJuste){
+        panelQuestions.SetActive(false);
+        panelInfoMJ.SetActive(true);
+        if(reponseJuste){
+            MJText.text = "Maitre du jeu : Bien répondu, votre marteau est chargé à 100%";
+            TourDuJoueur();
+        } 
+        else {
+            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, votre marteau est chargé à 50%";
+            TourDuJoueur();
+        }
+        
+    }
+
 
 
     private void TourDuJoueur(){
         if(tourJoueur) {
             buttonTextMarteau.SetActive(true);
             ////debug.Log("Debut tour joueur");
-            MJText.text = "Maître du jeu : A vous de jouer";
+            //MJText.text = "Maître du jeu : A vous de jouer";
             if(aRelacher){
                 Invoke("MoveMarteau",1f);
             }
@@ -274,7 +343,16 @@ public class GameManagerMarteau : MonoBehaviour
     }
 
     private IEnumerator MoveMarteauCoroutine(){
-       int mjForce = UnityEngine.Random.Range(10,101);
+        int mjForce;
+        if (aJuste) {
+            //si on a juste alors le mj tapera moins fort
+             mjForce = UnityEngine.Random.Range(10,51);
+        }
+        else {
+            //si on a faux alors le mj tapera plus fort
+            mjForce = UnityEngine.Random.Range(50,101);
+        }
+       
             //faire tourner le marteau du player
             if (tourJoueur){
                 //on attribue la valeur de la Force à Z
@@ -340,7 +418,8 @@ public class GameManagerMarteau : MonoBehaviour
                     FinDuJeu();
                 }
                 else {
-                    TourDuJoueur();
+                    //c'est au joueur de jouer, on lui affiche la question
+                    Invoke("AfficheLaQuestion",1f);
                 }
             }
             
