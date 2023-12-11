@@ -49,6 +49,7 @@ public class GameManagerMarteau : MonoBehaviour
     public Button buttonC;
     private bool aJuste = false;
     private int numQuestions = 0;
+    private List<int> questionsPosees = new List<int>();
 
     [System.Serializable]
     public class QuestionData
@@ -222,7 +223,21 @@ public class GameManagerMarteau : MonoBehaviour
         //choisi les questions de 1 à 20 (inclus)
         //comme on vise un tableau on est obligé de commencer à 0
         //et pour range on va jusqu'à 20, car on vise l'indice 19 du tableau
-        numQuestions = UnityEngine.Random.Range(0, 20);
+        do
+        {
+            numQuestions = UnityEngine.Random.Range(0, listQuestions.questions.Length);
+        } while (questionsPosees.Contains(numQuestions));
+
+        questionsPosees.Add(numQuestions);
+
+        // Restreindre le nombre total de questions posées
+        if (questionsPosees.Count >= listQuestions.questions.Length)
+        {
+            // Si toutes les questions ont été posées, vous pouvez réinitialiser la liste des questions posées ici
+            questionsPosees.Clear();
+            // Vous pouvez également ajouter une logique supplémentaire ici, selon vos besoins
+        }
+
         //////debug.Log("lancement de la fonction AfficherPanneauQuestions");
         if (panelInstruction.activeSelf){
             panelInstruction.SetActive(false);
