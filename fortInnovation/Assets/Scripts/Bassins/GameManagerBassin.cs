@@ -10,29 +10,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
-    public GameObject clou; 
-    public GameObject marteauPlayer;
-    public GameObject marteauMj;
+
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelJauge;
-    public GameObject buttonTextMarteau;
+    public GameObject buttonTextBassin;
     public TextMeshProUGUI MJText;
-    public TextMeshProUGUI textVieClou;
-    public Button buttonJauge;
-    public Transform pivotPointMarteauPlayer;
-    public Transform pivotPointMarteauMj;
-    float rotationSpeed = 60;
-    Vector3 currentEulerAnglesPlayer;
-    Vector3 currentEulerAnglesMj;
-    float z;
-    public float playerForce;
-    public Slider forceMarteau;
-    private int maxForce = 100;
-    private bool up =false;
+
     private bool tourJoueur = true;
     private bool aRelacher = false;
-    private float vieDuClou;
+    private float vieDuVerre;
     private bool finDuJeu = false;
     public bool isMoving = false;
 
@@ -103,12 +90,6 @@ public class GameManagerBassin : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
 
-        forceMarteau.value = 0;
-        playerForce = 10;
-        vieDuClou = 500f;
-        //affichage de la vie du clou
-        textVieClou.text = vieDuClou.ToString();
-        ResetGauge();
       //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -146,55 +127,8 @@ public class GameManagerBassin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKey(KeyCode.Space) && !aRelacher && tourJoueur && !finDuJeu){
-        
-        //si on a juste alors on peut taper jusqu'à 100%
-        if (aJuste) {
-            maxForce = 100;
-        } 
-        else {
-            //si on a faux  alors on peut taper que jusqu'à 50%
-            maxForce = 50;
-        }
-
-        if (playerForce == maxForce) {
-           up = false; 
-        } 
-        else if (playerForce == 10) {
-            up = true;
-        }
-        if (up){
-            playerForce +=5;
-        }
-        else {
-            playerForce -=5;
-        }
-        Slider();
-       } 
-       if (Input.GetKeyUp(KeyCode.Space) && !aRelacher && tourJoueur && !finDuJeu){
-        aRelacher = true;
-        //relacheMarteau();
-        StartCoroutine(Wait());
-       }
-       
-    }
-
-   
-    public void Slider() {
-        forceMarteau.value = playerForce;
-    }
-
-    public void ResetGauge(){
-        playerForce = 10;
-        forceMarteau.value = 0;
-    }
-    IEnumerator Wait(){
-        yield return new WaitForSeconds(0f);
-        aRelacher = true;
-        TourDuJoueur();
         
     }
-
 
     //affichage du panneau des règles
     private void PanneauRegle (){
@@ -294,7 +228,7 @@ public class GameManagerBassin : MonoBehaviour
 
     private void TourDuJoueur(){
         if(tourJoueur) {
-            buttonTextMarteau.SetActive(true);
+            buttonTextBassin.SetActive(true);
             ////debug.Log("Debut tour joueur");
             //MJText.text = "Maître du jeu : A vous de jouer";
             if(aRelacher){
@@ -305,143 +239,17 @@ public class GameManagerBassin : MonoBehaviour
 
     private void TourDuMj(){
         if (!tourJoueur) {
-            buttonTextMarteau.SetActive(false);
+            buttonTextBassin.SetActive(false);
             ////debug.Log("Debut tour Mj");
             MJText.text = "Maître du jeu : A mon tour de jouer";
-            ResetGauge();
             Invoke("MoveMarteau",1f);
         }        
-    }
-
-    private void MoveMarteau(){
-        if (!isMoving)
-        {
-            isMoving = true;
-            StartCoroutine(MoveMarteauCoroutine());
-        }
-    }
-
-    private void MoveClou (float currentHP){
-        // Assurez-vous que votre objet clou existe
-    if (clou != null)
-    {   float minY = 0.926f;
-        float maxY = 1.498f;
-        float maxHP = 800f;
-        // Calculez la position Y en utilisant une règle de trois
-        float normalizedY = Mathf.Lerp(minY, maxY, currentHP / maxHP);
-
-        // Récupérez la position actuelle du clou
-        Vector3 newPosition = clou.transform.position;
-
-        //si le clou dépasse la zone cible alors on le met au minY
-        if (currentHP <= 0){
-            normalizedY = minY;
-        }
-        // Modifiez la position Y avec la valeur souhaitée
-        newPosition.y = normalizedY;
-
-        // Appliquez la nouvelle position au clou
-        clou.transform.position = newPosition;
-        
-        if (vieDuClou <=0) {
-            vieDuClou = 0;
-        }
-        //affichage de la vie du clou
-        textVieClou.text = vieDuClou.ToString();
-    }
-    else
-    {
-        ////debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
-    }
-    }
-
-    private IEnumerator MoveMarteauCoroutine(){
-        int mjForce;
-        if (aJuste) {
-            //si on a juste alors le mj tapera moins fort
-             mjForce = UnityEngine.Random.Range(10,51);
-        }
-        else {
-            //si on a faux alors le mj tapera plus fort
-            mjForce = UnityEngine.Random.Range(50,101);
-        }
-       
-            //faire tourner le marteau du player
-            if (tourJoueur){
-                //on attribue la valeur de la Force à Z
-                while (currentEulerAnglesPlayer.z < 70f){
-                    z = 0.05f * playerForce;
-                    currentEulerAnglesPlayer += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauPlayer.localEulerAngles = currentEulerAnglesPlayer;
-                    yield return null; //Attendre la prochaine trame
-                }
-                //on descend la vie du clou 
-                vieDuClou -= playerForce; 
-                MoveClou(vieDuClou);
-            }
-            //faire tourner le marteau du Mj
-            else {
-                while (currentEulerAnglesMj.z > -70f ){
-                    z = -0.05f * mjForce;
-                    currentEulerAnglesMj += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauMj.localEulerAngles = currentEulerAnglesMj;
-                    yield return null; //Attendre la prochaine trame
-                }
-                //on descend la vie du clou
-                vieDuClou -= mjForce; 
-                MoveClou(vieDuClou);
-            }
-        //quand c fini replace les marteaux
-        //faire remonter le marteau du player
-            if (tourJoueur){
-                while (currentEulerAnglesPlayer.z > 0f){
-                    z = -0.05f * playerForce;
-                    currentEulerAnglesPlayer += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauPlayer.localEulerAngles = currentEulerAnglesPlayer;
-                    yield return null; //Attendre la prochaine trame
-                }
-            }
-            //faire remonter le marteau du Mj
-            else {
-                while (currentEulerAnglesMj.z < -0f ){
-                    z = 0.05f * mjForce;
-                    currentEulerAnglesMj += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauMj.localEulerAngles = currentEulerAnglesMj;
-                    yield return null ; //Attendre la prochaine trame
-                }
-            }
-            //on attend 2 secondes la fin de la coroutine 
-            yield return new WaitForSeconds(1f); 
-            isMoving = false;
-            ////debug.Log(isMoving);
-            ////debug.Log("Tour joueur : " + tourJoueur);
-            if (tourJoueur) {
-                tourJoueur = false;
-                if (vieDuClou <= 0){
-                    FinDuJeu();
-                } else {
-                    TourDuMj()
-;                }
-                ////debug.Log("Tour joueur : " + tourJoueur);
-            }
-            else {
-                tourJoueur = true;
-                aRelacher = false;
-                if (vieDuClou <= 0){
-                    FinDuJeu();
-                }
-                else {
-                    //c'est au joueur de jouer, on lui affiche la question
-                    Invoke("AfficheLaQuestion",1f);
-                }
-            }
-            
-    }
+    }  
     
     //fin du jeu 
     private void FinDuJeu(){
         ////debug.Log("GameOver");
-        buttonTextMarteau.SetActive(false);
+        buttonTextBassin.SetActive(false);
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {

@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 260763175}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManagerMarteau, Assembly-CSharp
         m_MethodName: TurnX
         m_Mode: 1
@@ -802,25 +802,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260763173}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6c3052b2bf138e4296c7aedc6ad6ad7, type: 3}
+  m_Script: {fileID: 11500000, guid: ece149193c0bca849ac77b43e5af61da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clou: {fileID: 0}
   marteauPlayer: {fileID: 0}
   marteauMj: {fileID: 0}
-  panelInstruction: {fileID: 1405357918}
-  panelInfoMJ: {fileID: 712702743}
-  panelJauge: {fileID: 230284473}
-  buttonTextMarteau: {fileID: 45022281}
-  MJText: {fileID: 458034346}
-  textVieClou: {fileID: 236873518}
-  buttonJauge: {fileID: 45022283}
+  panelInstruction: {fileID: 0}
+  panelInfoMJ: {fileID: 0}
+  panelJauge: {fileID: 0}
+  buttonTextMarteau: {fileID: 0}
+  MJText: {fileID: 0}
+  textVieClou: {fileID: 0}
+  buttonJauge: {fileID: 0}
   pivotPointMarteauPlayer: {fileID: 0}
   pivotPointMarteauMj: {fileID: 0}
   playerForce: 0
-  forceMarteau: {fileID: 509968259}
+  forceMarteau: {fileID: 0}
   isMoving: 0
   panelQuestions: {fileID: 0}
   questionText: {fileID: 0}
@@ -3848,7 +3848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7788889}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: -1.0686646}
+  m_AnchoredPosition: {x: 0, y: -1.0686035}
   m_SizeDelta: {x: 0, y: 2.1375732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157557444
@@ -5710,7 +5710,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 260763175}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManagerMarteau, Assembly-CSharp
         m_MethodName: RetraitPanneauRegle
         m_Mode: 1
