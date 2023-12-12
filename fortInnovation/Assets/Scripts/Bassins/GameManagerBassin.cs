@@ -19,6 +19,7 @@ public class GameManagerBassin : MonoBehaviour
     public GameObject panelBassin;
     public GameObject buttonTextBassin;
     public TextMeshProUGUI MJText;
+    public TextMeshProUGUI textVieVerre;
 
     private bool tourJoueur = true;
     private bool aRelacher = false;
@@ -96,6 +97,7 @@ public class GameManagerBassin : MonoBehaviour
         StartCoroutine(LoadJsonFromLocal());
 
         vieDuVerre = 6;
+        textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
         //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -284,6 +286,7 @@ public class GameManagerBassin : MonoBehaviour
             {   
                 isMoving = false;
                 vieDuVerre -= 1;
+                textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
                 if (vieDuVerre > 0){
@@ -302,6 +305,7 @@ public class GameManagerBassin : MonoBehaviour
             {   
                 isMoving = false;
                 vieDuVerre -= 1;
+                textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
                 if (vieDuVerre > 0){
