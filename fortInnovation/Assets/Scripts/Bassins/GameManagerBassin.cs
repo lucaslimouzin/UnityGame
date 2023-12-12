@@ -95,6 +95,7 @@ public class GameManagerBassin : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
 
+        vieDuVerre = 6;
         //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -145,14 +146,15 @@ public class GameManagerBassin : MonoBehaviour
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
-            //On affiche la question
-            Invoke("AfficheLaQuestion",0f);
-            //tour du player     
-        }
-        else {
             panelInfoMJ.SetActive(true);
+            MJText.text = "Maître du jeu : J'ai perdu aux dés, je dépose une bille dans le verre";
             tourJoueur = false;
             TourDuMj();
+        }
+        else {
+            //On affiche la question
+            Invoke("AfficheLaQuestion",0f);
+            //tour du player   
         } 
     }
 
@@ -221,14 +223,14 @@ public class GameManagerBassin : MonoBehaviour
         if(reponseJuste){
             MJText.text = "Maitre du jeu : Bien répondu, je dépose une bille dans le verre";
             tourJoueur = false;
-            isMoving = true;
+            
             TourDuMj();
             
         } 
         else {
             MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans le verre";
             tourJoueur = true;
-            isMoving = true;
+            
             TourDuJoueur();
         }
         
@@ -238,6 +240,7 @@ public class GameManagerBassin : MonoBehaviour
 
     private void TourDuJoueur(){
         if(tourJoueur) {
+            isMoving = true;
             buttonTextBassin.SetActive(true);
             ////debug.Log("Debut tour joueur");
             AfficherPlayerSphere();
@@ -248,9 +251,9 @@ public class GameManagerBassin : MonoBehaviour
 
     private void TourDuMj(){
         if (!tourJoueur) {
+            isMoving = true;
             buttonTextBassin.SetActive(false);
             ////debug.Log("Debut tour Mj");
-            MJText.text = "Maître du jeu : A mon tour de jouer";
             LancerMouvementMjSphere();
         }        
     }  
@@ -280,7 +283,17 @@ public class GameManagerBassin : MonoBehaviour
             if (playerSphere.transform.position.y <= seuilHauteurY)
             {   
                 isMoving = false;
-                Invoke("AfficheLaQuestion",0f);
+                vieDuVerre -= 1;
+                //Debug.Log(vieDuVerre);
+                //vérifie si le verre peut encore recevoir une bille
+                if (vieDuVerre > 0){
+
+                    Invoke("AfficheLaQuestion",1.5f);
+                }
+                else {
+                    FinDuJeu();
+                }
+                
             }
         }
         if (mjSphere != null && !tourJoueur && isMoving)
@@ -288,7 +301,15 @@ public class GameManagerBassin : MonoBehaviour
             if (mjSphere.transform.position.y <= seuilHauteurY)
             {   
                 isMoving = false;
-                Invoke("AfficheLaQuestion",0f);
+                vieDuVerre -= 1;
+                //Debug.Log(vieDuVerre);
+                //vérifie si le verre peut encore recevoir une bille
+                if (vieDuVerre > 0){
+                    Invoke("AfficheLaQuestion",1.5f);
+                }
+                else {
+                    FinDuJeu();
+                }
             }
         }
     }
@@ -342,6 +363,11 @@ public class GameManagerBassin : MonoBehaviour
         }
 
         mjSphere.transform.position = endPosition;
+        Renderer renderer = mjSphere.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            renderer.material.color = Color.green;
+        }
     }
 
     //fin du jeu 
@@ -353,16 +379,16 @@ public class GameManagerBassin : MonoBehaviour
         if (!tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
-                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
         }
         else {
             MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
         }
-        MainGameManager.Instance.nbPartieClouJoue += 1;
+        MainGameManager.Instance.nbPartieBassinJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieClouJoue == 3 ){
-            MainGameManager.Instance.gameClouFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleClous", 2f));
+        if(MainGameManager.Instance.nbPartieBassinJoue == 3 ){
+            MainGameManager.Instance.gameBassinFait = true;
+            StartCoroutine(LoadSceneAfterDelay("SalleBassins", 2f));
         }
         else
         {
