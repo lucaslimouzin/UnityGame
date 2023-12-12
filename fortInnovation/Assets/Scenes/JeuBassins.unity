@@ -1020,8 +1020,9 @@ MonoBehaviour:
   playerSphere: {fileID: 0}
   playerSpherePrefab: {fileID: 1185095481601369147, guid: 5ea7dcccadf7b574b8ad37b503be8474,
     type: 3}
-  mjSpheres:
-  - {fileID: 1614062625}
+  mjSphere: {fileID: 0}
+  mjSpherePrefab: {fileID: 3820888339432866802, guid: c063fee94dde22b44924a66753d7742a,
+    type: 3}
   panelInstruction: {fileID: 1405357918}
   panelInfoMJ: {fileID: 712702743}
   panelBassin: {fileID: 230284473}
