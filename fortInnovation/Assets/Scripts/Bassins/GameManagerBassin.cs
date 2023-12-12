@@ -10,9 +10,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
-    public GameObject playerSphere;
+    private GameObject playerSphere;
     public GameObject playerSpherePrefab;
-    public GameObject mjSphere;
+    private GameObject mjSphere;
     public GameObject mjSpherePrefab;
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
@@ -219,11 +219,16 @@ public class GameManagerBassin : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Maitre du jeu : Bien répondu, votre marteau est chargé à 100%";
-            TourDuJoueur();
+            MJText.text = "Maitre du jeu : Bien répondu, je dépose une bille dans le verre";
+            tourJoueur = false;
+            isMoving = true;
+            TourDuMj();
+            
         } 
         else {
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, votre marteau est chargé à 50%";
+            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans le verre";
+            tourJoueur = true;
+            isMoving = true;
             TourDuJoueur();
         }
         
@@ -236,7 +241,7 @@ public class GameManagerBassin : MonoBehaviour
             buttonTextBassin.SetActive(true);
             ////debug.Log("Debut tour joueur");
             AfficherPlayerSphere();
-            //MJText.text = "Maître du jeu : A vous de jouer";
+            
             
         }  
     }
@@ -245,7 +250,8 @@ public class GameManagerBassin : MonoBehaviour
         if (!tourJoueur) {
             buttonTextBassin.SetActive(false);
             ////debug.Log("Debut tour Mj");
-            AfficherPlayerSphere();
+            MJText.text = "Maître du jeu : A mon tour de jouer";
+            LancerMouvementMjSphere();
         }        
     }  
     
@@ -256,8 +262,8 @@ public class GameManagerBassin : MonoBehaviour
         if (playerSpherePrefab != null)
         {
             // Instantier le prefab
-            GameObject nouvelleSphere = Instantiate(playerSpherePrefab);
-            playerSphere = nouvelleSphere;
+            GameObject nouvelleSpherePlayer = Instantiate(playerSpherePrefab);
+            playerSphere = nouvelleSpherePlayer;
         }
         else
         {
@@ -269,22 +275,73 @@ public class GameManagerBassin : MonoBehaviour
     private void VerifierHauteurPlayerSphere()
     {
         
-        if (playerSphere != null && tourJoueur)
+        if (playerSphere != null && tourJoueur && isMoving)
         {   
             if (playerSphere.transform.position.y <= seuilHauteurY)
             {   
-                tourJoueur = false;
-                TourDuMj();
+                isMoving = false;
+                Invoke("AfficheLaQuestion",0f);
             }
         }
-        if (playerSphere != null && !tourJoueur)
+        if (mjSphere != null && !tourJoueur && isMoving)
         {
-            if (playerSphere.transform.position.y <= seuilHauteurY)
+            if (mjSphere.transform.position.y <= seuilHauteurY)
             {   
-                tourJoueur = true;
-                TourDuJoueur();
+                isMoving = false;
+                Invoke("AfficheLaQuestion",0f);
             }
         }
+    }
+
+    private void LancerMouvementMjSphere()
+    {
+        GameObject nouvelleSphereMj = Instantiate(mjSpherePrefab);
+        mjSphere = nouvelleSphereMj;
+        StartCoroutine(MouvementMjSphere());
+    }
+
+    private IEnumerator MouvementMjSphere()
+    {
+        // Monter en Y
+        yield return Monter(2.0f, 1.0f); // Monter à la hauteur 2 en 1 seconde
+
+        // Se déplacer sur X
+        yield return DeplacerX(1.6f, 1.0f); // Se déplacer jusqu'à 1.6 en 1 seconde
+
+        // Faire tomber
+        // Vous pouvez ajouter ici la logique pour faire tomber la sphère
+    }
+
+    private IEnumerator Monter(float hauteur, float duree)
+    {
+        Vector3 startPosition = mjSphere.transform.position;
+        Vector3 endPosition = new Vector3(startPosition.x, hauteur, startPosition.z);
+        float elapsedTime = 0;
+
+        while (elapsedTime < duree)
+        {
+            mjSphere.transform.position = Vector3.Lerp(startPosition, endPosition, (elapsedTime / duree));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        mjSphere.transform.position = endPosition;
+    }
+
+    private IEnumerator DeplacerX(float positionX, float duree)
+    {
+        Vector3 startPosition = mjSphere.transform.position;
+        Vector3 endPosition = new Vector3(positionX, startPosition.y, startPosition.z);
+        float elapsedTime = 0;
+
+        while (elapsedTime < duree)
+        {
+            mjSphere.transform.position = Vector3.Lerp(startPosition, endPosition, (elapsedTime / duree));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        mjSphere.transform.position = endPosition;
     }
 
     //fin du jeu 
