@@ -8,7 +8,7 @@ public class DragAndDrop : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Script DragAndDrop activé");
+        
     }
     // Méthode pour désactiver le script
     public void DisableScript()

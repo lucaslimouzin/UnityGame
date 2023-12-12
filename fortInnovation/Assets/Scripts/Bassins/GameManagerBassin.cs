@@ -10,8 +10,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
-    public GameObject[] playerSpheres;
-    public GameObject[] mjSpheres;
+    public GameObject playerSphere;
+    public GameObject playerSpherePrefab;
+    public GameObject mjSphere;
+    public GameObject mjSpherePrefab;
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelBassin;
@@ -24,7 +26,7 @@ public class GameManagerBassin : MonoBehaviour
     private bool finDuJeu = false;
     public bool isMoving = false;
 
-    private DragAndDrop scriptDragAndDrop;
+    private float seuilHauteurY = 1.30f;
  
    //variables pour les questions//////////////////////
    // URL du fichier JSON sur le réseau
@@ -93,7 +95,6 @@ public class GameManagerBassin : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
 
-        ActiveLeScriptDeplacement(playerSpheres[0], "DragAndDrop");
         //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -131,7 +132,7 @@ public class GameManagerBassin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        VerifierHauteurPlayerSphere();
     }
 
     //affichage du panneau des règles
@@ -234,8 +235,9 @@ public class GameManagerBassin : MonoBehaviour
         if(tourJoueur) {
             buttonTextBassin.SetActive(true);
             ////debug.Log("Debut tour joueur");
+            AfficherPlayerSphere();
             //MJText.text = "Maître du jeu : A vous de jouer";
-            ActiveLeScriptDeplacement(playerSpheres[0], "DragAndDrop");
+            
         }  
     }
 
@@ -243,27 +245,47 @@ public class GameManagerBassin : MonoBehaviour
         if (!tourJoueur) {
             buttonTextBassin.SetActive(false);
             ////debug.Log("Debut tour Mj");
-            
+            AfficherPlayerSphere();
         }        
     }  
     
-
-    // Fonction pour désactiver temporairement un script sur un prefab
-    private void ActiveLeScriptDeplacement(GameObject prefab, string scriptName)
+    // Fonction pour afficher le prefab PlayerSpheres
+    private void AfficherPlayerSphere()
     {
-        MonoBehaviour script = prefab.GetComponent(scriptName) as MonoBehaviour;
-        if (script != null)
+        // Vérifier si le prefab est assigné
+        if (playerSpherePrefab != null)
         {
-            script.enabled = false;
-            Debug.Log("script desactivé");
+            // Instantier le prefab
+            GameObject nouvelleSphere = Instantiate(playerSpherePrefab);
+            playerSphere = nouvelleSphere;
         }
         else
         {
-            Debug.LogError($"Le script {scriptName} n'a pas été trouvé sur l'objet {prefab.name}.");
+            Debug.LogError("PlayerSpheresPrefab n'est pas assigné dans l'inspecteur!");
         }
     }
-    
 
+    // Vérifie la hauteur de la playerSphere
+    private void VerifierHauteurPlayerSphere()
+    {
+        
+        if (playerSphere != null && tourJoueur)
+        {   
+            if (playerSphere.transform.position.y <= seuilHauteurY)
+            {   
+                tourJoueur = false;
+                TourDuMj();
+            }
+        }
+        if (playerSphere != null && !tourJoueur)
+        {
+            if (playerSphere.transform.position.y <= seuilHauteurY)
+            {   
+                tourJoueur = true;
+                TourDuJoueur();
+            }
+        }
+    }
 
     //fin du jeu 
     private void FinDuJeu(){
