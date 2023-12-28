@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Accueil.unity
+    guid: 837675fe5edac714898a12423e6f9e40
+  - enabled: 1
     path: Assets/Scenes/FortAccueil.unity
     guid: 91d078250fd66dc4587cdee76cf95f01
   - enabled: 1
