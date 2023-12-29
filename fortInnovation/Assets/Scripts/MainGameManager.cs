@@ -39,6 +39,9 @@ public class MainGameManager : MonoBehaviour
     //--------------------------------
     public string jeuEnCours;
 
+    //variable du choix du personnage
+    public int selectedCharacter;
+
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou, int newScoreBassin);
     public static event ScoreUpdated OnScoreUpdated;
