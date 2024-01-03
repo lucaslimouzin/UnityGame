@@ -23,6 +23,9 @@ public class DesGameManager : MonoBehaviour
         case "JeuBassins":
             textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBassinJoue.ToString() + "/" + MainGameManager.Instance.nbPartieBassin.ToString();
             break;
+        case "JeuEnigmes":
+            textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBassinJoue.ToString() + "/" + MainGameManager.Instance.nbPartieEnigmes.ToString();
+            break;
     }
         
    }

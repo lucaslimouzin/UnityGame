@@ -270,13 +270,14 @@ public class GameManagerEnigmes : MonoBehaviour
         {
             Debug.Log("Mot correct !");
             // Ajoutez ici des actions supplémentaires pour un mot correct
+            tourJoueur = false;
             FinDuJeu();
         }
         else
         {
             Debug.Log("Mot incorrect.");
             // Actions pour un mot incorrect
-            tourJoueur = false;
+            tourJoueur = true;
             FinDuJeu();
         }
     }
