@@ -269,7 +269,7 @@ public class GameManagerEnigmes : MonoBehaviour
         if (IsWordCorrect(selectedWord, wordToFind))
         {
             Debug.Log("Mot correct !");
-            // Ajoutez ici des actions supplémentaires pour un mot correct
+            // Actions pour un mot correct
             tourJoueur = false;
             FinDuJeu();
         }
