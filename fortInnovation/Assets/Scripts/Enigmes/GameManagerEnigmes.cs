@@ -8,26 +8,26 @@ using TMPro;
 using UnityEngine.SceneManagement;
 //pour récupérer en réseau le fichier Json
 using UnityEngine.Networking;
+using System.Linq;
+
 public class GameManagerEnigmes : MonoBehaviour
 {
-    private GameObject playerSphere;
-    public GameObject playerSpherePrefab;
-    private GameObject mjSphere;
-    public GameObject mjSpherePrefab;
+
+
+
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
-    public GameObject panelBassin;
-    public GameObject buttonTextBassin;
+    public GameObject panelEnigmes;
+    public GameObject buttonTextEnigmes;
     public TextMeshProUGUI MJText;
-    public TextMeshProUGUI textVieVerre;
-
     private bool tourJoueur = true;
     private bool aRelacher = false;
-    private float vieDuVerre;
     private bool finDuJeu = false;
     public bool isMoving = false;
 
-    private float seuilHauteurY = 1.30f;
+    //variables damier
+    public List<LetterButton> allLetterButtons; // Liste de tous les boutons de lettres
+    public string wordToFind = "ECOSYSTEME"; // Le mot à trouver
  
    //variables pour les questions//////////////////////
    // URL du fichier JSON sur le réseau
@@ -95,9 +95,6 @@ public class GameManagerEnigmes : MonoBehaviour
         //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
-
-        vieDuVerre = 6;
-        textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
         //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -132,10 +129,9 @@ public class GameManagerEnigmes : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        VerifierHauteurPlayerSphere();
+       
     }
 
     //affichage du panneau des règles
@@ -147,17 +143,18 @@ public class GameManagerEnigmes : MonoBehaviour
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
-       if (MainGameManager.Instance.quiCommence == "Player"){
-            panelInfoMJ.SetActive(true);
-            MJText.text = "Maître du jeu : J'ai perdu aux dés, je dépose une bille dans le verre";
-            tourJoueur = false;
-            TourDuMj();
-        }
-        else {
-            //On affiche la question
-            Invoke("AfficheLaQuestion",0f);
-            //tour du player   
-        } 
+        TourDuJoueur();
+    //    if (MainGameManager.Instance.quiCommence == "Player"){
+    //         panelInfoMJ.SetActive(true);
+    //         MJText.text = "Maître du jeu : J'ai perdu aux dés, je dépose une bille dans le verre";
+    //         tourJoueur = false;
+    //         TourDuMj();
+    //     }
+    //     else {
+    //         //On affiche la question
+    //         Invoke("AfficheLaQuestion",0f);
+    //         //tour du player   
+    //     } 
     }
 
     //affichage de la question   
@@ -243,141 +240,57 @@ public class GameManagerEnigmes : MonoBehaviour
     private void TourDuJoueur(){
         if(tourJoueur) {
             isMoving = true;
-            buttonTextBassin.SetActive(true);
-            ////debug.Log("Debut tour joueur");
-            AfficherPlayerSphere();
-            
-            
+            buttonTextEnigmes.SetActive(true);
+            ////debug.Log("Debut tour joueur");  
         }  
     }
 
     private void TourDuMj(){
         if (!tourJoueur) {
             isMoving = true;
-            buttonTextBassin.SetActive(false);
-            ////debug.Log("Debut tour Mj");
-            LancerMouvementMjSphere();
+            buttonTextEnigmes.SetActive(false);
+            ////debug.Log("Debut tour Mj");    
         }        
     }  
     
-    // Fonction pour afficher le prefab PlayerSpheres
-    private void AfficherPlayerSphere()
+    
+     public void ValidateWord()
     {
-        // Vérifier si le prefab est assigné
-        if (playerSpherePrefab != null)
+        string selectedWord = "";
+        foreach (LetterButton letterButton in allLetterButtons)
         {
-            // Instantier le prefab
-            GameObject nouvelleSpherePlayer = Instantiate(playerSpherePrefab);
-            playerSphere = nouvelleSpherePlayer;
+            if (letterButton.isSelected)
+            {
+                selectedWord += letterButton.gameObject.name; // Utilisez le nom du GameObject ou une propriété personnalisée pour la lettre
+                Debug.Log(selectedWord);
+            }
+        }
+
+        if (IsWordCorrect(selectedWord, wordToFind))
+        {
+            Debug.Log("Mot correct !");
+            // Ajoutez ici des actions supplémentaires pour un mot correct
         }
         else
         {
-            Debug.LogError("PlayerSpheresPrefab n'est pas assigné dans l'inspecteur!");
+            Debug.Log("Mot incorrect.");
+            // Actions pour un mot incorrect
         }
     }
 
-    // Vérifie la hauteur de la playerSphere
-    private void VerifierHauteurPlayerSphere()
+    bool IsWordCorrect(string selectedWord, string wordToFind)
     {
-        
-        if (playerSphere != null && tourJoueur && isMoving)
-        {   
-            if (playerSphere.transform.position.y <= seuilHauteurY)
-            {   
-                isMoving = false;
-                vieDuVerre -= 1;
-                textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
-                //Debug.Log(vieDuVerre);
-                //vérifie si le verre peut encore recevoir une bille
-                if (vieDuVerre > 0){
-
-                    Invoke("AfficheLaQuestion",1.5f);
-                }
-                else {
-                    FinDuJeu();
-                }
-                
-            }
-        }
-        if (mjSphere != null && !tourJoueur && isMoving)
-        {
-            if (mjSphere.transform.position.y <= seuilHauteurY)
-            {   
-                isMoving = false;
-                vieDuVerre -= 1;
-                textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
-                //Debug.Log(vieDuVerre);
-                //vérifie si le verre peut encore recevoir une bille
-                if (vieDuVerre > 0){
-                    Invoke("AfficheLaQuestion",1.5f);
-                }
-                else {
-                    FinDuJeu();
-                }
-            }
-        }
+        return selectedWord.OrderBy(c => c).SequenceEqual(wordToFind.OrderBy(c => c));
     }
 
-    private void LancerMouvementMjSphere()
-    {
-        GameObject nouvelleSphereMj = Instantiate(mjSpherePrefab);
-        mjSphere = nouvelleSphereMj;
-        StartCoroutine(MouvementMjSphere());
-    }
 
-    private IEnumerator MouvementMjSphere()
-    {
-        // Monter en Y
-        yield return Monter(2.0f, 1.0f); // Monter à la hauteur 2 en 1 seconde
 
-        // Se déplacer sur X
-        yield return DeplacerX(1.6f, 1.0f); // Se déplacer jusqu'à 1.6 en 1 seconde
 
-        // Faire tomber
-        // Vous pouvez ajouter ici la logique pour faire tomber la sphère
-    }
-
-    private IEnumerator Monter(float hauteur, float duree)
-    {
-        Vector3 startPosition = mjSphere.transform.position;
-        Vector3 endPosition = new Vector3(startPosition.x, hauteur, startPosition.z);
-        float elapsedTime = 0;
-
-        while (elapsedTime < duree)
-        {
-            mjSphere.transform.position = Vector3.Lerp(startPosition, endPosition, (elapsedTime / duree));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        mjSphere.transform.position = endPosition;
-    }
-
-    private IEnumerator DeplacerX(float positionX, float duree)
-    {
-        Vector3 startPosition = mjSphere.transform.position;
-        Vector3 endPosition = new Vector3(positionX, startPosition.y, startPosition.z);
-        float elapsedTime = 0;
-
-        while (elapsedTime < duree)
-        {
-            mjSphere.transform.position = Vector3.Lerp(startPosition, endPosition, (elapsedTime / duree));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        mjSphere.transform.position = endPosition;
-        Renderer renderer = mjSphere.GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            renderer.material.color = Color.green;
-        }
-    }
 
     //fin du jeu 
     private void FinDuJeu(){
         ////debug.Log("GameOver");
-        buttonTextBassin.SetActive(false);
+        buttonTextEnigmes.SetActive(false);
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
