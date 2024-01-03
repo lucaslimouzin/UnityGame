@@ -16,7 +16,7 @@ public class chestEnigmes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ActivateButton(MainGameManager.Instance.scoreRecobassin);
+        ActivateButton(MainGameManager.Instance.scoreRecoEnigmes);
     }
 
     // Update is called once per frame

@@ -20,7 +20,7 @@ public class MjActionEnigmes : MonoBehaviour
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
         #endif
-        if (MainGameManager.Instance.gameBassinFait) {
+        if (MainGameManager.Instance.gameEnigmesFait) {
                 //active le coffre
                 chest.SetActive(true);
                 textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
@@ -29,7 +29,7 @@ public class MjActionEnigmes : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la cellule des bassins coulants. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Maître du jeu : Bienvenue dans la cellule aux Enigmes. Approche toi pour lancer le jeu";
         }
        
     }
@@ -78,7 +78,7 @@ public class MjActionEnigmes : MonoBehaviour
     }
 
      public void PlayGame() {
-        MainGameManager.Instance.jeuEnCours = "JeuBassins";
+        MainGameManager.Instance.jeuEnCours = "JeuEnigmes";
         SceneManager.LoadScene("SalleDes");
     }
 

@@ -270,11 +270,14 @@ public class GameManagerEnigmes : MonoBehaviour
         {
             Debug.Log("Mot correct !");
             // Ajoutez ici des actions supplémentaires pour un mot correct
+            FinDuJeu();
         }
         else
         {
             Debug.Log("Mot incorrect.");
             // Actions pour un mot incorrect
+            tourJoueur = false;
+            FinDuJeu();
         }
     }
 
@@ -294,18 +297,18 @@ public class GameManagerEnigmes : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté l'épreuve et une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
-                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
         }
         else {
             MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
         }
-        MainGameManager.Instance.nbPartieBassinJoue += 1;
+        MainGameManager.Instance.nbPartieEnigmesJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieBassinJoue == 3 ){
-            MainGameManager.Instance.gameBassinFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleBassins", 2f));
+        if(MainGameManager.Instance.nbPartieEnigmesJoue == 1 ){
+            MainGameManager.Instance.gameEnigmesFait = true;
+            StartCoroutine(LoadSceneAfterDelay("SalleEnigmes", 2f));
         }
         else
         {
