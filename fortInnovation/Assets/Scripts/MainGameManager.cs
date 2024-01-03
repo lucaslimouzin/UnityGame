@@ -30,6 +30,13 @@ public class MainGameManager : MonoBehaviour
     public bool gameBassinFait = false;
     public List<int> questionsBassinPosees = new List<int>();
 
+    // variables pour jeu des Enigmes
+    public int scoreRecoEnigmes = 0;
+    public int nbPartieEnigmesJoue = 0;
+    public int nbPartieEnigmes = 1;
+    public bool gameEnigmesFait = false;
+    public List<int> questionsEnigmesPosees = new List<int>();
+
     //variables pour les dés afin de déterminer qui commence
     public bool checkFaitDesMj = true;
     public bool checkFaitDesPlayer = true;
@@ -43,7 +50,7 @@ public class MainGameManager : MonoBehaviour
     public int selectedCharacter;
 
     // Définir un événement pour signaler les mises à jour du score
-    public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou, int newScoreBassin);
+    public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);
     public static event ScoreUpdated OnScoreUpdated;
 
     private void Awake()
@@ -111,6 +118,6 @@ public class MainGameManager : MonoBehaviour
         //scoreReco = newScore;
 
         // Déclencher l'événement OnScoreUpdated
-        OnScoreUpdated?.Invoke(scoreRecoBaton, scoreRecoClou, scoreRecobassin);
+        OnScoreUpdated?.Invoke(scoreRecoBaton, scoreRecoClou, scoreRecobassin, scoreRecoEnigmes);
     }
 }
