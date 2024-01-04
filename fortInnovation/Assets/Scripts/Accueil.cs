@@ -27,9 +27,8 @@ public class Accueil : MonoBehaviour
         characters[selectedCharacter].enabled = true;
     }
 
-    public void PlayGame() {
+    public void PlayInstruction() {
         MainGameManager.Instance.selectedCharacter = selectedCharacter;
-        SceneManager.LoadScene("FortAccueil");
-        Debug.Log("test");
+        SceneManager.LoadScene("Instruction");
     }
 }
