@@ -193,6 +193,8 @@ public class GameManager : MonoBehaviour
 
         int levelNumber = GetCurrentLevelNumber();
         SaveStars(levelNumber, earnedStars);
+        // Déverrouillez le niveau suivant
+        UnlockNextLevel();
         // Activer le panneau de victoire
         panelWin.SetActive(true);
     }
@@ -225,6 +227,19 @@ public class GameManager : MonoBehaviour
     {
         string key = "Level_" + levelNumber + "_Stars";
         return PlayerPrefs.GetInt(key, 0);
+    }
+
+    public void UnlockNextLevel()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName.StartsWith("Level_"))
+        {
+            if (int.TryParse(sceneName.Substring("Level_".Length), out int currentLevel))
+            {
+                PlayerPrefs.SetInt("Level_" + (currentLevel + 1) + "_Unlocked", 1);
+                PlayerPrefs.Save();
+            }
+        }
     }
 
     public void PushStart (){

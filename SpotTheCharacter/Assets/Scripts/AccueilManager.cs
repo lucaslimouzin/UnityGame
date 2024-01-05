@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement; // Nécessaire pour accéder aux informations
         public Image star1;
         public Image star2;
         public Image star3;
+        public Image lockImage;
     }
 
 public class AccueilManager : MonoBehaviour
@@ -22,7 +23,10 @@ public class AccueilManager : MonoBehaviour
     {
         panelLevels.SetActive(false);
         StartCoroutine(ChangeSpritesCoroutine());
+        // Définir le premier niveau comme déverrouillé par défaut
+        UnlockFirstLevel();
         UpdateLevelStars();
+        UpdateLevelLocks();
     }
 
     IEnumerator ChangeSpritesCoroutine()
@@ -38,6 +42,23 @@ public class AccueilManager : MonoBehaviour
         }
     }
 
+    void UnlockFirstLevel()
+{
+    bool isUnlocked = true;
+    // // Vérifiez si "Level_001_Unlocked" a déjà été défini, sinon définissez-le par défaut à 1 (déverrouillé)
+    // if (!PlayerPrefs.HasKey("Level_001_Stars"))
+    // {
+    //     PlayerPrefs.SetInt("Level_001_Stars", 1);
+        
+    //     levelsUI[0].lockImage.enabled = isUnlocked;
+    //     levelsUI[0].levelPanel.GetComponent<Button>().interactable = isUnlocked;
+    //     PlayerPrefs.Save();
+    // }
+       
+        levelsUI[0].lockImage.enabled = !isUnlocked;
+        //levelsUI[0].levelPanel.GetComponent<Button>().interactable = isUnlocked;
+}
+
     void UpdateLevelStars()
     {
         for (int i = 0; i < levelsUI.Length; i++)
@@ -46,6 +67,17 @@ public class AccueilManager : MonoBehaviour
             levelsUI[i].star1.enabled = starsEarned >= 1;
             levelsUI[i].star2.enabled = starsEarned >= 2;
             levelsUI[i].star3.enabled = starsEarned >= 3;
+        }
+    }
+
+
+    void UpdateLevelLocks()
+    {
+        for (int i = 1; i < levelsUI.Length; i++)
+        {
+            bool isUnlocked = PlayerPrefs.GetInt("Level_" + (i + 1) + "_Unlocked", i == 0 ? 1 : 0) == 1;
+            levelsUI[i].lockImage.enabled = !isUnlocked;
+            levelsUI[i].levelPanel.GetComponent<Button>().interactable = isUnlocked;
         }
     }
 
