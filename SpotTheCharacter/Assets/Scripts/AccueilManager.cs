@@ -56,7 +56,7 @@ public class AccueilManager : MonoBehaviour
     // }
        
         levelsUI[0].lockImage.enabled = !isUnlocked;
-        //levelsUI[0].levelPanel.GetComponent<Button>().interactable = isUnlocked;
+        levelsUI[0].levelPanel.GetComponent<Button>().interactable = isUnlocked;
 }
 
     void UpdateLevelStars()
@@ -85,23 +85,12 @@ public class AccueilManager : MonoBehaviour
         panelLevels.SetActive(true);
     }
 
-    public void SelectLevel() {
-        // Obtenez l'index de la scène actuelle
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        
-        // Calculez l'index de la scène suivante
-        int nextSceneIndex = currentSceneIndex + 1;
+    public void SelectLevel(int levelIndex)
+    {
+        // Construisez le nom de la scène en fonction de l'index
+        string sceneNameToLoad = "Level_" + levelIndex.ToString("D3"); // Par exemple "Level_001" pour l'index 1
 
-        // Vérifiez si la scène suivante existe dans les paramètres de build
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            // Chargez la scène suivante
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        else
-        {
-            Debug.Log("Il n'y a pas d'autres niveaux à charger.");
-            // Gérez le cas où il n'y a pas de niveau suivant, par exemple, affichez un écran de fin de jeu
-        }
+        // Chargez la scène avec le nom construit
+        SceneManager.LoadScene(sceneNameToLoad);
     }
 }

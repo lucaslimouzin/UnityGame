@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public Image star2Win;
     public Image star3Win;
     private int earnedStars;
+    public TMP_Text wrongText; // Référence au TextMeshPro
 
     void Start()
     {
@@ -179,7 +180,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Lose");
+            Loose();
         }
     }
 
@@ -197,6 +198,18 @@ public class GameManager : MonoBehaviour
         UnlockNextLevel();
         // Activer le panneau de victoire
         panelWin.SetActive(true);
+    }
+
+    public void Loose()
+    {
+        StartCoroutine(ShowAndHideWrongText());
+    }
+
+    IEnumerator ShowAndHideWrongText()
+    {
+        wrongText.gameObject.SetActive(true); // Affiche le texte
+        yield return new WaitForSeconds(0.5f);  // Attend 1 seconde
+        wrongText.gameObject.SetActive(false); // Masque le texte
     }
 
     int GetCurrentLevelNumber()
