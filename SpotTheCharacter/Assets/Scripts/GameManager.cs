@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     public Image uiCorps, uiFace, uiBrasDroit, uiBrasGauche; // Références aux éléments UI 
     public TMP_Text levelText;
 
+    public GameObject panelWin;
+
     private GameObject selectedSpoonyForUI;
 
     void Start()
     {
+        panelWin.SetActive(false);
         string sceneName = SceneManager.GetActiveScene().name;
 
         // Supposer que le nom de la scène est toujours sous la forme "Level_XXX"
@@ -98,11 +101,36 @@ public class GameManager : MonoBehaviour
     {
         if (clickedSpoony == selectedSpoonyForUI)
         {
-            Debug.Log("Win");
+            Win();
         }
         else
         {
             Debug.Log("Lose");
+        }
+    }
+
+    void Win(){
+        panelWin.SetActive(false);
+    }
+
+    public void NextLevel()
+    {
+        // Obtenez l'index de la scène actuelle
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
+        // Calculez l'index de la scène suivante
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        // Vérifiez si la scène suivante existe dans les paramètres de build
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            // Chargez la scène suivante
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("Il n'y a pas d'autres niveaux à charger.");
+            // Gérez le cas où il n'y a pas de niveau suivant, par exemple, affichez un écran de fin de jeu
         }
     }
 }
