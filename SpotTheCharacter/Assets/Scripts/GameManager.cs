@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Image uiCorps, uiFace, uiBrasDroit, uiBrasGauche; // Références aux éléments UI 
     public Image uiCorpsSearch, uiFaceSearch, uiBrasDroitSearch, uiBrasGaucheSearch; // Références aux éléments UI Search
     public TMP_Text levelText;
+    public TMP_Text levelTextSearch;
     public TMP_Text timerText; // Référence au composant TextMeshProUGUI pour le timer
     public TMP_Text timerWin; // Référence au composant TextMeshProUGUI pour afficher le temps de victoire
     private float timeRemaining;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
             if (int.TryParse(levelNumberStr, out int levelNumber))
             {
                 levelText.text = "Level " + levelNumber; // Affiche "Level X" où X est le numéro de la scène
+                levelTextSearch.text = "Level " + levelNumber; // Affiche "Level X" où X est le numéro de la scène
             }
         }
 
@@ -89,24 +91,24 @@ public class GameManager : MonoBehaviour
         // Mettre à jour l'affichage des étoiles
         if (timeElapsed > 90f) // Plus de 1 min 30 sec
         {
-            star1.enabled = star2.enabled = star3.enabled = false;
+            star1.enabled = star2.enabled = star3.enabled = star1Win.enabled = star2Win.enabled = star3Win.enabled = false;
             earnedStars = 0;
         }
         else if (timeElapsed > 60f) // Plus de 1 min
         {
-            star1.enabled = true;
-            star2.enabled = star3.enabled = false;
+            star1.enabled = star1Win.enabled = true;
+            star2.enabled = star3.enabled = star2Win.enabled = star3Win.enabled = false;
             earnedStars = 1;
         }
         else if (timeElapsed > 30f) // Plus de 30 sec
         {
-            star1.enabled = star2.enabled = true;
-            star3.enabled = false;
+            star1.enabled = star2.enabled = star1Win.enabled = star2Win.enabled = true;
+            star3.enabled= star3Win.enabled = false;
             earnedStars = 2;
         }
         else // Moins de 30 sec
         {
-            star1.enabled = star2.enabled = star3.enabled = true;
+            star1.enabled = star2.enabled = star3.enabled = star1Win.enabled = star2Win.enabled = star3Win.enabled = true;
             earnedStars = 3;
         }
     }
