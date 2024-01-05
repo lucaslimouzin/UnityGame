@@ -191,8 +191,40 @@ public class GameManager : MonoBehaviour
         // Mettre à jour le texte de victoire avec le temps actuel
         timerWin.text = timerText.text;
 
+        int levelNumber = GetCurrentLevelNumber();
+        SaveStars(levelNumber, earnedStars);
         // Activer le panneau de victoire
         panelWin.SetActive(true);
+    }
+
+    int GetCurrentLevelNumber()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName.StartsWith("Level_"))
+        {
+            if (int.TryParse(sceneName.Substring("Level_".Length), out int levelNumber))
+            {
+                return levelNumber;
+            }
+        }
+        return 0; // Retourne 0 si le numéro de niveau ne peut pas être déterminé
+    }
+
+    void SaveStars(int levelNumber, int starsEarned)
+    {
+        string key = "Level_" + levelNumber + "_Stars";
+        int currentStars = PlayerPrefs.GetInt(key, 0);
+        if (starsEarned > currentStars)
+        {
+            PlayerPrefs.SetInt(key, starsEarned);
+            PlayerPrefs.Save();
+        }
+    }
+
+    int LoadStars(int levelNumber)
+    {
+        string key = "Level_" + levelNumber + "_Stars";
+        return PlayerPrefs.GetInt(key, 0);
     }
 
     public void PushStart (){
@@ -203,6 +235,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TimerCoroutine());
     }
 
+    public void ReturnHome() {
+        // Chargez la scène suivante
+            SceneManager.LoadScene("Home");
+    }
     public void NextLevel()
     {
         // Obtenez l'index de la scène actuelle
