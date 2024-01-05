@@ -10,15 +10,30 @@ public class GameManager : MonoBehaviour
     public GameObject spoonyPrefab;
     public Sprite[] bodySprites, faceSprites, brasDroitSprites, brasGaucheSprites;
     public Image uiCorps, uiFace, uiBrasDroit, uiBrasGauche; // Références aux éléments UI 
+    public Image uiCorpsSearch, uiFaceSearch, uiBrasDroitSearch, uiBrasGaucheSearch; // Références aux éléments UI Search
     public TMP_Text levelText;
-
+    public TMP_Text timerText; // Référence au composant TextMeshProUGUI pour le timer
+    public TMP_Text timerWin; // Référence au composant TextMeshProUGUI pour afficher le temps de victoire
+    private float timeRemaining;
+    private bool timerRunning = false;
+    private float timeAtStart = 180f; // Durée initiale du timer, par exemple 60 secondes
     public GameObject panelWin;
+    public GameObject panelSearch;
 
     private GameObject selectedSpoonyForUI;
+    public Image star1;
+    public Image star2;
+    public Image star3;
+
+    public Image star1Win;
+    public Image star2Win;
+    public Image star3Win;
+    private int earnedStars;
 
     void Start()
     {
         panelWin.SetActive(false);
+        panelSearch.SetActive(true);
         string sceneName = SceneManager.GetActiveScene().name;
 
         // Supposer que le nom de la scène est toujours sous la forme "Level_XXX"
@@ -42,6 +57,58 @@ public class GameManager : MonoBehaviour
         // Sélectionnez aléatoirement l'un des Spoonies
         selectedSpoonyForUI = spawnedSpoonies[Random.Range(0, spawnedSpoonies.Count)];
         UpdateUI(selectedSpoonyForUI);
+
+    }
+
+    IEnumerator TimerCoroutine()
+    {
+        while (timerRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                UpdateTimerDisplay();
+                yield return null;
+            }
+            else
+            {
+                Debug.Log("Temps écoulé!");
+                timerRunning = false;
+                // Vous pouvez ajouter ici d'autres actions à exécuter lorsque le temps est écoulé
+            }
+        }
+    }
+    void UpdateTimerDisplay()
+    {
+        int minutes = Mathf.FloorToInt(timeRemaining / 60);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        float timeElapsed = timeAtStart - timeRemaining;
+
+        // Mettre à jour l'affichage des étoiles
+        if (timeElapsed > 90f) // Plus de 1 min 30 sec
+        {
+            star1.enabled = star2.enabled = star3.enabled = false;
+            earnedStars = 0;
+        }
+        else if (timeElapsed > 60f) // Plus de 1 min
+        {
+            star1.enabled = true;
+            star2.enabled = star3.enabled = false;
+            earnedStars = 1;
+        }
+        else if (timeElapsed > 30f) // Plus de 30 sec
+        {
+            star1.enabled = star2.enabled = true;
+            star3.enabled = false;
+            earnedStars = 2;
+        }
+        else // Moins de 30 sec
+        {
+            star1.enabled = star2.enabled = star3.enabled = true;
+            earnedStars = 3;
+        }
     }
 
     int DetermineNumberOfSpoonies()
@@ -95,6 +162,11 @@ public class GameManager : MonoBehaviour
         uiFace.sprite = spoony.transform.Find("Face").GetComponent<SpriteRenderer>().sprite;
         uiBrasDroit.sprite = spoony.transform.Find("BrasDroit").GetComponent<SpriteRenderer>().sprite;
         uiBrasGauche.sprite = spoony.transform.Find("BrasGauche").GetComponent<SpriteRenderer>().sprite;
+        // Mettre à jour chaque élément d'UI Searchavec les sprites correspondants du Spoony
+        uiCorpsSearch.sprite = spoony.transform.Find("Body").GetComponent<SpriteRenderer>().sprite;
+        uiFaceSearch.sprite = spoony.transform.Find("Face").GetComponent<SpriteRenderer>().sprite;
+        uiBrasDroitSearch.sprite = spoony.transform.Find("BrasDroit").GetComponent<SpriteRenderer>().sprite;
+        uiBrasGaucheSearch.sprite = spoony.transform.Find("BrasGauche").GetComponent<SpriteRenderer>().sprite;
     }
 
     public void CheckSpoonySelection(GameObject clickedSpoony)
@@ -109,8 +181,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Win(){
-        panelWin.SetActive(false);
+    void Win()
+    {
+        // Arrêter le timer
+        timerRunning = false;
+
+        // Mettre à jour le texte de victoire avec le temps actuel
+        timerWin.text = timerText.text;
+
+        // Activer le panneau de victoire
+        panelWin.SetActive(true);
+    }
+
+    public void PushStart (){
+        panelSearch.SetActive(false);
+        // Configurez et démarrez votre timer ici
+        timeRemaining = 180f; // Par exemple, pour un timer de 180 secondes
+        timerRunning = true;
+        StartCoroutine(TimerCoroutine());
     }
 
     public void NextLevel()
