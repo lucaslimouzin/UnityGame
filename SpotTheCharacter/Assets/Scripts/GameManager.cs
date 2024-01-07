@@ -32,8 +32,11 @@ public class GameManager : MonoBehaviour
     private int earnedStars;
     public TMP_Text wrongText; // Référence au TextMeshPro
 
+    Interstitial interstitial;
+
     void Start()
     {
+        interstitial = GameObject.FindGameObjectWithTag("TagAds").GetComponent<Interstitial>();
         panelWin.SetActive(false);
         panelSearch.SetActive(true);
         string sceneName = SceneManager.GetActiveScene().name;
@@ -274,6 +277,11 @@ public class GameManager : MonoBehaviour
         
         // Calculez l'index de la scène suivante
         int nextSceneIndex = currentSceneIndex + 1;
+        // Vérifiez si l'action doit être exécutée avec une chance sur 4
+        if (ShouldShowInterstitialAd())
+        {
+            interstitial.ShowAd();
+        }
 
         // Vérifiez si la scène suivante existe dans les paramètres de build
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
@@ -283,8 +291,17 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Il n'y a pas d'autres niveaux à charger.");
+            SceneManager.LoadScene("Home");
             // Gérez le cas où il n'y a pas de niveau suivant, par exemple, affichez un écran de fin de jeu
         }
+    }
+
+    private bool ShouldShowInterstitialAd()
+    {
+        // Génère un nombre aléatoire entre 1 et 4 (inclus)
+        int randomValue = Random.Range(1, 5);
+        Debug.Log(randomValue);
+        // Si le nombre aléatoire est égal à 2, retourne true (1 chance sur 4)
+        return randomValue == 2;
     }
 }

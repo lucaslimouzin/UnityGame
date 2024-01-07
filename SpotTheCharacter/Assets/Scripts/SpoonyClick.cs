@@ -3,7 +3,7 @@ using UnityEngine;
 public class SpoonyClick : MonoBehaviour
 {
     private float lastClickTime;
-    private const float doubleClickThreshold = 0.2f;
+    private const float doubleClickThreshold = 1f;
     private GameManager gameManager;
 
     void Start()
