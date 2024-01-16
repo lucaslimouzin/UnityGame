@@ -238,9 +238,9 @@ public class GameManagerBaton : MonoBehaviour
             TourDuJoueur(reponseJuste);
         } 
         else {
-            if (!firstTimeMj) {
-                MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, je retire des bâtons !";
-            }
+            
+            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, je retire des bâtons !";
+            
             win = false;
             panelButtonBaton.SetActive(false);
             TourDuMj(reponseJuste);

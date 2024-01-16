@@ -164,10 +164,10 @@ public class GameManagerMarteau : MonoBehaviour
             up = true;
         }
         if (up){
-            playerForce +=5;
+            playerForce +=1;
         }
         else {
-            playerForce -=5;
+            playerForce -=1;
         }
         Slider();
        } 

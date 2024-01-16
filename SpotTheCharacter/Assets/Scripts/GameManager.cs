@@ -32,6 +32,20 @@ public class GameManager : MonoBehaviour
     private int earnedStars;
     public TMP_Text wrongText; // Référence au TextMeshPro
 
+    public GameObject[] spawnPoints;
+    private List<int> usedSpawnIndices = new List<int>();
+
+    private int currentLevel;
+    private PartToRandomize currentPartToRandomize;
+
+    enum PartToRandomize
+    {
+        None,
+        Face,
+        Body,
+        RightArm,
+        LeftArm
+    }
     Interstitial interstitial;
 
     void Start()
@@ -52,17 +66,43 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        int numberOfSpoonies = DetermineNumberOfSpoonies();
-        List<GameObject> spawnedSpoonies = new List<GameObject>();
+        // Déterminer le niveau actuel
+        currentLevel = GetCurrentLevelNumber();
 
-        for (int i = 0; i < numberOfSpoonies; i++)
+        // Déterminer la partie à randomiser en fonction du niveau
+        if (currentLevel <= 5)
         {
-            spawnedSpoonies.Add(SpawnSpoony());
+            currentPartToRandomize = PartToRandomize.Face;
+        }
+        else if (currentLevel <= 10)
+        {
+            currentPartToRandomize = PartToRandomize.Body;
+        }
+        else if (currentLevel <= 15)
+        {
+            currentPartToRandomize = PartToRandomize.RightArm;
+        }
+        else
+        {
+            currentPartToRandomize = PartToRandomize.LeftArm;
         }
 
-        // Sélectionnez aléatoirement l'un des Spoonies
-        selectedSpoonyForUI = spawnedSpoonies[Random.Range(0, spawnedSpoonies.Count)];
+
+        List<GameObject> spawnedSpoonies = new List<GameObject>();
+        
+        //création du spoony à trouver
+        spawnedSpoonies.Add(SpawnSelectedSpoony());
+        selectedSpoonyForUI = spawnedSpoonies[0];
         UpdateUI(selectedSpoonyForUI);
+
+
+        //autres spoony
+        int numberOfSpoonies = DetermineNumberOfSpoonies();       
+        for (int i = 1; i < numberOfSpoonies; i++)
+        {
+            spawnedSpoonies.Add(SpawnSpoony(currentPartToRandomize));
+        }
+        
 
     }
 
@@ -130,26 +170,110 @@ public class GameManager : MonoBehaviour
         return 2; // Valeur par défaut si le nom de la scène ne correspond pas
     }
 
-    GameObject SpawnSpoony()
+    GameObject SpawnSpoony(PartToRandomize partToRandomize)
     {
-        // Définir une position aléatoire basée sur les dimensions données
-        float randomX = Random.Range(-1.21f, 1.21f);
-        float randomY = Random.Range(-2.11f, 2.75f);
-        Vector3 randomPosition = new Vector3(randomX, randomY, 0);
+        // Vérifier combien de points de spawn sont disponibles
+        if (usedSpawnIndices.Count == spawnPoints.Length)
+        {
+            // Tous les points de spawn ont été utilisés, vous pouvez choisir de gérer cela comme vous le souhaitez
+            // Par exemple, réinitialiser la liste des indices utilisés
+            usedSpawnIndices.Clear();
+        }
 
-        // Instancier le prefab Spoony
-        GameObject newSpoony = Instantiate(spoonyPrefab, randomPosition, Quaternion.identity);
+        // Sélectionnez un spawnPoint aléatoire qui n'a pas été utilisé précédemment
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, spawnPoints.Length);
+        }
+        while (usedSpawnIndices.Contains(randomIndex));
 
-        // Attribuer des sprites aléatoires
-        AssignRandomSprite(newSpoony.transform.Find("Body").gameObject, bodySprites);
-        AssignRandomSprite(newSpoony.transform.Find("Face").gameObject, faceSprites);
-        AssignRandomSprite(newSpoony.transform.Find("BrasDroit").gameObject, brasDroitSprites);
-        AssignRandomSprite(newSpoony.transform.Find("BrasGauche").gameObject, brasGaucheSprites);
+        // Ajoutez l'index utilisé à la liste des indices utilisés
+        usedSpawnIndices.Add(randomIndex);
+
+        // Obtenez le GameObject du spawnPoint sélectionné
+        GameObject spawnPoint = spawnPoints[randomIndex];
+
+        // Obtenez la position du spawnPoint sélectionné
+        Vector3 spawnPosition = spawnPoint.transform.position;
+
+        // Instancier le prefab Spoony à la position du spawnPoint
+        GameObject newSpoony = Instantiate(selectedSpoonyForUI, spawnPosition, Quaternion.identity);
+
+        // Attribuer des sprites aléatoires, en fonction de la partie à randomiser
+        switch (partToRandomize)
+        {
+            case PartToRandomize.Face:
+                AssignRandomSprite(newSpoony.transform.Find("Face").gameObject, faceSprites);
+                break;
+            case PartToRandomize.Body:
+                AssignRandomSprite(newSpoony.transform.Find("Body").gameObject, bodySprites);
+                break;
+            case PartToRandomize.RightArm:
+                AssignRandomSprite(newSpoony.transform.Find("BrasDroit").gameObject, brasDroitSprites);
+                break;
+            case PartToRandomize.LeftArm:
+                AssignRandomSprite(newSpoony.transform.Find("BrasGauche").gameObject, brasGaucheSprites);
+                break;
+            default:
+                break;
+        }
 
         return newSpoony;
     }
 
+    GameObject SpawnSelectedSpoony()
+    {
+        // Vérifier combien de points de spawn sont disponibles
+        if (usedSpawnIndices.Count == spawnPoints.Length)
+        {
+            // Tous les points de spawn ont été utilisés, vous pouvez choisir de gérer cela comme vous le souhaitez
+            // Par exemple, réinitialiser la liste des indices utilisés
+            usedSpawnIndices.Clear();
+        }
+
+        // Sélectionnez un spawnPoint aléatoire qui n'a pas été utilisé précédemment
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, spawnPoints.Length);
+        }
+        while (usedSpawnIndices.Contains(randomIndex));
+
+        // Ajoutez l'index utilisé à la liste des indices utilisés
+        usedSpawnIndices.Add(randomIndex);
+
+        // Obtenez le GameObject du spawnPoint sélectionné
+        GameObject spawnPoint = spawnPoints[randomIndex];
+
+        // Obtenez la position du spawnPoint sélectionné
+        Vector3 spawnPosition = spawnPoint.transform.position;
+
+        // Instancier le prefab Spoony à la position du spawnPoint
+        GameObject newSpoony = Instantiate(spoonyPrefab, spawnPosition, Quaternion.identity);
+
+        // Attribuer des sprites aléatoires
+        AssignRandomSpriteForSelectedSpoony(newSpoony.transform.Find("Body").gameObject, bodySprites);
+        AssignRandomSpriteForSelectedSpoony(newSpoony.transform.Find("Face").gameObject, faceSprites);
+        AssignRandomSpriteForSelectedSpoony(newSpoony.transform.Find("BrasDroit").gameObject, brasDroitSprites);
+        AssignRandomSpriteForSelectedSpoony(newSpoony.transform.Find("BrasGauche").gameObject, brasGaucheSprites);
+
+        return newSpoony;
+    }
+
+    
     void AssignRandomSprite(GameObject obj, Sprite[] sprites)
+    {
+        if (sprites.Length > 0)
+        {
+            SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
+            }
+        }
+    }
+    void AssignRandomSpriteForSelectedSpoony(GameObject obj, Sprite[] sprites)
     {
         if (sprites.Length > 0)
         {

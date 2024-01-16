@@ -299,7 +299,7 @@ public class GameManagerEnigmes : MonoBehaviour
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
             MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté l'épreuve et une recommandation";
-            //envoi vers le Main Game Manager le scoreClou 
+            //envoi vers le Main Game Manager le scoreEnigme
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
         }
         else {
