@@ -5,8 +5,8 @@ using TMPro;
 
 public class LinkOpener : MonoBehaviour
 {
-    public TMP_Text myFirstText; // Référence au premier TextMeshPro
-    public TMP_Text mySecondText; // Référence au second TextMeshPro
+    public TMP_Text site1; // Rï¿½fï¿½rence au premier TextMeshPro
+    public TMP_Text site2; // Rï¿½fï¿½rence au second TextMeshPro
 
     void Update()
     {
@@ -20,8 +20,8 @@ public class LinkOpener : MonoBehaviour
     {
         yield return new WaitForSeconds(1f); // Attendre 1 seconde
 
-        if (myFirstText != null) CheckForLink(myFirstText);
-        if (mySecondText != null) CheckForLink(mySecondText);
+        if (site1 != null) CheckForLink(site1);
+        if (site2 != null) CheckForLink(site2);
     }
 
     void CheckForLink(TMP_Text textComponent)
@@ -29,7 +29,7 @@ public class LinkOpener : MonoBehaviour
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(textComponent, Input.mousePosition, null);
         if (linkIndex != -1)
         {
-            // Obtenez le lien cliqué
+            // Obtenez le lien cliquï¿½
             TMP_LinkInfo linkInfo = textComponent.textInfo.linkInfo[linkIndex];
 
             // Effectuez une action en fonction de l'identifiant du lien
