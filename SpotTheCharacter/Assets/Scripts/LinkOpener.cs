@@ -42,10 +42,10 @@ public class LinkOpener : MonoBehaviour
     {
         switch (linkID)
         {
-            case "kenney":
+            case "site1":
                 Application.OpenURL("https://www.kenney.nl/");
                 break;
-            case "flaticon":
+            case "site2":
                 Application.OpenURL("https://www.flaticon.com/");
                 break;
                 // Ajoutez d'autres cas au besoin
