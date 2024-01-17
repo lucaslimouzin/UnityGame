@@ -7,6 +7,7 @@ public class LinkOpener : MonoBehaviour
 {
     public TMP_Text site1; // R�f�rence au premier TextMeshPro
     public TMP_Text site2; // R�f�rence au second TextMeshPro
+    
 
     void Update()
     {
@@ -26,15 +27,18 @@ public class LinkOpener : MonoBehaviour
 
     void CheckForLink(TMP_Text textComponent)
     {
-        int linkIndex = TMP_TextUtilities.FindIntersectingLink(textComponent, Input.mousePosition, null);
-        if (linkIndex != -1)
+        if (textComponent.textInfo != null && textComponent.textInfo.linkInfo != null)
         {
-            // Obtenez le lien cliqu�
-            TMP_LinkInfo linkInfo = textComponent.textInfo.linkInfo[linkIndex];
+            int linkIndex = TMP_TextUtilities.FindIntersectingLink(textComponent, Input.mousePosition, null);
+            if (linkIndex != -1)
+            {
+                // Obtenez le lien cliqué
+                TMP_LinkInfo linkInfo = textComponent.textInfo.linkInfo[linkIndex];
 
-            // Effectuez une action en fonction de l'identifiant du lien
-            // Par exemple, ouvrir une URL ou effectuer une autre action
-            OpenLink(linkInfo.GetLinkID());
+                // Effectuez une action en fonction de l'identifiant du lien
+                // Par exemple, ouvrir une URL ou effectuer une autre action
+                OpenLink(linkInfo.GetLinkID());
+            }
         }
     }
 

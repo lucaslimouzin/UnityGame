@@ -19,6 +19,8 @@ public class AccueilManager : MonoBehaviour
     public Image uiCorps, uiFace, uiBrasDroit, uiBrasGauche; // Références aux éléments UI 
     public LevelUI[] levelsUI; // Tableau de tous les UI de niveau
     public GameObject panelLevels;
+    public GameObject linkPanel;
+    public LinkOpener linkOpenerScript;
     void Start()
     {
         panelLevels.SetActive(false);
@@ -29,6 +31,26 @@ public class AccueilManager : MonoBehaviour
         UpdateLevelLocks();
     }
 
+    void Update()
+    {
+        // Vérifiez si le panel est actif
+        if (linkPanel != null && linkPanel.activeSelf)
+        {
+            // Activez le script LinkOpener
+            if (linkOpenerScript != null)
+            {
+                linkOpenerScript.enabled = true;
+            }
+        }
+        else
+        {
+            // Désactivez le script LinkOpener
+            if (linkOpenerScript != null)
+            {
+                linkOpenerScript.enabled = false;
+            }
+        }
+    }
     IEnumerator ChangeSpritesCoroutine()
     {
         while (true)
