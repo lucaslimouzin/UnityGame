@@ -213,6 +213,7 @@ public class GameManagerMarteau : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             tourJoueur = false;
+            MJText.text = "Maitre du jeu : Je commence à frapper !";
             TourDuMj();
         } 
     }
@@ -284,8 +285,9 @@ public class GameManagerMarteau : MonoBehaviour
             TourDuJoueur();
         } 
         else {
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, votre marteau est chargé à 50%";
-            TourDuJoueur();
+            tourJoueur =false;
+            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
+            TourDuMj();
         }
         
     }
@@ -307,7 +309,7 @@ public class GameManagerMarteau : MonoBehaviour
         if (!tourJoueur) {
             buttonTextMarteau.SetActive(false);
             ////debug.Log("Debut tour Mj");
-            MJText.text = "Maître du jeu : A mon tour de jouer";
+            //MJText.text = "Maître du jeu : A mon tour de jouer";
             ResetGauge();
             Invoke("MoveMarteau",1f);
         }        
@@ -357,15 +359,10 @@ public class GameManagerMarteau : MonoBehaviour
 
     private IEnumerator MoveMarteauCoroutine(){
         int mjForce;
-        if (aJuste) {
-            //si on a juste alors le mj tapera moins fort
-             mjForce = UnityEngine.Random.Range(10,51);
-        }
-        else {
-            //si on a faux alors le mj tapera plus fort
+        
+            //si on a faux alors le mj tapera entre 50 et 101
             mjForce = UnityEngine.Random.Range(50,101);
-        }
-       
+               
             //faire tourner le marteau du player
             if (tourJoueur){
                 //on attribue la valeur de la Force à Z
@@ -419,9 +416,11 @@ public class GameManagerMarteau : MonoBehaviour
                 tourJoueur = false;
                 if (vieDuClou <= 0){
                     FinDuJeu();
-                } else {
-                    TourDuMj()
-;                }
+                } 
+                else {
+                    //c'est au joueur de jouer, on lui affiche la question
+                    Invoke("AfficheLaQuestion",1f);
+                }
                 ////debug.Log("Tour joueur : " + tourJoueur);
             }
             else {
