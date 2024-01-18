@@ -43,7 +43,7 @@ public class MjActionEnigmes : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameBassinFait) {
+            if (!MainGameManager.Instance.gameEnigmesFait) {
                 panelMjInfo.SetActive(true);
                 //Set Cursor to not be visible
                 Cursor.visible = true;
@@ -56,7 +56,7 @@ public class MjActionEnigmes : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameBassinFait) {
+            if (!MainGameManager.Instance.gameEnigmesFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
                     //Set Cursor to not be visible

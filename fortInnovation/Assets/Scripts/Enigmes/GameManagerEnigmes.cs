@@ -21,9 +21,8 @@ public class GameManagerEnigmes : MonoBehaviour
     public GameObject buttonTextEnigmes;
     public TextMeshProUGUI MJText;
     private bool tourJoueur = true;
-    private bool aRelacher = false;
     private bool finDuJeu = false;
-    public bool isMoving = false;
+    
 
     //variables damier
     public List<LetterButton> allLetterButtons; // Liste de tous les boutons de lettres
@@ -40,8 +39,7 @@ public class GameManagerEnigmes : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
-    private bool aJuste = false;
-    private int numQuestions = 0;
+    
     
 
     [System.Serializable]
@@ -144,116 +142,16 @@ public class GameManagerEnigmes : MonoBehaviour
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
         TourDuJoueur();
-    //    if (MainGameManager.Instance.quiCommence == "Player"){
-    //         panelInfoMJ.SetActive(true);
-    //         MJText.text = "Maître du jeu : J'ai perdu aux dés, je dépose une bille dans le verre";
-    //         tourJoueur = false;
-    //         TourDuMj();
-    //     }
-    //     else {
-    //         //On affiche la question
-    //         Invoke("AfficheLaQuestion",0f);
-    //         //tour du player   
-    //     } 
     }
-
-    //affichage de la question   
-    private void AfficheLaQuestion(){
-
-        //choisi les questions de 1 à taille Json
-        //comme on vise un tableau on est obligé de commencer à 0
-        //et pour range on va jusqu'à taille Json
-        do
-        {
-            numQuestions = UnityEngine.Random.Range(0, listQuestions.questions.Length);
-        } while (MainGameManager.Instance.questionsClouPosees.Contains(numQuestions));
-
-        MainGameManager.Instance.questionsClouPosees.Add(numQuestions);
-        // Restreindre le nombre total de questions posées
-        if (MainGameManager.Instance.questionsClouPosees.Count >= listQuestions.questions.Length)
-        {
-            // Si toutes les questions ont été posées, réinitalisation de la liste
-            MainGameManager.Instance.questionsClouPosees.Clear();
-        }
-
-        //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
-        if (panelInfoMJ.activeSelf){
-            panelInfoMJ.SetActive(false);
-        }
-        panelQuestions.SetActive(true);
-
-        QuestionData question = listQuestions.questions[numQuestions];
-        //affichage des données
-        questionText.text = question.question;
-        propositionAtext.text = question.propositions[0];
-        propositionBtext.text = question.propositions[1];
-        propositionCtext.text = question.propositions[2];
-
-        buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
-        buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
-        buttonC.onClick.AddListener(() => OnButtonClick("C", question.reponseCorrecte));
-        
-    }
-
-    //fonction qui check le bouton enfoncé
-    private void OnButtonClick(String choix, string reponseCorrecte){
-        // Supprimer tous les écouteurs d'événements du bouton
-        buttonA.onClick.RemoveAllListeners();
-        buttonB.onClick.RemoveAllListeners();
-        buttonC.onClick.RemoveAllListeners();
-
-        if (choix == reponseCorrecte){
-            aJuste = true;
-        }
-        else {
-            aJuste = false;
-        }
-        //on enlève le panneau des questions
-        RetraitPanneauQuestions(aJuste);
-    }
-
-    //retrait panneau Question
-    private void RetraitPanneauQuestions(bool reponseJuste){
-        panelQuestions.SetActive(false);
-        panelInfoMJ.SetActive(true);
-        if(reponseJuste){
-            MJText.text = "Maitre du jeu : Bien répondu, je dépose une bille dans le verre";
-            tourJoueur = false;
-            
-            TourDuMj();
-            
-        } 
-        else {
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans le verre";
-            tourJoueur = true;
-            
-            TourDuJoueur();
-        }
-        
-    }
-
-
 
     private void TourDuJoueur(){
         if(tourJoueur) {
-            isMoving = true;
             buttonTextEnigmes.SetActive(true);
             ////debug.Log("Debut tour joueur");  
         }  
     }
 
-    private void TourDuMj(){
-        if (!tourJoueur) {
-            isMoving = true;
-            buttonTextEnigmes.SetActive(false);
-            ////debug.Log("Debut tour Mj");    
-        }        
-    }  
-    
-    
+   
      public void ValidateWord()
     {
         string selectedWord = "";
@@ -286,9 +184,6 @@ public class GameManagerEnigmes : MonoBehaviour
     {
         return selectedWord.OrderBy(c => c).SequenceEqual(wordToFind.OrderBy(c => c));
     }
-
-
-
 
 
     //fin du jeu 
