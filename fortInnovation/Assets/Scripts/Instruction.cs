@@ -12,6 +12,6 @@ public class Instruction : MonoBehaviour
     }
    
     public void PlayGame() {
-        SceneManager.LoadScene("FortAccueil");
+        SceneManager.LoadScene("SalleInstructions");
     }
 }
