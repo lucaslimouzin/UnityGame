@@ -8,6 +8,7 @@ public class Floater : MonoBehaviour
     public float depthBeforeSubmerged = 1f;
     public float displacementAmount = 3f;
     public float startingPositionY = 1.01f;
+    private bool test = false;
 
     private void FixedUpdate()
     {
