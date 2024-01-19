@@ -8,6 +8,25 @@ namespace StarterAssets
         [Header("Output")]
         public StarterAssetsInputs starterAssetsInputs;
 
+        private void Start()
+        {
+            InitializeStarterAssetsInputs();
+        }
+
+        private void InitializeStarterAssetsInputs()
+        {
+            // Rechercher un GameObject avec le tag "Player"
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                // Obtenir le composant StarterAssetsInputs de l'objet trouvé
+                starterAssetsInputs = player.GetComponent<StarterAssetsInputs>();
+            }
+            else
+            {
+                Debug.LogWarning("GameObject avec le tag 'Player' n'a pas été trouvé dans la scène");
+            }
+        }
         public void VirtualMoveInput(Vector2 virtualMoveDirection)
         {
             starterAssetsInputs.MoveInput(virtualMoveDirection);

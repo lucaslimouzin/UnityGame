@@ -17,6 +17,7 @@ TagManager:
   - SIDEMJ4
   - SIDEMJ5
   - SIDEMJ6
+  - MJ
   layers:
   - Default
   - TransparentFX
