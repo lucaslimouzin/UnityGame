@@ -114,8 +114,8 @@ public class GameManagerMarteau : MonoBehaviour
         textVieClou.text = vieDuClou.ToString();
         isSpaceEnabled = false;
         phaseQuestion = true;
-        Debug.Log("PhaseQ 1 = " + phaseQuestion);
-        Debug.Log("Espace 1 = " + isSpaceEnabled);
+        //Debug.Log("PhaseQ 1 = " + phaseQuestion);
+       // Debug.Log("Espace 1 = " + isSpaceEnabled);
         ResetGauge();
       //on affiche le panneau des régles
         PanneauRegle();
@@ -223,7 +223,7 @@ public class GameManagerMarteau : MonoBehaviour
         aRelacher = true;
         phaseQuestion = true;
         isSpaceEnabled = false; //on desactive la touche espace
-        Debug.Log("Espace 2= " + isSpaceEnabled);
+        //Debug.Log("Espace 2= " + isSpaceEnabled);
         TourDuJoueur();
         
     }
@@ -256,10 +256,10 @@ public class GameManagerMarteau : MonoBehaviour
         Input.ResetInputAxes(); // reset toutes les entrées utilisateur
         ignoreInput = true; // ignore les inputs 
         phaseQuestion = true;
-        Debug.Log("PhaseQ 2 = " + phaseQuestion);
+        //Debug.Log("PhaseQ 2 = " + phaseQuestion);
         tourJoueur = false;
         isSpaceEnabled = false;
-        Debug.Log("Espace 3 = " + isSpaceEnabled);
+        //Debug.Log("Espace 3 = " + isSpaceEnabled);
         ResetGauge();
         //choisi les questions de 1 à taille Json
         //comme on vise un tableau on est obligé de commencer à 0
@@ -294,9 +294,7 @@ public class GameManagerMarteau : MonoBehaviour
         propositionCtext.text = question.propositions[2];
 
         if (Input.GetKey(KeyCode.Space)) {
-            Input.ResetInputAxes(); // reset toutes les entrées utilisateur
-            ignoreInput = true; // ignore les inputs 
-            phaseQuestion = true;
+
         } else {
             buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
             buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
@@ -333,16 +331,16 @@ public class GameManagerMarteau : MonoBehaviour
             tourJoueur= true;
             phaseQuestion = false;
             ignoreInput = false; // autorise les inputs
-            Debug.Log("PhaseQ 3 = " + phaseQuestion);
+            //Debug.Log("PhaseQ 3 = " + phaseQuestion);
             MJText.text = "Maitre du jeu : Bien répondu, votre marteau est chargé à 100%";
             isSpaceEnabled = true; //active la touche espace
-            Debug.Log("Espace 4 = " + isSpaceEnabled);
+            //Debug.Log("Espace 4 = " + isSpaceEnabled);
             TourDuJoueur();
         } 
         else {
             tourJoueur = false;
             isSpaceEnabled = false; // désactive la touche espace
-            Debug.Log("Espace 5 = " + isSpaceEnabled);
+          //  Debug.Log("Espace 5 = " + isSpaceEnabled);
             MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
             TourDuMj();
         }
@@ -360,7 +358,7 @@ public class GameManagerMarteau : MonoBehaviour
             if(aRelacher){
                 aRelacher = false;
                 isSpaceEnabled = false;//on desactive la touche espace
-                Debug.Log("Espace 6 = " + isSpaceEnabled);
+                //Debug.Log("Espace 6 = " + isSpaceEnabled);
                 Invoke("MoveMarteau",1f);
             }
         }  
@@ -380,7 +378,7 @@ public class GameManagerMarteau : MonoBehaviour
         phaseQuestion = true;
         Input.ResetInputAxes(); // reset toutes les entrées utilisateur
         ignoreInput = true; // ignore les inputs 
-        Debug.Log("PhaseQ 4 = " + phaseQuestion);
+        //Debug.Log("PhaseQ 4 = " + phaseQuestion);
         if (!isMoving)
         {
             isMoving = true;
@@ -428,7 +426,7 @@ public class GameManagerMarteau : MonoBehaviour
             //si on a faux alors le mj tapera entre 50 et 101
             mjForce = UnityEngine.Random.Range(50,101);
             isSpaceEnabled = false; //on desactive la touche espace 
-            Debug.Log("Espace = 7 " + isSpaceEnabled);
+            //Debug.Log("Espace = 7 " + isSpaceEnabled);
             //faire tourner le marteau du player
             if (tourJoueur){
                 //on attribue la valeur de la Force à Z
@@ -476,11 +474,11 @@ public class GameManagerMarteau : MonoBehaviour
             }
             //on attend 2 secondes la fin de la coroutine 
             isSpaceEnabled = false; //on desactive la touche espace 
-            Debug.Log("Espace  8 = " + isSpaceEnabled);
+            //Debug.Log("Espace  8 = " + isSpaceEnabled);
             yield return new WaitForSeconds(1f); 
             isMoving = false;
             isSpaceEnabled = false; //on desactive la touche espace 
-            Debug.Log("Espace 9 = " + isSpaceEnabled);
+            //Debug.Log("Espace 9 = " + isSpaceEnabled);
             ////debug.Log(isMoving);
             ////debug.Log("Tour joueur : " + tourJoueur);
            
@@ -501,7 +499,7 @@ public class GameManagerMarteau : MonoBehaviour
         buttonTextMarteau.SetActive(false);
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
-        if (!tourJoueur) {
+        if (tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
