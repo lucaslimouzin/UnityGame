@@ -30,9 +30,11 @@ public class GameManagerMarteau : MonoBehaviour
     public Slider forceMarteau;
     private int maxForce = 100;
     private bool up =false;
-    private bool tourJoueur = true;
+    private bool tourJoueur = false;
     private bool aRelacher = false;
     private float vieDuClou;
+    private bool phaseQuestion = false;
+    private bool ignoreInput = false;
     private bool finDuJeu = false;
     public bool isMoving = false;
 
@@ -49,6 +51,8 @@ public class GameManagerMarteau : MonoBehaviour
     public Button buttonC;
     private bool aJuste = false;
     private int numQuestions = 0;
+
+    private bool isSpaceEnabled = false;
     
 
     [System.Serializable]
@@ -108,6 +112,10 @@ public class GameManagerMarteau : MonoBehaviour
         vieDuClou = 500f;
         //affichage de la vie du clou
         textVieClou.text = vieDuClou.ToString();
+        isSpaceEnabled = false;
+        phaseQuestion = true;
+        Debug.Log("PhaseQ 1 = " + phaseQuestion);
+        Debug.Log("Espace 1 = " + isSpaceEnabled);
         ResetGauge();
       //on affiche le panneau des régles
         PanneauRegle();
@@ -146,39 +154,59 @@ public class GameManagerMarteau : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKey(KeyCode.Space) && !aRelacher && tourJoueur && !finDuJeu){
-        
-        //si on a juste alors on peut taper jusqu'à 100%
+        if (ignoreInput)
+        {
+            return;
+        }
+         if (!phaseQuestion){
+                // Vérifier si c'est le tour du joueur et si le jeu n'est pas fini
+            if (tourJoueur && !finDuJeu)
+            {
+                if (isSpaceEnabled)
+                {
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+                        GestionAppuiToucheEspace();
+                    }
+
+                    if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
+                        ignoreInput = true; // ignore les inputs 
+                        phaseQuestion = true;
+                        isSpaceEnabled = false;
+                        StartCoroutine(Wait());
+                    }
+                }
+            }
+         }       
+    }
+
+    private void GestionAppuiToucheEspace()
+    {
+        // Logique pour augmenter ou diminuer la force
         if (aJuste) {
             maxForce = 100;
         } 
         else {
-            //si on a faux  alors on peut taper que jusqu'à 50%
             maxForce = 50;
         }
 
         if (playerForce == maxForce) {
-           up = false; 
+            up = false; 
         } 
         else if (playerForce == 10) {
             up = true;
         }
+        
         if (up){
-            playerForce +=1;
+            playerForce += 1;
         }
         else {
-            playerForce -=1;
+            playerForce -= 1;
         }
         Slider();
-       } 
-       if (Input.GetKeyUp(KeyCode.Space) && !aRelacher && tourJoueur && !finDuJeu){
-        aRelacher = true;
-        //relacheMarteau();
-        StartCoroutine(Wait());
-       }
-       
     }
-
    
     public void Slider() {
         forceMarteau.value = playerForce;
@@ -190,7 +218,12 @@ public class GameManagerMarteau : MonoBehaviour
     }
     IEnumerator Wait(){
         yield return new WaitForSeconds(0f);
+        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
+        ignoreInput = true; // ignore les inputs 
         aRelacher = true;
+        phaseQuestion = true;
+        isSpaceEnabled = false; //on desactive la touche espace
+        Debug.Log("Espace 2= " + isSpaceEnabled);
         TourDuJoueur();
         
     }
@@ -220,7 +253,14 @@ public class GameManagerMarteau : MonoBehaviour
 
     //affichage de la question   
     private void AfficheLaQuestion(){
-
+        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
+        ignoreInput = true; // ignore les inputs 
+        phaseQuestion = true;
+        Debug.Log("PhaseQ 2 = " + phaseQuestion);
+        tourJoueur = false;
+        isSpaceEnabled = false;
+        Debug.Log("Espace 3 = " + isSpaceEnabled);
+        ResetGauge();
         //choisi les questions de 1 à taille Json
         //comme on vise un tableau on est obligé de commencer à 0
         //et pour range on va jusqu'à taille Json
@@ -253,9 +293,16 @@ public class GameManagerMarteau : MonoBehaviour
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
 
-        buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
-        buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
-        buttonC.onClick.AddListener(() => OnButtonClick("C", question.reponseCorrecte));
+        if (Input.GetKey(KeyCode.Space)) {
+            Input.ResetInputAxes(); // reset toutes les entrées utilisateur
+            ignoreInput = true; // ignore les inputs 
+            phaseQuestion = true;
+        } else {
+            buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
+            buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
+            buttonC.onClick.AddListener(() => OnButtonClick("C", question.reponseCorrecte));
+        }
+        
         
     }
 
@@ -278,14 +325,24 @@ public class GameManagerMarteau : MonoBehaviour
 
     //retrait panneau Question
     private void RetraitPanneauQuestions(bool reponseJuste){
+        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
+        ignoreInput = true; // ignore les inputs 
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
+            tourJoueur= true;
+            phaseQuestion = false;
+            ignoreInput = false; // autorise les inputs
+            Debug.Log("PhaseQ 3 = " + phaseQuestion);
             MJText.text = "Maitre du jeu : Bien répondu, votre marteau est chargé à 100%";
+            isSpaceEnabled = true; //active la touche espace
+            Debug.Log("Espace 4 = " + isSpaceEnabled);
             TourDuJoueur();
         } 
         else {
-            tourJoueur =false;
+            tourJoueur = false;
+            isSpaceEnabled = false; // désactive la touche espace
+            Debug.Log("Espace 5 = " + isSpaceEnabled);
             MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
             TourDuMj();
         }
@@ -299,7 +356,11 @@ public class GameManagerMarteau : MonoBehaviour
             buttonTextMarteau.SetActive(true);
             ////debug.Log("Debut tour joueur");
             //MJText.text = "Maître du jeu : A vous de jouer";
+            //ResetGauge();
             if(aRelacher){
+                aRelacher = false;
+                isSpaceEnabled = false;//on desactive la touche espace
+                Debug.Log("Espace 6 = " + isSpaceEnabled);
                 Invoke("MoveMarteau",1f);
             }
         }  
@@ -310,12 +371,16 @@ public class GameManagerMarteau : MonoBehaviour
             buttonTextMarteau.SetActive(false);
             ////debug.Log("Debut tour Mj");
             //MJText.text = "Maître du jeu : A mon tour de jouer";
-            ResetGauge();
+            //ResetGauge();
             Invoke("MoveMarteau",1f);
         }        
     }
 
     private void MoveMarteau(){
+        phaseQuestion = true;
+        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
+        ignoreInput = true; // ignore les inputs 
+        Debug.Log("PhaseQ 4 = " + phaseQuestion);
         if (!isMoving)
         {
             isMoving = true;
@@ -362,7 +427,8 @@ public class GameManagerMarteau : MonoBehaviour
         
             //si on a faux alors le mj tapera entre 50 et 101
             mjForce = UnityEngine.Random.Range(50,101);
-               
+            isSpaceEnabled = false; //on desactive la touche espace 
+            Debug.Log("Espace = 7 " + isSpaceEnabled);
             //faire tourner le marteau du player
             if (tourJoueur){
                 //on attribue la valeur de la Force à Z
@@ -397,6 +463,7 @@ public class GameManagerMarteau : MonoBehaviour
                     pivotPointMarteauPlayer.localEulerAngles = currentEulerAnglesPlayer;
                     yield return null; //Attendre la prochaine trame
                 }
+                tourJoueur = false;
             }
             //faire remonter le marteau du Mj
             else {
@@ -408,33 +475,24 @@ public class GameManagerMarteau : MonoBehaviour
                 }
             }
             //on attend 2 secondes la fin de la coroutine 
+            isSpaceEnabled = false; //on desactive la touche espace 
+            Debug.Log("Espace  8 = " + isSpaceEnabled);
             yield return new WaitForSeconds(1f); 
             isMoving = false;
+            isSpaceEnabled = false; //on desactive la touche espace 
+            Debug.Log("Espace 9 = " + isSpaceEnabled);
             ////debug.Log(isMoving);
             ////debug.Log("Tour joueur : " + tourJoueur);
-            if (tourJoueur) {
-                tourJoueur = false;
-                if (vieDuClou <= 0){
-                    FinDuJeu();
-                } 
-                else {
-                    //c'est au joueur de jouer, on lui affiche la question
-                    Invoke("AfficheLaQuestion",1f);
-                }
-                ////debug.Log("Tour joueur : " + tourJoueur);
-            }
-            else {
-                tourJoueur = true;
-                aRelacher = false;
-                if (vieDuClou <= 0){
-                    FinDuJeu();
-                }
-                else {
-                    //c'est au joueur de jouer, on lui affiche la question
-                    Invoke("AfficheLaQuestion",1f);
-                }
-            }
+           
             
+            if (vieDuClou <= 0){
+                FinDuJeu();
+            } 
+            else {
+                //On affiche la question suivante 
+                tourJoueur = false;
+                Invoke("AfficheLaQuestion",1f);
+            }
     }
     
     //fin du jeu 
