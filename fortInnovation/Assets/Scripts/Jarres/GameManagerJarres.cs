@@ -10,31 +10,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerJarres : MonoBehaviour
 {
-    public GameObject clou; 
-    public GameObject marteauPlayer;
-    public GameObject marteauMj;
+ 
+
+
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
-    public GameObject panelJauge;
-    public GameObject buttonTextMarteau;
     public TextMeshProUGUI MJText;
-    public TextMeshProUGUI textVieClou;
-    public Button buttonJauge;
-    public Transform pivotPointMarteauPlayer;
-    public Transform pivotPointMarteauMj;
-    float rotationSpeed = 60;
-    Vector3 currentEulerAnglesPlayer;
-    Vector3 currentEulerAnglesMj;
-    float z;
-    public float playerForce;
-    public Slider forceMarteau;
-    private int maxForce = 100;
-    private bool up =false;
+  
     private bool tourJoueur = false;
-    private bool aRelacher = false;
-    private float vieDuClou;
+
     private bool phaseQuestion = false;
-    private bool ignoreInput = false;
     private bool finDuJeu = false;
     public bool isMoving = false;
 
@@ -52,8 +37,17 @@ public class GameManagerJarres : MonoBehaviour
     private bool aJuste = false;
     private int numQuestions = 0;
 
-    private bool isSpaceEnabled = false;
+    public List<Button> ligne1Cartes; // Liste pour stocker les cartes de la ligne 1
+    public List<Button> ligne2Cartes; // Liste pour stocker les cartes de la ligne 2
+    public Sprite cardDos; // Image pour le dos de la carte
+    public Sprite cardChat, cardEtoile, cardNuage, cardPlanete, cardSoleil; // Images pour les faces des cartes
     
+    private string[] ligne1Refs;
+    private string[] ligne2Refs;
+    private string[] typesDeCartes = { "chat", "etoile", "nuage", "planete", "soleil" }; // Les types de cartes
+    private Button carteSelectionneeLigne1;
+    private Button carteSelectionneeLigne2;
+    private Dictionary<int, string> memoireIA = new Dictionary<int, string>();
 
     [System.Serializable]
     public class QuestionData
@@ -106,18 +100,16 @@ public class GameManagerJarres : MonoBehaviour
         //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
-
-        forceMarteau.value = 0;
-        playerForce = 10;
-        vieDuClou = 500f;
-        //affichage de la vie du clou
-        textVieClou.text = vieDuClou.ToString();
-        isSpaceEnabled = false;
         phaseQuestion = true;
-        //Debug.Log("PhaseQ 1 = " + phaseQuestion);
-       // Debug.Log("Espace 1 = " + isSpaceEnabled);
-        ResetGauge();
-      //on affiche le panneau des régles
+
+        //on mélange les cartes
+        MelangerListe(ligne1Cartes);
+        MelangerListe(ligne2Cartes);
+        InitialiserCartesFaceCachee();
+        AssigneClicAuxBoutons();
+        // Initialiser et mélanger les tableaux de références
+        InitialiserEtMelangerRefs();
+        //on affiche le panneau des régles
         PanneauRegle();
     }
 
@@ -154,81 +146,10 @@ public class GameManagerJarres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ignoreInput)
-        {
-            return;
-        }
-         if (!phaseQuestion){
-                // Vérifier si c'est le tour du joueur et si le jeu n'est pas fini
-            if (tourJoueur && !finDuJeu)
-            {
-                if (isSpaceEnabled)
-                {
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        GestionAppuiToucheEspace();
-                    }
-
-                    if (Input.GetKeyUp(KeyCode.Space))
-                    {
-                        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
-                        ignoreInput = true; // ignore les inputs 
-                        phaseQuestion = true;
-                        isSpaceEnabled = false;
-                        StartCoroutine(Wait());
-                    }
-                }
-            }
-         }       
-    }
-
-    private void GestionAppuiToucheEspace()
-    {
-        // Logique pour augmenter ou diminuer la force
-        if (aJuste) {
-            maxForce = 100;
-        } 
-        else {
-            maxForce = 50;
-        }
-
-        if (playerForce == maxForce) {
-            up = false; 
-        } 
-        else if (playerForce == 10) {
-            up = true;
-        }
-        
-        if (up){
-            playerForce += 1;
-        }
-        else {
-            playerForce -= 1;
-        }
-        Slider();
-    }
-   
-    public void Slider() {
-        forceMarteau.value = playerForce;
-    }
-
-    public void ResetGauge(){
-        playerForce = 10;
-        forceMarteau.value = 0;
-    }
-    IEnumerator Wait(){
-        yield return new WaitForSeconds(0f);
-        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
-        ignoreInput = true; // ignore les inputs 
-        aRelacher = true;
-        phaseQuestion = true;
-        isSpaceEnabled = false; //on desactive la touche espace
-        //Debug.Log("Espace 2= " + isSpaceEnabled);
-        TourDuJoueur();
         
     }
 
-
+    
     //affichage du panneau des règles
     private void PanneauRegle (){
         panelInstruction.SetActive(true);
@@ -245,36 +166,34 @@ public class GameManagerJarres : MonoBehaviour
         }
         else {
             panelInfoMJ.SetActive(true);
-            tourJoueur = false;
+           // tourJoueur = false;
+           tourJoueur = true;
             MJText.text = "Maitre du jeu : Je commence à frapper !";
             TourDuMj();
         } 
     }
 
+    
+
     //affichage de la question   
     private void AfficheLaQuestion(){
-        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
-        ignoreInput = true; // ignore les inputs 
         phaseQuestion = true;
         //Debug.Log("PhaseQ 2 = " + phaseQuestion);
         tourJoueur = false;
-        isSpaceEnabled = false;
-        //Debug.Log("Espace 3 = " + isSpaceEnabled);
-        ResetGauge();
         //choisi les questions de 1 à taille Json
         //comme on vise un tableau on est obligé de commencer à 0
         //et pour range on va jusqu'à taille Json
         do
         {
             numQuestions = UnityEngine.Random.Range(0, listQuestions.questions.Length);
-        } while (MainGameManager.Instance.questionsClouPosees.Contains(numQuestions));
+        } while (MainGameManager.Instance.questionsJarresPosees.Contains(numQuestions));
 
-        MainGameManager.Instance.questionsClouPosees.Add(numQuestions);
+        MainGameManager.Instance.questionsJarresPosees.Add(numQuestions);
         // Restreindre le nombre total de questions posées
-        if (MainGameManager.Instance.questionsClouPosees.Count >= listQuestions.questions.Length)
+        if (MainGameManager.Instance.questionsJarresPosees.Count >= listQuestions.questions.Length)
         {
             // Si toutes les questions ont été posées, réinitalisation de la liste
-            MainGameManager.Instance.questionsClouPosees.Clear();
+            MainGameManager.Instance.questionsJarresPosees.Clear();
         }
 
         //gestion des panneaux
@@ -323,195 +242,265 @@ public class GameManagerJarres : MonoBehaviour
 
     //retrait panneau Question
     private void RetraitPanneauQuestions(bool reponseJuste){
-        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
-        ignoreInput = true; // ignore les inputs 
+
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
             tourJoueur= true;
             phaseQuestion = false;
-            ignoreInput = false; // autorise les inputs
-            //Debug.Log("PhaseQ 3 = " + phaseQuestion);
-            MJText.text = "Maitre du jeu : Bien répondu, votre marteau est chargé à 100%";
-            isSpaceEnabled = true; //active la touche espace
-            //Debug.Log("Espace 4 = " + isSpaceEnabled);
+            MJText.text = "Maitre du jeu : Bien répondu, vous pouvez retourner deux cartes";
             TourDuJoueur();
         } 
         else {
             tourJoueur = false;
-            isSpaceEnabled = false; // désactive la touche espace
-          //  Debug.Log("Espace 5 = " + isSpaceEnabled);
             MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
             TourDuMj();
         }
         
     }
 
+    private void InitialiserCartesFaceCachee()
+    {
+        foreach (var carte in ligne1Cartes)
+        {
+            SetCardFace(carte, cardDos);
+        }
+        foreach (var carte in ligne2Cartes)
+        {
+            SetCardFace(carte, cardDos);
+        }
+    }
+    // Méthode pour changer l'image d'une carte
+    private void SetCardFace(Button carteButton, Sprite face)
+    {
+        carteButton.GetComponent<Image>().sprite = face;
+    }
+
+    // Méthode pour mélanger une liste de cartes
+    private void MelangerListe<T>(List<T> liste)
+    {
+        System.Random rnd = new System.Random();
+        int n = liste.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rnd.Next(n + 1);
+            T valeur = liste[k];
+            liste[k] = liste[n];
+            liste[n] = valeur;
+        }
+    }
+
+    private void InitialiserEtMelangerRefs()
+    {
+        // Créer et remplir les tableaux de références
+        ligne1Refs = new string[typesDeCartes.Length];
+        ligne2Refs = new string[typesDeCartes.Length];
+        for (int i = 0; i < typesDeCartes.Length; i++)
+        {
+            ligne1Refs[i] = typesDeCartes[i];
+            ligne2Refs[i] = typesDeCartes[i];
+        }
+
+        // Mélanger les tableaux
+        MelangerTableau(ligne1Refs);
+        MelangerTableau(ligne2Refs);
+    }
+
+    // Méthode pour mélanger un tableau
+    private void MelangerTableau<T>(T[] tableau)
+    {
+        System.Random rnd = new System.Random();
+        int n = tableau.Length;
+        while (n > 1)
+        {
+            n--;
+            int k = rnd.Next(n + 1);
+            T valeur = tableau[k];
+            tableau[k] = tableau[n];
+            tableau[n] = valeur;
+        }
+    }
+
+    private void AssigneClicAuxBoutons(){
+        // Assigner les méthodes de clic aux boutons
+        for (int i = 0; i < ligne1Cartes.Count; i++)
+        {
+            int index = i; // Important pour capturer la valeur actuelle de i dans la closure
+            ligne1Cartes[i].onClick.AddListener(() => OnCardClicked(index, true));
+        }
+        for (int i = 0; i < ligne2Cartes.Count; i++)
+        {
+            int index = i;
+            ligne2Cartes[i].onClick.AddListener(() => OnCardClicked(index, false));
+        }
+    }
+    private void OnCardClicked(int index, bool isLigne1)
+    {
+        // Si c'est le tour du joueur et si une carte n'a pas déjà été sélectionnée dans la ligne
+        if (tourJoueur && ((isLigne1 && carteSelectionneeLigne1 == null) || (!isLigne1 && carteSelectionneeLigne2 == null)))
+        {
+            Button carteCliquee = isLigne1 ? ligne1Cartes[index] : ligne2Cartes[index];
+            string refCarte = isLigne1 ? ligne1Refs[index] : ligne2Refs[index];
+            Sprite nouvelleImage = TrouverSprite(refCarte);
+
+            carteCliquee.GetComponent<Image>().sprite = nouvelleImage;
+
+            if (isLigne1)
+            {
+                carteSelectionneeLigne1 = carteCliquee;
+            }
+            else
+            {
+                carteSelectionneeLigne2 = carteCliquee;
+            }
+
+            VerifierSiDeuxCartesSelectionnees();
+        }
+        else {
+            Debug.Log("erreur");
+            Debug.Log(tourJoueur);
+            Debug.Log(isLigne1);
+        }
+    }
+    private void VerifierSiDeuxCartesSelectionnees()
+    {
+        if (carteSelectionneeLigne1 != null && carteSelectionneeLigne2 != null)
+        {
+            int indexCarte1 = ligne1Cartes.IndexOf(carteSelectionneeLigne1);
+            int indexCarte2 = ligne2Cartes.IndexOf(carteSelectionneeLigne2);
+
+            if (ligne1Refs[indexCarte1] == ligne2Refs[indexCarte2])
+            {
+                // Les cartes forment une paire, les laisser retournées et désactiver le clic
+                carteSelectionneeLigne1.interactable = false;
+                carteSelectionneeLigne2.interactable = false;
+
+                // Réinitialiser les cartes sélectionnées pour le prochain tour
+                carteSelectionneeLigne1 = null;
+                carteSelectionneeLigne2 = null;
+                Invoke("AfficheLaQuestion",2f);
+            }
+            else
+            {
+                // Les cartes ne forment pas une paire, planifier pour les retourner face cachée
+                StartCoroutine(RetournerCartes());
+            }
+        }
+    }
+
+    private IEnumerator RetournerCartes()
+    {
+        // Attendre un court délai avant de retourner les cartes
+        yield return new WaitForSeconds(2);
+
+        // Retourner les cartes face cachée et les rendre à nouveau interactives
+        carteSelectionneeLigne1.GetComponent<Image>().sprite = cardDos;
+        carteSelectionneeLigne2.GetComponent<Image>().sprite = cardDos;
+
+        carteSelectionneeLigne1.interactable = true;
+        carteSelectionneeLigne2.interactable = true;
+
+        // Réinitialiser les cartes sélectionnées
+        carteSelectionneeLigne1 = null;
+        carteSelectionneeLigne2 = null;
+
+        //affiche la prochaine question
+        Invoke("AfficheLaQuestion",1f);
+    }
+
+    private Sprite TrouverSprite(string refCarte)
+    {
+        switch (refCarte)
+        {
+            case "chat": return cardChat;
+            case "etoile": return cardEtoile;
+            case "nuage": return cardNuage;
+            case "planete": return cardPlanete;
+            case "soleil": return cardSoleil;
+            default: return cardDos; // Ou gérer une erreur
+        }
+    }
+
+
+
 
 
     private void TourDuJoueur(){
+        tourJoueur = true;
         if(tourJoueur) {
-            buttonTextMarteau.SetActive(true);
-            ////debug.Log("Debut tour joueur");
-            //MJText.text = "Maître du jeu : A vous de jouer";
-            //ResetGauge();
-            if(aRelacher){
-                aRelacher = false;
-                isSpaceEnabled = false;//on desactive la touche espace
-                //Debug.Log("Espace 6 = " + isSpaceEnabled);
-                Invoke("MoveMarteau",1f);
-            }
+
         }  
     }
 
     private void TourDuMj(){
-        if (!tourJoueur) {
-            buttonTextMarteau.SetActive(false);
-            ////debug.Log("Debut tour Mj");
-            //MJText.text = "Maître du jeu : A mon tour de jouer";
-            //ResetGauge();
-            Invoke("MoveMarteau",1f);
-        }        
+        tourJoueur = false;
+
+        int carteLigne1Index = ChoisirCarteIA(ligne1Refs, ligne1Cartes);
+        int carteLigne2Index = ChoisirCarteIA(ligne2Refs, ligne2Cartes);
+
+        // L'IA retourne les cartes
+        RetournerCarteIA(carteLigne1Index, true);
+        RetournerCarteIA(carteLigne2Index, false);
+
+        // Vérifier si les cartes forment une paire
+        VerifierSiDeuxCartesSelectionnees();
     }
-
-    private void MoveMarteau(){
-        phaseQuestion = true;
-        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
-        ignoreInput = true; // ignore les inputs 
-        //Debug.Log("PhaseQ 4 = " + phaseQuestion);
-        if (!isMoving)
-        {
-            isMoving = true;
-            StartCoroutine(MoveMarteauCoroutine());
-        }
-    }
-
-    private void MoveClou (float currentHP){
-        // Assurez-vous que votre objet clou existe
-    if (clou != null)
-    {   float minY = 0.926f;
-        float maxY = 1.498f;
-        float maxHP = 800f;
-        // Calculez la position Y en utilisant une règle de trois
-        float normalizedY = Mathf.Lerp(minY, maxY, currentHP / maxHP);
-
-        // Récupérez la position actuelle du clou
-        Vector3 newPosition = clou.transform.position;
-
-        //si le clou dépasse la zone cible alors on le met au minY
-        if (currentHP <= 0){
-            normalizedY = minY;
-        }
-        // Modifiez la position Y avec la valeur souhaitée
-        newPosition.y = normalizedY;
-
-        // Appliquez la nouvelle position au clou
-        clou.transform.position = newPosition;
-        
-        if (vieDuClou <=0) {
-            vieDuClou = 0;
-        }
-        //affichage de la vie du clou
-        textVieClou.text = vieDuClou.ToString();
-    }
-    else
+    private int ChoisirCarteIA(string[] refs, List<Button> cartes)
     {
-        ////debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
-    }
+        // Votre logique pour choisir une carte par l'IA...
+        // Par exemple, vérifier la mémoire pour une paire potentielle ou choisir au hasard
+
+        // Exemple simplifié : choix aléatoire
+        int index;
+        do
+        {
+            index = UnityEngine.Random.Range(0, cartes.Count);
+        } while (!cartes[index].interactable); // S'assurer que la carte n'est pas déjà choisie
+
+        // Mettre à jour la mémoire de l'IA
+        if (!memoireIA.ContainsKey(index))
+            memoireIA.Add(index, refs[index]);
+
+        return index;
     }
 
-    private IEnumerator MoveMarteauCoroutine(){
-        int mjForce;
-        
-            //si on a faux alors le mj tapera entre 50 et 101
-            mjForce = UnityEngine.Random.Range(50,101);
-            isSpaceEnabled = false; //on desactive la touche espace 
-            //Debug.Log("Espace = 7 " + isSpaceEnabled);
-            //faire tourner le marteau du player
-            if (tourJoueur){
-                //on attribue la valeur de la Force à Z
-                while (currentEulerAnglesPlayer.z < 70f){
-                    z = 0.05f * playerForce;
-                    currentEulerAnglesPlayer += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauPlayer.localEulerAngles = currentEulerAnglesPlayer;
-                    yield return null; //Attendre la prochaine trame
-                }
-                //on descend la vie du clou 
-                vieDuClou -= playerForce; 
-                MoveClou(vieDuClou);
-            }
-            //faire tourner le marteau du Mj
-            else {
-                while (currentEulerAnglesMj.z > -70f ){
-                    z = -0.05f * mjForce;
-                    currentEulerAnglesMj += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauMj.localEulerAngles = currentEulerAnglesMj;
-                    yield return null; //Attendre la prochaine trame
-                }
-                //on descend la vie du clou
-                vieDuClou -= mjForce; 
-                MoveClou(vieDuClou);
-            }
-        //quand c fini replace les marteaux
-        //faire remonter le marteau du player
-            if (tourJoueur){
-                while (currentEulerAnglesPlayer.z > 0f){
-                    z = -0.05f * playerForce;
-                    currentEulerAnglesPlayer += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauPlayer.localEulerAngles = currentEulerAnglesPlayer;
-                    yield return null; //Attendre la prochaine trame
-                }
-                tourJoueur = false;
-            }
-            //faire remonter le marteau du Mj
-            else {
-                while (currentEulerAnglesMj.z < -0f ){
-                    z = 0.05f * mjForce;
-                    currentEulerAnglesMj += new Vector3(0,0,z) * Time.deltaTime * rotationSpeed;
-                    pivotPointMarteauMj.localEulerAngles = currentEulerAnglesMj;
-                    yield return null ; //Attendre la prochaine trame
-                }
-            }
-            //on attend 2 secondes la fin de la coroutine 
-            isSpaceEnabled = false; //on desactive la touche espace 
-            //Debug.Log("Espace  8 = " + isSpaceEnabled);
-            yield return new WaitForSeconds(1f); 
-            isMoving = false;
-            isSpaceEnabled = false; //on desactive la touche espace 
-            //Debug.Log("Espace 9 = " + isSpaceEnabled);
-            ////debug.Log(isMoving);
-            ////debug.Log("Tour joueur : " + tourJoueur);
-           
-            
-            if (vieDuClou <= 0){
-                FinDuJeu();
-            } 
-            else {
-                //On affiche la question suivante 
-                tourJoueur = false;
-                Invoke("AfficheLaQuestion",1f);
-            }
+    private void RetournerCarteIA(int index, bool isLigne1)
+    {
+        Button carte = isLigne1 ? ligne1Cartes[index] : ligne2Cartes[index];
+        string refCarte = isLigne1 ? ligne1Refs[index] : ligne2Refs[index];
+        Sprite nouvelleImage = TrouverSprite(refCarte);
+
+        carte.GetComponent<Image>().sprite = nouvelleImage;
+        carte.interactable = false; // Désactiver le bouton pour éviter de cliquer dessus
+
+        if (isLigne1)
+            carteSelectionneeLigne1 = carte;
+        else
+            carteSelectionneeLigne2 = carte;
     }
+    
+
+    
     
     //fin du jeu 
     private void FinDuJeu(){
         ////debug.Log("GameOver");
-        buttonTextMarteau.SetActive(false);
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
-            //envoi vers le Main Game Manager le scoreClou 
-                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
+            //envoi vers le Main Game Manager le scoreJarres
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoJarres+= 1);
         }
         else {
             MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
         }
-        MainGameManager.Instance.nbPartieClouJoue += 1;
+        MainGameManager.Instance.nbPartieJarresJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieClouJoue == 3 ){
-            MainGameManager.Instance.gameClouFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleClous", 2f));
+        if(MainGameManager.Instance.nbPartieJarresJoue == 5 ){
+            MainGameManager.Instance.gameJarresFait = true;
+            StartCoroutine(LoadSceneAfterDelay("SalleJarres", 2f));
         }
         else
         {

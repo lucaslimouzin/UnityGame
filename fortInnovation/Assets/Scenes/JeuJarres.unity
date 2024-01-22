@@ -687,6 +687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 260763174}
+  - component: {fileID: 260763175}
   m_Layer: 0
   m_Name: GameManagerJarres
   m_TagString: Untagged
@@ -709,6 +710,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &260763175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260763173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8eb61e8e2d83845a70982492e6fa72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInstruction: {fileID: 1405357918}
+  panelInfoMJ: {fileID: 712702743}
+  MJText: {fileID: 458034346}
+  isMoving: 0
+  panelQuestions: {fileID: 45605386}
+  questionText: {fileID: 1270068124}
+  propositionAtext: {fileID: 1503796709}
+  propositionBtext: {fileID: 955522955}
+  propositionCtext: {fileID: 1132178601}
+  buttonA: {fileID: 1129382459}
+  buttonB: {fileID: 410125084}
+  buttonC: {fileID: 1395807357}
+  ligne1Cartes:
+  - {fileID: 255725453}
+  - {fileID: 1299513857}
+  - {fileID: 1548194084}
+  - {fileID: 2008744788}
+  - {fileID: 528203334}
+  ligne2Cartes:
+  - {fileID: 1401974821}
+  - {fileID: 370840408}
+  - {fileID: 1179216797}
+  - {fileID: 1980435888}
+  - {fileID: 1044344346}
+  cardDos: {fileID: 21300000, guid: 5b4d6d490143e554881d57afa28603a5, type: 3}
+  cardChat: {fileID: 21300000, guid: 2f59c9b548ffccf4c9d2f1d8bf834bef, type: 3}
+  cardEtoile: {fileID: 21300000, guid: 285c821ac69032b4dba6b07d4e4fd87f, type: 3}
+  cardNuage: {fileID: 21300000, guid: 5959184d1114ea842aab4701172faf78, type: 3}
+  cardPlanete: {fileID: 21300000, guid: e15176d670e9c324aa88c1247858b3c0, type: 3}
+  cardSoleil: {fileID: 21300000, guid: e287278523451064c954b980188ff039, type: 3}
 --- !u!1 &370840406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1669,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1663187150, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1663187150, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
       propertyPath: thirdPersonInputs
       value: 
@@ -4233,8 +4280,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManagerEnigmes, Assembly-CSharp
+      - m_Target: {fileID: 260763175}
+        m_TargetAssemblyTypeName: GameManagerJarres, Assembly-CSharp
         m_MethodName: RetraitPanneauRegle
         m_Mode: 1
         m_Arguments:
