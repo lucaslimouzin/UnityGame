@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace StarterAssets
@@ -10,21 +11,25 @@ namespace StarterAssets
 
         private void Start()
         {
-            InitializeStarterAssetsInputs();
+            StartCoroutine(InitializeStarterAssetsInputs());
         }
 
-        private void InitializeStarterAssetsInputs()
+        private IEnumerator InitializeStarterAssetsInputs()
         {
-            // Rechercher un GameObject avec le tag "Player"
-            GameObject player = GameObject.FindWithTag("Player");
-            if (player != null)
+            // Continuer à chercher jusqu'à ce que le player soit trouvé
+            while (starterAssetsInputs == null)
             {
-                // Obtenir le composant StarterAssetsInputs de l'objet trouvé
-                starterAssetsInputs = player.GetComponent<StarterAssetsInputs>();
-            }
-            else
-            {
-                Debug.LogWarning("GameObject avec le tag 'Player' n'a pas été trouvé dans la scène");
+                GameObject player = GameObject.FindWithTag("Player");
+                if (player != null)
+                {
+                    starterAssetsInputs = player.GetComponent<StarterAssetsInputs>();
+                    break; // Sortir de la boucle si le player est trouvé
+                }
+                else
+                {
+                    Debug.LogWarning("GameObject avec le tag 'Player' n'a pas été trouvé dans la scène. Réessai...");
+                    yield return new WaitForSeconds(1); // Attendre 1 seconde avant de réessayer
+                }
             }
         }
         public void VirtualMoveInput(Vector2 virtualMoveDirection)
