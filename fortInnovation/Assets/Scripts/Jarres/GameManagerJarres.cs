@@ -433,37 +433,77 @@ public class GameManagerJarres : MonoBehaviour
         }  
     }
 
-    private void TourDuMj(){
-        tourJoueur = false;
-
-        int carteLigne1Index = ChoisirCarteIA(ligne1Refs, ligne1Cartes);
-        int carteLigne2Index = ChoisirCarteIA(ligne2Refs, ligne2Cartes);
-
-        // L'IA retourne les cartes
-        RetournerCarteIA(carteLigne1Index, true);
-        RetournerCarteIA(carteLigne2Index, false);
-
-        // Vérifier si les cartes forment une paire
-        VerifierSiDeuxCartesSelectionnees();
-    }
-    private int ChoisirCarteIA(string[] refs, List<Button> cartes)
+    private void TourDuMj()
     {
-        // Votre logique pour choisir une carte par l'IA...
-        // Par exemple, vérifier la mémoire pour une paire potentielle ou choisir au hasard
+        tourJoueur = false;
+        StartCoroutine(RetournerCartesIACoroutine());
+    }
+    private int ChoisirCarteIA(string[] refs, List<Button> cartes, bool premiereCarte)
+    {
+        int indexPairTrouve = TrouverPairConnu(refs, cartes, premiereCarte);
 
-        // Exemple simplifié : choix aléatoire
+        if (indexPairTrouve != -1)
+        {
+            return indexPairTrouve; // Une paire connue a été trouvée
+        }
+
+        // Choix aléatoire si aucune paire connue
         int index;
         do
         {
             index = UnityEngine.Random.Range(0, cartes.Count);
-        } while (!cartes[index].interactable); // S'assurer que la carte n'est pas déjà choisie
-
-        // Mettre à jour la mémoire de l'IA
-        if (!memoireIA.ContainsKey(index))
-            memoireIA.Add(index, refs[index]);
+        } while (!cartes[index].interactable);
 
         return index;
     }
+
+    private int TrouverPairConnu(string[] refs, List<Button> cartes, bool premiereCarte)
+    {
+        foreach (var pair in memoireIA)
+        {
+            if (cartes[pair.Key].interactable && (premiereCarte || refs[pair.Key] != refs[ligne1Cartes.IndexOf(carteSelectionneeLigne1)]))
+            {
+                // Vérifier si une paire correspondante existe
+                for (int i = 0; i < refs.Length; i++)
+                {
+                    if (i != pair.Key && refs[i] == pair.Value && cartes[i].interactable)
+                    {
+                        return i; // Retourner l'index de la paire correspondante
+                    }
+                }
+            }
+        }
+        return -1; // Aucune paire connue trouvée
+    }
+
+    public void MettreAJourMemoireIA(int index, string refCarte)
+    {
+        if (!memoireIA.ContainsKey(index))
+        {
+            memoireIA.Add(index, refCarte);
+        }
+    }
+
+    private IEnumerator RetournerCartesIACoroutine()
+    {
+        // Choix de la première carte par l'IA
+        int carteLigne1Index = ChoisirCarteIA(ligne1Refs, ligne1Cartes, true);
+        
+        // Retourner la première carte et attendre
+        RetournerCarteIA(carteLigne1Index, true);
+        yield return new WaitForSeconds(1);  // Délai entre les retournements
+
+        // Choix de la deuxième carte par l'IA
+        int carteLigne2Index = ChoisirCarteIA(ligne2Refs, ligne2Cartes, false);
+
+        // Retourner la deuxième carte
+        RetournerCarteIA(carteLigne2Index, false);
+        yield return new WaitForSeconds(1);  // Délai avant de vérifier les paires
+
+        // Vérifier si les cartes forment une paire
+        VerifierSiDeuxCartesSelectionnees();
+    }
+
 
     private void RetournerCarteIA(int index, bool isLigne1)
     {
