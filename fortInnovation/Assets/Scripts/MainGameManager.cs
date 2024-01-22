@@ -49,6 +49,9 @@ public class MainGameManager : MonoBehaviour
     //variable du choix du personnage
     public int selectedCharacter;
 
+    //variable activation panelUiMobile;
+    public bool panelUiMobile =false;
+
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);
     public static event ScoreUpdated OnScoreUpdated;
@@ -119,5 +122,9 @@ public class MainGameManager : MonoBehaviour
 
         // Déclencher l'événement OnScoreUpdated
         OnScoreUpdated?.Invoke(scoreRecoBaton, scoreRecoClou, scoreRecobassin, scoreRecoEnigmes);
+    }
+
+    public void ActivationUiMobile(){
+        panelUiMobile = !panelUiMobile; // Basculer l'état de panelUiMobile
     }
 }

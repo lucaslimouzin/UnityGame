@@ -11,9 +11,16 @@ public class MjActionInstructions : MonoBehaviour
     public GameObject panelRoom;
     public TextMeshProUGUI textMjRoom;
     public GameObject chest;
+    public GameObject panelUi_Move;
+    public GameObject panelUi_Jump;
     // Start is called before the first frame update
     void Start()
     {   
+        //activation de l'ui mobile si vrai 
+        if (MainGameManager.Instance.panelUiMobile){
+            panelUi_Jump.SetActive(true);
+            panelUi_Move.SetActive(true);
+        }
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         #if !UNITY_EDITOR && UNITY_WEBGL
