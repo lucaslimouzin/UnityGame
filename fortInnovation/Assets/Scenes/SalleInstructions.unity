@@ -3106,6 +3106,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3455913231585214713, guid: 53a1891a01ef9a94fb64dae7da91dae4,
         type: 3}
+      propertyPath: panelUi_Jump
+      value: 
+      objectReference: {fileID: 1998119611}
+    - target: {fileID: 3455913231585214713, guid: 53a1891a01ef9a94fb64dae7da91dae4,
+        type: 3}
+      propertyPath: panelUi_Move
+      value: 
+      objectReference: {fileID: 1493265654}
+    - target: {fileID: 3455913231585214713, guid: 53a1891a01ef9a94fb64dae7da91dae4,
+        type: 3}
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1781722421}

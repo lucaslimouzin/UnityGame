@@ -8,7 +8,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 //pour récupérer en réseau le fichier Json
 using UnityEngine.Networking;
-public class GameManagerMarteau : MonoBehaviour
+public class GameManagerJarres : MonoBehaviour
 {
     public GameObject clou; 
     public GameObject marteauPlayer;

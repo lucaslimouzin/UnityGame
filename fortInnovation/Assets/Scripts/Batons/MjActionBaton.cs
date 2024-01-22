@@ -14,7 +14,9 @@ public class MjActionBaton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         #if !UNITY_EDITOR && UNITY_WEBGL
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
@@ -60,8 +62,8 @@ public class MjActionBaton : MonoBehaviour
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
                     //Set Cursor to not be visible
-                    Cursor.visible = false;
-                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }   
             }
             
@@ -72,8 +74,8 @@ public class MjActionBaton : MonoBehaviour
         if (panelMjInfo.activeSelf){
             panelReco.SetActive(false);
             //Set Cursor to not be visible
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }   
     }
 

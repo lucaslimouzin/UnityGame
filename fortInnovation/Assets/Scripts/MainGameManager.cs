@@ -9,6 +9,13 @@ public class MainGameManager : MonoBehaviour
     private TextMeshProUGUI scoreTextReco;
     public int scoreReco = 0;
 
+    // variables pour jeu des Jarres
+    public int scoreRecoJarres = 0;
+    public int nbPartieJarresJoue = 0;
+    public int nbPartieJarres = 5;
+    public bool gameJarresFait = false;
+    public List<int> questionsJarresPosees = new List<int>();
+
     // variables pour jeu du baton
     public int scoreRecoBaton = 0;
     public int nbPartieBatonJoue = 0;
@@ -53,7 +60,7 @@ public class MainGameManager : MonoBehaviour
     public bool panelUiMobile =false;
 
     // Définir un événement pour signaler les mises à jour du score
-    public delegate void ScoreUpdated(int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);
+    public delegate void ScoreUpdated(int newScoreJarres, int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);
     public static event ScoreUpdated OnScoreUpdated;
 
     private void Awake()
@@ -71,6 +78,8 @@ public class MainGameManager : MonoBehaviour
     {
         checkFaitDesMj = true;
         checkFaitDesPlayer = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         // Trouver le GameObject avec le nom "scoreTextReco" au démarrage
         FindScoreTextObject();
         UpdateScoreText();
@@ -121,7 +130,7 @@ public class MainGameManager : MonoBehaviour
         //scoreReco = newScore;
 
         // Déclencher l'événement OnScoreUpdated
-        OnScoreUpdated?.Invoke(scoreRecoBaton, scoreRecoClou, scoreRecobassin, scoreRecoEnigmes);
+        OnScoreUpdated?.Invoke(scoreRecoJarres,scoreRecoBaton, scoreRecoClou, scoreRecobassin, scoreRecoEnigmes);
     }
 
     public void ActivationUiMobile(){

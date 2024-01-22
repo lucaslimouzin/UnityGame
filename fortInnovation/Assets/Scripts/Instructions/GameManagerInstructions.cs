@@ -77,7 +77,7 @@ public class GameManagerInstructions : MonoBehaviour
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    private void HandleScoreUpdated(int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
+    private void HandleScoreUpdated(int scoreJarres, int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
     {
         // Faire quelque chose avec le nouveau score
         MainGameManager.Instance.scoreReco = scoreBaton + scoreClou + scoreBassin + scoreEnigmes; 

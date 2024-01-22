@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class chestEnigmes : MonoBehaviour
+public class chestJarres : MonoBehaviour
 {
     public GameObject panelReco;
     public GameObject panelReco1;
@@ -16,7 +16,7 @@ public class chestEnigmes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ActivateButton(MainGameManager.Instance.scoreRecoEnigmes);
+        ActivateButton(MainGameManager.Instance.scoreRecoClou);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }

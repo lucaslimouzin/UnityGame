@@ -16,8 +16,11 @@ public class MjActionInstructions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         //activation de l'ui mobile si vrai 
         if (MainGameManager.Instance.panelUiMobile){
+            Cursor.visible = true;
             panelUi_Jump.SetActive(true);
             panelUi_Move.SetActive(true);
         }
@@ -56,8 +59,8 @@ public class MjActionInstructions : MonoBehaviour
             if (panelMjInfo.activeSelf){
                 panelMjInfo.SetActive(false);
                 //Set Cursor to not be visible
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             }   
         }
     }
@@ -66,8 +69,8 @@ public class MjActionInstructions : MonoBehaviour
         if (panelMjInfo.activeSelf){
             panelReco.SetActive(false);
             //Set Cursor to not be visible
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }   
     }
 

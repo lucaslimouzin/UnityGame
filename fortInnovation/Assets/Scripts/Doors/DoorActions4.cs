@@ -13,7 +13,9 @@ public class DoorActions4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.Locked;
         #if !UNITY_EDITOR && UNITY_WEBGL
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
@@ -34,8 +36,8 @@ public class DoorActions4 : MonoBehaviour
             if (panelDoor.activeSelf){
                 panelDoor.SetActive(false);
                 //Set Cursor to not be visible
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
@@ -43,8 +45,8 @@ public class DoorActions4 : MonoBehaviour
      public void PlayGameBaton() {
         panelDoor.SetActive(false);
         //Set Cursor to not be visible
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         //mettre un delai
         StartCoroutine(DeplacerGameObject(objetADeplacer));
         Invoke("ChangerDeScene", 2f);

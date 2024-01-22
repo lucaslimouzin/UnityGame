@@ -17,6 +17,8 @@ public class chestBaton : MonoBehaviour
     void Start()
     {
         ActivateButton(MainGameManager.Instance.scoreRecoBaton);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class chestBaton : MonoBehaviour
                 panelReco.SetActive(true);
                 //Set Cursor to not be visible
                 Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None; 
+                Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -38,8 +40,8 @@ public class chestBaton : MonoBehaviour
         if (panelReco.activeSelf){
             panelReco.SetActive(false);
             //Set Cursor to not be visible
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

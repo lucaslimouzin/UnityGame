@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MjActionClou : MonoBehaviour
+public class MjActionJarres : MonoBehaviour
 {
     public GameObject panelMjInfo;
     public GameObject panelReco;
@@ -80,7 +80,7 @@ public class MjActionClou : MonoBehaviour
     }
 
      public void PlayGame() {
-        MainGameManager.Instance.jeuEnCours = "JeuClous";
+        MainGameManager.Instance.jeuEnCours = "JeuJarres";
         SceneManager.LoadScene("SalleDes");
     }
 

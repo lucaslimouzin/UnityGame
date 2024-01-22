@@ -14,6 +14,9 @@ public class DesGameManager : MonoBehaviour
     panelQuiCommence.SetActive(false);
     panelTirageDesDes.SetActive(true);
     switch (MainGameManager.Instance.jeuEnCours){
+        case "JeuJarres":
+            textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieJarresJoue.ToString() + "/" + MainGameManager.Instance.nbPartieJarres.ToString();
+            break;
         case "JeuBatons":
             textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBatonJoue.ToString() + "/" + MainGameManager.Instance.nbPartieBaton.ToString();
             break;
@@ -24,7 +27,7 @@ public class DesGameManager : MonoBehaviour
             textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBassinJoue.ToString() + "/" + MainGameManager.Instance.nbPartieBassin.ToString();
             break;
         case "JeuEnigmes":
-            textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieBassinJoue.ToString() + "/" + MainGameManager.Instance.nbPartieEnigmes.ToString();
+            textNbParties.text = "Nombre de parties : " + MainGameManager.Instance.nbPartieEnigmesJoue.ToString() + "/" + MainGameManager.Instance.nbPartieEnigmes.ToString();
             break;
     }
         
