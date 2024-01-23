@@ -48,6 +48,14 @@ public class GameManagerJarres : MonoBehaviour
     private Button carteSelectionneeLigne1;
     private Button carteSelectionneeLigne2;
     private Dictionary<int, string> memoireIA = new Dictionary<int, string>();
+    private HashSet<int> cartesVuesNonAppariees = new HashSet<int>();
+    private int premiereCarteIndexIA = -1; // Ajoutez cette variable pour stocker l'index de la première carte choisie par l'IA
+    private int toursIA = 0;
+    public TextMeshProUGUI scorePlayerText;
+    public TextMeshProUGUI scoreMjText;
+    public TextMeshProUGUI trueWrongText;
+    public int scoreMj = 0;
+    public int scorePlayer = 0;
 
     [System.Serializable]
     public class QuestionData
@@ -95,6 +103,10 @@ public class GameManagerJarres : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        toursIA = 0;
+        scoreMj = 0;
+        scorePlayer = 0;
+        trueWrongText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 
         //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
@@ -168,7 +180,7 @@ public class GameManagerJarres : MonoBehaviour
             panelInfoMJ.SetActive(true);
            // tourJoueur = false;
            tourJoueur = true;
-            MJText.text = "Maitre du jeu : Je commence à frapper !";
+            MJText.text = "Maitre du jeu : Je commence à jouer !";
             TourDuMj();
         } 
     }
@@ -365,11 +377,11 @@ public class GameManagerJarres : MonoBehaviour
     }
     private void VerifierSiDeuxCartesSelectionnees()
     {
+
         if (carteSelectionneeLigne1 != null && carteSelectionneeLigne2 != null)
         {
             int indexCarte1 = ligne1Cartes.IndexOf(carteSelectionneeLigne1);
             int indexCarte2 = ligne2Cartes.IndexOf(carteSelectionneeLigne2);
-
             if (ligne1Refs[indexCarte1] == ligne2Refs[indexCarte2])
             {
                 // Les cartes forment une paire, les laisser retournées et désactiver le clic
@@ -379,15 +391,56 @@ public class GameManagerJarres : MonoBehaviour
                 // Réinitialiser les cartes sélectionnées pour le prochain tour
                 carteSelectionneeLigne1 = null;
                 carteSelectionneeLigne2 = null;
-                Invoke("AfficheLaQuestion",2f);
+                //attribution des points de score 
+                StartCoroutine(ShowAndHideTrueText());
+                if(tourJoueur){
+                    scorePlayer++;
+                    scorePlayerText.text = scorePlayer.ToString() + "/3 paires Joueur";
+                }
+                else {
+                    scoreMj++;
+                    scoreMjText.text = scoreMj.ToString() + "/3 paires MJ";
+                }
+                if (scorePlayer == 3 || scoreMj ==3) {
+                    //fin du jeu
+                    FinDuJeu();
+                }else {
+                    Invoke("AfficheLaQuestion",1.5f);
+                }
+                
             }
             else
             {
+                // Les cartes ne forment pas une paire
+                // Ajouter les index des cartes aux cartes vues non appariées
+                StartCoroutine(ShowAndHideWrongText());
+                cartesVuesNonAppariees.Add(indexCarte1);
+                cartesVuesNonAppariees.Add(indexCarte2);
                 // Les cartes ne forment pas une paire, planifier pour les retourner face cachée
                 StartCoroutine(RetournerCartes());
             }
         }
     }
+
+    IEnumerator ShowAndHideTrueText()
+    {
+        trueWrongText.gameObject.SetActive(true); // Affiche le texte
+        trueWrongText.text = "paire trouvée";
+        // Change la couleur du texte en vert
+        trueWrongText.color = Color.green;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+        trueWrongText.gameObject.SetActive(false); // Masque le texte
+    }
+    IEnumerator ShowAndHideWrongText()
+    {
+        trueWrongText.gameObject.SetActive(true); // Affiche le texte
+        trueWrongText.text = "paire non trouvée";
+        // Change la couleur du texte en vert
+        trueWrongText.color = Color.red;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+        trueWrongText.gameObject.SetActive(false); // Masque le texte
+    }
+
 
     private IEnumerator RetournerCartes()
     {
@@ -438,71 +491,66 @@ public class GameManagerJarres : MonoBehaviour
         tourJoueur = false;
         StartCoroutine(RetournerCartesIACoroutine());
     }
-    private int ChoisirCarteIA(string[] refs, List<Button> cartes, bool premiereCarte)
+
+    private int ChoisirCarteIA(List<Button> cartes)
+{
+    int index;
+
+    // Choisissez une carte aléatoirement parmi les cartes interactables
+    List<Button> cartesInteractables = cartes.FindAll(carte => carte.interactable);
+
+    if (cartesInteractables.Count > 0)
     {
-        int indexPairTrouve = TrouverPairConnu(refs, cartes, premiereCarte);
-
-        if (indexPairTrouve != -1)
-        {
-            return indexPairTrouve; // Une paire connue a été trouvée
-        }
-
-        // Choix aléatoire si aucune paire connue
-        int index;
-        do
-        {
-            index = UnityEngine.Random.Range(0, cartes.Count);
-        } while (!cartes[index].interactable);
-
-        return index;
+        index = UnityEngine.Random.Range(0, cartesInteractables.Count);
+        return cartes.IndexOf(cartesInteractables[index]);
     }
-
-    private int TrouverPairConnu(string[] refs, List<Button> cartes, bool premiereCarte)
+    else
     {
-        foreach (var pair in memoireIA)
-        {
-            if (cartes[pair.Key].interactable && (premiereCarte || refs[pair.Key] != refs[ligne1Cartes.IndexOf(carteSelectionneeLigne1)]))
-            {
-                // Vérifier si une paire correspondante existe
-                for (int i = 0; i < refs.Length; i++)
-                {
-                    if (i != pair.Key && refs[i] == pair.Value && cartes[i].interactable)
-                    {
-                        return i; // Retourner l'index de la paire correspondante
-                    }
-                }
-            }
-        }
-        return -1; // Aucune paire connue trouvée
+        // Si aucune carte n'est interactable, retournez -1 pour indiquer qu'aucune carte valide n'a été trouvée
+        return -1;
     }
+}
 
-    public void MettreAJourMemoireIA(int index, string refCarte)
-    {
-        if (!memoireIA.ContainsKey(index))
-        {
-            memoireIA.Add(index, refCarte);
-        }
-    }
+
+
+
+
+
 
     private IEnumerator RetournerCartesIACoroutine()
     {
-        // Choix de la première carte par l'IA
-        int carteLigne1Index = ChoisirCarteIA(ligne1Refs, ligne1Cartes, true);
-        
-        // Retourner la première carte et attendre
+        int carteLigne1Index = ChoisirCarteIA(ligne1Cartes);
         RetournerCarteIA(carteLigne1Index, true);
-        yield return new WaitForSeconds(1);  // Délai entre les retournements
+        yield return new WaitForSeconds(1);
 
-        // Choix de la deuxième carte par l'IA
-        int carteLigne2Index = ChoisirCarteIA(ligne2Refs, ligne2Cartes, false);
+        // Initialiser carteSelectionneeLigne1 avec la carte choisie par l'IA
+        carteSelectionneeLigne1 = ligne1Cartes[carteLigne1Index];
 
-        // Retourner la deuxième carte
-        RetournerCarteIA(carteLigne2Index, false);
-        yield return new WaitForSeconds(1);  // Délai avant de vérifier les paires
+        // Trouvez la référence de la deuxième carte directement dans ligne2Refs
+        string refDeuxiemeCarte = ligne1Refs[carteLigne1Index];
+        int carteLigne2Index = -1;
 
-        // Vérifier si les cartes forment une paire
+        for (int i = 0; i < ligne2Refs.Length; i++)
+        {
+            if (ligne2Refs[i] == refDeuxiemeCarte && ligne2Cartes[i].interactable)
+            {
+                carteLigne2Index = i;
+                break;
+            }
+        }
+
+        if (carteLigne2Index != -1)
+        {
+            RetournerCarteIA(carteLigne2Index, false);
+            // Initialiser carteSelectionneeLigne2 avec la deuxième carte choisie par l'IA
+            carteSelectionneeLigne2 = ligne2Cartes[carteLigne2Index];
+        }
+
+        yield return new WaitForSeconds(1);
+
         VerifierSiDeuxCartesSelectionnees();
     }
+
 
 
     private void RetournerCarteIA(int index, bool isLigne1)
@@ -512,17 +560,10 @@ public class GameManagerJarres : MonoBehaviour
         Sprite nouvelleImage = TrouverSprite(refCarte);
 
         carte.GetComponent<Image>().sprite = nouvelleImage;
-        carte.interactable = false; // Désactiver le bouton pour éviter de cliquer dessus
-
-        if (isLigne1)
-            carteSelectionneeLigne1 = carte;
-        else
-            carteSelectionneeLigne2 = carte;
+        carte.interactable = false;
     }
-    
 
-    
-    
+
     //fin du jeu 
     private void FinDuJeu(){
         ////debug.Log("GameOver");
