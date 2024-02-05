@@ -37,6 +37,7 @@ public class GameManagerMarteau : MonoBehaviour
     private bool ignoreInput = false;
     private bool finDuJeu = false;
     public bool isMoving = false;
+    private bool buttonPressed = false;
 
    //variables pour les questions//////////////////////
    // URL du fichier JSON sur le réseau
@@ -101,6 +102,7 @@ public class GameManagerMarteau : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        buttonPressed = false;
 
         //charge la coroutine qui va récupérer le fichier Json 
         //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
@@ -164,18 +166,12 @@ public class GameManagerMarteau : MonoBehaviour
             {
                 if (isSpaceEnabled)
                 {
+                    
+                    GestionAppuiToucheEspace();
+                    
                     if (Input.GetKey(KeyCode.Space))
                     {
-                        GestionAppuiToucheEspace();
-                    }
-
-                    if (Input.GetKeyUp(KeyCode.Space))
-                    {
-                        Input.ResetInputAxes(); // reset toutes les entrées utilisateur
-                        ignoreInput = true; // ignore les inputs 
-                        phaseQuestion = true;
-                        isSpaceEnabled = false;
-                        StartCoroutine(Wait());
+                        GestionRelacheToucheEspace();   
                     }
                 }
             }
@@ -184,28 +180,39 @@ public class GameManagerMarteau : MonoBehaviour
 
     private void GestionAppuiToucheEspace()
     {
-        // Logique pour augmenter ou diminuer la force
-        if (aJuste) {
-            maxForce = 100;
-        } 
-        else {
-            maxForce = 50;
-        }
+            // Logique pour augmenter ou diminuer la force
+            if (aJuste) {
+                maxForce = 100;
+            } 
+            else {
+                maxForce = 50;
+            }
 
-        if (playerForce == maxForce) {
-            up = false; 
-        } 
-        else if (playerForce == 10) {
-            up = true;
-        }
+            if (playerForce == maxForce) {
+                up = false; 
+            } 
+            else if (playerForce == 10) {
+                up = true;
+            }
+            
+            if (up){
+                playerForce += 2f;
+            }
+            else {
+                playerForce -= 2f;
+            }
+            Slider();
         
-        if (up){
-            playerForce += 1;
-        }
-        else {
-            playerForce -= 1;
-        }
-        Slider();
+    }
+
+    public void GestionRelacheToucheEspace(){
+        if (isSpaceEnabled ) {
+            Input.ResetInputAxes(); // reset toutes les entrées utilisateur
+            ignoreInput = true; // ignore les inputs 
+            phaseQuestion = true;
+            isSpaceEnabled = false;
+            StartCoroutine(Wait());
+        } 
     }
    
     public void Slider() {
@@ -332,7 +339,7 @@ public class GameManagerMarteau : MonoBehaviour
             phaseQuestion = false;
             ignoreInput = false; // autorise les inputs
             //Debug.Log("PhaseQ 3 = " + phaseQuestion);
-            MJText.text = "Maitre du jeu : Bien répondu, votre marteau est chargé à 100%";
+            MJText.text = "Maitre du jeu : Bien répondu, à vous de jouer !  Cliquez sur le bouton pour déterminer la puissance (jauge rouge) de votre marteau";
             isSpaceEnabled = true; //active la touche espace
             //Debug.Log("Espace 4 = " + isSpaceEnabled);
             TourDuJoueur();
@@ -356,6 +363,7 @@ public class GameManagerMarteau : MonoBehaviour
             //MJText.text = "Maître du jeu : A vous de jouer";
             //ResetGauge();
             if(aRelacher){
+                buttonTextMarteau.SetActive(false);
                 aRelacher = false;
                 isSpaceEnabled = false;//on desactive la touche espace
                 //Debug.Log("Espace 6 = " + isSpaceEnabled);
@@ -461,7 +469,7 @@ public class GameManagerMarteau : MonoBehaviour
                     pivotPointMarteauPlayer.localEulerAngles = currentEulerAnglesPlayer;
                     yield return null; //Attendre la prochaine trame
                 }
-                tourJoueur = false;
+                //tourJoueur = false;
             }
             //faire remonter le marteau du Mj
             else {

@@ -16,7 +16,7 @@ public class chestJarres : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ActivateButton(MainGameManager.Instance.scoreRecoClou);
+        ActivateButton(MainGameManager.Instance.scoreRecoJarres);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
