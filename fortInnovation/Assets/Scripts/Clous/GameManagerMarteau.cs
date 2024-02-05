@@ -339,7 +339,7 @@ public class GameManagerMarteau : MonoBehaviour
             phaseQuestion = false;
             ignoreInput = false; // autorise les inputs
             //Debug.Log("PhaseQ 3 = " + phaseQuestion);
-            MJText.text = "Maitre du jeu : Bien répondu, à vous de jouer !  Cliquez sur le bouton pour déterminer la puissance (jauge rouge) de votre marteau";
+            MJText.text = "Maitre du jeu : Bien répondu, à vous de jouer ! \n Cliquez sur le bouton pour déterminer la puissance (jauge rouge) de votre marteau";
             isSpaceEnabled = true; //active la touche espace
             //Debug.Log("Espace 4 = " + isSpaceEnabled);
             TourDuJoueur();
