@@ -4203,7 +4203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ils te donneront les consignes pour les jeux.\nIls te permettrons \xE9galement
+  m_text: "Ils te donneront les consignes pour les jeux.\nIls te permettront \xE9galement
     de lire les recommandations gagn\xE9es."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -581,11 +581,11 @@ public class GameManagerJarres : MonoBehaviour
         
         if(MainGameManager.Instance.nbPartieJarresJoue == 5 ){
             MainGameManager.Instance.gameJarresFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleJarres", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleJarres", 4f));
         }
         else
         {
-            StartCoroutine(LoadSceneAfterDelay("SalleDes", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleDes", 4f));
         }
 
     }

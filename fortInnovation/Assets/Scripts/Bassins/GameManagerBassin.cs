@@ -392,11 +392,11 @@ public class GameManagerBassin : MonoBehaviour
         
         if(MainGameManager.Instance.nbPartieBassinJoue == 3 ){
             MainGameManager.Instance.gameBassinFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleBassins", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleBassins", 4f));
         }
         else
         {
-            StartCoroutine(LoadSceneAfterDelay("SalleDes", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleDes", 4f));
         }
 
     }

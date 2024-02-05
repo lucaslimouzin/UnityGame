@@ -355,7 +355,7 @@ public class GameManagerBaton : MonoBehaviour
             }
             // Toutes les questions ont été posées, fin du jeu
             MainGameManager.Instance.nbPartieBatonJoue += 1;
-            Invoke("FinDuJeu", 2f);
+            Invoke("FinDuJeu",4f);
         }
     }
 

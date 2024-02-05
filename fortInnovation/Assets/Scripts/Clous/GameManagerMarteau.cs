@@ -511,11 +511,11 @@ public class GameManagerMarteau : MonoBehaviour
         
         if(MainGameManager.Instance.nbPartieClouJoue == 3 ){
             MainGameManager.Instance.gameClouFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleClous", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleClous", 4f));
         }
         else
         {
-            StartCoroutine(LoadSceneAfterDelay("SalleDes", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleDes", 4f));
         }
 
     }

@@ -204,11 +204,11 @@ public class GameManagerEnigmes : MonoBehaviour
         
         if(MainGameManager.Instance.nbPartieEnigmesJoue == 1 ){
             MainGameManager.Instance.gameEnigmesFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleEnigmes", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleEnigmes", 4f));
         }
         else
         {
-            StartCoroutine(LoadSceneAfterDelay("SalleDes", 2f));
+            StartCoroutine(LoadSceneAfterDelay("SalleDes", 4f));
         }
 
     }
