@@ -50,6 +50,7 @@ public class GameManagerMarteau : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
 
@@ -103,6 +104,7 @@ public class GameManagerMarteau : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         buttonPressed = false;
+        gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 
         //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
@@ -126,7 +128,7 @@ public class GameManagerMarteau : MonoBehaviour
     //fonction qui charge les questions depuis local
     IEnumerator LoadJsonFromLocal(){
         // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
+        TextAsset jsonFile = Resources.Load<TextAsset>("ClouQuestions");
         // Désérialiser les données JSON
         listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
         yield return null;
@@ -500,6 +502,24 @@ public class GameManagerMarteau : MonoBehaviour
                 Invoke("AfficheLaQuestion",1f);
             }
     }
+
+    IEnumerator ShowAndHideGagneText()
+    {
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez gagné !";
+        // Change la couleur du texte en vert
+        gagnePerduText.color = Color.green;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+    }
+    IEnumerator ShowAndHidePerduText()
+    {
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez perdu !";
+        // Change la couleur du texte en vert
+        gagnePerduText.color = Color.red;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+    }
+
     
     //fin du jeu 
     private void FinDuJeu(){
@@ -510,10 +530,12 @@ public class GameManagerMarteau : MonoBehaviour
         if (tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
-                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
+            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
+            StartCoroutine(ShowAndHideGagneText());
         }
         else {
             MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieClouJoue += 1;
         

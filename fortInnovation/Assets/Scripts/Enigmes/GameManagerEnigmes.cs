@@ -39,6 +39,7 @@ public class GameManagerEnigmes : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public TextMeshProUGUI gagnePerduText;
     
     
 
@@ -88,6 +89,7 @@ public class GameManagerEnigmes : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 
         //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
@@ -186,6 +188,24 @@ public class GameManagerEnigmes : MonoBehaviour
     }
 
 
+    IEnumerator ShowAndHideGagneText()
+    {
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez gagné !";
+        // Change la couleur du texte en vert
+        gagnePerduText.color = Color.green;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+    }
+    IEnumerator ShowAndHidePerduText()
+    {
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez perdu !";
+        // Change la couleur du texte en vert
+        gagnePerduText.color = Color.red;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+    }
+
+
     //fin du jeu 
     private void FinDuJeu(){
         ////debug.Log("GameOver");
@@ -195,10 +215,12 @@ public class GameManagerEnigmes : MonoBehaviour
         if (!tourJoueur) {
             MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté l'épreuve et une recommandation";
             //envoi vers le Main Game Manager le scoreEnigme
-                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
+            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
+            StartCoroutine(ShowAndHideGagneText());
         }
         else {
             MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieEnigmesJoue += 1;
         

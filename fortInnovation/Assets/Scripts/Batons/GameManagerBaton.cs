@@ -37,6 +37,7 @@ public class GameManagerBaton : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
 
@@ -86,6 +87,7 @@ public class GameManagerBaton : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 
         //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
@@ -349,15 +351,36 @@ public class GameManagerBaton : MonoBehaviour
                 MJText.text = "Maitre du jeu : bravo vous avez remporté l'Epreuve et une recommandation !";
                 //envoi vers le Main Game Manager le scoreBaton 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoBaton += 1);
+                StartCoroutine(ShowAndHideGagneText());
             }
             else {
                 MJText.text = "Maitre du jeu : Dommage, vous avez échoué si prêt du but je détruis la recommandation !";
+                StartCoroutine(ShowAndHidePerduText());
             }
             // Toutes les questions ont été posées, fin du jeu
             MainGameManager.Instance.nbPartieBatonJoue += 1;
             Invoke("FinDuJeu",4f);
         }
     }
+
+    IEnumerator ShowAndHideGagneText()
+    {
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez gagné !";
+        // Change la couleur du texte en vert
+        gagnePerduText.color = Color.green;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+    }
+    IEnumerator ShowAndHidePerduText()
+    {
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez perdu !";
+        // Change la couleur du texte en vert
+        gagnePerduText.color = Color.red;
+        yield return new WaitForSeconds(1f);  // Attend 1 seconde
+    }
+
+
 
     //fin du jeu 
     private void FinDuJeu(){

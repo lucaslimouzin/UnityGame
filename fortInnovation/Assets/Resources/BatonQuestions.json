@@ -119,6 +119,126 @@
       "question": "Quelle est la plus grande mer du monde?",
       "propositions": ["Mer Méditerranée", "Mer Rouge", "Mer des Philippines"],
       "reponseCorrecte": "A"
+    },
+    {
+      "id": 21,
+      "question": "Qui a écrit 'Les Misérables'?",
+      "propositions": ["Victor Hugo", "Albert Camus", "Émile Zola"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 22,
+      "question": "Quelle est la capitale du Japon?",
+      "propositions": ["Kyoto", "Osaka", "Tokyo"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 23,
+      "question": "Quel est le plus long système fluvial du monde?",
+      "propositions": ["Mississippi", "Nile", "Amazone"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 24,
+      "question": "Quelle période historique précède le Moyen Âge?",
+      "propositions": ["L'Antiquité", "La Renaissance", "Le Néolithique"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 25,
+      "question": "Quel est le plus petit pays du monde?",
+      "propositions": ["Monaco", "Vatican", "Nauru"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 26,
+      "question": "Qui est le fondateur de Microsoft?",
+      "propositions": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 27,
+      "question": "Quel est l'océan le plus salé?",
+      "propositions": ["Océan Atlantique", "Océan Pacifique", "Océan Indien"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 28,
+      "question": "Quel pays est connu comme le pays du Soleil Levant?",
+      "propositions": ["Chine", "Japon", "Corée du Sud"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 29,
+      "question": "Quelle est la langue la plus parlée dans le monde?",
+      "propositions": ["Anglais", "Chinois", "Espagnol"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 30,
+      "question": "Quel est le livre le plus vendu au monde après la Bible?",
+      "propositions": ["Le Petit Prince", "Harry Potter", "Le Seigneur des Anneaux"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 31,
+      "question": "Quel est le sport le plus populaire dans le monde?",
+      "propositions": ["Basketball", "Football", "Cricket"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 32,
+      "question": "Quel est le métal le plus cher du monde?",
+      "propositions": ["Or", "Platine", "Rhodium"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 33,
+      "question": "Quelle est la plus profonde fosse océanique du monde?",
+      "propositions": ["Fosse des Mariannes", "Fosse de Tonga", "Fosse du Pérou-Chili"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 34,
+      "question": "Qui a peint la Joconde?",
+      "propositions": ["Vincent Van Gogh", "Leonardo da Vinci", "Michelangelo"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 35,
+      "question": "Quelle est la durée d'un jour sur Mars?",
+      "propositions": ["24 heures", "24 heures et 37 minutes", "23 heures et 56 minutes"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 36,
+      "question": "Quel est l'animal terrestre le plus rapide?",
+      "propositions": ["Guépard", "Lion", "Faucon pèlerin"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 37,
+      "question": "Quelle est la plus grande structure vivante sur Terre?",
+      "propositions": ["Forêt amazonienne", "Grande barrière de corail", "Mont Everest"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 38,
+      "question": "Quelle est la capitale de l'Australie?",
+      "propositions": ["Sydney", "Melbourne", "Canberra"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 39,
+      "question": "Quel est le pays le plus peuplé du monde?",
+      "propositions": ["Inde", "Chine", "États-Unis"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 40,
+      "question": "Quel est l'élément chimique le plus abondant dans l'Univers?",
+      "propositions": ["Hydrogène", "Hélium", "Oxygène"],
+      "reponseCorrecte": "A"
     }
   ]
 }
