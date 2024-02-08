@@ -7432,7 +7432,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1855331355}
         m_TargetAssemblyTypeName: scriptButtonHome, Assembly-CSharp
         m_MethodName: activeUi
         m_Mode: 1
@@ -9108,11 +9108,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 597308369130767402, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 331006439}
+      addedObject: {fileID: 1260159066}
     - targetCorrespondingSourceObject: {fileID: 597308369130767402, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1260159066}
+      addedObject: {fileID: 331006439}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
 --- !u!114 &1979352519 stripped

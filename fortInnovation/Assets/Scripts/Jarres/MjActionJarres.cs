@@ -22,7 +22,7 @@ public class MjActionJarres : MonoBehaviour
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
         #endif
-        if (MainGameManager.Instance.gameClouFait) {
+        if (MainGameManager.Instance.gameJarresFait) {
                 //active le coffre
                 chest.SetActive(true);
                 textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
@@ -45,7 +45,7 @@ public class MjActionJarres : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameClouFait) {
+            if (!MainGameManager.Instance.gameJarresFait) {
                 panelMjInfo.SetActive(true);
                 //Set Cursor to not be visible
                 Cursor.visible = true;
@@ -58,7 +58,7 @@ public class MjActionJarres : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameClouFait) {
+            if (!MainGameManager.Instance.gameJarresFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
                     //Set Cursor to not be visible
