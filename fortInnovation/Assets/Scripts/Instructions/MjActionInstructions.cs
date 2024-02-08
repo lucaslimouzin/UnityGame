@@ -18,6 +18,7 @@ public class MjActionInstructions : MonoBehaviour
     {   
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        MainGameManager.Instance.tutoCompteur = 0;
         //activation de l'ui mobile si vrai 
         if (MainGameManager.Instance.panelUiMobile){
             Cursor.visible = true;
@@ -33,7 +34,7 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Maître du jeu : Bienvenue dans Fort Innovation. Pour te déplacer utilise ZQSD ou les flèches. Essayes d'atteindre le coffre derrière moi !";
+        textMjRoom.text = "Maître du jeu : Bienvenue dans Fort Innovation. Pour te déplacer utilise ZQSD ou les flèches. \n Essayes d'atteindre le coffre derrière moi !";
     
     }
 
@@ -44,17 +45,20 @@ public class MjActionInstructions : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
-            panelMjInfo.SetActive(true);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+        if (MainGameManager.Instance.tutoCompteur == 1) {
+            if (other.gameObject.CompareTag("Player")){
+                panelRoom.SetActive(false);
+                panelMjInfo.SetActive(true);
+                //Set Cursor to not be visible
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.gameObject.CompareTag("Player")){
+        if (MainGameManager.Instance.tutoCompteur == 1) {
+            if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
             if (panelMjInfo.activeSelf){
                 panelMjInfo.SetActive(false);
@@ -63,6 +67,8 @@ public class MjActionInstructions : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             }   
         }
+        }
+        
     }
 
     public void ExitPanel(){
@@ -75,6 +81,7 @@ public class MjActionInstructions : MonoBehaviour
     }
 
      public void PlayGame() {
+        MainGameManager.Instance.tutoCompteur = 2;
         SceneManager.LoadScene("FortAccueil");
     }
 

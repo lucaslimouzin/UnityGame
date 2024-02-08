@@ -58,6 +58,7 @@ public class MainGameManager : MonoBehaviour
 
     //variable activation panelUiMobile;
     public bool panelUiMobile =false;
+    public int tutoCompteur;
 
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScoreJarres, int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);

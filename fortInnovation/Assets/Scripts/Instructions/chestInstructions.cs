@@ -42,6 +42,7 @@ public class chestInstructions : MonoBehaviour
             //Set Cursor to not be visible
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            MainGameManager.Instance.tutoCompteur = 1;
         }
     }
 

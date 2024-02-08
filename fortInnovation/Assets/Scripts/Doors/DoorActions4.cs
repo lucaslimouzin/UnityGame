@@ -23,21 +23,25 @@ public class DoorActions4 : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Player")){
-            panelDoor.SetActive(true);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None; 
-        }
-    }
-
-    private void OnTriggerExit(Collider other) {
-        if (other.gameObject.CompareTag("Player")){
-            if (panelDoor.activeSelf){
-                panelDoor.SetActive(false);
+        if (MainGameManager.Instance.tutoCompteur == 3) {
+            if (other.gameObject.CompareTag("Player")){
+                panelDoor.SetActive(true);
                 //Set Cursor to not be visible
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+            }
+        } 
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (MainGameManager.Instance.tutoCompteur == 3) {
+            if (other.gameObject.CompareTag("Player")){
+                if (panelDoor.activeSelf){
+                    panelDoor.SetActive(false);
+                    //Set Cursor to not be visible
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
             }
         }
     }
