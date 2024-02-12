@@ -1,68 +1,13 @@
 {
-    "m_SelectedDeviceId": "CLCDU18425007429",
+    "m_SelectedDeviceId": "",
     "m_SelectedProcess": {
-        "deviceId": "CLCDU18425007429",
-        "name": "com.Givros.SpotTheCharacter",
-        "processId": 14119,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownProcessesForSerialization": [
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 19057,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 22381,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 2490,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 7867,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 2080,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 8129,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 10204,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 13223,
-            "exited": false
-        },
-        {
-            "deviceId": "CLCDU18425007429",
-            "name": "com.Givros.SpotTheCharacter",
-            "processId": 14119,
-            "exited": false
-        }
-    ],
+    "m_KnownProcessesForSerialization": [],
     "m_Tags": {
         "m_Entries": [
             {
