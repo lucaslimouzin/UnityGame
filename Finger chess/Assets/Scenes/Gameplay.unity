@@ -165,7 +165,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 144efb85278ee264ab8ab39344c7829d, type: 3}
   - {fileID: 21300000, guid: 1b2df9541da1b63499088852c8a8928a, type: 3}
   - {fileID: 21300000, guid: 731425894f4acf94ea156eed46235590, type: 3}
-  - {fileID: 21300000, guid: 80699427fce4fe245993cb54501f604b, type: 3}
+  - {fileID: 21300000, guid: 10f53e4f199eb4e4f8b583dc58086ac1, type: 3}
   TextJoueur1Commence: {fileID: 1842712109}
   TextJoueur2Commence: {fileID: 544995144}
 --- !u!4 &75891814
