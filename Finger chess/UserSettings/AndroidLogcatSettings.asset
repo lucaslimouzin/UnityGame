@@ -1,13 +1,26 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "CLCDU18425007429",
     "m_SelectedProcess": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "CLCDU18425007429",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 3391,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownProcessesForSerialization": [],
+    "m_KnownProcessesForSerialization": [
+        {
+            "deviceId": "CLCDU18425007429",
+            "name": "com.huawei.android.launcher",
+            "processId": 2033,
+            "exited": false
+        },
+        {
+            "deviceId": "CLCDU18425007429",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 3391,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
