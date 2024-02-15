@@ -1,0 +1,244 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quel animal est considéré comme le meilleur ami de l'homme?",
+      "propositions": ["Chat", "Chien", "Perroquet"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 2,
+      "question": "Quel est l'animal domestique le plus populaire au monde?",
+      "propositions": ["Poisson", "Chat", "Chien"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 3,
+      "question": "Quelle est la durée de vie moyenne d'un chat domestique?",
+      "propositions": ["5 à 10 ans", "10 à 15 ans", "15 à 20 ans"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 4,
+      "question": "Quel animal domestique est connu pour être un excellent chasseur de souris?",
+      "propositions": ["Chien", "Chat", "Furet"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 5,
+      "question": "Quel est le nom donné à un jeune lapin?",
+      "propositions": ["Poussin", "Lapereau", "Veau"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 6,
+      "question": "Quel est le régime alimentaire principal des hamsters?",
+      "propositions": ["Herbivore", "Carnivore", "Omnivore"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 7,
+      "question": "Quel animal de compagnie est réputé pour sa capacité à apprendre des tours et des mots?",
+      "propositions": ["Chat", "Perroquet", "Chien"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 8,
+      "question": "Combien de doigts ont les chats à chaque patte arrière?",
+      "propositions": ["4", "5", "6"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 9,
+      "question": "Quel animal de compagnie nécessite un bain de sable pour maintenir la propreté de son pelage?",
+      "propositions": ["Chinchilla", "Cochon d'Inde", "Lapin"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 10,
+      "question": "Quelle est la principale caractéristique d'un poisson Betta mâle?",
+      "propositions": ["Il ne peut pas vivre avec d'autres mâles", "Il change de couleur en vieillissant", "Il ne nécessite pas d'oxygène"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 11,
+      "question": "Quel type de logement un hamster nécessite-t-il pour son bien-être?",
+      "propositions": ["Une cage avec des barreaux espacés", "Une cage avec un fond solide", "Un aquarium sans eau"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 12,
+      "question": "Quel animal de compagnie est connu pour pouvoir vivre plusieurs décennies?",
+      "propositions": ["Tortue", "Hamster", "Canari"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 13,
+      "question": "Quel est le terme utilisé pour désigner le cri du canard?",
+      "propositions": ["Cancanement", "Cocorico", "Miaulement"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 14,
+      "question": "Quelle race de chien est connue pour sa petite taille et ses grandes oreilles?",
+      "propositions": ["Labrador", "Chihuahua", "Bulldog"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 15,
+      "question": "Quel est le principal avantage d'avoir un poisson comme animal de compagnie?",
+      "propositions": ["Ils sont silencieux", "Ils nécessitent beaucoup d'attention", "Ils peuvent être dressés facilement"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 16,
+      "question": "Quelle race de chat est connue pour être sans poils?",
+      "propositions": ["Persan", "Sphynx", "Siamese"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 17,
+      "question": "Quel animal de compagnie est souvent utilisé dans les thérapies assistées par l'animal?",
+      "propositions": ["Cheval", "Chat", "Dauphin"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 18,
+      "question": "Quelle est la caractéristique principale des oiseaux de la famille des Psittacidae, comme les perroquets?",
+      "propositions": ["Ils peuvent nager", "Ils peuvent imiter les sons", "Ils ne volent pas"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 19,
+      "question": "Quel est le besoin quotidien essentiel d'un chien pour son bien-être?",
+      "propositions": ["Exercice physique", "Bain quotidien", "Exposition au soleil"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 20,
+      "question": "Quelle race de chien a été initialement élevée pour chasser les renards?",
+      "propositions": ["Beagle", "Boxer", "Dalmatien"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 21,
+      "question": "Quel est le principal aliment des lapins domestiques?",
+      "propositions": ["Graines", "Viande", "Foin"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 22,
+      "question": "Quelle race de chat est connue pour son tempérament amical et sociable?",
+      "propositions": ["Maine Coon", "Ragdoll", "Sphynx"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 23,
+      "question": "Quel animal de compagnie est considéré comme le plus indépendant?",
+      "propositions": ["Chien", "Chat", "Poisson"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 24,
+      "question": "Quelle race de chien est réputée pour sa capacité à travailler comme chien de sauvetage en montagne?",
+      "propositions": ["Saint-Bernard", "Husky sibérien", "Golden Retriever"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 25,
+      "question": "Quel est le principal prédateur des oiseaux domestiques en liberté à l'intérieur de la maison?",
+      "propositions": ["Chiens", "Chats", "Rongeurs"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 26,
+      "question": "Quelle caractéristique est commune à tous les poissons rouges domestiques?",
+      "propositions": ["Ils ont besoin de lumière solaire directe", "Ils peuvent vivre sans filtre", "Ils produisent une grande quantité de déchets"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 27,
+      "question": "Quel type de cage est recommandé pour un perroquet?",
+      "propositions": ["Cage en bois", "Cage métallique robuste", "Cage en plastique"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 28,
+      "question": "Quel est le terme correct pour désigner la naissance des chatons?",
+      "propositions": ["Éclosion", "Mise bas", "Poulinage"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 29,
+      "question": "Quelle race de chien est connue pour son pelage frisé?",
+      "propositions": ["Caniche", "Labrador", "Beagle"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 30,
+      "question": "Quel animal de compagnie est le mieux adapté pour vivre dans un petit appartement?",
+      "propositions": ["Chien de grande taille", "Chat", "Poisson"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 31,
+      "question": "Quelle race de chat est réputée pour sa capacité à sauter haut?",
+      "propositions": ["Bengale", "Persan", "Siamois"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 32,
+      "question": "Quel est le comportement typique d'un chien heureux?",
+      "propositions": ["Mordiller constamment", "Remuer la queue", "Se cacher"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 33,
+      "question": "Quelle race de chien a un museau distinctement carré?",
+      "propositions": ["Boxer", "Cocker Spaniel", "Shih Tzu"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 34,
+      "question": "Quel est le principal avantage de choisir un cochon d'Inde comme animal de compagnie?",
+      "propositions": ["Peu coûteux à entretenir", "Nécessite peu d'espace", "Amical et facile à manipuler"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 35,
+      "question": "Quelle est la méthode la plus efficace pour éduquer un chiot?",
+      "propositions": ["Punition", "Récompense positive", "Ignorance"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 36,
+      "question": "Quelle race de chien est connue pour son endurance et sa capacité à courir de longues distances?",
+      "propositions": ["Bulldog", "Dalmatien", "Chihuahua"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 37,
+      "question": "Quel type de nourriture est recommandé pour un chat adulte?",
+      "propositions": ["Nourriture humide uniquement", "Un mélange de nourriture humide et sèche", "Nourriture sèche uniquement"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 38,
+      "question": "Quel animal de compagnie est capable de reconnaître son propre nom?",
+      "propositions": ["Poisson", "Chat", "Tortue"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 39,
+      "question": "Quelle race de chat est connue pour son absence de queue?",
+      "propositions": ["Maine Coon", "Manx", "Ragdoll"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 40,
+      "question": "Quel est l'animal domestique le plus facile à entretenir pour un débutant?",
+      "propositions": ["Perroquet", "Poisson rouge", "Chien"],
+      "reponseCorrecte": "B"
+    }
+  ]
+}

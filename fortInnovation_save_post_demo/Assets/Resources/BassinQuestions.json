@@ -1,0 +1,244 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Qui était le roi de France pendant la Révolution française?",
+      "propositions": ["Louis XV", "Louis XVI", "Louis XIV"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 2,
+      "question": "Quelle bataille Napoléon a-t-il perdue en 1815, menant à sa chute définitive?",
+      "propositions": ["Bataille d'Austerlitz", "Bataille de Borodino", "Bataille de Waterloo"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 3,
+      "question": "Quel roi a été surnommé le 'Roi Soleil'?",
+      "propositions": ["Henri IV", "François Ier", "Louis XIV"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 4,
+      "question": "En quelle année a débuté la Révolution française?",
+      "propositions": ["1799", "1776", "1789"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 5,
+      "question": "Quelle est la période de règne de Napoléon Bonaparte comme Empereur des Français?",
+      "propositions": ["1799-1815", "1804-1815", "1804-1814"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 6,
+      "question": "Quel traité a mis fin à la Guerre de Cent Ans entre la France et l'Angleterre?",
+      "propositions": ["Traité de Westphalie", "Traité de Versailles", "Traité de Picquigny"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 7,
+      "question": "Qui était le chef militaire français pendant la Première Guerre mondiale surnommé 'le vainqueur de Verdun'?",
+      "propositions": ["Philippe Pétain", "Charles de Gaulle", "Ferdinand Foch"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 8,
+      "question": "En quelle année la France a-t-elle gagné sa première Coupe du monde de football?",
+      "propositions": ["1984", "2006", "1998"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 9,
+      "question": "Quel roi français a été exécuté pendant la Révolution française?",
+      "propositions": ["Charles Ier", "Louis XVI", "Louis XVIII"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 10,
+      "question": "Quelle dynastie a régné sur la France avant les Bourbons?",
+      "propositions": ["Les Capétiens", "Les Valois", "Les Carolingiens"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 11,
+      "question": "Quelle grande réforme religieuse a divisé la France au XVIe siècle?",
+      "propositions": ["La Contre-Réforme", "La Réforme protestante", "Le Concile de Trente"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 12,
+      "question": "Quel est le nom du palais construit par Louis XIV?",
+      "propositions": ["Le Louvre", "Versailles", "Fontainebleau"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 13,
+      "question": "Qui a dit : 'L'État, c'est moi'?",
+      "propositions": ["Louis XIV", "Napoléon Bonaparte", "Charles de Gaulle"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 14,
+      "question": "En quelle année a eu lieu la bataille de Marignan?",
+      "propositions": ["1415", "1615", "1515"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 15,
+      "question": "Quel traité de paix a mis fin à la Première Guerre mondiale pour la France?",
+      "propositions": ["Traité de Trianon", "Traité de Saint-Germain", "Traité de Versailles"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 16,
+      "question": "Qui était le premier président de la Cinquième République française?",
+      "propositions": ["Georges Pompidou", "Charles de Gaulle", "François Mitterrand"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 17,
+      "question": "Quelle reine de France a été guillotinée pendant la Révolution française?",
+      "propositions": ["Catherine de Médicis", "Marie-Antoinette", "Anne d'Autriche"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 18,
+      "question": "Quelle expédition militaire a été un échec pour Napoléon en 1812?",
+      "propositions": ["La campagne d'Italie", "L'invasion de la Russie", "L'expédition d'Égypte"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 19,
+      "question": "Quelle loi française de 1905 marque la séparation de l'Église et de l'État?",
+      "propositions": ["Le Concordat de 1801", "La loi de séparation", "La loi sur la laïcité"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 20,
+      "question": "Qui était le leader de la Résistance française pendant la Seconde Guerre mondiale?",
+      "propositions": ["Jean Moulin", "Philippe Pétain", "Charles de Gaulle"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 21,
+      "question": "En quelle année a été signée la Déclaration des droits de l'homme et du citoyen?",
+      "propositions": ["1791", "1789", "1793"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 22,
+      "question": "Quel roi a été surnommé 'Saint-Louis'?",
+      "propositions": ["Louis XVI", "Louis IX", "Louis XIV"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 23,
+      "question": "Quelle guerre a vu la bataille de Verdun en 1916?",
+      "propositions": ["La Seconde Guerre mondiale", "La guerre franco-prussienne", "La Première Guerre mondiale"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 24,
+      "question": "Quel événement a marqué le début de la Révolution française?",
+      "propositions": ["La convocation des États généraux", "L'exécution de Louis XVI", "La prise de la Bastille"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 25,
+      "question": "Quelle fut la première colonie française à devenir indépendante au XIXe siècle?",
+      "propositions": ["L'Algérie", "Haïti", "Le Canada"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 26,
+      "question": "Quel monarque est associé à l'édit de Nantes?",
+      "propositions": ["François Ier", "Henri IV", "Louis XIV"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 27,
+      "question": "Quelle bataille a marqué la fin de l'Empire napoléonien?",
+      "propositions": ["Bataille de Leipzig", "Bataille d'Austerlitz", "Bataille de Waterloo"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 28,
+      "question": "Quelle période de l'histoire de France est connue sous le nom de 'Belle Époque'?",
+      "propositions": ["Début du XXe siècle", "Entre-deux-guerres", "Fin du XIXe siècle"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 29,
+      "question": "Qui a fondé l'Académie française?",
+      "propositions": ["Louis XIV", "François Ier", "Cardinal de Richelieu"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 30,
+      "question": "Quel événement historique est associé à l'année 732?",
+      "propositions": ["Le couronnement de Charlemagne", "La bataille de Poitiers", "La fondation de l'Académie française"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 31,
+      "question": "Qui a été le premier empereur des Français?",
+      "propositions": ["Louis XIV", "Napoléon Bonaparte", "Charles de Gaulle"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 32,
+      "question": "Quelle révolution a aboli la monarchie et établi la Première République française?",
+      "propositions": ["La Révolution de 1848", "La Révolution française de 1789", "Les journées de Juillet 1830"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 33,
+      "question": "Quel roi de France est connu pour avoir révoqué l'Édit de Nantes?",
+      "propositions": ["Louis XIV", "Henri IV", "François Ier"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 34,
+      "question": "Dans quel château la signature du traité de paix de la Guerre de Cent Ans a-t-elle eu lieu?",
+      "propositions": ["Château de Chambord", "Château de Versailles", "Château de Picquigny"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 35,
+      "question": "Quelle est la date de la chute du régime de Vichy et de la libération de Paris pendant la Seconde Guerre mondiale?",
+      "propositions": ["25 août 1944", "6 juin 1944", "8 mai 1945"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 36,
+      "question": "Quel traité a marqué la fin de la guerre de Succession d'Espagne impliquant la France?",
+      "propositions": ["Traité de Paris", "Traité d'Utrecht", "Traité de Versailles"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 37,
+      "question": "Qui était le ministre des Finances de Louis XIV, célèbre pour ses réformes économiques?",
+      "propositions": ["Jean-Baptiste Colbert", "Nicolas Fouquet", "Sully"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 38,
+      "question": "Quelle guerre a vu l'utilisation massive de la ligne Maginot par la France?",
+      "propositions": ["La Première Guerre mondiale", "La guerre franco-prussienne", "La Seconde Guerre mondiale"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 39,
+      "question": "Quel est le nom du roi de France exécuté en 1793?",
+      "propositions": ["Charles Ier", "Louis XVI", "Louis XVIII"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 40,
+      "question": "Qui était le général français vainqueur à la bataille d'Austerlitz?",
+      "propositions": ["Maréchal Ney", "Napoléon Bonaparte", "Louis-Nicolas Davout"],
+      "reponseCorrecte": "B"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quel fromage est connu comme le roi des fromages en France?",
+      "propositions": ["Camembert", "Roquefort", "Brie"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 2,
+      "question": "Quelle ville est surnommée la capitale du vin?",
+      "propositions": ["Lyon", "Bordeaux", "Dijon"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 3,
+      "question": "Qui est l'auteur de 'Les Misérables'?",
+      "propositions": ["Victor Hugo", "Albert Camus", "Émile Zola"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 4,
+      "question": "Quel est le musée le plus visité de Paris?",
+      "propositions": ["Le Louvre", "Musée d'Orsay", "Centre Pompidou"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 5,
+      "question": "Quel est le plat traditionnel français à base de viande de bœuf mijotée dans du vin rouge?",
+      "propositions": ["Quiche Lorraine", "Ratatouille", "Boeuf Bourguignon"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 6,
+      "question": "Quelle est la fête nationale française?",
+      "propositions": ["Le 14 juillet", "Le 1er mai", "Le 11 novembre"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 7,
+      "question": "Qui a peint 'Impression, soleil levant', donnant son nom au mouvement impressionniste?",
+      "propositions": ["Claude Monet", "Vincent Van Gogh", "Paul Cézanne"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 8,
+      "question": "Quel château est associé à Charles Perrault et a inspiré le conte de 'La Belle au bois dormant'?",
+      "propositions": ["Château de Chambord", "Château de Versailles", "Château d'Ussé"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 9,
+      "question": "Dans quelle région de France se trouve la Côte d'Azur?",
+      "propositions": ["Normandie", "Bretagne", "Provence-Alpes-Côte d'Azur"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 10,
+      "question": "Quel est le prénom de la Tour Eiffel, nommé d'après son concepteur?",
+      "propositions": ["Gustave", "Alexandre", "Georges"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 11,
+      "question": "Quel festival de cinéma se tient annuellement sur la Côte d'Azur?",
+      "propositions": ["Festival de Cannes", "Festival de Venise", "Festival de Berlin"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 12,
+      "question": "Quelle est la danse traditionnelle française associée à la région de la Bretagne?",
+      "propositions": ["La bourrée", "Le cancan", "La gavotte"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 13,
+      "question": "Qui a écrit 'Le Petit Prince'?",
+      "propositions": ["Antoine de Saint-Exupéry", "Marcel Proust", "Jean-Paul Sartre"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 14,
+      "question": "Quel événement historique est célébré par la Fête de la Fédération le 14 juillet?",
+      "propositions": ["La prise de la Bastille", "La fin de la Révolution française", "La signature de la Déclaration des droits de l'homme et du citoyen"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 15,
+      "question": "Quel est le nom du pain français en forme de bâton?",
+      "propositions": ["Croissant", "Baguette", "Brioche"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 16,
+      "question": "Quelle région française est réputée pour sa production de fromage bleu?",
+      "propositions": ["Normandie", "Auvergne", "Alsace"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 17,
+      "question": "Qui est le réalisateur français célèbre pour ses films 'La Haine' et 'Amélie'?",
+      "propositions": ["Luc Besson", "Jean-Pierre Jeunet", "François Truffaut"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 18,
+      "question": "Dans quel quartier de Paris se trouve le Moulin Rouge?",
+      "propositions": ["Montmartre", "Le Marais", "La Défense"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 19,
+      "question": "Quel fromage français est célèbre pour être mangé à l'aide d'une petite cuillère?",
+      "propositions": ["Camembert", "Boursin", "Vacherin"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 20,
+      "question": "Quel architecte a conçu le Centre Pompidou à Paris?",
+      "propositions": ["Le Corbusier", "Renzo Piano", "Frank Gehry"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 21,
+      "question": "Quelle est la spécialité culinaire de la ville de Lyon?",
+      "propositions": ["Les quenelles", "Le cassoulet", "La bouillabaisse"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 22,
+      "question": "Quel écrivain français a remporté le prix Nobel de littérature en 2014?",
+      "propositions": ["Patrick Modiano", "J.M.G. Le Clézio", "Albert Camus"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 23,
+      "question": "Quelle est la plus haute montagne de France?",
+      "propositions": ["Le Mont Blanc", "Le Pic du Midi", "Le Mont Ventoux"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 24,
+      "question": "Quel est le dessert français constitué de crème anglaise et de caramel dur?",
+      "propositions": ["Tarte Tatin", "Crème brûlée", "Mousse au chocolat"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 25,
+      "question": "Quelle est la longueur de la Loire, le plus long fleuve de France?",
+      "propositions": ["Environ 500 km", "Environ 700 km", "Environ 1000 km"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 26,
+      "question": "Quel peintre français est célèbre pour ses nymphéas?",
+      "propositions": ["Paul Cézanne", "Claude Monet", "Édouard Manet"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 27,
+      "question": "Quelle île française est également connue comme la beauté de l'île en Méditerranée?",
+      "propositions": ["Corse", "Île de Ré", "Martinique"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 28,
+      "question": "Quel est le style architectural prédominant de la cathédrale Notre-Dame de Paris?",
+      "propositions": ["Roman", "Gothique", "Baroque"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 29,
+      "question": "Qui est le compositeur français de l'opéra 'Carmen'?",
+      "propositions": ["Georges Bizet", "Claude Debussy", "Hector Berlioz"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 30,
+      "question": "Dans quelle ville se trouve le Palais des Papes, le plus grand palais gothique d'Europe?",
+      "propositions": ["Lyon", "Avignon", "Marseille"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 31,
+      "question": "Quel est le nom de la pâte feuilletée utilisée pour faire les croissants?",
+      "propositions": ["Pâte brisée", "Pâte feuilletée", "Pâte sablée"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 32,
+      "question": "Quelle ville est connue pour son festival international de la bande dessinée?",
+      "propositions": ["Angoulême", "Lyon", "Cannes"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 33,
+      "question": "Quel célèbre tournoi de tennis se joue sur terre battue à Paris?",
+      "propositions": ["Wimbledon", "US Open", "Roland-Garros"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 34,
+      "question": "Quel est le principal ingrédient de la soupe à l'oignon française?",
+      "propositions": ["Pommes de terre", "Tomates", "Oignons"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 35,
+      "question": "Quel écrivain français a écrit 'À la recherche du temps perdu'?",
+      "propositions": ["Marcel Proust", "Victor Hugo", "Albert Camus"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 36,
+      "question": "Quelle est la boisson alcoolisée traditionnelle française produite à partir de pommes?",
+      "propositions": ["Cidre", "Calvados", "Pastis"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 37,
+      "question": "Quel château de la Loire est connu pour ses jardins suspendus?",
+      "propositions": ["Château de Chambord", "Château de Chenonceau", "Château de Villandry"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 38,
+      "question": "Quelle tradition culinaire française consiste à manger des crêpes le 2 février?",
+      "propositions": ["La Chandeleur", "Le Beaujolais Nouveau", "La Fête de la Gastronomie"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 39,
+      "question": "Quel artiste français est célèbre pour ses sculptures comme 'Le Penseur'?",
+      "propositions": ["Auguste Rodin", "Claude Monet", "Paul Gauguin"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 40,
+      "question": "Dans quelle région de France se trouve la Dune du Pilat, la plus haute dune de sable d'Europe?",
+      "propositions": ["Nouvelle-Aquitaine", "Occitanie", "Provence-Alpes-Côte d'Azur"],
+      "reponseCorrecte": "A"
+    }
+  ]
+}
