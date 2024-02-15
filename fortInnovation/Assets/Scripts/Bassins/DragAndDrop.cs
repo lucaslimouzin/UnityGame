@@ -37,7 +37,7 @@ public class DragAndDrop : MonoBehaviour
 
         
         // Vérifier si la position en X est dans l'intervalle désiré
-        if (transform.position.x >= 1.40f && transform.position.x <= 1.95f)
+        if (transform.position.x >= 0.036f && transform.position.x <= 0.542f)
         {
             ChangerCouleur(Color.green); 
             rb.constraints = RigidbodyConstraints.None;

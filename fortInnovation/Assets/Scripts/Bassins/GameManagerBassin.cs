@@ -19,11 +19,13 @@ public class GameManagerBassin : MonoBehaviour
     public GameObject panelBassin;
     public GameObject buttonTextBassin;
     public TextMeshProUGUI MJText;
-    public TextMeshProUGUI textVieVerre;
+    public TextMeshProUGUI textVieVerreMJ;
+     public TextMeshProUGUI textVieVerreJoueur;
 
     private bool tourJoueur = true;
     private bool aRelacher = false;
-    private float vieDuVerre;
+    private float vieDuVerreMj;
+    private float vieDuVerreJoueur;
     private bool finDuJeu = false;
     public bool isMoving = false;
 
@@ -98,8 +100,11 @@ public class GameManagerBassin : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
 
-        vieDuVerre = 6;
-        textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
+        vieDuVerreMj = 3;
+        vieDuVerreJoueur= 3;
+        
+        textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \n avant que votre verre \n  ne coule ";
+        textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \n avant que le verre \n du MJ ne coule ";
         //on affiche le panneau des régles
         PanneauRegle();
     }
@@ -150,15 +155,16 @@ public class GameManagerBassin : MonoBehaviour
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
-            panelInfoMJ.SetActive(true);
-            MJText.text = "Maître du jeu : J'ai perdu aux dés, je dépose une bille dans le verre";
-            tourJoueur = false;
-            TourDuMj();
-        }
-        else {
             //On affiche la question
             Invoke("AfficheLaQuestion",0f);
-            //tour du player   
+        }
+        else {
+            
+            //tour du MJ  
+            panelInfoMJ.SetActive(true);
+            MJText.text = "Maître du jeu : J'ai gagné aux dés, je dépose une bille dans votre verre";
+            tourJoueur = false;
+            TourDuMj();
         } 
     }
 
@@ -225,17 +231,15 @@ public class GameManagerBassin : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Maitre du jeu : Bien répondu, je dépose une bille dans le verre";
-            tourJoueur = false;
-            
-            TourDuMj();
+            MJText.text = "Maitre du jeu : Bien répondu, vous pouvez déposer une bille  dans mon verre";
+            tourJoueur = true;
+            TourDuJoueur();
             
         } 
         else {
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans le verre";
-            tourJoueur = true;
-            
-            TourDuJoueur();
+            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans votre verre";
+            tourJoueur = false;
+            TourDuMj();
         }
         
     }
@@ -287,11 +291,11 @@ public class GameManagerBassin : MonoBehaviour
             if (playerSphere.transform.position.y <= seuilHauteurY)
             {   
                 isMoving = false;
-                vieDuVerre -= 1;
-                textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
+                vieDuVerreMj -= 1;
+                textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \n avant que le verre du MJ \n ne coule";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
-                if (vieDuVerre > 0){
+                if (vieDuVerreMj > 0){
 
                     Invoke("AfficheLaQuestion",1.5f);
                 }
@@ -306,11 +310,11 @@ public class GameManagerBassin : MonoBehaviour
             if (mjSphere.transform.position.y <= seuilHauteurY)
             {   
                 isMoving = false;
-                vieDuVerre -= 1;
-                textVieVerre.text = vieDuVerre.ToString() + " billes restantes avant que le verre ne déborde";
+                vieDuVerreJoueur -= 1;
+                textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \n avant que votre verre \n  ne coule";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
-                if (vieDuVerre > 0){
+                if (vieDuVerreJoueur > 0){
                     Invoke("AfficheLaQuestion",1.5f);
                 }
                 else {
@@ -333,7 +337,7 @@ public class GameManagerBassin : MonoBehaviour
         yield return Monter(2.0f, 1.0f); // Monter à la hauteur 2 en 1 seconde
 
         // Se déplacer sur X
-        yield return DeplacerX(1.6f, 1.0f); // Se déplacer jusqu'à 1.6 en 1 seconde
+        yield return DeplacerX(2.8f, 2.0f); // Se déplacer jusqu'à 1.6 en 1 seconde
 
         // Faire tomber
         // Vous pouvez ajouter ici la logique pour faire tomber la sphère
@@ -400,7 +404,7 @@ public class GameManagerBassin : MonoBehaviour
         buttonTextBassin.SetActive(false);
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
-        if (!tourJoueur) {
+        if (tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
