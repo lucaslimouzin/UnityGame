@@ -1,0 +1,245 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quel est l'objectif principal de donner du sens à l'innovation participative?",
+      "propositions": ["Améliorer la productivité", "Favoriser l'engagement des collaborateurs", "Réduire les coûts", "Stimuler la créativité"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 2,
+      "question": "Quel rôle la communication joue-t-elle dans l'innovation participative?",
+      "propositions": ["Aucun rôle", "Un rôle mineur", "Un rôle critique", "Un rôle périphérique"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 3,
+      "question": "Quels indicateurs de performance peuvent être utilisés pour évaluer l'innovation participative?",
+      "propositions": ["Indicateurs financiers", "Indicateurs de satisfaction client", "Indicateurs de bien-être au travail", "Tous les précédents"],
+      "reponseCorrecte": "D"
+    },
+    {
+      "id": 4,
+      "question": "Comment l'innovation participative peut-elle être encouragée au sein de l'organisation?",
+      "propositions": ["Par des récompenses financières", "Par la reconnaissance", "Par la formation", "Toutes les réponses sont correctes"],
+      "reponseCorrecte": "D"
+    },
+    {
+      "id": 5,
+      "question": "Quelle est la première étape pour mettre en place un cadre d'innovation participative?",
+      "propositions": ["Définir les objectifs", "Choisir les participants", "Identifier les ressources", "Établir les règles"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 6,
+      "question": "Quelle méthode n'est pas recommandée pour choisir les participants à l'innovation participative?",
+      "propositions": ["Sélection aléatoire", "Sur la base du volontariat", "Sélection basée sur les compétences", "Sélection par la direction"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 7,
+      "question": "Pourquoi est-il important d'établir des indicateurs de performance pour l'innovation participative?",
+      "propositions": ["Pour mesurer le succès", "Pour motiver les participants", "Pour justifier le budget", "Toutes les réponses sont correctes"],
+      "reponseCorrecte": "D"
+    },
+    {
+      "id": 8,
+      "question": "Quel est l'impact de l'innovation participative sur la culture d'entreprise?",
+      "propositions": ["Aucun impact", "Elle peut la renforcer", "Elle peut la diluer", "Elle peut créer des conflits"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 9,
+      "question": "Quelle stratégie n'est pas efficace pour engager les collaborateurs dans l'innovation participative?",
+      "propositions": ["Communication transparente", "Imposer la participation", "Offrir des formations", "Reconnaître les contributions"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 10,
+      "question": "Quel défi l'innovation participative doit-elle surmonter pour être efficace?",
+      "propositions": ["La résistance au changement", "Le manque de ressources", "La surabondance d'idées", "La compétition interne"],
+      "reponseCorrecte": "A"
+    },
+    {
+      "id": 11,
+      "question": "Comment la direction peut-elle soutenir l'innovation participative?",
+      "propositions": ["En ignorant le processus", "En participant activement", "En limitant les ressources", "En critiquant les idées"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 12,
+      "question": "Quel est le principal avantage de l'innovation participative pour les employés?",
+      "propositions": ["Augmentation salariale", "Développement professionnel", "Moins de travail", "Plus de vacances"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 13,
+      "question": "Quel facteur est crucial pour le succès de l'innovation participative?",
+      "propositions": ["La technologie de pointe", "Un leadership fort", "Des bureaux luxueux", "Des horaires flexibles"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 14,
+      "question": "Quelle est la meilleure façon de mesurer l'impact de l'innovation participative?",
+      "propositions": ["Anecdotes personnelles", "Études de cas spécifiques", "Données quantitatives", "Avis d'experts externes"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 15,
+      "question": "Quel est le principal obstacle à l'innovation participative?",
+      "propositions": ["L'enthousiasme des employés", "Le manque de soutien de la direction", "La technologie insuffisante", "Les politiques gouvernementales"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 16,
+      "question": "Quelle est la conséquence d'une mauvaise communication sur l'innovation participative?",
+      "propositions": ["Augmentation de la motivation", "Diminution de la participation", "Amélioration de l'efficacité", "Réduction des coûts"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 17,
+      "question": "Quel aspect de l'innovation participative est le plus important pour assurer son succès?",
+      "propositions": ["La quantité d'idées générées", "La qualité des idées", "La rapidité de mise en œuvre", "La participation de tous les employés"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 18,
+      "question": "Quel est l'effet d'une innovation participative réussie sur l'entreprise?",
+      "propositions": ["Augmentation des coûts à court terme", "Amélioration de la réputation", "Réduction immédiate des revenus", "Diminution de l'engagement des employés"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 19,
+      "question": "Quel rôle les managers doivent-ils jouer dans l'innovation participative?",
+      "propositions": ["Observateurs", "Participants actifs", "Critiques", "Décideurs uniques"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 20,
+      "question": "Quelle approche n'est pas recommandée pour évaluer les idées dans un processus d'innovation participative?",
+      "propositions": ["Évaluation collective", "Vote démocratique", "Décision basée uniquement sur l'opinion du PDG", "Analyse de faisabilité"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 21,
+      "question": "Quelle est l'importance de l'alignement stratégique dans l'innovation participative?",
+      "propositions": ["Négligeable", "Modérée", "Importante", "Critique"],
+      "reponseCorrecte": "D"
+    },
+    {
+      "id": 22,
+      "question": "Quel est le meilleur moyen de promouvoir une culture d'innovation ouverte?",
+      "propositions": ["Conserver les idées en interne", "Encourager la compétition entre collègues", "Partager librement les idées", "Limite la communication"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 23,
+      "question": "Quelle méthode est la moins efficace pour générer des idées dans un contexte d'innovation participative?",
+      "propositions": ["Brainstorming en groupe", "Boîte à idées anonyme", "Réunions hiérarchiques strictes", "Ateliers créatifs"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 24,
+      "question": "Quel est l'effet d'une participation large des employés à l'innovation participative?",
+      "propositions": ["Confusion et désordre", "Dilution de la qualité des idées", "Augmentation de l'engagement et de la diversité des idées", "Surcharge de travail pour les managers"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 25,
+      "question": "Comment assurer la pérennité de l'innovation participative au sein de l'organisation?",
+      "propositions": ["En la limitant à des périodes spécifiques", "Par des récompenses financières uniquement", "En l'intégrant dans les processus et la culture", "En augmentant constamment le budget"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 26,
+      "question": "Quelle approche est préférable pour traiter les idées issues de l'innovation participative?",
+      "propositions": ["Sélection rigoureuse par la direction", "Analyse détaillée par des experts", "Évaluation démocratique par tous les employés", "Ignorer la majorité des propositions"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 27,
+      "question": "Quel facteur peut entraver la communication efficace dans l'innovation participative?",
+      "propositions": ["Transparence excessive", "Manque de canaux de communication formels", "Feedback régulier", "Excès de confiance"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 28,
+      "question": "Quelle est la meilleure façon d'intégrer les nouveaux employés dans un programme d'innovation participative?",
+      "propositions": ["Formation intensive dès le premier jour", "Observation passive pendant les premiers mois", "Inclusion dans des projets d'innovation dès l'intégration", "Attente de leur initiative personnelle"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 29,
+      "question": "Quelle erreur est à éviter dans la mise en œuvre de l'innovation participative?",
+      "propositions": ["Trop de liberté dans la génération d'idées", "Pas assez de reconnaissance des contributions", "Focalisation exclusive sur les idées à court terme", "Trop insister sur les résultats quantitatifs"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 30,
+      "question": "Quelle est l'importance de l'échec dans le processus d'innovation participative?",
+      "propositions": ["Il doit être évité à tout prix", "Il est toléré mais non souhaité", "Il est vu comme une opportunité d'apprentissage", "Il n'est pas considéré dans le processus"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 31,
+      "question": "Comment mesurer le succès de l'innovation participative au-delà des indicateurs financiers?",
+      "propositions": ["Nombre d'idées générées", "Satisfaction et engagement des employés", "Réduction des coûts opérationnels", "Augmentation immédiate des ventes"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 32,
+      "question": "Quelle est la contribution de l'innovation participative à la stratégie globale de l'entreprise?",
+      "propositions": ["Aucune", "Marginal", "Significatif", "Fondamental"],
+      "reponseCorrecte": "D"
+    },
+    {
+      "id": 33,
+      "question": "Quel est le principal défi dans la gestion des idées issues de l'innovation participative?",
+      "propositions": ["Leur quantité", "Leur qualité", "Leur mise en œuvre", "Leur documentation"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 34,
+      "question": "Quelle est la valeur d'une approche participative pour résoudre des problèmes complexes?",
+      "propositions": ["Limitée", "Variable", "Élevée", "Négligeable"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 35,
+      "question": "Quel rôle les retours d'expérience jouent-ils dans l'amélioration continue de l'innovation participative?",
+      "propositions": ["Aucun rôle", "Un rôle mineur", "Un rôle majeur", "Un rôle ponctuel"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 36,
+      "question": "Quelle stratégie adopter face à une idée innovante mais controversée?",
+      "propositions": ["Rejet immédiat", "Analyse de risque détaillée", "Vote démocratique pour décider", "Adoption sans réserve"],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 37,
+      "question": "Comment favoriser un environnement propice à l'innovation participative?",
+      "propositions": ["Augmentation des contraintes", "Réduction des échanges interdépartementaux", "Encouragement de la prise de risque", "Centralisation des décisions"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 38,
+      "question": "Quelle est l'importance de la diversité des équipes dans l'innovation participative?",
+      "propositions": ["Peu importante", "Moyennement importante", "Très importante", "Pas importante du tout"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 39,
+      "question": "Quel est le meilleur indicateur du succès de l'innovation participative à long terme?",
+      "propositions": ["Le nombre d'idées implémentées", "La satisfaction client", "L'engagement et la rétention des talents", "Les bénéfices nets"],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 40,
+      "question": "Quelle approche est essentielle pour intégrer l'innovation participative dans la culture d'entreprise?",
+      "propositions": ["Une approche top-down", "Une approche bottom-up", "Une combinaison des deux", "Aucune des réponses"],
+      "reponseCorrecte": "C"
+    }
+  ]
+}
+      

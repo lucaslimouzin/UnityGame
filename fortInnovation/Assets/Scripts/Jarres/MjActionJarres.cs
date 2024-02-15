@@ -31,7 +31,7 @@ public class MjActionJarres : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la salle des jarres dégoutantes. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Maître du jeu : Bienvenue dans la salle des Paires. Approche toi pour lancer le jeu";
         }
        
     }
