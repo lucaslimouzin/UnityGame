@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class OnligneFingerChessGame : MonoBehaviour
+public class OnlineFingerChessGame : MonoBehaviour
 {
     public Button mainDroiteJoueur1Button;
     public Button mainGaucheJoueur1Button;
