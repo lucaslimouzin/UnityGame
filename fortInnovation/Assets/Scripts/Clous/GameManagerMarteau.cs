@@ -10,7 +10,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerMarteau : MonoBehaviour
 {
-    public GameObject clou; 
+    public GameObject clouJoueur; 
+    public GameObject clouMj;
     public GameObject marteauPlayer;
     public GameObject marteauMj;
     public GameObject panelInstruction;
@@ -18,7 +19,8 @@ public class GameManagerMarteau : MonoBehaviour
     public GameObject panelJauge;
     public GameObject buttonTextMarteau;
     public TextMeshProUGUI MJText;
-    public TextMeshProUGUI textVieClou;
+    public TextMeshProUGUI textVieClouJoueur;
+    public TextMeshProUGUI textVieClouMj;
     public Button buttonJauge;
     public Transform pivotPointMarteauPlayer;
     public Transform pivotPointMarteauMj;
@@ -32,7 +34,8 @@ public class GameManagerMarteau : MonoBehaviour
     private bool up =false;
     private bool tourJoueur = false;
     private bool aRelacher = false;
-    private float vieDuClou;
+    private float vieDuClouJoueur;
+    private float vieDuClouMj;
     private bool phaseQuestion = false;
     private bool ignoreInput = false;
     private bool finDuJeu = false;
@@ -113,9 +116,11 @@ public class GameManagerMarteau : MonoBehaviour
 
         forceMarteau.value = 0;
         playerForce = 10;
-        vieDuClou = 500f;
+        vieDuClouJoueur = 300f;
+        vieDuClouMj = 300f;
         //affichage de la vie du clou
-        textVieClou.text = vieDuClou.ToString();
+        textVieClouJoueur.text = vieDuClouJoueur.ToString();
+        textVieClouMj.text = vieDuClouMj.ToString();
         isSpaceEnabled = false;
         phaseQuestion = true;
         //Debug.Log("PhaseQ 1 = " + phaseQuestion);
@@ -396,45 +401,79 @@ public class GameManagerMarteau : MonoBehaviour
         }
     }
 
-    private void MoveClou (float currentHP){
+    private void MoveClouJoueur (float currentHP){
         // Assurez-vous que votre objet clou existe
-    if (clou != null)
-    {   float minY = 0.926f;
-        float maxY = 1.498f;
-        float maxHP = 800f;
-        // Calculez la position Y en utilisant une règle de trois
-        float normalizedY = Mathf.Lerp(minY, maxY, currentHP / maxHP);
+        if (clouJoueur != null)
+        {   float minY = 0.926f;
+            float maxY = 1.498f;
+            float maxHP = 800f;
+            // Calculez la position Y en utilisant une règle de trois
+            float normalizedY = Mathf.Lerp(minY, maxY, currentHP / maxHP);
 
-        // Récupérez la position actuelle du clou
-        Vector3 newPosition = clou.transform.position;
+            // Récupérez la position actuelle du clou
+            Vector3 newPosition = clouJoueur.transform.position;
 
-        //si le clou dépasse la zone cible alors on le met au minY
-        if (currentHP <= 0){
-            normalizedY = minY;
+            //si le clou dépasse la zone cible alors on le met au minY
+            if (currentHP <= 0){
+                normalizedY = minY;
+            }
+            // Modifiez la position Y avec la valeur souhaitée
+            newPosition.y = normalizedY;
+
+            // Appliquez la nouvelle position au clou
+            clouJoueur.transform.position = newPosition;
+            
+            if (vieDuClouJoueur <=0) {
+                vieDuClouJoueur = 0;
+            }
+            //affichage de la vie du clou
+            textVieClouJoueur.text = vieDuClouJoueur.ToString();
         }
-        // Modifiez la position Y avec la valeur souhaitée
-        newPosition.y = normalizedY;
-
-        // Appliquez la nouvelle position au clou
-        clou.transform.position = newPosition;
-        
-        if (vieDuClou <=0) {
-            vieDuClou = 0;
+        else
+        {
+            ////debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
         }
-        //affichage de la vie du clou
-        textVieClou.text = vieDuClou.ToString();
     }
-    else
-    {
-        ////debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
-    }
+    private void MoveClouMj (float currentHP){
+        // Assurez-vous que votre objet clou existe
+        if (clouMj != null)
+        {   float minY = 0.926f;
+            float maxY = 1.498f;
+            float maxHP = 800f;
+            // Calculez la position Y en utilisant une règle de trois
+            float normalizedY = Mathf.Lerp(minY, maxY, currentHP / maxHP);
+
+            // Récupérez la position actuelle du clou
+            Vector3 newPosition = clouMj.transform.position;
+
+            //si le clou dépasse la zone cible alors on le met au minY
+            if (currentHP <= 0){
+                normalizedY = minY;
+            }
+            // Modifiez la position Y avec la valeur souhaitée
+            newPosition.y = normalizedY;
+
+            // Appliquez la nouvelle position au clou
+            clouMj.transform.position = newPosition;
+            
+            if (vieDuClouMj <=0) {
+                vieDuClouMj = 0;
+            }
+            //affichage de la vie du clou
+            textVieClouMj.text = vieDuClouMj.ToString();
+        }
+        else
+        {
+            ////debug.LogError("Clou n'est pas défini. Assurez-vous de le définir correctement.");
+        }
     }
 
     private IEnumerator MoveMarteauCoroutine(){
         int mjForce;
         
             //si on a faux alors le mj tapera entre 50 et 101
-            mjForce = UnityEngine.Random.Range(50,101);
+            //mjForce = UnityEngine.Random.Range(50,101);
+            mjForce = 100;
             isSpaceEnabled = false; //on desactive la touche espace 
             //Debug.Log("Espace = 7 " + isSpaceEnabled);
             //faire tourner le marteau du player
@@ -447,8 +486,8 @@ public class GameManagerMarteau : MonoBehaviour
                     yield return null; //Attendre la prochaine trame
                 }
                 //on descend la vie du clou 
-                vieDuClou -= playerForce; 
-                MoveClou(vieDuClou);
+                vieDuClouJoueur -= playerForce; 
+                MoveClouJoueur(vieDuClouJoueur);
             }
             //faire tourner le marteau du Mj
             else {
@@ -459,8 +498,8 @@ public class GameManagerMarteau : MonoBehaviour
                     yield return null; //Attendre la prochaine trame
                 }
                 //on descend la vie du clou
-                vieDuClou -= mjForce; 
-                MoveClou(vieDuClou);
+                vieDuClouMj -= mjForce; 
+                MoveClouMj(vieDuClouMj);
             }
         //quand c fini replace les marteaux
         //faire remonter le marteau du player
@@ -493,7 +532,7 @@ public class GameManagerMarteau : MonoBehaviour
             ////debug.Log("Tour joueur : " + tourJoueur);
            
             
-            if (vieDuClou <= 0){
+            if (vieDuClouJoueur <= 0 || vieDuClouMj <= 0){
                 FinDuJeu();
             } 
             else {
