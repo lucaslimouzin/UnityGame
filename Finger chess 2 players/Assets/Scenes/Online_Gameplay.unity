@@ -158,6 +158,7 @@ MonoBehaviour:
   buttonRightBlack: {fileID: 368710697}
   backgroundWhite: {fileID: 1570469562}
   backgroundBlack: {fileID: 1283200977}
+  textInfo: {fileID: 1842712109}
 --- !u!4 &75891814
 Transform:
   m_ObjectHideFlags: 0
@@ -1905,7 +1906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1842712107
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2250,7 +2251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2081405966
 RectTransform:
   m_ObjectHideFlags: 0
