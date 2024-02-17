@@ -152,28 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a54872bb30ccb046b1d2417d6625d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDroiteJoueur1Button: {fileID: 609523514}
-  mainGaucheJoueur1Button: {fileID: 1644865707}
-  mainDroiteJoueur2Button: {fileID: 368710697}
-  mainGaucheJoueur2Button: {fileID: 955585276}
-  finDuTourJoueur1: {fileID: 1851611231}
-  finDuTourJoueur2: {fileID: 0}
-  transfertJoueur1: {fileID: 351497949}
-  transfertJoueur2: {fileID: 0}
-  restartJoueur1: {fileID: 2081405967}
-  restartJoueur2: {fileID: 0}
-  mainDroiteJoueur1Image: {fileID: 1632300060}
-  mainGaucheJoueur1Image: {fileID: 1920472800}
-  mainDroiteJoueur2Image: {fileID: 1163449195}
-  mainGaucheJoueur2Image: {fileID: 612920757}
-  spritesDoigts:
-  - {fileID: 21300000, guid: b8bcbf7100934d54b8bcfc3ea0ccf04e, type: 3}
-  - {fileID: 21300000, guid: 144efb85278ee264ab8ab39344c7829d, type: 3}
-  - {fileID: 21300000, guid: 1b2df9541da1b63499088852c8a8928a, type: 3}
-  - {fileID: 21300000, guid: 731425894f4acf94ea156eed46235590, type: 3}
-  - {fileID: 21300000, guid: 10f53e4f199eb4e4f8b583dc58086ac1, type: 3}
-  TextJoueur1Commence: {fileID: 1842712109}
-  TextJoueur2Commence: {fileID: 0}
+  buttonLeftWhite: {fileID: 1644865707}
+  buttonRightWhite: {fileID: 609523514}
+  buttonLeftBlack: {fileID: 955585276}
+  buttonRightBlack: {fileID: 368710697}
+  backgroundWhite: {fileID: 1570469562}
+  backgroundBlack: {fileID: 1283200977}
 --- !u!4 &75891814
 Transform:
   m_ObjectHideFlags: 0
@@ -605,7 +589,7 @@ GameObject:
   - component: {fileID: 368710698}
   - component: {fileID: 368710697}
   m_Layer: 5
-  m_Name: mainDroiteJoueur2Button
+  m_Name: mainDroiteBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -898,7 +882,7 @@ GameObject:
   - component: {fileID: 609523515}
   - component: {fileID: 609523514}
   m_Layer: 5
-  m_Name: mainDroiteJoueur1Button
+  m_Name: mainDroiteWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,7 +1014,7 @@ GameObject:
   - component: {fileID: 612920758}
   - component: {fileID: 612920757}
   m_Layer: 5
-  m_Name: mainGaucheJoueur2Image
+  m_Name: mainGaucheBlackImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1106,7 +1090,7 @@ GameObject:
   - component: {fileID: 955585277}
   - component: {fileID: 955585276}
   m_Layer: 5
-  m_Name: mainGaucheJoueur2Button
+  m_Name: mainGaucheBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1238,7 +1222,7 @@ GameObject:
   - component: {fileID: 1163449196}
   - component: {fileID: 1163449195}
   m_Layer: 5
-  m_Name: mainDroiteJoueur2Image
+  m_Name: mainDroiteBlackImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1313,7 +1297,7 @@ GameObject:
   - component: {fileID: 1283200979}
   - component: {fileID: 1283200978}
   m_Layer: 5
-  m_Name: backgroundJoueur2
+  m_Name: backgroundBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,7 +1481,7 @@ GameObject:
   - component: {fileID: 1570469564}
   - component: {fileID: 1570469563}
   m_Layer: 5
-  m_Name: backgroundJoueur1
+  m_Name: backgroundWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1574,7 +1558,7 @@ GameObject:
   - component: {fileID: 1632300061}
   - component: {fileID: 1632300060}
   m_Layer: 5
-  m_Name: mainDroiteJoueur1Image
+  m_Name: mainDroiteWhiteImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1650,7 +1634,7 @@ GameObject:
   - component: {fileID: 1644865708}
   - component: {fileID: 1644865707}
   m_Layer: 5
-  m_Name: mainGaucheJoueur1Button
+  m_Name: mainGaucheWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2185,7 +2169,7 @@ GameObject:
   - component: {fileID: 1920472801}
   - component: {fileID: 1920472800}
   m_Layer: 5
-  m_Name: mainGaucheJoueur1Image
+  m_Name: mainGaucheWhiteImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
