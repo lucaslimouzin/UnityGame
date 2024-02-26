@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
         // Déterminer le niveau actuel
         currentLevel = GetCurrentLevelNumber();
-
+        
         //détermine le nombre de partie du corps qui sera randomisé
         DetermineNumberOfPartieDuCorps();
 
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         {
             spawnedSpoonies.Add(SpawnSpoony(currentPartToRandomize, currentPart2ToRandomize, currentPart3ToRandomize, currentPart4ToRandomize));
         }
-
+       
     }
 
        
