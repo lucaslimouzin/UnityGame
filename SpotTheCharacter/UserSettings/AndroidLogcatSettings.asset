@@ -3,7 +3,7 @@
     "m_SelectedProcess": {
         "deviceId": "CLCDU18425007429",
         "name": "com.Givros.SpotTheCharacter",
-        "processId": 14119,
+        "processId": 32153,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -60,6 +60,12 @@
             "deviceId": "CLCDU18425007429",
             "name": "com.Givros.SpotTheCharacter",
             "processId": 14119,
+            "exited": false
+        },
+        {
+            "deviceId": "CLCDU18425007429",
+            "name": "com.Givros.SpotTheCharacter",
+            "processId": 32153,
             "exited": false
         }
     ],
