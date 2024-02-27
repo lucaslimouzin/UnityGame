@@ -55,6 +55,16 @@ public class GameManager : MonoBehaviour
         panelWin.SetActive(false);
         panelGameOver.SetActive(false);
         panelSearch.SetActive(true);
+        // Recherchez le bouton par son nom
+        GameObject buttonStart = GameObject.Find("ButtonStart");
+        if (buttonStart != null)
+        {
+            // Désactivez le bouton pour le rendre invisible
+            buttonStart.SetActive(false);
+
+            // Commencez une coroutine pour attendre 3 secondes
+            StartCoroutine(MakeButtonVisibleAfterDelay(buttonStart, 3.0f));
+        }
         string sceneName = SceneManager.GetActiveScene().name;
 
         // Supposer que le nom de la scène est toujours sous la forme "Level_XXX"
@@ -68,6 +78,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        IEnumerator MakeButtonVisibleAfterDelay(GameObject button, float delay)
+        {
+            // Attendez le délai spécifié
+            yield return new WaitForSeconds(delay);
+
+            // Rendez le bouton visible
+            button.SetActive(true);
+        }
         // Déterminer le niveau actuel
         currentLevel = GetCurrentLevelNumber();
         
