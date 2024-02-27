@@ -363,3 +363,895 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1664.757474 seconds.
+  path: Assets/Ressources/positive-cartoon-loop-109009.mp3
+  artifactKey: Guid(6925fe387504a3b4693df19ff3d2a062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/positive-cartoon-loop-109009.mp3 using Guid(6925fe387504a3b4693df19ff3d2a062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd33b0cd255ec8194d8bacba4d3d1394') in 0.070029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.401 seconds
+Refreshing native plugins compatible for Editor in 6.60 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.819 seconds
+Domain Reload Profiling: 1218ms
+	BeginReloadAssembly (141ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (187ms)
+		LoadAssemblies (251ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (820ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (395ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (26ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (255ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 8.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4472 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 75 unused Assets / (56.4 KB). Loaded Objects now: 4947.
+Memory consumption went from 163.2 MB to 163.1 MB.
+Total: 2.836900 ms (FindLiveObjects: 0.282800 ms CreateObjectMapping: 0.280700 ms MarkObjects: 2.170200 ms  DeleteObjects: 0.102600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1215.190556 seconds.
+  path: Assets/Ressources/Design sans titre.png
+  artifactKey: Guid(fa520a9994aafd54e9d45ad3506b0d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/Design sans titre.png using Guid(fa520a9994aafd54e9d45ad3506b0d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edd28a3a9b5a06f93e687979c1c4c68a') in 0.069250 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Ressources/logo.png
+  artifactKey: Guid(33a6572de1f39894cbc1a5a6c6d0c3c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/logo.png using Guid(33a6572de1f39894cbc1a5a6c6d0c3c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4e747cefc8027fa5f7613061af97d7f') in 0.022520 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 21.228907 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/arrow.png
+  artifactKey: Guid(01348fb62bf0db24cb23f84935eb128f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/arrow.png using Guid(01348fb62bf0db24cb23f84935eb128f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '069738c02d119a2b801b5ffe26436e31') in 0.029706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_circle.png
+  artifactKey: Guid(92b319e53e2222448a08d03df450bbc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_circle.png using Guid(92b319e53e2222448a08d03df450bbc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '227407f01c88bb5a57c4d51bad13feeb') in 0.042521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_circle.png
+  artifactKey: Guid(9cd601f2eec41584bafafd72ba7a5803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_circle.png using Guid(9cd601f2eec41584bafafd72ba7a5803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '332d17fe8ea842e21067fa8b8ec79e72') in 0.019602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/BG.png
+  artifactKey: Guid(825489511b0f43342b2aaecd5d74a32e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/BG.png using Guid(825489511b0f43342b2aaecd5d74a32e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60ccb350d09951f34dadb8657aad3131') in 0.025492 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_rhombus.png
+  artifactKey: Guid(1ccd04b02841e034e9b22882b6fa2732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_rhombus.png using Guid(1ccd04b02841e034e9b22882b6fa2732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a777e5f635f2eb676f2fbb2b1bc3ca59') in 0.032389 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_rhombus.png
+  artifactKey: Guid(346bc162d82cd714ebe41de08162387e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_rhombus.png using Guid(346bc162d82cd714ebe41de08162387e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90d423647bf0e1da816cd2bf431bd0ec') in 0.023778 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/backBtn.png
+  artifactKey: Guid(14fb3f114f4d17245be93ee3fbeb5566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/backBtn.png using Guid(14fb3f114f4d17245be93ee3fbeb5566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c1a0dbe2dd800e489187e18a89b6809') in 0.021836 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_square.png
+  artifactKey: Guid(c61fbf79dae6eb748b57ca7e25fdeef0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_square.png using Guid(c61fbf79dae6eb748b57ca7e25fdeef0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79957cd7ad7b11f06045a0ea8d04462d') in 0.021338 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.571681 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_square.png
+  artifactKey: Guid(e04427362beebf742a83081128a63448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_square.png using Guid(e04427362beebf742a83081128a63448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cf5a791f38859f0821cc6ed8f63f5bb') in 0.019896 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_squircle.png
+  artifactKey: Guid(52f2ae37561dc6248b0d407664bad6a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_body_squircle.png using Guid(52f2ae37561dc6248b0d407664bad6a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3bca0be7863574a59ec8d57f4d6e9e2') in 0.024951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.435198 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_squircle.png
+  artifactKey: Guid(27d363984ac5a02499e1871605ec455c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_body_squircle.png using Guid(27d363984ac5a02499e1871605ec455c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '794cff617597eeadc73abed946d3f2d7') in 0.022291 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_closed.png
+  artifactKey: Guid(ce56a5b3989faa642ad5b9fdc2dd0903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_closed.png using Guid(ce56a5b3989faa642ad5b9fdc2dd0903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f92b44d054c3c77f5a65c42d043361') in 0.023709 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.962660 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_closed.png
+  artifactKey: Guid(97957c3556fe9684ea4184154bfeafd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_closed.png using Guid(97957c3556fe9684ea4184154bfeafd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b52ba795958998c0e2943c37daa6f92f') in 0.019054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_open.png
+  artifactKey: Guid(3901b27a6df672e46a1ad244f9d4adbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_open.png using Guid(3901b27a6df672e46a1ad244f9d4adbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8857bcaa2a0506468d452408c7622644') in 0.019351 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.248192 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_open.png
+  artifactKey: Guid(e338096adbc79de44a7e1be587049c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_open.png using Guid(e338096adbc79de44a7e1be587049c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9af622268967e91c92592a1bc590c20') in 0.022295 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_peace.png
+  artifactKey: Guid(6042dcc1d9e52e04484825db38639e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_peace.png using Guid(6042dcc1d9e52e04484825db38639e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cce33562734026539a2c81a304defee9') in 0.022381 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.142288 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_peace.png
+  artifactKey: Guid(392036f3a01c2734abdea6615ea858d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_peace.png using Guid(392036f3a01c2734abdea6615ea858d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '551c4be52a169516a9043497870b9e5c') in 0.018485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.006874 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_point.png
+  artifactKey: Guid(a2e69fc45cf117a41a9667b8c68261bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_point.png using Guid(a2e69fc45cf117a41a9667b8c68261bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7ce3ab380559fac0ecc4737829903c1') in 0.018221 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.196386 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_point.png
+  artifactKey: Guid(f2110e51d85991b48a5b63a596d0f016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_point.png using Guid(f2110e51d85991b48a5b63a596d0f016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13ee8f70c7c2ceef8206a62773a00178') in 0.021768 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_rock.png
+  artifactKey: Guid(42e1f05ffa32d6746964dbcaf7fe8adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_rock.png using Guid(42e1f05ffa32d6746964dbcaf7fe8adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca95467c5fa59ff9cc7e00f782809e26') in 0.021949 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.093162 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_rock.png
+  artifactKey: Guid(430bc045ee342294c8d3e3dd42143012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_rock.png using Guid(430bc045ee342294c8d3e3dd42143012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcb5f36325a75897f79959b09068e177') in 0.018396 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_thumb.png
+  artifactKey: Guid(01e6a752c02682b4cb426b6b8d05a53e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/blue_hand_thumb.png using Guid(01e6a752c02682b4cb426b6b8d05a53e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e45763141c801071f8c1b6cefdbbfe84') in 0.022436 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.643117 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_thumb.png
+  artifactKey: Guid(39208da59fd0757479e0f0a71d7183a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/blue_hand_thumb.png using Guid(39208da59fd0757479e0f0a71d7183a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8903db7711ab64e1579e4da040e41c9e') in 0.219668 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/blueBG.png
+  artifactKey: Guid(1b2ec080b19db7640a28aba43ac36e93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/blueBG.png using Guid(1b2ec080b19db7640a28aba43ac36e93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e2466a90f44f756ed145e86bc6b7a43') in 0.017774 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.015738 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/blueBtnNormal.png
+  artifactKey: Guid(1b08233b523fd4a4a9991c0106492991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/blueBtnNormal.png using Guid(1b08233b523fd4a4a9991c0106492991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df0a5f9079a59d8e8371042bc03530a') in 0.019736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/blueBtnTapped.png
+  artifactKey: Guid(e70fb7a60b5bf0b46ae857c588e27e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/blueBtnTapped.png using Guid(e70fb7a60b5bf0b46ae857c588e27e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c33bc9eef0bb594f3429ea11febe5cda') in 0.021080 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.272023 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/blueRectInactive.png
+  artifactKey: Guid(f1c0ea6b7896e8448bac694433fb3739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/blueRectInactive.png using Guid(f1c0ea6b7896e8448bac694433fb3739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b063e5dae97171907b80687676d747d') in 0.342041 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.042694 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/blueRectNormal.png
+  artifactKey: Guid(802578516bf607641bc6a603d3b53128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/blueRectNormal.png using Guid(802578516bf607641bc6a603d3b53128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ebeb25d1d57d83f440a1955950c0745') in 0.018220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.022684 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/blueRectTapped.png
+  artifactKey: Guid(22cdfde64e2d063408e722e16f3d781e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/blueRectTapped.png using Guid(22cdfde64e2d063408e722e16f3d781e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c6d46feeb2f2b8ae07bdffe13421f3e') in 0.018085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.011412 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/borderCircle.png
+  artifactKey: Guid(55da0437e5ea9284d941f89c2f071285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/borderCircle.png using Guid(55da0437e5ea9284d941f89c2f071285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d85aa643242bb6a89a18154062d07cc') in 0.026009 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/closeBtn.png
+  artifactKey: Guid(a07e12af60e2958409aecec4261cbdf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/closeBtn.png using Guid(a07e12af60e2958409aecec4261cbdf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df4d7e245af771c00308a8eda8876b8') in 0.019849 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/circle.png
+  artifactKey: Guid(2b6ef8b340aff1447a592d14c3391a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/circle.png using Guid(2b6ef8b340aff1447a592d14c3391a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '607c0f6d6d4e3c2faf596e76de2b6a1f') in 0.018737 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.041547 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/coinIcon.png
+  artifactKey: Guid(751673f9123e4494da60cff7b4e422f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/coinIcon.png using Guid(751673f9123e4494da60cff7b4e422f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f09386ec9a1486d30840abdbdaf0f7af') in 0.021751 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.017306 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/cornerSquare.png
+  artifactKey: Guid(512fc44eac47823488554224c3be424f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/cornerSquare.png using Guid(512fc44eac47823488554224c3be424f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d9ff06ec5dcd1f382f366c5b0ad3e28') in 0.017821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.065493 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/cornerSquare2.png
+  artifactKey: Guid(ba50743d545adf34a8930c754e431be9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/cornerSquare2.png using Guid(ba50743d545adf34a8930c754e431be9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed20581436c61d03bf98f00beea28665') in 0.018742 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.630419 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_a.png
+  artifactKey: Guid(c504473c2346fd0409d056ef9a3a4b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_a.png using Guid(c504473c2346fd0409d056ef9a3a4b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27cbf7f3d030fc190cf1d675e0132136') in 0.018583 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_b.png
+  artifactKey: Guid(d1a4df802c8719b47b4a927762711b89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_b.png using Guid(d1a4df802c8719b47b4a927762711b89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad73c3deba44503e52e5d0d9441addd5') in 0.020914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_a.png
+  artifactKey: Guid(5540cc1e6ceabbe4fb92a54dfe0e2204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_a.png using Guid(5540cc1e6ceabbe4fb92a54dfe0e2204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c6d57eccf223d054ed397af9d42c1ee') in 0.022836 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.025205 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_b.png
+  artifactKey: Guid(aa92f1ba77b2409419cb690dad7a78fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_b.png using Guid(aa92f1ba77b2409419cb690dad7a78fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55212cdb22eaf5db78374929f45114a6') in 0.021570 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_c.png
+  artifactKey: Guid(64c1e9a5b54a3ad49a41c5cf84497779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_c.png using Guid(64c1e9a5b54a3ad49a41c5cf84497779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afd7e6ec27d7b38e4e9d0c942796b7c5') in 0.019295 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.066562 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_c.png
+  artifactKey: Guid(585ff00dbccf89844adf6d15babb741f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_c.png using Guid(585ff00dbccf89844adf6d15babb741f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c9e127ff2cc8ecd07e8ca7ac1803f62') in 0.024939 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_d.png
+  artifactKey: Guid(b64551db42afab14a92f3278d391c471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_d.png using Guid(b64551db42afab14a92f3278d391c471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b126ca8aa64f75bc845d3959ac25e8af') in 0.023256 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 18.163483 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_d.png
+  artifactKey: Guid(f8cf5f14bd233534d893ec01f9e2ef87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_d.png using Guid(f8cf5f14bd233534d893ec01f9e2ef87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b338b3cb57a64d60acbe463e5572143e') in 0.101627 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_e.png
+  artifactKey: Guid(f9f2495b0fc090441b00f54e09ec5ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_e.png using Guid(f9f2495b0fc090441b00f54e09ec5ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1b37d52bab7f600ef80aa0cc19f723') in 0.021895 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.017629 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_e.png
+  artifactKey: Guid(1d9f485053a758b4bb69dfd6f56fae9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_e.png using Guid(1d9f485053a758b4bb69dfd6f56fae9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ef298a53fd83388391e8a42f2d6e19d') in 0.041414 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_f.png
+  artifactKey: Guid(add89ad8c37d14743bca0b066b5077ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_f.png using Guid(add89ad8c37d14743bca0b066b5077ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f10c0988d1d8bbf90c3f0024bfda70a') in 0.018462 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_f.png
+  artifactKey: Guid(f704dc9af9488b0478dda1cc969e8d0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_f.png using Guid(f704dc9af9488b0478dda1cc969e8d0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '739b8b453d2c867ef3bc46efc594725f') in 0.023502 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_g.png
+  artifactKey: Guid(58a0547a23c493444bd845d46eca1932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_g.png using Guid(58a0547a23c493444bd845d46eca1932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c43f398e5fcd05e709ebaa325e62de') in 0.018879 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.360330 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_g.png
+  artifactKey: Guid(831af30fe7e0c364e95507a438d4b00c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_g.png using Guid(831af30fe7e0c364e95507a438d4b00c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49b6950b5b611d131b90108376e952c7') in 0.023359 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_h.png
+  artifactKey: Guid(83182fb776331154da8d47ba061e381c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_h.png using Guid(83182fb776331154da8d47ba061e381c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '912a70e86ca7a34305290b54cb0035d0') in 0.021510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.129411 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_h.png
+  artifactKey: Guid(70b39f275ad1dab47813e466d2ce6060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_h.png using Guid(70b39f275ad1dab47813e466d2ce6060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '306221620e1d5d83430b7556f52c5cbd') in 0.019850 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_i.png
+  artifactKey: Guid(c62eab6a54ebcf248b3e6c7ac75dcac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_i.png using Guid(c62eab6a54ebcf248b3e6c7ac75dcac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f3d78b0d0efe1e0b19cb0077acb9090') in 0.023187 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_j.png
+  artifactKey: Guid(1f54a6f8ca253434c8d0b58c8b19662a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_j.png using Guid(1f54a6f8ca253434c8d0b58c8b19662a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc0091d42801574d82cd015b0e7dae87') in 0.021338 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_j.png
+  artifactKey: Guid(36f493071bcac304198a93af1751a88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_j.png using Guid(36f493071bcac304198a93af1751a88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73cd931f3647ac5461050c628cdadf44') in 0.019061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_i.png
+  artifactKey: Guid(617040ae3eb7eca449e17eb20d060956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_i.png using Guid(617040ae3eb7eca449e17eb20d060956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b69c2da4786dc27d191c88e7a1108e97') in 0.019252 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.169951 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_k.png
+  artifactKey: Guid(c676e5901bb52224ea8a7e557a371a74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_k.png using Guid(c676e5901bb52224ea8a7e557a371a74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0429b0a48b52b110bf091d14a30164ca') in 0.029128 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/face_l.png
+  artifactKey: Guid(b3b51b206a27e354a9eec52d293ee2df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/face_l.png using Guid(b3b51b206a27e354a9eec52d293ee2df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37f23ec004a6d7abac317a0cd234e833') in 0.019963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_k.png
+  artifactKey: Guid(ee6c7056e8d07984ba00ea207e362307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_k.png using Guid(ee6c7056e8d07984ba00ea207e362307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3a108519b2ff54912492ba968d3bbb7') in 0.023493 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.044800 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/face_l.png
+  artifactKey: Guid(e1be9151bd27ea04eb40935fc17d5b3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/face_l.png using Guid(e1be9151bd27ea04eb40935fc17d5b3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45ab52aae7d93c09dfd8ca22690f6451') in 0.023639 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.161024 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_closed_down.png
+  artifactKey: Guid(3a6aeb667602e784db219500a03e0d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_closed_down.png using Guid(3a6aeb667602e784db219500a03e0d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e199eb5265dd9154f79c1c340822bad9') in 0.348010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.041127 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_closed_down.png
+  artifactKey: Guid(058ded05baa4eec4bbc785490d88f22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_closed_down.png using Guid(058ded05baa4eec4bbc785490d88f22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '595d72aa2ac61de79ca01ead420c0a7d') in 0.017466 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.023599 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_closed_up.png
+  artifactKey: Guid(23a0da5b2403ff34b910cdd01a40f817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_closed_up.png using Guid(23a0da5b2403ff34b910cdd01a40f817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa41106575cd9f5aef7570d8bf0808ca') in 0.017290 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.023570 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_closed_up.png
+  artifactKey: Guid(b35bf2ae698d0ba45972e5ece853f5af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_closed_up.png using Guid(b35bf2ae698d0ba45972e5ece853f5af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef6c6e42054ffbb28f9090b2e3f6dcaa') in 0.018750 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_half_bottom.png
+  artifactKey: Guid(1046712cb7b63f245b609cc83e3c05f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_half_bottom.png using Guid(1046712cb7b63f245b609cc83e3c05f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81becc660c298219af60eea8b76e1f31') in 0.018056 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.019513 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_half_bottom.png
+  artifactKey: Guid(4693e0e83520c144297e6e5fdbacfadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_half_bottom.png using Guid(4693e0e83520c144297e6e5fdbacfadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '514fbfc97a24c32f1ff975d166590063') in 0.017860 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_half_top.png
+  artifactKey: Guid(5e35920501b71f040ae1efd8bd67158b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_half_top.png using Guid(5e35920501b71f040ae1efd8bd67158b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd4176edc879f4e8e1f1fbf01ce0dbab') in 0.017994 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.013092 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_half_top.png
+  artifactKey: Guid(06e07ce4599fb6e4d9934003ebd0ceb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_half_top.png using Guid(06e07ce4599fb6e4d9934003ebd0ceb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '802398c60a2289f8468f6e1ee917537a') in 0.017132 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_half_top_wing.png
+  artifactKey: Guid(0b1b15a08a1cab548bfc20d38ec3f6a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_half_top_wing.png using Guid(0b1b15a08a1cab548bfc20d38ec3f6a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7363a8cc3355f5e66105e6ecf871f95d') in 0.017689 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.414188 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_half_top_wing.png
+  artifactKey: Guid(b650da2bd5591e5458826a1b5e0c1652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_half_top_wing.png using Guid(b650da2bd5591e5458826a1b5e0c1652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2594bb53b8d642f32070f821355327a1') in 0.016709 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.097519 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_open.png
+  artifactKey: Guid(da18e4804f9125f4eabfe88c7a755e1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eye_open.png using Guid(da18e4804f9125f4eabfe88c7a755e1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df23889f8d49e2e01186194efabb6cf') in 0.018369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.022475 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_open.png
+  artifactKey: Guid(0891dedcc2d3aa044bc2f1e304754337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eye_open.png using Guid(0891dedcc2d3aa044bc2f1e304754337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3cc5b7c7eb8bab1d6793c418f5ea8e5') in 0.018517 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_a.png
+  artifactKey: Guid(8dca9bdaec911ac4596af368e807eec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_a.png using Guid(8dca9bdaec911ac4596af368e807eec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff5b3bb0dfa7ef81d7e15ed64723512e') in 0.019449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_a.png
+  artifactKey: Guid(1c8a4d743e79d39459020ba24f023e05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_a.png using Guid(1c8a4d743e79d39459020ba24f023e05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1cadd00ede921a6585e06b6f517a291') in 0.018388 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_b.png
+  artifactKey: Guid(6dacffee8ba23b34ab381194662c0049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_b.png using Guid(6dacffee8ba23b34ab381194662c0049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c16811196f7866f7157990d0575605ac') in 0.019065 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_b.png
+  artifactKey: Guid(43a6eecad96d46741bfe79276db2a761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_b.png using Guid(43a6eecad96d46741bfe79276db2a761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f988cead97cbffcf4cae1c460391107') in 0.017643 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_c.png
+  artifactKey: Guid(b9de6d4ead5c4344996852ceb7a89224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_c.png using Guid(b9de6d4ead5c4344996852ceb7a89224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04f2bcad643543b9b2be7f3337ad395e') in 0.017726 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.344791 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_c.png
+  artifactKey: Guid(596ffb111c7675a4cb4bce9941c8cb65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_c.png using Guid(596ffb111c7675a4cb4bce9941c8cb65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f66b68f7b77e2b25903f70922b360bc') in 0.154474 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_d.png
+  artifactKey: Guid(94488c56843c82643b010e6541ba329f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_eyebrow_d.png using Guid(94488c56843c82643b010e6541ba329f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b968e5f88f1294506cf00befaaa0a497') in 0.019638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_mouth_angry.png
+  artifactKey: Guid(f87b088897f954a41b5d98079e522e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_mouth_angry.png using Guid(f87b088897f954a41b5d98079e522e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f6c5fcd7ff8d5a8ad6579aac6187050') in 0.019203 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_d.png
+  artifactKey: Guid(d57daf2ff62b659499bc11b3d8f970d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_eyebrow_d.png using Guid(d57daf2ff62b659499bc11b3d8f970d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d11f2ba95a63086fde59fc8a641bb1') in 0.016737 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_mouth_angry.png
+  artifactKey: Guid(319d8926ca7bfd246be1c57618581cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_mouth_angry.png using Guid(319d8926ca7bfd246be1c57618581cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76b195e7f0749c75a4e91dcbbe5f9695') in 0.019568 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.074696 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_mouth_happy.png
+  artifactKey: Guid(6341993e726c85140891a2de8b934d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_mouth_happy.png using Guid(6341993e726c85140891a2de8b934d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9dbfba80bb97ef67a268eff2a0e125c') in 0.019500 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.100553 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_mouth_happy.png
+  artifactKey: Guid(67922b9d371957d44a2fd3b4051656aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Double/facial_part_mouth_happy.png using Guid(67922b9d371957d44a2fd3b4051656aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '761e4d0d41fff11c2cc32b1dd8511779') in 0.017717 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.032829 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_mouth_sad.png
+  artifactKey: Guid(effef3126aa588c44955a45b23dc64c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/facial_part_mouth_sad.png using Guid(effef3126aa588c44955a45b23dc64c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3c1d22a4bea9557e34fd02da2b73556') in 0.018617 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.380208 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/yellowBtnInactive.png
+  artifactKey: Guid(22580ac8007df784abb2dde7c6b4cf69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/yellowBtnInactive.png using Guid(22580ac8007df784abb2dde7c6b4cf69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40750d075a6167ad0e6c3b3f2f4a7736') in 0.017572 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/yellowBtnTapped.png
+  artifactKey: Guid(e5a51b2d67dbca04ebd5c079e8b2aa66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/yellowBtnTapped.png using Guid(e5a51b2d67dbca04ebd5c079e8b2aa66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ae26ae79bf4a46b3a09e1cb5ea94f95') in 0.018750 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/yellowRectTapped.png
+  artifactKey: Guid(f897e2fcdd974004b9cabf8e0ecc1149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/yellowRectTapped.png using Guid(f897e2fcdd974004b9cabf8e0ecc1149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce6abaeef05798b0e45721243bccbdf3') in 0.018074 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/yellowRectNormal.png
+  artifactKey: Guid(fd2448901906b164e8495ab34f9e905b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/yellowRectNormal.png using Guid(fd2448901906b164e8495ab34f9e905b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01b84d5e6b00c6943791a84b835ec622') in 0.017482 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Ressources/HyperCasual Game UI/yellowBtnNormal.png
+  artifactKey: Guid(9601481ba58861c4182703be9fa649d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/HyperCasual Game UI/yellowBtnNormal.png using Guid(9601481ba58861c4182703be9fa649d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2429b5fa50e5d59d9853009359d1c058') in 0.022713 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 183.061867 seconds.
+  path: Assets/Ressources/Design sans titre 1.png
+  artifactKey: Guid(55c724e38f04934489ad1780d8217d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/Design sans titre 1.png using Guid(55c724e38f04934489ad1780d8217d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d6b0b3043d011b56620af1c7caf338') in 0.030781 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Ressources/logo 1.png
+  artifactKey: Guid(867430beaaa43744890e4650d9d4ef0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/logo 1.png using Guid(867430beaaa43744890e4650d9d4ef0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d25fed2f7979ac657f5ad6b700dac3f') in 0.021956 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 12.656321 seconds.
+  path: Assets/Ressources/kenney_shape-characters/PNG/Default/green_hand_closed.png
+  artifactKey: Guid(bb1807dc4d32fee4dbc4aa8336cc84a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ressources/kenney_shape-characters/PNG/Default/green_hand_closed.png using Guid(bb1807dc4d32fee4dbc4aa8336cc84a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4722a34eaed57e6c7984434704bc01f8') in 0.027215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 95.667995 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF.asset
+  artifactKey: Guid(8a89fa14b10d46a99122fd4f73fca9a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF.asset using Guid(8a89fa14b10d46a99122fd4f73fca9a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d5fb4fa66af21b1a3b023f61fe448e7') in 0.069800 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF.asset
+  artifactKey: Guid(125cb55b44b24c4393181402bc6200e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF.asset using Guid(125cb55b44b24c4393181402bc6200e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9437c894d42c2f9dda311bf48a36cad2') in 0.157810 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 7.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (0.9 KB). Loaded Objects now: 5107.
+Memory consumption went from 95.4 MB to 95.4 MB.
+Total: 15.868200 ms (FindLiveObjects: 0.408300 ms CreateObjectMapping: 0.398800 ms MarkObjects: 14.963500 ms  DeleteObjects: 0.096600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 6.58 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (3.1 KB). Loaded Objects now: 5107.
+Memory consumption went from 95.7 MB to 95.7 MB.
+Total: 3.594600 ms (FindLiveObjects: 0.304900 ms CreateObjectMapping: 0.289700 ms MarkObjects: 2.979000 ms  DeleteObjects: 0.020300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
