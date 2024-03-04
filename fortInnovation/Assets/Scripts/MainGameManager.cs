@@ -9,10 +9,10 @@ public class MainGameManager : MonoBehaviour
     private TextMeshProUGUI scoreTextReco;
     public int scoreReco = 0;
 
-    // variables pour jeu des Jarres
+    // variables pour jeu des Jarres/paires
     public int scoreRecoJarres = 0;
     public int nbPartieJarresJoue = 0;
-    public int nbPartieJarres = 5;
+    public int nbPartieJarres = 3;
     public bool gameJarresFait = false;
     public List<int> questionsJarresPosees = new List<int>();
 
