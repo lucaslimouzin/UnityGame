@@ -588,7 +588,10 @@ public class GameManagerJarres : MonoBehaviour
         if (tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
             //envoi vers le Main Game Manager le scoreJarres
-            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoJarres+= 1);
+            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoJarres+= 2);
+            if (MainGameManager.Instance.scoreRecoJarres == 6) {
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoJarres-= 1);
+            }
             StartCoroutine(ShowAndHideGagneText());
         }
         else {
@@ -597,7 +600,7 @@ public class GameManagerJarres : MonoBehaviour
         }
         MainGameManager.Instance.nbPartieJarresJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieJarresJoue == 5 ){
+        if(MainGameManager.Instance.nbPartieJarresJoue == 3 ){
             MainGameManager.Instance.gameJarresFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleJarres", 4f));
         }
