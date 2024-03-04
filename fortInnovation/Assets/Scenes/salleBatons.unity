@@ -8974,6 +8974,17 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 916103881}
+    - target: {fileID: 3455913231585214713, guid: 53a1891a01ef9a94fb64dae7da91dae4,
+        type: 3}
+      propertyPath: characterPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455913231585214713, guid: 53a1891a01ef9a94fb64dae7da91dae4,
+        type: 3}
+      propertyPath: characterPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 3151727175966077227, guid: 3996db80259a1ee42abc5b459c44b555,
+        type: 3}
     - target: {fileID: 7953266012364729338, guid: 53a1891a01ef9a94fb64dae7da91dae4,
         type: 3}
       propertyPath: m_Name

@@ -11,6 +11,7 @@ public class Accueil : MonoBehaviour
     void Start(){
         characters[0].enabled = true;
         characters[1].enabled = false;
+        characters[2].enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
