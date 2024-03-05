@@ -52,6 +52,7 @@ public class MainGameManager : MonoBehaviour
     public string quiCommence;
     //--------------------------------
     public string jeuEnCours;
+    public string cinematiqueEnCours;
 
     //variable du choix du personnage
     public int selectedCharacter;

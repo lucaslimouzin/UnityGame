@@ -10,11 +10,13 @@ public class MjActionAccueil : MonoBehaviour
     public GameObject panelRoom;
     public TextMeshProUGUI textMjRoom;
     public TextMeshProUGUI textMjInfo;
+    private StarterAssets.ThirdPersonController thirdPersonController;
 
     // Start is called before the first frame update
     void Start()
     {   
-        
+         // Trouver le script ThirdPersonController automatiquement au démarrage
+        thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         //Cursor.lockState = CursorLockMode.Locked;
@@ -52,6 +54,8 @@ public class MjActionAccueil : MonoBehaviour
                 //Set Cursor to not be visible
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                // Désactive les entrées de gameplay
+                DisableGameplayInput();
             }
         } 
     }
@@ -83,9 +87,27 @@ public class MjActionAccueil : MonoBehaviour
             //Set Cursor to not be visible
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            // Réactive les entrées de gameplay
+            EnableGameplayInput();
+        }
+    }
+    public void DisableGameplayInput()
+    {
+        // Désactive les entrées de gameplay
+        if (thirdPersonController != null)
+        {
+            thirdPersonController.enabled = false;
         }
     }
 
+    public void EnableGameplayInput()
+    {
+        // Réactive les entrées de gameplay
+        if (thirdPersonController != null)
+        {
+            thirdPersonController.enabled = true;
+        }
+    }
     private IEnumerator LoadSceneAfterDelay(string sceneName, float delayInSeconds)
     {
         yield return new WaitForSeconds(delayInSeconds);

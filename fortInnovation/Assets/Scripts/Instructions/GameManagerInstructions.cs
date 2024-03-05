@@ -21,7 +21,6 @@ public class GameManagerInstructions : MonoBehaviour
     public GameObject buttonTextEnigmes;
     public TextMeshProUGUI MJText;
     private bool tourJoueur = true;
-    private bool aRelacher = false;
     private bool finDuJeu = false;
     public bool isMoving = false;
 

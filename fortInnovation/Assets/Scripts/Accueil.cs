@@ -32,6 +32,8 @@ public class Accueil : MonoBehaviour
 
     public void PlayInstruction() {
         MainGameManager.Instance.selectedCharacter = selectedCharacter;
-        SceneManager.LoadScene("Instruction");
+        MainGameManager.Instance.jeuEnCours = "Instruction";
+        MainGameManager.Instance.cinematiqueEnCours = "Introduction";
+        SceneManager.LoadScene("Cinematiques");
     }
 }
