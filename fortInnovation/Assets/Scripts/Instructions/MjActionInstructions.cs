@@ -13,20 +13,25 @@ public class MjActionInstructions : MonoBehaviour
     public GameObject chest;
     public GameObject panelUi_Move;
     public GameObject panelUi_Jump;
+    private StarterAssets.ThirdPersonController thirdPersonController;
     // Start is called before the first frame update
     void Start()
     {   
+        // Trouver le script ThirdPersonController automatiquement au démarrage
+        thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         MainGameManager.Instance.tutoCompteur = 0;
         //activation de l'ui mobile si vrai 
         if (MainGameManager.Instance.panelUiMobile){
             Cursor.visible = true;
-            panelUi_Jump.SetActive(true);
+            panelUi_Jump.SetActive(false);
             panelUi_Move.SetActive(true);
         }
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
+        //desactive le deplacement
+        DisableGameplayInput();
         #if !UNITY_EDITOR && UNITY_WEBGL
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
@@ -34,7 +39,7 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Maître du jeu : Bienvenue dans Fort Innovation. Pour te déplacer utilise ZQSD ou les flèches. \n Essayes d'atteindre le coffre derrière moi !";
+        textMjRoom.text = "Bienvenue dans Fort Innovation.\n Pour te déplacer utilise ZQSD ou les flèches. \n Essayes d'atteindre le coffre !";
     
     }
 
@@ -87,5 +92,23 @@ public class MjActionInstructions : MonoBehaviour
 
     public void GoAccueil(){
         SceneManager.LoadScene("FortAccueil");
+    }
+
+    public void DisableGameplayInput()
+    {
+        // Désactive les entrées de gameplay
+        if (thirdPersonController != null)
+        {
+            thirdPersonController.enabled = false;
+        }
+    }
+
+    public void EnableGameplayInput()
+    {
+        // Réactive les entrées de gameplay
+        if (thirdPersonController != null)
+        {
+            thirdPersonController.enabled = true;
+        }
     }
 }

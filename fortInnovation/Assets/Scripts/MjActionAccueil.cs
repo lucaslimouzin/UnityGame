@@ -21,20 +21,22 @@ public class MjActionAccueil : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
+        // desactive les entrées de gameplay
+        DisableGameplayInput();
         #if !UNITY_EDITOR && UNITY_WEBGL
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
         #endif
         //si on a fini l'ensemble du jeu on se tp vers la salle de fin
         if (MainGameManager.Instance.gameJarresFait && MainGameManager.Instance.gameBatonFait && MainGameManager.Instance.gameBassinFait && MainGameManager.Instance.gameClouFait && MainGameManager.Instance.gameEnigmesFait){
-           textMjRoom.text = "Maître du jeu : Bravo vous avez fini toutes les épreuves!\n On se retrouve dans la salle des récompenses !"; 
+           textMjRoom.text = "Bravo vous avez fini toutes les épreuves!\n On se retrouve dans la salle des récompenses !"; 
            StartCoroutine(LoadSceneAfterDelay("SalleFinDuJeu", 4f));
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
-                textMjRoom.text = "Maître du jeu : Bienvenue dans Fort Innovation !!! \n Approche toi de moi pour avoir les explications sur ton aventure \n dans le fort ...";
+                textMjRoom.text = "Bienvenue dans Fort Innovation !!! \n Approche toi de moi pour avoir les explications sur ton aventure \n dans le fort ...";
         }
         else {
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Continue d'explorer les autres salles \n Avance vers la voie de l'innovation...";
+            textMjRoom.text = "Continue d'explorer les autres salles \n Avance vers la voie de l'innovation...";
         }
        
     }
@@ -50,7 +52,7 @@ public class MjActionAccueil : MonoBehaviour
             if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
-                textMjInfo.text = "Maître du Temps: \nHéros de l'innovation,\nbienvenue dans l'enceinte sacrée du Fort de l'Innovation.\n\nVotre quête ici est noble et essentielle. En parcourant les cinq cellules mystiques de ce fort, vous serez initiés aux principes sacrés de l'innovation participative.\n\nChaque cellule est un sanctuaire dédié à un principe spécifique, un lieu où se révèlent les leviers d'action - les bonnes pratiques - et les pièges - les écueils à éviter - qui façonnent le paysage de l'innovation.Votre périple à travers ces cellules a un double objectif. Premièrement, il vise à approfondir votre compréhension et votre mise en œuvre des bonnes pratiques et des écueils à éviter, afin de cultiver un terreau fertile pour l'innovation au sein de la Caisse.\n\nDeuxièmement, il est conçu pour vous équiper d'une sagesse pratique, vous permettant d'identifier et d'activer les leviers nécessaires pour animer l'innovation participative au sein de vos équipes.";
+                textMjInfo.text = "\nHéros de l'innovation,\nbienvenue dans l'enceinte sacrée du Fort de l'Innovation.\n\nVotre quête ici est noble et essentielle. En parcourant les cinq cellules mystiques de ce fort, vous serez initiés aux principes sacrés de l'innovation participative.\n\nChaque cellule est un sanctuaire dédié à un principe spécifique, un lieu où se révèlent les leviers d'action - les bonnes pratiques - et les pièges - les écueils à éviter - qui façonnent le paysage de l'innovation.Votre périple à travers ces cellules a un double objectif. Premièrement, il vise à approfondir votre compréhension et votre mise en œuvre des bonnes pratiques et des écueils à éviter, afin de cultiver un terreau fertile pour l'innovation au sein de la Caisse.\n\nDeuxièmement, il est conçu pour vous équiper d'une sagesse pratique, vous permettant d'identifier et d'activer les leviers nécessaires pour animer l'innovation participative au sein de vos équipes.";
                 //Set Cursor to not be visible
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
@@ -64,7 +66,9 @@ public class MjActionAccueil : MonoBehaviour
         if (MainGameManager.Instance.tutoCompteur == 2){
                 if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(true);
-                textMjRoom.text = "Maître du jeu : Dirige toi vers une cellule \n Pour commencer ton aventure...";
+                textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
+                // desactive les entrées de gameplay
+                DisableGameplayInput();
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
                     //Set Cursor to not be visible
@@ -82,13 +86,13 @@ public class MjActionAccueil : MonoBehaviour
         }
         else{
             panelRoom.SetActive(true);
-            textMjRoom.text = "Maître du jeu : Dirige toi vers une cellule \n Pour commencer ton aventure...";
+            textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
             panelMjInfo.SetActive(false);
             //Set Cursor to not be visible
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            // Réactive les entrées de gameplay
-            EnableGameplayInput();
+            // desactive les entrées de gameplay
+            DisableGameplayInput();
         }
     }
     public void DisableGameplayInput()

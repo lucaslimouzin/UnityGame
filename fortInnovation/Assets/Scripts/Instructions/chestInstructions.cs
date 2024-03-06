@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class chestInstructions : MonoBehaviour
 {
-    public GameObject panelMj;
+    public GameObject panelRoom;
     public TextMeshProUGUI textMjRoom;
     public GameObject panelReco;
+    
+    private StarterAssets.ThirdPersonController thirdPersonController;
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,8 @@ public class chestInstructions : MonoBehaviour
         //ActivateButton(MainGameManager.Instance.scoreRecoEnigmes);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        // Trouver le script ThirdPersonController automatiquement au démarrage
+        thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
     }
 
     // Update is called once per frame
@@ -26,7 +30,7 @@ public class chestInstructions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-                panelMj.SetActive(false);
+                panelRoom.SetActive(false);
                 panelReco.SetActive(true);
                 //Set Cursor to not be visible
                 Cursor.visible = true;
@@ -37,12 +41,23 @@ public class chestInstructions : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (panelReco.activeSelf){
             panelReco.SetActive(false);
-            panelMj.SetActive(true);
-            textMjRoom.text = "Maître du jeu : Maintenant, va vers la table pour débuter l'aventure !";
+            panelRoom.SetActive(true);
+            //desactive le deplacement
+            DisableGameplayInput();
+            textMjRoom.text = "Maintenant, va vers la table pour débuter l'aventure !";
             //Set Cursor to not be visible
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             MainGameManager.Instance.tutoCompteur = 1;
+        }
+    }
+
+    public void DisableGameplayInput()
+    {
+        // Désactive les entrées de gameplay
+        if (thirdPersonController != null)
+        {
+            thirdPersonController.enabled = false;
         }
     }
 
