@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MjActionInstructions : MonoBehaviour
 {
     public GameObject panelMjInfo;
+    public TextMeshProUGUI textMjInfo;
     public GameObject panelReco;
     public GameObject panelRoom;
     public TextMeshProUGUI textMjRoom;
@@ -40,6 +41,7 @@ public class MjActionInstructions : MonoBehaviour
             chest.SetActive(true);
         //change le message du panel Room
         textMjRoom.text = "Bienvenue dans Fort Innovation.\n Pour te déplacer utilise ZQSD ou les flèches. \n Essayes d'atteindre le coffre !";
+        textMjInfo.text = "Bien tu es prêt(e) à commençez l'aventure !\n Clique sur le bouton JOUER et retrouve moi dans la salle suivante.\n Bonne chance !";
     
     }
 
@@ -110,5 +112,14 @@ public class MjActionInstructions : MonoBehaviour
         {
             thirdPersonController.enabled = true;
         }
+        panelRoom.SetActive(true);
+        //desactive le deplacement
+        DisableGameplayInput();
+        textMjRoom.text = "Maintenant, va vers la porte pour débuter l'aventure !";
+        //Set Cursor to not be visible
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        MainGameManager.Instance.tutoCompteur = 1;
+        
     }
 }
