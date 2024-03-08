@@ -46,7 +46,7 @@ public class DoorActions1 : MonoBehaviour
         }
     }
 
-     public void PlayGameBaton() {
+     public void OpenDoor() {
         panelDoor.SetActive(false);
         //Set Cursor to not be visible
         Cursor.visible = true;
