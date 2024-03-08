@@ -82,6 +82,7 @@ public class MjActionAccueil : MonoBehaviour
     public void textSuivant(){
         panelRoom.SetActive(true);
         textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
+        MainGameManager.Instance.tutoCompteur = 3;
         panelMjInfo.SetActive(false);
         //Set Cursor to not be visible
         Cursor.visible = true;
