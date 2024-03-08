@@ -32,6 +32,7 @@ public class chestInstructions : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
                 panelReco.SetActive(true);
+                DisableGameplayInput();
                 //Set Cursor to not be visible
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;

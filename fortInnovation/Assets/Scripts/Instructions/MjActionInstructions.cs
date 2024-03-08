@@ -40,8 +40,8 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Bienvenue dans Fort Innovation.\n Pour te déplacer utilise ZQSD ou les flèches. \n Essayes d'atteindre le coffre !";
-        textMjInfo.text = "Bien tu es prêt(e) à commençez l'aventure !\n Clique sur le bouton JOUER et retrouve moi dans la salle suivante.\n Bonne chance !";
+        textMjRoom.text = "Pour te déplacer utilise ZQSD ou les flèches. \n Essayes d'atteindre le coffre !";
+        textMjInfo.text = "Bien tu es prêt(e) à commençez l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
     
     }
 

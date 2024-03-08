@@ -64,18 +64,18 @@ public class MjActionAccueil : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         if (MainGameManager.Instance.tutoCompteur == 2){
-                if (other.gameObject.CompareTag("Player")){
-                panelRoom.SetActive(true);
-                textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
-                // desactive les entrées de gameplay
-                DisableGameplayInput();
-                if (panelMjInfo.activeSelf){
-                    panelMjInfo.SetActive(false);
-                    //Set Cursor to not be visible
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
-                }  
-            }
+            // if (other.gameObject.CompareTag("Player")){
+            //     panelRoom.SetActive(true);
+            //     textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
+            //     // desactive les entrées de gameplay
+            //     DisableGameplayInput();
+            //     if (panelMjInfo.activeSelf){
+            //         panelMjInfo.SetActive(false);
+            //         //Set Cursor to not be visible
+            //         Cursor.visible = true;
+            //         Cursor.lockState = CursorLockMode.None;
+            //     }  
+            // }
         }
     }
 
