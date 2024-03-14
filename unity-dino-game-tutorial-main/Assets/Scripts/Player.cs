@@ -7,12 +7,15 @@ public class Player : MonoBehaviour
 {
     private CharacterController character;
     private Vector3 direction;
-    public String  userName="";
+    
     public float jumpForce = 8f;
     public float gravity = 9.81f * 2f;
     public float jumpDelay = 0.5f; // Délai de 0.5 seconde entre les sauts
     private float lastJumpTime = -1f; // Quand le dernier saut a eu lieu
 
+    async void Start(){
+        var userName="fukuma_mizushi20";
+    }
     private void Awake()
     {
         character = GetComponent<CharacterController>();
