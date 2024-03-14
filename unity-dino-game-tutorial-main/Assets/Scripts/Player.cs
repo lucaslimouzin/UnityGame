@@ -14,7 +14,12 @@ public class Player : MonoBehaviour
     private float lastJumpTime = -1f; // Quand le dernier saut a eu lieu
 
     async void Start(){
-        var userName="fukuma_mizushi20";
+        var userName= "fukuma_mizushi20";
+        TikTokLiveManager.Instance.OnGift += (liveClient, giftEvent) => {
+            jump();
+            Debug.Log(message: $"Thank you for Gift! {giftEvent.Gift.Name}{giftEvent.Sender.NickName}");
+        };
+        await TikTokLiveManager.Instance.ConnectToStream(userName);
     }
     private void Awake()
     {
@@ -42,15 +47,21 @@ public class Player : MonoBehaviour
                 direction = Vector3.up * jumpForce;
                 
             }
-        TikTokLiveManager.Instance.OnGift += (liveClient, likeEvent) => {
-             if (transform.position.y <= 3) {
-                direction = Vector3.up * jumpForce;
-            }
-        };
+        
 
         character.Move(direction * Time.deltaTime);
     }
 
+    private void jump()
+    {
+        if (Time.time - lastJumpTime >= jumpDelay && transform.position.y <= 3)
+        {
+            direction = Vector3.up * jumpForce;
+            
+            Debug.Log(direction);
+            lastJumpTime = Time.time; // Mettre à jour le temps du dernier saut
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle")) {
