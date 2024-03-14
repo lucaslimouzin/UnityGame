@@ -3798,6 +3798,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 911866277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &911866279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 382501411976735561, guid: baa3dd5d275cd2b488d2e7f0ef0e316d,
+    type: 3}
+  m_PrefabInstance: {fileID: 911866277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &911866280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7889085259882885391, guid: baa3dd5d275cd2b488d2e7f0ef0e316d,
+    type: 3}
+  m_PrefabInstance: {fileID: 911866277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &938656151
 GameObject:
   m_ObjectHideFlags: 0
@@ -5798,8 +5816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelMjInfo: {fileID: 519539487}
   panelReco: {fileID: 709726220}
-  panelRoom: {fileID: 0}
-  textMjRoom: {fileID: 0}
+  panelRoom: {fileID: 911866280}
+  textMjRoom: {fileID: 911866279}
   chest: {fileID: 2110367814}
 --- !u!1 &1266700203
 GameObject:
