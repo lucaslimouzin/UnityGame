@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private bool iCanJump = false;
 
     async void Start(){
-        var userName= "skillgx007";
+        var userName= "okamexile";
         TikTokLiveManager.Instance.OnGift += (liveClient, giftEvent) => {
             iCanJump = true;
             Debug.Log(message: $"Thank you for Gift! {giftEvent.Gift.Name}{giftEvent.Sender.NickName}");
@@ -50,21 +50,21 @@ public class Player : MonoBehaviour
             }
         
         if (iCanJump == true){
-            direction = Vector3.up * jumpForce;
+            jump();
             iCanJump = false;
         }
         character.Move(direction * Time.deltaTime);
     }
 
     private void jump()
-    {
+    {/*
         if (Time.time - lastJumpTime >= jumpDelay && transform.position.y <= 3)
-        {
+        {*/
             direction = Vector3.up * jumpForce;
             
-            Debug.Log(direction);
+         /*   Debug.Log(direction);
             lastJumpTime = Time.time; // Mettre à jour le temps du dernier saut
-        }
+        }*/
     }
     private void OnTriggerEnter(Collider other)
     {
