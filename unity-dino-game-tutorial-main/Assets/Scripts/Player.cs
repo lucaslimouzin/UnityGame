@@ -12,11 +12,12 @@ public class Player : MonoBehaviour
     public float gravity = 9.81f * 2f;
     public float jumpDelay = 0.5f; // Délai de 0.5 seconde entre les sauts
     private float lastJumpTime = -1f; // Quand le dernier saut a eu lieu
+    private bool iCanJump = false;
 
     async void Start(){
-        var userName= "fukuma_mizushi20";
+        var userName= "skillgx007";
         TikTokLiveManager.Instance.OnGift += (liveClient, giftEvent) => {
-            jump();
+            iCanJump = true;
             Debug.Log(message: $"Thank you for Gift! {giftEvent.Gift.Name}{giftEvent.Sender.NickName}");
         };
         await TikTokLiveManager.Instance.ConnectToStream(userName);
@@ -48,7 +49,10 @@ public class Player : MonoBehaviour
                 
             }
         
-
+        if (iCanJump == true){
+            direction = Vector3.up * jumpForce;
+            iCanJump = false;
+        }
         character.Move(direction * Time.deltaTime);
     }
 
