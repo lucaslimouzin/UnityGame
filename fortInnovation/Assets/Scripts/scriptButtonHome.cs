@@ -11,7 +11,7 @@ public class scriptButtonHome : MonoBehaviour
     public void activeUi(){
         MainGameManager.Instance.panelUiMobile = !MainGameManager.Instance.panelUiMobile;
         if (MainGameManager.Instance.panelUiMobile){
-            Cursor.visible = true;
+            
             panelUi_Jump.SetActive(true);
             panelUi_Move.SetActive(true);
         } else {

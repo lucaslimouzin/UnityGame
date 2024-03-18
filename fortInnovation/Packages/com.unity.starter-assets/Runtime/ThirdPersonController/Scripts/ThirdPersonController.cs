@@ -73,7 +73,7 @@ namespace StarterAssets
         public float CameraAngleOverride = 0.0f;
 
         [Tooltip("For locking the camera position on all axis")]
-        public bool LockCameraPosition = false;
+        public bool LockCameraPosition = true;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -192,24 +192,30 @@ namespace StarterAssets
 
         private void CameraRotation()
         {
-            // if there is an input and camera position is not fixed
+            // Si une entrée est détectée et la position de la caméra n'est pas verrouillée
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
-                //Don't multiply mouse input by Time.deltaTime;
+                // N'appliquez pas Time.deltaTime aux entrées de la souris;
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+                // Destination cible basée sur l'entrée actuelle
+                float targetYaw = _cinemachineTargetYaw + _input.look.x * deltaTimeMultiplier;
+                float targetPitch = _cinemachineTargetPitch - _input.look.y * deltaTimeMultiplier; // Inverse le signe pour le pitch si nécessaire
+
+                // Lisse la transition vers la cible
+                _cinemachineTargetYaw = Mathf.SmoothDampAngle(_cinemachineTargetYaw, targetYaw, ref _rotationVelocity, RotationSmoothTime);
+                _cinemachineTargetPitch = Mathf.SmoothDampAngle(_cinemachineTargetPitch, targetPitch, ref _rotationVelocity, RotationSmoothTime);
             }
 
-            // clamp our rotations so our values are limited 360 degrees
-            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
+            // Limite les rotations pour éviter les tours complets
+            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, -360, 360);
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-            // Cinemachine will follow this target
-            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
-                _cinemachineTargetYaw, 0.0f);
+            // Applique la rotation calculée à la cible de la caméra
+            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
         }
+
+        
 
         private void Move()
         {

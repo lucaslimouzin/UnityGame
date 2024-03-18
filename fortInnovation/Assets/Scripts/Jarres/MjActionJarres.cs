@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MjActionJarres : MonoBehaviour
+public class MjActionPaires : MonoBehaviour
 {
     public GameObject panelMjInfo;
     public GameObject panelReco;
@@ -14,15 +14,15 @@ public class MjActionJarres : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         #if !UNITY_EDITOR && UNITY_WEBGL
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
         #endif
-        if (MainGameManager.Instance.gameJarresFait) {
+        if (MainGameManager.Instance.gamePairesFait) {
                 //active le coffre
                 chest.SetActive(true);
                 textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
@@ -39,17 +39,18 @@ public class MjActionJarres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameJarresFait) {
+            if (!MainGameManager.Instance.gamePairesFait) {
                 panelMjInfo.SetActive(true);
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                
+                
+                
             }
              
         }
@@ -58,12 +59,12 @@ public class MjActionJarres : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelRoom.SetActive(false);
-            if (!MainGameManager.Instance.gameJarresFait) {
+            if (!MainGameManager.Instance.gamePairesFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
-                    //Set Cursor to not be visible
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
+                    
+                    
+                    
                 }   
             }
             
@@ -73,14 +74,14 @@ public class MjActionJarres : MonoBehaviour
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
             panelReco.SetActive(false);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            
+            
         }   
     }
 
      public void PlayGame() {
-        MainGameManager.Instance.jeuEnCours = "JeuJarres";
+        MainGameManager.Instance.jeuEnCours = "JeuPaires";
         SceneManager.LoadScene("SalleDes");
     }
 

@@ -11,8 +11,8 @@ public class LoadCharacter : MonoBehaviour
     public GameObject panelUi_Move;
     public GameObject panelUi_Jump;
     void Start() {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
         GameObject prefab = Instantiate(characterPrefabs[MainGameManager.Instance.selectedCharacter]);
         if (virtualCamera != null )
         {
@@ -35,8 +35,8 @@ public class LoadCharacter : MonoBehaviour
 
         //activation de l'ui mobile si vrai 
         if (MainGameManager.Instance.panelUiMobile){
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            
             panelUi_Jump.SetActive(true);
             panelUi_Move.SetActive(true);
         }

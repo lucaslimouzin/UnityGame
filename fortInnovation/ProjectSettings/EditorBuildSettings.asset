@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/FortAccueil.unity
     guid: 91d078250fd66dc4587cdee76cf95f01
   - enabled: 1
-    path: Assets/Scenes/SalleJarres.unity
+    path: Assets/Scenes/SallePaires.unity
     guid: 46e4e62ac1544db45ab23e2936fb3fa7
   - enabled: 1
     path: Assets/Scenes/SalleBatons.unity
@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SalleDes.unity
     guid: d6e292a43be2e8249872d329acfea44c
   - enabled: 1
-    path: Assets/Scenes/JeuJarres.unity
+    path: Assets/Scenes/JeuPaires.unity
     guid: 5f5e358368b00dd4a8acae1fda45350f
   - enabled: 1
     path: Assets/Scenes/JeuBatons.unity

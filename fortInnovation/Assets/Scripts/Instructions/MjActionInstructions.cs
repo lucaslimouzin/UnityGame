@@ -20,12 +20,12 @@ public class MjActionInstructions : MonoBehaviour
     {   
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
         MainGameManager.Instance.tutoCompteur = 0;
         //activation de l'ui mobile si vrai 
         if (MainGameManager.Instance.panelUiMobile){
-            Cursor.visible = true;
+            
             panelUi_Jump.SetActive(false);
             panelUi_Move.SetActive(true);
         }
@@ -40,15 +40,16 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Pour te déplacer utilise ZQSD ou les flèches. \n Essayes d'atteindre le coffre !";
-        textMjInfo.text = "Bien tu es prêt(e) à commençez l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
+        textMjRoom.text = "Pour te déplacer utilise ZQSD ou les flèches. \n Essaie d'atteindre le coffre !";
+        textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
     
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -56,9 +57,7 @@ public class MjActionInstructions : MonoBehaviour
             if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+ 
             }
         }
     }
@@ -69,9 +68,7 @@ public class MjActionInstructions : MonoBehaviour
             panelRoom.SetActive(false);
             if (panelMjInfo.activeSelf){
                 panelMjInfo.SetActive(false);
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+
             }   
         }
         }
@@ -80,10 +77,7 @@ public class MjActionInstructions : MonoBehaviour
 
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
-            panelReco.SetActive(false);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            panelReco.SetActive(false); 
         }   
     }
 
@@ -116,9 +110,6 @@ public class MjActionInstructions : MonoBehaviour
         //desactive le deplacement
         DisableGameplayInput();
         textMjRoom.text = "Maintenant, va vers la porte pour débuter l'aventure !";
-        //Set Cursor to not be visible
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
         MainGameManager.Instance.tutoCompteur = 1;
         
     }

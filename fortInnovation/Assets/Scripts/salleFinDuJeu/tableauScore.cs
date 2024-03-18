@@ -15,15 +15,16 @@ public class tableauScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
             panelTableauScores.SetActive(true);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            
+            
         }
     }
 
@@ -31,9 +32,9 @@ public class tableauScore : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
             if (panelTableauScores.activeSelf){
                 panelTableauScores.SetActive(false);
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+                
+                
+            
             }   
         }        
     }

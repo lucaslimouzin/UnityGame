@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class chestJarres : MonoBehaviour
+public class chestPaires : MonoBehaviour
 {
     public GameObject panelReco;
     public GameObject panelReco1;
@@ -16,32 +16,33 @@ public class chestJarres : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ActivateButton(MainGameManager.Instance.scoreRecoJarres);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        ActivateButton(MainGameManager.Instance.scoreRecoPaires);
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
                 panelReco.SetActive(true);
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                
+                
+                
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (panelReco.activeSelf){
             panelReco.SetActive(false);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            
+            
         }
     }
 

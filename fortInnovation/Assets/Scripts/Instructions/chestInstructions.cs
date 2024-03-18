@@ -16,8 +16,8 @@ public class chestInstructions : MonoBehaviour
     void Start()
     {
         //ActivateButton(MainGameManager.Instance.scoreRecoEnigmes);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
     }
@@ -25,7 +25,8 @@ public class chestInstructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -33,9 +34,9 @@ public class chestInstructions : MonoBehaviour
                 panelRoom.SetActive(false);
                 panelReco.SetActive(true);
                 DisableGameplayInput();
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                
+                
+                
         }
     }
 
@@ -46,9 +47,9 @@ public class chestInstructions : MonoBehaviour
             //desactive le deplacement
             DisableGameplayInput();
             textMjRoom.text = "Maintenant, va vers la table pour débuter l'aventure !";
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            
+            
             MainGameManager.Instance.tutoCompteur = 1;
         }
     }

@@ -8,7 +8,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 //pour récupérer en réseau le fichier Json
 using UnityEngine.Networking;
-public class GameManagerJarres : MonoBehaviour
+public class GameManagerPaires : MonoBehaviour
 {
  
 
@@ -90,10 +90,10 @@ public class GameManagerJarres : MonoBehaviour
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    private void HandleScoreUpdated(int scoreJarres, int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
+    private void HandleScoreUpdated(int scorePaires, int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
     {
         // Faire quelque chose avec le nouveau score
-        MainGameManager.Instance.scoreReco = scoreJarres + scoreBaton + scoreClou + scoreBassin + scoreEnigmes; 
+        MainGameManager.Instance.scoreReco = scorePaires + scoreBaton + scoreClou + scoreBassin + scoreEnigmes; 
        
     }
     //-------------------------------------------------------------------
@@ -101,8 +101,8 @@ public class GameManagerJarres : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
         toursIA = 0;
         scoreMj = 0;
         scorePlayer = 0;
@@ -158,7 +158,8 @@ public class GameManagerJarres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     
@@ -198,14 +199,14 @@ public class GameManagerJarres : MonoBehaviour
         do
         {
             numQuestions = UnityEngine.Random.Range(0, listQuestions.questions.Length);
-        } while (MainGameManager.Instance.questionsJarresPosees.Contains(numQuestions));
+        } while (MainGameManager.Instance.questionsPairesPosees.Contains(numQuestions));
 
-        MainGameManager.Instance.questionsJarresPosees.Add(numQuestions);
+        MainGameManager.Instance.questionsPairesPosees.Add(numQuestions);
         // Restreindre le nombre total de questions posées
-        if (MainGameManager.Instance.questionsJarresPosees.Count >= listQuestions.questions.Length)
+        if (MainGameManager.Instance.questionsPairesPosees.Count >= listQuestions.questions.Length)
         {
             // Si toutes les questions ont été posées, réinitalisation de la liste
-            MainGameManager.Instance.questionsJarresPosees.Clear();
+            MainGameManager.Instance.questionsPairesPosees.Clear();
         }
 
         //gestion des panneaux
@@ -587,10 +588,10 @@ public class GameManagerJarres : MonoBehaviour
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
-            //envoi vers le Main Game Manager le scoreJarres
-            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoJarres+= 2);
-            if (MainGameManager.Instance.scoreRecoJarres == 6) {
-                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoJarres-= 1);
+            //envoi vers le Main Game Manager le scorePaires
+            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 2);
+            if (MainGameManager.Instance.scoreRecoPaires == 6) {
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires-= 1);
             }
             StartCoroutine(ShowAndHideGagneText());
         }
@@ -598,11 +599,11 @@ public class GameManagerJarres : MonoBehaviour
             MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
             StartCoroutine(ShowAndHidePerduText());
         }
-        MainGameManager.Instance.nbPartieJarresJoue += 1;
+        MainGameManager.Instance.nbPartiePairesJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieJarresJoue == 3 ){
-            MainGameManager.Instance.gameJarresFait = true;
-            StartCoroutine(LoadSceneAfterDelay("SalleJarres", 4f));
+        if(MainGameManager.Instance.nbPartiePairesJoue == 3 ){
+            MainGameManager.Instance.gamePairesFait = true;
+            StartCoroutine(LoadSceneAfterDelay("SallePaires", 4f));
         }
         else
         {

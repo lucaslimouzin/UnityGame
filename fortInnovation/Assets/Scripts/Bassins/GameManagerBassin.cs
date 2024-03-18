@@ -80,10 +80,10 @@ public class GameManagerBassin : MonoBehaviour
     }
 
     // Méthode appelée lorsque le score est mis à jour
-    private void HandleScoreUpdated(int scoreJarres, int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
+    private void HandleScoreUpdated(int scorePaires, int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
     {
         // Faire quelque chose avec le nouveau score
-        MainGameManager.Instance.scoreReco = scoreJarres + scoreBaton + scoreClou + scoreBassin + scoreEnigmes; 
+        MainGameManager.Instance.scoreReco = scorePaires + scoreBaton + scoreClou + scoreBassin + scoreEnigmes; 
        
     }
     //-------------------------------------------------------------------
@@ -91,8 +91,8 @@ public class GameManagerBassin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 

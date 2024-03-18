@@ -14,8 +14,8 @@ public class MjActionClou : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         #if !UNITY_EDITOR && UNITY_WEBGL
@@ -39,7 +39,8 @@ public class MjActionClou : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -47,9 +48,9 @@ public class MjActionClou : MonoBehaviour
             panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gameClouFait) {
                 panelMjInfo.SetActive(true);
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                
+                
+                
             }
              
         }
@@ -61,9 +62,9 @@ public class MjActionClou : MonoBehaviour
             if (!MainGameManager.Instance.gameClouFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
-                    //Set Cursor to not be visible
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
+                    
+                    
+                    
                 }   
             }
             
@@ -73,9 +74,9 @@ public class MjActionClou : MonoBehaviour
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
             panelReco.SetActive(false);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            
+            
         }   
     }
 

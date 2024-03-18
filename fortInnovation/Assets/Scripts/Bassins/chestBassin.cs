@@ -17,31 +17,32 @@ public class chestbassin : MonoBehaviour
     void Start()
     {
         ActivateButton(MainGameManager.Instance.scoreRecobassin);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
                 panelReco.SetActive(true);
-                //Set Cursor to not be visible
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None; 
+                
+                
+                 
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (panelReco.activeSelf){
             panelReco.SetActive(false);
-            //Set Cursor to not be visible
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            
+            
         }
     }
 
