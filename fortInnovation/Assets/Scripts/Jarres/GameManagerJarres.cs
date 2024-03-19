@@ -17,8 +17,8 @@ public class GameManagerPaires : MonoBehaviour
     public GameObject panelInfoMJ;
     public TextMeshProUGUI MJText;
   
-    private bool tourJoueur = false;
-
+    public bool tourJoueur = false;
+    private bool deuxCartesRetournees = false;
     private bool phaseQuestion = false;
     private bool finDuJeu = false;
     public bool isMoving = false;
@@ -191,6 +191,7 @@ public class GameManagerPaires : MonoBehaviour
     //affichage de la question   
     private void AfficheLaQuestion(){
         phaseQuestion = true;
+         
         //Debug.Log("PhaseQ 2 = " + phaseQuestion);
         tourJoueur = false;
         //choisi les questions de 1 à taille Json
@@ -351,7 +352,7 @@ public class GameManagerPaires : MonoBehaviour
     private void OnCardClicked(int index, bool isLigne1)
     {
         // Si c'est le tour du joueur et si une carte n'a pas déjà été sélectionnée dans la ligne
-        if (tourJoueur && ((isLigne1 && carteSelectionneeLigne1 == null) || (!isLigne1 && carteSelectionneeLigne2 == null)))
+        if (tourJoueur && !deuxCartesRetournees && ((isLigne1 && carteSelectionneeLigne1 == null) || (!isLigne1 && carteSelectionneeLigne2 == null)))
         {
             Button carteCliquee = isLigne1 ? ligne1Cartes[index] : ligne2Cartes[index];
             string refCarte = isLigne1 ? ligne1Refs[index] : ligne2Refs[index];
@@ -362,10 +363,13 @@ public class GameManagerPaires : MonoBehaviour
             if (isLigne1)
             {
                 carteSelectionneeLigne1 = carteCliquee;
+                carteSelectionneeLigne1.interactable = false;
+                
             }
             else
             {
                 carteSelectionneeLigne2 = carteCliquee;
+                carteSelectionneeLigne2.interactable = false;
             }
 
             VerifierSiDeuxCartesSelectionnees();
@@ -381,6 +385,7 @@ public class GameManagerPaires : MonoBehaviour
 
         if (carteSelectionneeLigne1 != null && carteSelectionneeLigne2 != null)
         {
+            deuxCartesRetournees = true;
             int indexCarte1 = ligne1Cartes.IndexOf(carteSelectionneeLigne1);
             int indexCarte2 = ligne2Cartes.IndexOf(carteSelectionneeLigne2);
             if (ligne1Refs[indexCarte1] == ligne2Refs[indexCarte2])
@@ -402,6 +407,7 @@ public class GameManagerPaires : MonoBehaviour
                     scoreMj++;
                     scoreMjText.text = scoreMj.ToString() + "/3 paires MJ";
                 }
+                deuxCartesRetournees = false;
                 if (scorePlayer == 3 || scoreMj ==3) {
                     //fin du jeu
                     FinDuJeu();
@@ -412,6 +418,7 @@ public class GameManagerPaires : MonoBehaviour
             }
             else
             {
+                deuxCartesRetournees = false;
                 // Les cartes ne forment pas une paire
                 // Ajouter les index des cartes aux cartes vues non appariées
                 StartCoroutine(ShowAndHideWrongText());
@@ -448,13 +455,13 @@ public class GameManagerPaires : MonoBehaviour
         // Attendre un court délai avant de retourner les cartes
         yield return new WaitForSeconds(2);
 
-        // Retourner les cartes face cachée et les rendre à nouveau interactives
+        // Retourner les cartes face cachée 
         carteSelectionneeLigne1.GetComponent<Image>().sprite = cardDos;
         carteSelectionneeLigne2.GetComponent<Image>().sprite = cardDos;
 
+        //rend les cartes non interactable
         carteSelectionneeLigne1.interactable = true;
         carteSelectionneeLigne2.interactable = true;
-
         // Réinitialiser les cartes sélectionnées
         carteSelectionneeLigne1 = null;
         carteSelectionneeLigne2 = null;
@@ -481,6 +488,7 @@ public class GameManagerPaires : MonoBehaviour
 
 
     private void TourDuJoueur(){
+        
         tourJoueur = true;
         if(tourJoueur) {
 
@@ -490,27 +498,28 @@ public class GameManagerPaires : MonoBehaviour
     private void TourDuMj()
     {
         tourJoueur = false;
+        
         StartCoroutine(RetournerCartesIACoroutine());
     }
 
     private int ChoisirCarteIA(List<Button> cartes)
-{
-    int index;
-
-    // Choisissez une carte aléatoirement parmi les cartes interactables
-    List<Button> cartesInteractables = cartes.FindAll(carte => carte.interactable);
-
-    if (cartesInteractables.Count > 0)
     {
-        index = UnityEngine.Random.Range(0, cartesInteractables.Count);
-        return cartes.IndexOf(cartesInteractables[index]);
+        int index;
+
+        // Choisissez une carte aléatoirement parmi les cartes interactables
+        List<Button> cartesInteractables = cartes.FindAll(carte => carte.interactable);
+
+        if (cartesInteractables.Count > 0)
+        {
+            index = UnityEngine.Random.Range(0, cartesInteractables.Count);
+            return cartes.IndexOf(cartesInteractables[index]);
+        }
+        else
+        {
+            // Si aucune carte n'est interactable, retournez -1 pour indiquer qu'aucune carte valide n'a été trouvée
+            return -1;
+        }
     }
-    else
-    {
-        // Si aucune carte n'est interactable, retournez -1 pour indiquer qu'aucune carte valide n'a été trouvée
-        return -1;
-    }
-}
 
 
 
