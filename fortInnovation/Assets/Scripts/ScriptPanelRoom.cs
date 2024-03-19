@@ -26,6 +26,7 @@ public class ScriptPanelRoom : MonoBehaviour
         if (thirdPersonController != null)
         {
             thirdPersonController.enabled = true;
+            Debug.Log("oui");
         }
     }
 }
