@@ -4121,7 +4121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelUi_Move: {fileID: 592747005}
-  panelUi_Jump: {fileID: 1895769006}
 --- !u!1001 &1891634636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4134,6 +4133,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: panelHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564642422658290719, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1891634639}
+    - target: {fileID: 5564642422658290719, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleFullScreen
       objectReference: {fileID: 0}
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}
@@ -4235,10 +4244,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7727678586757030857, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1891634640}
+    - target: {fileID: 7727678586757030857, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: activeUi
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1891634640}
   m_SourcePrefab: {fileID: 100100000, guid: 094aee8385040f045a284abf58893531, type: 3}
 --- !u!224 &1891634637 stripped
 RectTransform:
@@ -4252,6 +4275,31 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1891634636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1891634639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6768330439505637015, guid: 094aee8385040f045a284abf58893531,
+    type: 3}
+  m_PrefabInstance: {fileID: 1891634636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891634638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c4fddbfb3adcf4f84aeb4f8bb613c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1891634640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891634638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df55eadde403ab4a91778ffcdc62f8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUi_Move: {fileID: 592747005}
 --- !u!1001 &1895769005
 PrefabInstance:
   m_ObjectHideFlags: 0

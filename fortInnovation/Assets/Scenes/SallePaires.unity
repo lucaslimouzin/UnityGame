@@ -5476,18 +5476,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1979352518}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1855331355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8786509198638755074, guid: 6f56bd3b69793cc46b1da7852aa8d78d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4674540894698473162}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df55eadde403ab4a91778ffcdc62f8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1895769005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6868,6 +6856,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelHome
       objectReference: {fileID: 0}
+    - target: {fileID: 5564642422658290719, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4430062527824403973}
+    - target: {fileID: 5564642422658290719, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleFullScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6972,12 +6970,52 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1855331355}
+      objectReference: {fileID: 4430062527824403975}
+    - target: {fileID: 7727678586757030857, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: activeUi
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4430062527824403975}
   m_SourcePrefab: {fileID: 100100000, guid: 094aee8385040f045a284abf58893531, type: 3}
+--- !u!114 &4430062527824403973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6768330439505637015, guid: 094aee8385040f045a284abf58893531,
+    type: 3}
+  m_PrefabInstance: {fileID: 4430062527824403972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430062527824403974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c4fddbfb3adcf4f84aeb4f8bb613c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4430062527824403974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+    type: 3}
+  m_PrefabInstance: {fileID: 4430062527824403972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4430062527824403975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430062527824403974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df55eadde403ab4a91778ffcdc62f8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUi_Move: {fileID: 592747005}
 --- !u!1001 &4674540894698473162
 PrefabInstance:
   m_ObjectHideFlags: 0
