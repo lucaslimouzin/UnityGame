@@ -23,12 +23,6 @@ public class MjActionInstructions : MonoBehaviour
         
         
         MainGameManager.Instance.tutoCompteur = 0;
-        //activation de l'ui mobile si vrai 
-        if (MainGameManager.Instance.panelUiMobile){
-            
-            panelUi_Jump.SetActive(false);
-            panelUi_Move.SetActive(true);
-        }
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         //desactive le deplacement

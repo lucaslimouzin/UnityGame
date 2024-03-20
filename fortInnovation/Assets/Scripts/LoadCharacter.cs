@@ -9,7 +9,6 @@ public class LoadCharacter : MonoBehaviour
     public GameObject[] characterPrefabs;
     public CinemachineVirtualCamera virtualCamera;
     public GameObject panelUi_Move;
-    public GameObject panelUi_Jump;
     void Start() {
         
         
@@ -35,9 +34,7 @@ public class LoadCharacter : MonoBehaviour
 
         //activation de l'ui mobile si vrai 
         if (MainGameManager.Instance.panelUiMobile){
-            
-            
-            panelUi_Jump.SetActive(true);
+        
             panelUi_Move.SetActive(true);
         }
        
