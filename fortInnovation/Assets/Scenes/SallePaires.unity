@@ -356,11 +356,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1809774950}
     m_Modifications:
-    - target: {fileID: 4220800511994698075, guid: a5d11ee75e5788043a94fc3415679a62,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -28.999985
-      objectReference: {fileID: 0}
     - target: {fileID: 4410307963062093221, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_Name
@@ -370,11 +365,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6284677161926829490, guid: a5d11ee75e5788043a94fc3415679a62,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -5.199997
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
@@ -454,12 +444,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -391.39996
+      value: -289
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -620
+      value: -655
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
@@ -481,16 +471,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1222168289}
-    - target: {fileID: 8702927521499785964, guid: a5d11ee75e5788043a94fc3415679a62,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8702927521499785964, guid: a5d11ee75e5788043a94fc3415679a62,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MjActionPaires, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1409,6 +1409,7 @@ MonoBehaviour:
   panelEnigmes: {fileID: 230284473}
   buttonTextEnigmes: {fileID: 45022281}
   MJText: {fileID: 1611861898}
+  textEnigmeInfo: {fileID: 965714790}
   allLetterButtons:
   - {fileID: 1850071546}
   - {fileID: 724539438}
@@ -1867,6 +1868,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345211265514948852, guid: 364cc89a7d63c81498bfa4f3941933f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 852616410}
+    - target: {fileID: 7345211265514948852, guid: 364cc89a7d63c81498bfa4f3941933f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 8620216625050301935, guid: 364cc89a7d63c81498bfa4f3941933f0,
         type: 3}
@@ -3586,6 +3597,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 852616408}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &852616410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+    type: 3}
+  m_PrefabInstance: {fileID: 852616408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &854362901
 GameObject:
   m_ObjectHideFlags: 0
@@ -4595,7 +4612,7 @@ GameObject:
   - component: {fileID: 965714791}
   - component: {fileID: 965714790}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextEnigmesInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

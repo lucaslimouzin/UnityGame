@@ -18,7 +18,7 @@ public class GameManagerPaires : MonoBehaviour
     public TextMeshProUGUI MJText;
   
     public bool tourJoueur = false;
-    private bool deuxCartesRetournees = false;
+    public bool deuxCartesRetournees = false;
     private bool phaseQuestion = false;
     private bool finDuJeu = false;
     public bool isMoving = false;
@@ -34,6 +34,7 @@ public class GameManagerPaires : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
 
@@ -102,7 +103,7 @@ public class GameManagerPaires : MonoBehaviour
     void Start()
     {
         
-        
+        gagnePerduText.gameObject.SetActive(false); // Masque le texte
         toursIA = 0;
         scoreMj = 0;
         scorePlayer = 0;
@@ -191,7 +192,7 @@ public class GameManagerPaires : MonoBehaviour
     //affichage de la question   
     private void AfficheLaQuestion(){
         phaseQuestion = true;
-         
+        deuxCartesRetournees = false;
         //Debug.Log("PhaseQ 2 = " + phaseQuestion);
         tourJoueur = false;
         //choisi les questions de 1 à taille Json
@@ -407,7 +408,6 @@ public class GameManagerPaires : MonoBehaviour
                     scoreMj++;
                     scoreMjText.text = scoreMj.ToString() + "/3 paires MJ";
                 }
-                deuxCartesRetournees = false;
                 if (scorePlayer == 3 || scoreMj ==3) {
                     //fin du jeu
                     FinDuJeu();
@@ -418,7 +418,6 @@ public class GameManagerPaires : MonoBehaviour
             }
             else
             {
-                deuxCartesRetournees = false;
                 // Les cartes ne forment pas une paire
                 // Ajouter les index des cartes aux cartes vues non appariées
                 StartCoroutine(ShowAndHideWrongText());
@@ -575,18 +574,20 @@ public class GameManagerPaires : MonoBehaviour
 
     IEnumerator ShowAndHideGagneText()
     {
-        trueWrongText.gameObject.SetActive(true); // Affiche le texte
-        trueWrongText.text = "vous avez gagné !";
+        yield return new WaitForSeconds(2f);  // Attend 1 seconde
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez gagné !";
         // Change la couleur du texte en vert
-        trueWrongText.color = Color.green;
+        gagnePerduText.color = Color.green;
         yield return new WaitForSeconds(1f);  // Attend 1 seconde
     }
     IEnumerator ShowAndHidePerduText()
     {
-        trueWrongText.gameObject.SetActive(true); // Affiche le texte
-        trueWrongText.text = "vous avez perdu !";
+        yield return new WaitForSeconds(2f);  // Attend 1 seconde
+        gagnePerduText.gameObject.SetActive(true); // Affiche le texte
+        gagnePerduText.text = "vous avez perdu !";
         // Change la couleur du texte en vert
-        trueWrongText.color = Color.red;
+        gagnePerduText.color = Color.red;
         yield return new WaitForSeconds(1f);  // Attend 1 seconde
     }
 

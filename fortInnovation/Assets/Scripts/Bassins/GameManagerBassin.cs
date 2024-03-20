@@ -17,7 +17,6 @@ public class GameManagerBassin : MonoBehaviour
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelBassin;
-    public GameObject buttonTextBassin;
     public TextMeshProUGUI MJText;
     public TextMeshProUGUI textVieVerreMJ;
      public TextMeshProUGUI textVieVerreJoueur;
@@ -249,7 +248,6 @@ public class GameManagerBassin : MonoBehaviour
     private void TourDuJoueur(){
         if(tourJoueur) {
             isMoving = true;
-            buttonTextBassin.SetActive(true);
             ////debug.Log("Debut tour joueur");
             AfficherPlayerSphere();
             
@@ -260,7 +258,6 @@ public class GameManagerBassin : MonoBehaviour
     private void TourDuMj(){
         if (!tourJoueur) {
             isMoving = true;
-            buttonTextBassin.SetActive(false);
             ////debug.Log("Debut tour Mj");
             LancerMouvementMjSphere();
         }        
@@ -337,7 +334,7 @@ public class GameManagerBassin : MonoBehaviour
         yield return Monter(2.0f, 1.0f); // Monter à la hauteur 2 en 1 seconde
 
         // Se déplacer sur X
-        yield return DeplacerX(2.8f, 2.0f); // Se déplacer jusqu'à 1.6 en 1 seconde
+        yield return DeplacerX(2.8f, 1.25f); // Se déplacer jusqu'à 2.8 en 1.25 seconde
 
         // Faire tomber
         // Vous pouvez ajouter ici la logique pour faire tomber la sphère
@@ -401,7 +398,6 @@ public class GameManagerBassin : MonoBehaviour
     //fin du jeu 
     private void FinDuJeu(){
         ////debug.Log("GameOver");
-        buttonTextBassin.SetActive(false);
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {

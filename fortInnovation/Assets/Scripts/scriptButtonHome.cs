@@ -19,5 +19,11 @@ public class scriptButtonHome : MonoBehaviour
             panelUi_Move.SetActive(false);
         }
     }
+
+    //pour mettre en plein écran
+    public void ToggleFullScreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
     
 }

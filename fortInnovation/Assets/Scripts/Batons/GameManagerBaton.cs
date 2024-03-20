@@ -354,7 +354,7 @@ public class GameManagerBaton : MonoBehaviour
                 StartCoroutine(ShowAndHideGagneText());
             }
             else {
-                MJText.text = "Maitre du jeu : Dommage, vous avez échoué si prêt du but je détruis la recommandation !";
+                MJText.text = "Maitre du jeu : Dommage, vous avez échoué si près du but je détruis la recommandation !";
                 StartCoroutine(ShowAndHidePerduText());
             }
             // Toutes les questions ont été posées, fin du jeu

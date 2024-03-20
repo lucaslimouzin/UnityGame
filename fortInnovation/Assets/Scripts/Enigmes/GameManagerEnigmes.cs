@@ -12,14 +12,12 @@ using System.Linq;
 
 public class GameManagerEnigmes : MonoBehaviour
 {
-
-
-
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelEnigmes;
     public GameObject buttonTextEnigmes;
     public TextMeshProUGUI MJText;
+    public TextMeshProUGUI textEnigmeInfo;
     private bool tourJoueur = true;
     private bool finDuJeu = false;
     
@@ -210,7 +208,9 @@ public class GameManagerEnigmes : MonoBehaviour
     private void FinDuJeu(){
         ////debug.Log("GameOver");
         buttonTextEnigmes.SetActive(false);
+        textEnigmeInfo.gameObject.SetActive(false);
         finDuJeu = true;
+        panelInfoMJ.SetActive(true);
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
             MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté l'épreuve et une recommandation";
