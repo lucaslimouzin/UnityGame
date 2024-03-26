@@ -2043,6 +2043,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: panel_MJ_Salle_Room
       objectReference: {fileID: 0}
+    - target: {fileID: 7889085259882885391, guid: 543be44a80c5fdd49a77778342df57ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
