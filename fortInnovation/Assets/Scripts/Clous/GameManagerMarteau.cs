@@ -116,7 +116,7 @@ public class GameManagerMarteau : MonoBehaviour
 
         forceMarteau.value = 0;
         playerForce = 10;
-        vieDuClouJoueur = 300f;
+        vieDuClouJoueur = 250f;
         vieDuClouMj = 300f;
         //affichage de la vie du clou
         textVieClouJoueur.text = vieDuClouJoueur.ToString();
