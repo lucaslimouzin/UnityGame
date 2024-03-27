@@ -17,7 +17,7 @@ public class MjActionBassin : MonoBehaviour
         
         
         //Cursor.lockState = CursorLockMode.Locked;
-        panelRoom.SetActive(true);
+       // panelRoom.SetActive(true);
         #if !UNITY_EDITOR && UNITY_WEBGL
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
