@@ -1,0 +1,26 @@
+name: Automate Merge from fort-innovation-main to main
+
+on:
+  push:
+    branches:
+      - fort-innovation-main
+
+jobs:
+  merge_to_main:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # Important pour permettre l'accès à toutes les branches
+
+    - name: Configure Git
+      run: |
+        git config --global user.name 'lucaslimouzin'
+        git config --global user.email 'limouzin.lucas@gmail.com'
+
+    - name: Merge fort-innovation-main to main
+      run: |
+        git checkout main
+        git merge --no-ff fort-innovation-main -m "Automated merge of fort-innovation-main into main"
+        git push origin main
