@@ -1,0 +1,28 @@
+name: Automate Merge from fort-innovation-main to main
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - fort-innovation-main
+
+jobs:
+  merge_to_main:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout base branch (main)
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'lucaslimouzin'
+          git config --global user.email 'limouzin.lucas@gmail.com'
+
+      - name: Merge PR changes to main
+        run: |
+          git fetch origin fort-innovation-main
+          git merge --no-ff origin/fort-innovation-main -m "Automated merge of fort-innovation-main into main"
+          git push origin main
