@@ -82,7 +82,7 @@ public class MjActionEnigmes : MonoBehaviour
 
      public void PlayGame() {
         MainGameManager.Instance.jeuEnCours = "JeuEnigmes";
-        SceneManager.LoadScene("SalleDes");
+        SceneManager.LoadScene("JeuEnigmes");
     }
 
     public void GoAccueil(){
