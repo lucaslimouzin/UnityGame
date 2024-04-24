@@ -17,6 +17,10 @@ public class scriptButtonHome : MonoBehaviour
         }
     }
 
+    public void recommencerGame(){
+        
+    }
+
     
     
 }
