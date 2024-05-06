@@ -2,242 +2,213 @@
   "questions": [
     {
       "id": 1,
-      "question": "Quelle est la capitale de la France?",
-      "propositions": ["Berlin", "Paris", "Londres"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 2,
-      "question": "Quel est le plus grand océan du monde?",
-      "propositions": ["Océan Atlantique", "Océan Indien", "Océan Pacifique"],
+      "question": "Quels types d'outils peuvent être utilisés pour faciliter l'innovation participative ?",
+      "propositions": [
+        "Des tableurs Excel.",
+        "Des réunions en tête-à-tête.",
+        "Des plateformes en ligne de gestion d'idées."
+      ],
       "reponseCorrecte": "C"
     },
     {
+      "id": 2,
+      "question": "Quelle est l'importance de la communication dans l'innovation participative ?",
+      "propositions": [
+        "Limiter la transparence.",
+        "Faciliter le partage d'idées et la collaboration.",
+        "Encourager la compétition entre les employés."
+      ],
+      "reponseCorrecte": "B"
+    },
+    {
       "id": 3,
-      "question": "Quelle est la couleur du ciel par temps clair?",
-      "propositions": ["Vert", "Bleu", "Rouge"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 4,
-      "question": "Quel est le nombre de planètes dans notre système solaire?",
-      "propositions": ["7", "8", "9"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 5,
-      "question": "Quelle est la plus grande montagne du monde?",
-      "propositions": ["Mont Everest", "Mont Kilimandjaro", "Mont Fuji"],
+      "question": "Comment peut-on favoriser un environnement propice à l'innovation participative ?",
+      "propositions": [
+        "En maintenant un environnement rigide et hiérarchique.",
+        "En décourageant la prise de risque.",
+        "En encourageant la prise de risque et l'expérimentation."
+        
+      ],
       "reponseCorrecte": "A"
     },
     {
+      "id": 4,
+      "question": "Comment peut-on favoriser une culture de confiance dans le contexte de l'innovation participative ?",
+      "propositions": [
+        "En gardant les employés dans l'ignorance.",        
+        "En maintenant un environnement de secret et de méfiance.",
+        "En favorisant la transparence et le partage d'informations."
+      ],
+      "reponseCorrecte": "C"
+    },
+    {
+      "id": 5,
+      "question": "Comment peut-on favoriser l’expression des idées chez les employés introvertis ?",
+      "propositions": [
+        "En les excluant dans les discussions.",
+        "En offrant des possibilités de contribution écrite et anonyme.",
+        "En les obligeant à s’exprimer publiquement."
+      ],
+      "reponseCorrecte": "B"
+    },
+    {
       "id": 6,
-      "question": "Quel est le plus grand désert du monde?",
-      "propositions": ["Désert du Sahara", "Désert de Gobi", "Désert d'Atacama"],
+      "question": "Quel est l'avantage de l'utilisation de plateformes en ligne pour l'expression des idées en innovation participative ?",
+      "propositions": [
+        "Elles permettent une contribution continue et la collaboration à distance.",
+        "Elles limitent la participation.",        
+        "Elles rendent les idées publiques sans protection de la vie privée."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 7,
-      "question": "Quel est le plus long fleuve du monde?",
-      "propositions": ["Fleuve Nil", "Fleuve Amazone", "Fleuve Yangtsé"],
-      "reponseCorrecte": "B"
+      "question": "Quelles sont les étapes pour exprimer efficacement une idée en innovation participative ?",
+      "propositions": [
+        "Garder l'idée pour soi jusqu'à ce qu'elle soit parfaite.",        
+        "Ignorer les idées des autres et travailler seul sur ses propres idées.",
+        "Formuler clairement l'idée, la partager avec les autres, et encourager la discussion."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 8,
-      "question": "Quelle est la plus grande île du monde?",
-      "propositions": ["Groenland", "Australie", "Bornéo"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 9,
-      "question": "Quel est le plus grand animal du monde?",
-      "propositions": ["Éléphant", "Baleine bleue", "Girafe"],
+      "question": "Pourquoi est-il important d'écouter activement les idées des autres en innovation participative ?",
+      "propositions": [
+        "Pour décourager la collaboration.",
+        "Pour encourager la diversité des idées et favoriser l'innovation.",
+        "Pour limiter les perspectives disponibles."
+      ],
       "reponseCorrecte": "B"
     },
     {
+      "id": 9,
+      "question": "Qu'est-ce que la culture de l'écoute dans le contexte de l'innovation participative ?",
+      "propositions": [
+        "Encourager l'écoute active et la considération des idées des autres.",
+        "Ignorer les idées des collègues.",        
+        "Imposer ses propres idées sans tenir compte des autres."
+      ],
+      "reponseCorrecte": "A"
+    },
+    {
       "id": 10,
-      "question": "Quel est le plus grand pays du monde?",
-      "propositions": ["Canada", "Russie", "Chine"],
+      "question": "Qu'est-ce que la création d'un environnement de confiance dans l'accompagnement des innovateurs ?",
+      "propositions": [
+        "Ignorer les inquiétudes des innovateurs.",        
+        "Minimiser l'importance de la confiance dans le processus d'innovation.",
+        "Créer un climat où les innovateurs se sentent en sécurité pour exprimer leurs idées et leurs préoccupations."
+      ],
       "reponseCorrecte": "C"
     },
     {
       "id": 11,
-      "question": "Quelle est la plus grande forêt tropicale du monde?",
-      "propositions": ["Forêt amazonienne", "Forêt du Congo", "Forêt de Bornéo"],
-      "reponseCorrecte": "A"
+      "question": "Pourquoi est-il difficile de faire en sorte que les collaborateurs innovent ?",
+      "propositions": [
+        "Parce que l'innovation est une compétence innée chez certains collaborateurs.",
+        "Parce que les expériences douloureuses ont découragé certains collaborateurs.",
+        "Parce que les collaborateurs manquent de compétences techniques."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 12,
-      "question": "Quel est le plus grand lac d'Afrique?",
-      "propositions": ["Lac Victoria", "Lac Tanganyika", "Lac Malawi"],
+      "question": "Quelle compétence est nécessaire pour dépasser les blocages individuels et collectifs ?",
+      "propositions": [
+        "Compétence en pensée critique.",
+        "Compétence en leadership.",        
+        "Compétence en gestion du temps."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 13,
-      "question": "Quelle est la plus haute tour du monde?",
-      "propositions": ["Burj Khalifa", "Shanghai Tower", "One World Trade Center"],
-      "reponseCorrecte": "A"
+      "question": "Qu'est-ce qui est nécessaire pour que l'apprentissage de la pensée critique ait lieu ?",
+      "propositions": [
+        "Des récompenses financières.",        
+        "Un système de punitions pour les erreurs.",
+        "Un cadre et une organisation propices."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 14,
-      "question": "Quelle est la plus grande île du Japon?",
-      "propositions": ["Hokkaido", "Honshu", "Kyushu"],
-      "reponseCorrecte": "A"
+      "question": "Qui doit proposer un cadre et une organisation propices à l'accueil de la pensée critique ?",
+      "propositions": [
+        "Les employés.",
+        "La direction et les managers.",
+        "Tous"
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 15,
-      "question": "Quel est le plus grand carnivore terrestre?",
-      "propositions": ["Lion", "Tigre", "Ours polaire"],
-      "reponseCorrecte": "B"
+      "question": "Qu’est-il nécessaire de faire pour favoriser l'innovation participative au sein de l'organisation ?",
+      "propositions": [
+        "Communiquer sur les expériences et témoigner des succès, échecs et enseignements.",
+        "Mettre en place des punitions pour ceux qui n'expriment pas leurs idées.",
+        "Ignorer les échecs et se concentrer uniquement sur les succès."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 16,
-      "question": "Quel est le plus grand producteur mondial de café?",
-      "propositions": ["Brésil", "Colombie", "Vietnam"],
-      "reponseCorrecte": "A"
+      "question": "Quel est le but de communiquer sur les succès, les échecs et les enseignements ?",
+      "propositions": [
+        "Accabler les collaborateurs qui ont échoué.",        
+        "Établir une hiérarchie basée sur la performance.",
+        "Motiver les collaborateurs en mettant en valeur les réussites et les apprentissages."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 17,
-      "question": "Quel est le plus grand désert de glace de la Terre?",
-      "propositions": ["Antarctique", "Arctique", "Groenland"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 18,
-      "question": "Quelle est la plus grande chaîne de montagnes du monde?",
-      "propositions": ["Himalaya", "Andes", "Rocheuses"],
+      "question": "Pourquoi est-il important pour un manager de communiquer sur une plateforme d’idéation ?",
+      "propositions": [
+        "Pour montrer son autorité.",
+        "Pour valoriser les idées déposées par ses collaborateurs et encourager la participation.",
+        "Pour imposer ses propres idées."
+      ],
       "reponseCorrecte": "B"
     },
     {
+      "id": 18,
+      "question": "Quel est le principal avantage de la mise en place d’un cycle de vie des idées déposées dans une plateforme d’idéation ?",
+      "propositions": [
+        "Il informe les porteurs d'idées sur leur état d’avancement.",
+        "Il est long et complexe.",        
+        "Il supprime complètement les idées non retenues."
+      ],
+      "reponseCorrecte": "A"
+    },
+    {
       "id": 19,
-      "question": "Quel est le plus grand félin du monde?",
-      "propositions": ["Tigre", "Lion", "Jaguar"],
+      "question": "Comment pouvez-vous encourager la diversité des idées dans l'innovation participative ?",
+      "propositions": [
+        "En limitant la participation à certaines catégories d'employés.",        
+        "En imposant des idées préétablies aux participants.",
+        "En encourageant l'inclusion de personnes avec des perspectives différentes."
+      ],
       "reponseCorrecte": "C"
     },
     {
       "id": 20,
-      "question": "Quelle est la plus grande mer du monde?",
-      "propositions": ["Mer Méditerranée", "Mer Rouge", "Mer des Philippines"],
-      "reponseCorrecte": "A"
+      "question": "Pourquoi est-il important de pouvoir exprimer ses idées en innovation participative ?",
+      "propositions": [
+        "Pour limiter la créativité.",
+        "Pour encourager la diversité des perspectives.",
+        "Pour maintenir le statu quo."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 21,
-      "question": "Qui a écrit 'Les Misérables'?",
-      "propositions": ["Victor Hugo", "Albert Camus", "Émile Zola"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 22,
-      "question": "Quelle est la capitale du Japon?",
-      "propositions": ["Kyoto", "Osaka", "Tokyo"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 23,
-      "question": "Quel est le plus long système fluvial du monde?",
-      "propositions": ["Mississippi", "Nile", "Amazone"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 24,
-      "question": "Quelle période historique précède le Moyen Âge?",
-      "propositions": ["L'Antiquité", "La Renaissance", "Le Néolithique"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 25,
-      "question": "Quel est le plus petit pays du monde?",
-      "propositions": ["Monaco", "Vatican", "Nauru"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 26,
-      "question": "Qui est le fondateur de Microsoft?",
-      "propositions": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 27,
-      "question": "Quel est l'océan le plus salé?",
-      "propositions": ["Océan Atlantique", "Océan Pacifique", "Océan Indien"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 28,
-      "question": "Quel pays est connu comme le pays du Soleil Levant?",
-      "propositions": ["Chine", "Japon", "Corée du Sud"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 29,
-      "question": "Quelle est la langue la plus parlée dans le monde?",
-      "propositions": ["Anglais", "Chinois", "Espagnol"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 30,
-      "question": "Quel est le livre le plus vendu au monde après la Bible?",
-      "propositions": ["Le Petit Prince", "Harry Potter", "Le Seigneur des Anneaux"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 31,
-      "question": "Quel est le sport le plus populaire dans le monde?",
-      "propositions": ["Basketball", "Football", "Cricket"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 32,
-      "question": "Quel est le métal le plus cher du monde?",
-      "propositions": ["Or", "Platine", "Rhodium"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 33,
-      "question": "Quelle est la plus profonde fosse océanique du monde?",
-      "propositions": ["Fosse des Mariannes", "Fosse de Tonga", "Fosse du Pérou-Chili"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 34,
-      "question": "Qui a peint la Joconde?",
-      "propositions": ["Vincent Van Gogh", "Leonardo da Vinci", "Michelangelo"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 35,
-      "question": "Quelle est la durée d'un jour sur Mars?",
-      "propositions": ["24 heures", "24 heures et 37 minutes", "23 heures et 56 minutes"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 36,
-      "question": "Quel est l'animal terrestre le plus rapide?",
-      "propositions": ["Guépard", "Lion", "Faucon pèlerin"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 37,
-      "question": "Quelle est la plus grande structure vivante sur Terre?",
-      "propositions": ["Forêt amazonienne", "Grande barrière de corail", "Mont Everest"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 38,
-      "question": "Quelle est la capitale de l'Australie?",
-      "propositions": ["Sydney", "Melbourne", "Canberra"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 39,
-      "question": "Quel est le pays le plus peuplé du monde?",
-      "propositions": ["Inde", "Chine", "États-Unis"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 40,
-      "question": "Quel est l'élément chimique le plus abondant dans l'Univers?",
-      "propositions": ["Hydrogène", "Hélium", "Oxygène"],
+      "question": "Qu’est-ce l’écoute active en innovation participative ?",
+      "propositions": [
+        "Respecter l'interlocuteur, l'écouter sans le juger, quelle que soit la situation.",
+        "Ecouter l’interlocuteur en interprétant et jugeant ses propos.",        
+        "Ecouter l’interlocuteur et le stopper à chaque fois qu’on a une question."
+      ],
       "reponseCorrecte": "A"
     }
   ]

@@ -2,243 +2,213 @@
   "questions": [
     {
       "id": 1,
-      "question": "Quel animal est considéré comme le meilleur ami de l'homme?",
-      "propositions": ["Chat", "Chien", "Perroquet"],
-      "reponseCorrecte": "B"
+      "question": "Comment peut-on encourager la participation des employés dans l'innovation participative ?",
+      "propositions": [
+        "En reconnaissant et en valorisant les contributions.",
+        "En limitant l'accès à l'information.",        
+        "En décourageant l'expression des idées."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 2,
-      "question": "Quel est l'animal domestique le plus populaire au monde?",
-      "propositions": ["Poisson", "Chat", "Chien"],
-      "reponseCorrecte": "C"
+      "question": "Comment peut-on maintenir l'engagement des employés dans l'innovation participative sur le long terme ?",
+      "propositions": [
+        "En ignorant leurs contributions.",
+        "En offrant des opportunités de développement de compétences et en reconnaissant leurs réalisations.",
+        "En imposant des restrictions strictes sur leur participation."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 3,
-      "question": "Quelle est la durée de vie moyenne d'un chat domestique?",
-      "propositions": ["5 à 10 ans", "10 à 15 ans", "15 à 20 ans"],
+      "question": "Comment peut-on assurer la durabilité des initiatives d'innovation participative ?",
+      "propositions": [
+        "En limitant la diversité des participants.",        
+        "En ignorant les préoccupations environnementales et sociales.",
+        "En intégrant les objectifs de durabilité dans les processus d'innovation."
+      ],
       "reponseCorrecte": "C"
     },
     {
       "id": 4,
-      "question": "Quel animal domestique est connu pour être un excellent chasseur de souris?",
-      "propositions": ["Chien", "Chat", "Furet"],
-      "reponseCorrecte": "B"
+      "question": "Pourquoi est-il important d'évaluer (feedback) régulièrement les initiatives d'innovation participative ?",
+      "propositions": [
+        "Pour identifier les opportunités d'amélioration et d'ajustement.",
+        "Pour maintenir le statu quo.",        
+        "Pour ignorer les retours des parties prenantes."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 5,
-      "question": "Quel est le nom donné à un jeune lapin?",
-      "propositions": ["Poussin", "Lapereau", "Veau"],
+      "question": "Pourquoi la valorisation des contributions est-elle importante en innovation participative ?",
+      "propositions": [
+        "Pour décourager les employés de contribuer davantage.",
+        "Pour motiver les employés et renforcer leur engagement.",
+        "Pour minimiser l'importance des idées proposées."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 6,
-      "question": "Quel est le régime alimentaire principal des hamsters?",
-      "propositions": ["Herbivore", "Carnivore", "Omnivore"],
+      "question": "Pourquoi est-il crucial de fournir un retour d’information sur les idées proposées ?",
+      "propositions": [
+        "Pour ignorer les contributions des employés.",        
+        "Pour décourager les employés de participer.",
+        "Pour renforcer l’engagement des employés."
+      ],
       "reponseCorrecte": "C"
     },
     {
       "id": 7,
-      "question": "Quel animal de compagnie est réputé pour sa capacité à apprendre des tours et des mots?",
-      "propositions": ["Chat", "Perroquet", "Chien"],
-      "reponseCorrecte": "B"
+      "question": "Quels sont les avantages pour une organisation d'encourager l'expression des idées en innovation participative ?",
+      "propositions": [
+        "Amélioration de l'innovation, de l'engagement des employés et de la résolution de problèmes.",
+        "Diminution de la créativité organisationnelle.",        
+        "Ignorer les besoins des employés."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 8,
-      "question": "Combien de doigts ont les chats à chaque patte arrière?",
-      "propositions": ["4", "5", "6"],
-      "reponseCorrecte": "A"
+      "question": "Comment l'organisation peut-elle gérer les idées qui ne sont pas mises en œuvre ?",
+      "propositions": [        
+        "En les rejetant sans explication.",
+        "En les valorisant comme une contribution précieuse.",
+        "En pénalisant les employés pour avoir proposé des idées non retenues."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 9,
-      "question": "Quel animal de compagnie nécessite un bain de sable pour maintenir la propreté de son pelage?",
-      "propositions": ["Chinchilla", "Cochon d'Inde", "Lapin"],
-      "reponseCorrecte": "A"
+      "question": "Quelle est l'importance de l'encouragement et de la motivation dans l'accompagnement des innovateurs ?",
+      "propositions": [
+        "Décourager les innovateurs à poursuivre leurs efforts.",        
+        "Ignorer les besoins d'encouragement des innovateurs.",
+        "Renforcer la confiance et la persévérance des innovateurs face aux défis."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 10,
-      "question": "Quelle est la principale caractéristique d'un poisson Betta mâle?",
-      "propositions": ["Il ne peut pas vivre avec d'autres mâles", "Il change de couleur en vieillissant", "Il ne nécessite pas d'oxygène"],
+      "question": "Qu'est-ce que la reconnaissance des succès dans l'accompagnement des innovateurs ?",
+      "propositions": [
+        "Célébrer les réussites pour renforcer la motivation et l'engagement des innovateurs.",
+        "Ignorer les succès des innovateurs.",        
+        "Minimiser l'importance de la reconnaissance des succès."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 11,
-      "question": "Quel type de logement un hamster nécessite-t-il pour son bien-être?",
-      "propositions": ["Une cage avec des barreaux espacés", "Une cage avec un fond solide", "Un aquarium sans eau"],
+      "question": "Qu’est-ce que l’envie d’innover ?",
+      "propositions": [
+        "Un désir de suivre des méthodes traditionnelles.",
+        "Un désir intrinsèque de proposer de nouvelles idées et de créer des changements.",
+        "Un manque d’intérêt pour l’amélioration continue."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 12,
-      "question": "Quel animal de compagnie est connu pour pouvoir vivre plusieurs décennies?",
-      "propositions": ["Tortue", "Hamster", "Canari"],
-      "reponseCorrecte": "A"
+      "question": "Pourquoi est-il important de maintenir l'envie d'innover au sein d'une organisation ?",
+      "propositions": [
+        "Pour maintenir le statu quo.",       
+        "Pour limiter la créativité des employés.",
+        "Pour rester compétitif et répondre aux évolutions en cours et à venir."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 13,
-      "question": "Quel est le terme utilisé pour désigner le cri du canard?",
-      "propositions": ["Cancanement", "Cocorico", "Miaulement"],
+      "question": "Comment les entreprises peuvent-elles encourager l'envie d'innover chez leurs employés ?",
+      "propositions": [
+        "En créant un environnement qui favorise la prise de risque et l'exploration de nouvelles idées.",
+        "En réprimant toute forme de créativité.",        
+        "En limitant l'accès aux ressources nécessaires."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 14,
-      "question": "Quelle race de chien est connue pour sa petite taille et ses grandes oreilles?",
-      "propositions": ["Labrador", "Chihuahua", "Bulldog"],
+      "question": "Quel est le rôle des leaders dans le maintien de l'envie d'innover ?",
+      "propositions": [
+        "Décourager toute initiative novatrice.",
+        "Encourager, soutenir et valoriser la créativité et l'innovation.",
+        "Ignorer les contributions des employés."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 15,
-      "question": "Quel est le principal avantage d'avoir un poisson comme animal de compagnie?",
-      "propositions": ["Ils sont silencieux", "Ils nécessitent beaucoup d'attention", "Ils peuvent être dressés facilement"],
-      "reponseCorrecte": "A"
+      "question": "Quels sont les avantages de maintenir une culture d'innovation au sein d'une organisation ?",
+      "propositions": [
+        "Stagnation et perte de compétitivité.",        
+        "Diminution de la productivité.",
+        "Créativité accrue, meilleure adaptation aux changements."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 16,
-      "question": "Quelle race de chat est connue pour être sans poils?",
-      "propositions": ["Persan", "Sphynx", "Siamese"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 17,
-      "question": "Quel animal de compagnie est souvent utilisé dans les thérapies assistées par l'animal?",
-      "propositions": ["Cheval", "Chat", "Dauphin"],
+      "question": "Quelle est l'importance de la reconnaissance des contributions innovantes ?",
+      "propositions": [
+        "Pour renforcer la motivation et l'engagement des innovateurs.",
+        "Pour décourager les employés à innover.",        
+        "Pour minimiser l'impact de l'innovation sur l'organisation."
+      ],
       "reponseCorrecte": "A"
     },
     {
-      "id": 18,
-      "question": "Quelle est la caractéristique principale des oiseaux de la famille des Psittacidae, comme les perroquets?",
-      "propositions": ["Ils peuvent nager", "Ils peuvent imiter les sons", "Ils ne volent pas"],
+      "id": 17,
+      "question": "Qu'est-ce que la gestion des échecs dans le maintien de l'envie d'innover ?",
+      "propositions": [
+        "Ignorer les échecs pour maintenir une image positive.",
+        "Apprendre des échecs et les utiliser comme des opportunités d'apprentissage et d'amélioration.",
+        "Punir ceux qui échouent dans leurs initiatives innovantes."
+      ],
       "reponseCorrecte": "B"
     },
     {
+      "id": 18,
+      "question": "Qu'est-ce que la communication efficace dans le contexte du maintien de l'envie d'innover ?",
+      "propositions": [
+        "Limiter la communication pour maintenir le secret.",        
+        "Ignorer les besoins de communication des employés.",
+        "Favoriser la communication ouverte, transparente et bidirectionnelle pour faciliter le partage d'idées et de feedbacks."
+      ],
+      "reponseCorrecte": "C"
+    },
+    {
       "id": 19,
-      "question": "Quel est le besoin quotidien essentiel d'un chien pour son bien-être?",
-      "propositions": ["Exercice physique", "Bain quotidien", "Exposition au soleil"],
+      "question": "Qu'est-ce que la formation et le développement des compétences dans le maintien de l'envie d'innover ?",
+      "propositions": [
+        "Fournir des opportunités de développement des compétences pour renforcer celles nécessaires à l'innovation.",
+        "Limiter les opportunités de formation pour maintenir la stagnation.",        
+        "Ignorer l'importance de la formation dans le processus d'innovation."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 20,
-      "question": "Quelle race de chien a été initialement élevée pour chasser les renards?",
-      "propositions": ["Beagle", "Boxer", "Dalmatien"],
-      "reponseCorrecte": "A"
+      "question": "​​Quel bénéfice la démarche d'innovation participative apporte-t-elle aux collaborateurs ?",
+      "propositions": [
+        "Elle leur permet de ne plus avoir de responsabilités.",
+        "Elle leur permet de (re)donner du sens à leur travail.",
+        "Elle leur permet de ne plus investir leurs compétences."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 21,
-      "question": "Quel est le principal aliment des lapins domestiques?",
-      "propositions": ["Graines", "Viande", "Foin"],
+      "question": "Quel est le rôle des ressources humaines (RH) dans la démarche d'innovation participative ?",
+      "propositions": [
+        "Les ignorer.",        
+        "Les sanctionner.",
+        "Les suivre dans leur montée en compétences."
+      ],
       "reponseCorrecte": "C"
-    },
-    {
-      "id": 22,
-      "question": "Quelle race de chat est connue pour son tempérament amical et sociable?",
-      "propositions": ["Maine Coon", "Ragdoll", "Sphynx"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 23,
-      "question": "Quel animal de compagnie est considéré comme le plus indépendant?",
-      "propositions": ["Chien", "Chat", "Poisson"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 24,
-      "question": "Quelle race de chien est réputée pour sa capacité à travailler comme chien de sauvetage en montagne?",
-      "propositions": ["Saint-Bernard", "Husky sibérien", "Golden Retriever"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 25,
-      "question": "Quel est le principal prédateur des oiseaux domestiques en liberté à l'intérieur de la maison?",
-      "propositions": ["Chiens", "Chats", "Rongeurs"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 26,
-      "question": "Quelle caractéristique est commune à tous les poissons rouges domestiques?",
-      "propositions": ["Ils ont besoin de lumière solaire directe", "Ils peuvent vivre sans filtre", "Ils produisent une grande quantité de déchets"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 27,
-      "question": "Quel type de cage est recommandé pour un perroquet?",
-      "propositions": ["Cage en bois", "Cage métallique robuste", "Cage en plastique"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 28,
-      "question": "Quel est le terme correct pour désigner la naissance des chatons?",
-      "propositions": ["Éclosion", "Mise bas", "Poulinage"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 29,
-      "question": "Quelle race de chien est connue pour son pelage frisé?",
-      "propositions": ["Caniche", "Labrador", "Beagle"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 30,
-      "question": "Quel animal de compagnie est le mieux adapté pour vivre dans un petit appartement?",
-      "propositions": ["Chien de grande taille", "Chat", "Poisson"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 31,
-      "question": "Quelle race de chat est réputée pour sa capacité à sauter haut?",
-      "propositions": ["Bengale", "Persan", "Siamois"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 32,
-      "question": "Quel est le comportement typique d'un chien heureux?",
-      "propositions": ["Mordiller constamment", "Remuer la queue", "Se cacher"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 33,
-      "question": "Quelle race de chien a un museau distinctement carré?",
-      "propositions": ["Boxer", "Cocker Spaniel", "Shih Tzu"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 34,
-      "question": "Quel est le principal avantage de choisir un cochon d'Inde comme animal de compagnie?",
-      "propositions": ["Peu coûteux à entretenir", "Nécessite peu d'espace", "Amical et facile à manipuler"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 35,
-      "question": "Quelle est la méthode la plus efficace pour éduquer un chiot?",
-      "propositions": ["Punition", "Récompense positive", "Ignorance"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 36,
-      "question": "Quelle race de chien est connue pour son endurance et sa capacité à courir de longues distances?",
-      "propositions": ["Bulldog", "Dalmatien", "Chihuahua"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 37,
-      "question": "Quel type de nourriture est recommandé pour un chat adulte?",
-      "propositions": ["Nourriture humide uniquement", "Un mélange de nourriture humide et sèche", "Nourriture sèche uniquement"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 38,
-      "question": "Quel animal de compagnie est capable de reconnaître son propre nom?",
-      "propositions": ["Poisson", "Chat", "Tortue"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 39,
-      "question": "Quelle race de chat est connue pour son absence de queue?",
-      "propositions": ["Maine Coon", "Manx", "Ragdoll"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 40,
-      "question": "Quel est l'animal domestique le plus facile à entretenir pour un débutant?",
-      "propositions": ["Perroquet", "Poisson rouge", "Chien"],
-      "reponseCorrecte": "B"
     }
   ]
 }
