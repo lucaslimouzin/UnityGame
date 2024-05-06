@@ -2,242 +2,243 @@
   "questions": [
     {
       "id": 1,
-      "question": "Quel fromage est connu comme le roi des fromages en France?",
-      "propositions": ["Camembert", "Roquefort", "Brie"],
-      "reponseCorrecte": "B"
+      "question": "Qu'est-ce que l'innovation participative ?",
+      "propositions": [
+        "Un processus d'innovation impliquant uniquement des experts en la matière.",
+        "Un processus d'innovation réservé aux grandes entreprises et organisations.",
+        "Un processus d'innovation impliquant la contribution active des collaborateurs à tous les niveaux de l'organisation."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 2,
-      "question": "Quelle ville est surnommée la capitale du vin?",
-      "propositions": ["Lyon", "Bordeaux", "Dijon"],
+      "question": "Quel est l'objectif principal de l'innovation participative ?",
+      "propositions": [
+        "Accroître la compétition entre les employés.",
+        "Encourager la collaboration et la créativité au sein de l'entreprise.",
+        "Limiter l'accès à l'information sur les projets en cours."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 3,
-      "question": "Qui est l'auteur de 'Les Misérables'?",
-      "propositions": ["Victor Hugo", "Albert Camus", "Émile Zola"],
+      "question": "Quel rôle joue le sens dans l'innovation participative ?",
+      "propositions": [
+        "Il motive et guide les participants dans leurs contributions.",
+        "Il est négligeable.",        
+        "Il est seulement important pour les dirigeants de l'entreprise."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 4,
-      "question": "Quel est le musée le plus visité de Paris?",
-      "propositions": ["Le Louvre", "Musée d'Orsay", "Centre Pompidou"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 5,
-      "question": "Quel est le plat traditionnel français à base de viande de bœuf mijotée dans du vin rouge?",
-      "propositions": ["Quiche Lorraine", "Ratatouille", "Boeuf Bourguignon"],
+      "question": "Pourquoi est-il essentiel de donner une direction claire en innovation participative ?",
+      "propositions": [
+        "Pour limiter la participation des employés.",        
+        "Pour exclure les idées nouvelles et radicales.",
+        "Pour garantir que les efforts d'innovation sont alignés sur les objectifs de l'entreprise."
+      ],
       "reponseCorrecte": "C"
     },
     {
+      "id": 5,
+      "question": "Quelle est la différence entre l'innovation participative et les méthodes traditionnelles d'innovation ?",
+      "propositions": [
+        "L'innovation participative exclut les employés de la prise de décision.", 
+        "L'innovation participative implique une plus grande participation des employés à tous les niveaux.",       
+        "Les méthodes traditionnelles d'innovation sont plus efficaces."
+      ],
+      "reponseCorrecte": "B"
+    },
+    {
       "id": 6,
-      "question": "Quelle est la fête nationale française?",
-      "propositions": ["Le 14 juillet", "Le 1er mai", "Le 11 novembre"],
+      "question": "Qui devrait être impliqué dans l'innovation participative ?",
+      "propositions": [
+        "Tous les employés quel que soit leur niveau hiérarchique.",
+        "Seulement les cadres supérieurs.",    
+        "Seulement les départements de recherche et développement."
+        
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 7,
-      "question": "Qui a peint 'Impression, soleil levant', donnant son nom au mouvement impressionniste?",
-      "propositions": ["Claude Monet", "Vincent Van Gogh", "Paul Cézanne"],
-      "reponseCorrecte": "A"
+      "question": "Quels sont les avantages de l'innovation participative ?",
+      "propositions": [
+        "Moins de diversité d'idées.",       
+        "Plus grande centralisation du processus décisionnel.",
+        "Amélioration de l'engagement des employés et de la qualité des solutions."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 8,
-      "question": "Quel château est associé à Charles Perrault et a inspiré le conte de 'La Belle au bois dormant'?",
-      "propositions": ["Château de Chambord", "Château de Versailles", "Château d'Ussé"],
-      "reponseCorrecte": "C"
+      "question": "Quels sont les effets indirects de la participation des collaborateurs à la démarche d'innovation participative ?",
+      "propositions": [
+        "Le renforcement de la concurrence interne, la diminution de la collaboration, l’isolement.",
+        "L’apprentissage, la transformation organisationnelle, le changement positif de comportement.",
+        "L’amélioration de la productivité, la réduction du temps de travail."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 9,
-      "question": "Dans quelle région de France se trouve la Côte d'Azur?",
-      "propositions": ["Normandie", "Bretagne", "Provence-Alpes-Côte d'Azur"],
-      "reponseCorrecte": "C"
+      "question": "Quel est l'avantage de la diversité dans le processus d'innovation participative ?",
+      "propositions": [
+        "Favoriser l'innovation et la créativité.",
+        "Réduire les perspectives et les idées.",        
+        "Faciliter la conformité aux normes établies."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 10,
-      "question": "Quel est le prénom de la Tour Eiffel, nommé d'après son concepteur?",
-      "propositions": ["Gustave", "Alexandre", "Georges"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 11,
-      "question": "Quel festival de cinéma se tient annuellement sur la Côte d'Azur?",
-      "propositions": ["Festival de Cannes", "Festival de Venise", "Festival de Berlin"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 12,
-      "question": "Quelle est la danse traditionnelle française associée à la région de la Bretagne?",
-      "propositions": ["La bourrée", "Le cancan", "La gavotte"],
+      "question": "Qu'est-ce que la direction stratégique en innovation participative ?",
+      "propositions": [
+        "Fixer des objectifs vagues et généraux.",        
+        "Ignorer les défis potentiels.",
+        "Définir clairement les priorités et les orientations pour l'innovation."
+      ],
       "reponseCorrecte": "C"
     },
     {
-      "id": 13,
-      "question": "Qui a écrit 'Le Petit Prince'?",
-      "propositions": ["Antoine de Saint-Exupéry", "Marcel Proust", "Jean-Paul Sartre"],
+      "id": 11,
+      "question": "Quelles sont les limites de l'innovation participative ?",
+      "propositions": [
+        "Manque de diversité dans les idées.",
+        "Risque de surcharge d'informations.",
+        "Renforcer la culture de l'entreprise."
+      ],
+      "reponseCorrecte": "B"
+    },
+    {
+      "id": 12,
+      "question": "Pourquoi la transparence est-elle importante dans l'innovation participative ?",
+      "propositions": [
+        "Pour favoriser la confiance et l'engagement des employés.",
+        "Pour limiter l'accès à l'information.",        
+        "Pour maintenir le secret des projets."
+      ],
       "reponseCorrecte": "A"
+    },
+    {
+      "id": 13,
+      "question": "Quels sont les obstacles potentiels à l'innovation participative ?",
+      "propositions": [
+        "Manque de diversité d'opinions.",        
+        "Ouverture à de nouvelles idées.",
+        "Rigidité organisationnelle et peur du changement."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 14,
-      "question": "Quel événement historique est célébré par la Fête de la Fédération le 14 juillet?",
-      "propositions": ["La prise de la Bastille", "La fin de la Révolution française", "La signature de la Déclaration des droits de l'homme et du citoyen"],
-      "reponseCorrecte": "A"
+      "question": "Comment peut-on intégrer les valeurs de l’organisme dans l'innovation participative ?",
+      "propositions": [
+        "En ignorant les valeurs de l'entreprise.",
+        "En alignant les initiatives d'innovation avec les valeurs fondamentales de l’organisme.",
+        "En écartant les valeurs pour favoriser l'innovation."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 15,
-      "question": "Quel est le nom du pain français en forme de bâton?",
-      "propositions": ["Croissant", "Baguette", "Brioche"],
-      "reponseCorrecte": "B"
+      "question": "Quel est l'effet probable de ne pas prendre en compte les attentes des participants lors de l'innovation participative ?",
+      "propositions": [
+        "Un sentiment de déception chez certains.",
+        "Une augmentation de la motivation.",        
+        "Une accélération du processus."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 16,
-      "question": "Quelle région française est réputée pour sa production de fromage bleu?",
-      "propositions": ["Normandie", "Auvergne", "Alsace"],
-      "reponseCorrecte": "B"
+      "question": "Quelle est la première étape pour définir l’objectif de la démarche d'innovation participative ?",
+      "propositions": [
+        "Organiser la convergence.",        
+        "Se lancer directement dans l'innovation participative.",
+        "Accepter la divergence de point de vue."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 17,
-      "question": "Qui est le réalisateur français célèbre pour ses films 'La Haine' et 'Amélie'?",
-      "propositions": ["Luc Besson", "Jean-Pierre Jeunet", "François Truffaut"],
+      "question": "Combien de degrés d'ouverture (périmètre de participation) sont possibles en innovation participative ?",
+      "propositions": [
+        "Deux.",
+        "Trois.",
+        "Quatre."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 18,
-      "question": "Dans quel quartier de Paris se trouve le Moulin Rouge?",
-      "propositions": ["Montmartre", "Le Marais", "La Défense"],
+      "question": "Quels sont les trois degrés d'ouverture (périmètre de participation) possibles en innovation participative ?",
+      "propositions": [
+        "Fermé, entre-ouvert, ouvert.",
+        "Restreint, semi-ouvert, ouvert.",        
+        "Privé, semi-privé, public."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 19,
-      "question": "Quel fromage français est célèbre pour être mangé à l'aide d'une petite cuillère?",
-      "propositions": ["Camembert", "Boursin", "Vacherin"],
+      "question": "Qu'est-ce qui doit être pris en compte avant de décider du périmètre des personnes pouvant participer à l'innovation participative ?",
+      "propositions": [
+        "Le niveau de compétence.",        
+        "Les intérêts personnels.",
+        "Les coûts et bénéfices associés à chaque périmètre de participation."
+      ],
       "reponseCorrecte": "C"
     },
     {
       "id": 20,
-      "question": "Quel architecte a conçu le Centre Pompidou à Paris?",
-      "propositions": ["Le Corbusier", "Renzo Piano", "Frank Gehry"],
+      "question": "Le choix du degré d'ouverture (périmètre de participation) en innovation participative est-il définitif ?",
+      "propositions": [
+        "Oui, il est définitif.",
+        "Non, il peut évoluer en fonction de l'environnement.",
+        "Oui, mais seulement dans certains cas."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 21,
-      "question": "Quelle est la spécialité culinaire de la ville de Lyon?",
-      "propositions": ["Les quenelles", "Le cassoulet", "La bouillabaisse"],
+      "question": "Pourquoi est-il important de connaître les coûts et les bénéfices de chaque degré d'ouverture (périmètre de participation) possibles en innovation participative ?",
+      "propositions": [
+        "Pour prendre une décision éclairée sur le périmètre de participation.",
+        "Pour exclure les personnes non qualifiées.",        
+        "Pour réduire les dépenses."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 22,
-      "question": "Quel écrivain français a remporté le prix Nobel de littérature en 2014?",
-      "propositions": ["Patrick Modiano", "J.M.G. Le Clézio", "Albert Camus"],
-      "reponseCorrecte": "A"
+      "question": "Pourquoi est-il important de mettre en place des indicateurs de performance pour évaluer l'innovation participative ?",
+      "propositions": [
+        "Pour justifier l'existence de l'organisation.",        
+        "Pour mesurer l'efficacité de la direction.",
+        "Pour prouver son utilité et son impact sur l'organisation."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 23,
-      "question": "Quelle est la plus haute montagne de France?",
-      "propositions": ["Le Mont Blanc", "Le Pic du Midi", "Le Mont Ventoux"],
-      "reponseCorrecte": "A"
+      "question": "Quelles sont les parties prenantes auxquelles il convient d'ouvrir le processus d'évaluation de l’innovation participative ?",
+      "propositions": [
+        "Seulement les cadres supérieurs.",
+        "L'ensemble des collaborateurs.",
+        "Uniquement les collaborateurs directement impliqués."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 24,
-      "question": "Quel est le dessert français constitué de crème anglaise et de caramel dur?",
-      "propositions": ["Tarte Tatin", "Crème brûlée", "Mousse au chocolat"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 25,
-      "question": "Quelle est la longueur de la Loire, le plus long fleuve de France?",
-      "propositions": ["Environ 500 km", "Environ 700 km", "Environ 1000 km"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 26,
-      "question": "Quel peintre français est célèbre pour ses nymphéas?",
-      "propositions": ["Paul Cézanne", "Claude Monet", "Édouard Manet"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 27,
-      "question": "Quelle île française est également connue comme la beauté de l'île en Méditerranée?",
-      "propositions": ["Corse", "Île de Ré", "Martinique"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 28,
-      "question": "Quel est le style architectural prédominant de la cathédrale Notre-Dame de Paris?",
-      "propositions": ["Roman", "Gothique", "Baroque"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 29,
-      "question": "Qui est le compositeur français de l'opéra 'Carmen'?",
-      "propositions": ["Georges Bizet", "Claude Debussy", "Hector Berlioz"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 30,
-      "question": "Dans quelle ville se trouve le Palais des Papes, le plus grand palais gothique d'Europe?",
-      "propositions": ["Lyon", "Avignon", "Marseille"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 31,
-      "question": "Quel est le nom de la pâte feuilletée utilisée pour faire les croissants?",
-      "propositions": ["Pâte brisée", "Pâte feuilletée", "Pâte sablée"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 32,
-      "question": "Quelle ville est connue pour son festival international de la bande dessinée?",
-      "propositions": ["Angoulême", "Lyon", "Cannes"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 33,
-      "question": "Quel célèbre tournoi de tennis se joue sur terre battue à Paris?",
-      "propositions": ["Wimbledon", "US Open", "Roland-Garros"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 34,
-      "question": "Quel est le principal ingrédient de la soupe à l'oignon française?",
-      "propositions": ["Pommes de terre", "Tomates", "Oignons"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 35,
-      "question": "Quel écrivain français a écrit 'À la recherche du temps perdu'?",
-      "propositions": ["Marcel Proust", "Victor Hugo", "Albert Camus"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 36,
-      "question": "Quelle est la boisson alcoolisée traditionnelle française produite à partir de pommes?",
-      "propositions": ["Cidre", "Calvados", "Pastis"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 37,
-      "question": "Quel château de la Loire est connu pour ses jardins suspendus?",
-      "propositions": ["Château de Chambord", "Château de Chenonceau", "Château de Villandry"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 38,
-      "question": "Quelle tradition culinaire française consiste à manger des crêpes le 2 février?",
-      "propositions": ["La Chandeleur", "Le Beaujolais Nouveau", "La Fête de la Gastronomie"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 39,
-      "question": "Quel artiste français est célèbre pour ses sculptures comme 'Le Penseur'?",
-      "propositions": ["Auguste Rodin", "Claude Monet", "Paul Gauguin"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 40,
-      "question": "Dans quelle région de France se trouve la Dune du Pilat, la plus haute dune de sable d'Europe?",
-      "propositions": ["Nouvelle-Aquitaine", "Occitanie", "Provence-Alpes-Côte d'Azur"],
+      "question": "Quels sont les indicateurs globaux permettant d’évaluer l'impact de l'innovation participative ?",
+      "propositions": [
+        "Impact stratégique, Impact QVT, Impact sur la montée en compétence, Impact culture.",
+        "Impact financier, Impact marketing, Impact juridique.",        
+        "Impact environnemental, Impact technologique, Impact social."
+      ],
       "reponseCorrecte": "A"
     }
   ]
