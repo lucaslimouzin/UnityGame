@@ -2,243 +2,223 @@
   "questions": [
     {
       "id": 1,
-      "question": "Qui était le roi de France pendant la Révolution française?",
-      "propositions": ["Louis XV", "Louis XVI", "Louis XIV"],
-      "reponseCorrecte": "B"
+      "question": "Quel est le rôle du leadership dans l'innovation participative ?",
+      "propositions": [
+        "Encourager et soutenir la collaboration et la créativité.",
+        "Limiter la participation des employés.",        
+        "Ignorer complètement le processus d'innovation."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 2,
-      "question": "Quelle bataille Napoléon a-t-il perdue en 1815, menant à sa chute définitive?",
-      "propositions": ["Bataille d'Austerlitz", "Bataille de Borodino", "Bataille de Waterloo"],
-      "reponseCorrecte": "C"
+      "question": "Quel est le rôle des managers dans l'innovation participative ?",
+      "propositions": [
+        "Bloquer les idées nouvelles.",
+        "Soutenir et faciliter le processus d'innovation.",
+        "Ignorer les suggestions des employés."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 3,
-      "question": "Quel roi a été surnommé le 'Roi Soleil'?",
-      "propositions": ["Henri IV", "François Ier", "Louis XIV"],
+      "question": "Quels sont les canaux de communication courants pour faire remonter ses idées en innovation participative ?",
+      "propositions": [
+        "Les courriers postaux uniquement.",        
+        "Les e-mails envoyés directement à la Direction de l’organisme.",
+        "Les réunions, les plateformes en ligne, les boîtes à idées, etc."
+      ],
       "reponseCorrecte": "C"
     },
     {
       "id": 4,
-      "question": "En quelle année a débuté la Révolution française?",
-      "propositions": ["1799", "1776", "1789"],
-      "reponseCorrecte": "C"
+      "question": "Comment les organisations peuvent-elles encourager les employés à exprimer leurs idées ?",
+      "propositions": [
+        "En créant un environnement sûr où les idées sont valorisées et respectées.",
+        "En décourageant la prise de parole.",
+        "En sanctionnant ceux qui proposent des idées."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 5,
-      "question": "Quelle est la période de règne de Napoléon Bonaparte comme Empereur des Français?",
-      "propositions": ["1799-1815", "1804-1815", "1804-1814"],
+      "question": "Quel est le rôle des managers dans la promotion de l’expression des idées en innovation participative ?",
+      "propositions": [
+        "Restreindre la communication.",
+        "Encourager et soutenir la participation des employés.",
+        "Ignorer les idées proposées."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 6,
-      "question": "Quel traité a mis fin à la Guerre de Cent Ans entre la France et l'Angleterre?",
-      "propositions": ["Traité de Westphalie", "Traité de Versailles", "Traité de Picquigny"],
+      "question": "Comment peut-on garantir que les idées exprimées sont prises en compte et mises en œuvre ?",
+      "propositions": [
+        "En les rejetant systématiquement.",        
+        "En gardant les idées confidentielles.",
+        "En mettant en place des processus pour évaluer, sélectionner et implémenter les idées."
+      ],
       "reponseCorrecte": "C"
     },
     {
       "id": 7,
-      "question": "Qui était le chef militaire français pendant la Première Guerre mondiale surnommé 'le vainqueur de Verdun'?",
-      "propositions": ["Philippe Pétain", "Charles de Gaulle", "Ferdinand Foch"],
+      "question": "Qu'est-ce que l'accompagnement dans le contexte de l'innovation ?",
+      "propositions": [
+        "Le soutien et l'encadrement des individus ou des équipes impliqués dans le processus d'innovation.",
+        "La gestion stricte des processus d'innovation.",        
+        "L'ignorance des défis rencontrés par les innovateurs."
+      ],
       "reponseCorrecte": "A"
     },
     {
       "id": 8,
-      "question": "En quelle année la France a-t-elle gagné sa première Coupe du monde de football?",
-      "propositions": ["1984", "2006", "1998"],
-      "reponseCorrecte": "C"
+      "question": "Quel est le rôle de l'accompagnateur dans le processus d'innovation ?",
+      "propositions": [
+        "Restreindre la créativité des innovateurs.",
+        "Fournir des conseils, du soutien et des ressources pour aider les innovateurs à réussir.",
+        "Limiter l'accès aux informations pertinentes."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 9,
-      "question": "Quel roi français a été exécuté pendant la Révolution française?",
-      "propositions": ["Charles Ier", "Louis XVI", "Louis XVIII"],
-      "reponseCorrecte": "B"
+      "question": "Pourquoi est-il important d'avoir un accompagnement adapté dans l'innovation ?",
+      "propositions": [
+        "Pour décourager l'innovation au sein de l'organisation.",
+        "Pour surcharger les innovateurs avec des tâches supplémentaires.",
+        "Pour maximiser les chances de succès des initiatives innovantes."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 10,
-      "question": "Quelle dynastie a régné sur la France avant les Bourbons?",
-      "propositions": ["Les Capétiens", "Les Valois", "Les Carolingiens"],
-      "reponseCorrecte": "B"
+      "question": "Quels sont les aspects pris en compte dans l'accompagnement des innovateurs ?",
+      "propositions": [
+        "Les compétences techniques mais aussi les aspects émotionnels, sociaux et organisationnels.",
+        "Uniquement les compétences techniques.",        
+        "Ignorer les besoins des innovateurs."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 11,
-      "question": "Quelle grande réforme religieuse a divisé la France au XVIe siècle?",
-      "propositions": ["La Contre-Réforme", "La Réforme protestante", "Le Concile de Trente"],
+      "question": "Quelle est l'importance de la communication dans l'accompagnement des innovateurs ?",
+      "propositions": [
+        "Limiter la transparence pour maintenir le contrôle.",
+        "Faciliter le partage d'informations, de défis et de succès.",
+        "Ignorer les besoins en communication des innovateurs."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 12,
-      "question": "Quel est le nom du palais construit par Louis XIV?",
-      "propositions": ["Le Louvre", "Versailles", "Fontainebleau"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 13,
-      "question": "Qui a dit : 'L'État, c'est moi'?",
-      "propositions": ["Louis XIV", "Napoléon Bonaparte", "Charles de Gaulle"],
-      "reponseCorrecte": "A"
+      "question": "Quels sont les avantages de l'accompagnement des innovateurs dans le développement de compétences des innovateurs ?",
+      "propositions": [
+        "Décourager les innovateurs à acquérir de nouvelles compétences.",        
+        "Ignorer le développement des compétences des innovateurs.",
+        "Favoriser la croissance professionnelle et personnelle des innovateurs."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 14,
-      "question": "En quelle année a eu lieu la bataille de Marignan?",
-      "propositions": ["1415", "1615", "1515"],
-      "reponseCorrecte": "C"
+      "question": "Comment l'accompagnement des innovateurs peut-il aider à la gestion du changement dans le processus d'innovation ?",
+      "propositions": [
+        "En soutenant les innovateurs dans l'adaptation aux changements et en aidant à atténuer les résistances.",
+        "En décourageant toute forme de changement.",        
+        "En ignorant les défis liés au changement."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 15,
-      "question": "Quel traité de paix a mis fin à la Première Guerre mondiale pour la France?",
-      "propositions": ["Traité de Trianon", "Traité de Saint-Germain", "Traité de Versailles"],
-      "reponseCorrecte": "C"
+      "question": "Pourquoi est-il important d'adapter l'accompagnement aux besoins spécifiques des innovateurs ?",
+      "propositions": [
+        "Pour décourager l'innovation.",
+        "Pour maximiser l'efficacité de l'accompagnement et le succès des initiatives innovantes.",
+        "Pour ignorer les besoins individuels des innovateurs."
+      ],
+      "reponseCorrecte": "B"
     },
     {
       "id": 16,
-      "question": "Qui était le premier président de la Cinquième République française?",
-      "propositions": ["Georges Pompidou", "Charles de Gaulle", "François Mitterrand"],
-      "reponseCorrecte": "B"
+      "question": "Comment l'accompagnement des innovateurs peut-il contribuer à la création d'une culture d'innovation au sein de l'organisation ?",
+      "propositions": [
+        "En décourageant toute forme de changement.",        
+        "En maintenant un statu quo rigide.",
+        "En encourageant l'exploration, la prise de risque et l'apprentissage continu."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 17,
-      "question": "Quelle reine de France a été guillotinée pendant la Révolution française?",
-      "propositions": ["Catherine de Médicis", "Marie-Antoinette", "Anne d'Autriche"],
-      "reponseCorrecte": "B"
+      "question": "Quels sont les trois types d'innovations qui existent ?",
+      "propositions": [
+        "Innovation incrémentale, innovation adjacente, innovation de rupture.",
+        "Innovations radicales, innovations mineures, innovations continues.",        
+        "Innovation normative, innovation majeure, innovation marginale."
+      ],
+      "reponseCorrecte": "A"
     },
     {
       "id": 18,
-      "question": "Quelle expédition militaire a été un échec pour Napoléon en 1812?",
-      "propositions": ["La campagne d'Italie", "L'invasion de la Russie", "L'expédition d'Égypte"],
+      "question": "Qu’est-ce que l’innovation incrémentale ?",
+      "propositions": [
+        "Le développement d'un nouveau produit/service visant à remplacer l'existant.",
+        "L'amélioration d'un produit/service existant.",
+        "L'utilisation d'un produit/service existant pour l'adapter à un nouvel usage."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 19,
-      "question": "Quelle loi française de 1905 marque la séparation de l'Église et de l'État?",
-      "propositions": ["Le Concordat de 1801", "La loi de séparation", "La loi sur la laïcité"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 20,
-      "question": "Qui était le leader de la Résistance française pendant la Seconde Guerre mondiale?",
-      "propositions": ["Jean Moulin", "Philippe Pétain", "Charles de Gaulle"],
+      "question": "Qu’est-ce que l'innovation adjacente ?",
+      "propositions": [
+        "L'amélioration progressive d'un produit/service.",        
+        "Le développement d'un nouveau produit/service visant à remplacer l'existant.",
+        "L’adaptation d’un produit/service existant à un nouvel usage."
+      ],
       "reponseCorrecte": "C"
     },
     {
+      "id": 20,
+      "question": "Qu’est-ce que l'innovation de rupture ?",
+      "propositions": [
+        "Le développement d'un nouveau produit/service visant à remplacer l'existant.",
+        "L'amélioration d'un produit/service existant.",        
+        "L'utilisation d'un produit/service existant pour l'adapter à un nouvel usage."
+      ],
+      "reponseCorrecte": "A"
+    },
+    {
       "id": 21,
-      "question": "En quelle année a été signée la Déclaration des droits de l'homme et du citoyen?",
-      "propositions": ["1791", "1789", "1793"],
+      "question": "Quelle est l'une des responsabilités principales d'un sponsor vis-à-vis de l'innovateur ?",
+      "propositions": [
+        "Restreindre l'accès aux terrains d'expérimentation.",
+        "Promouvoir l'innovation dans son propre environnement.",
+        "Encourager l'innovateur à abandonner ses idées."
+      ],
       "reponseCorrecte": "B"
     },
     {
       "id": 22,
-      "question": "Quel roi a été surnommé 'Saint-Louis'?",
-      "propositions": ["Louis XVI", "Louis IX", "Louis XIV"],
-      "reponseCorrecte": "B"
+      "question": "Qu’est-ce qu’un sponsor en innovation ?",
+      "propositions": [
+        "Personne ou entité qui dirige et contrôle tous les aspects du processus d’innovation.",        
+        "Personne ou entité qui critique et bloque les initiatives innovantes.",
+        "Personne ou entité qui fournit un soutien stratégique à un projet d’innovation."
+      ],
+      "reponseCorrecte": "C"
     },
     {
       "id": 23,
-      "question": "Quelle guerre a vu la bataille de Verdun en 1916?",
-      "propositions": ["La Seconde Guerre mondiale", "La guerre franco-prussienne", "La Première Guerre mondiale"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 24,
-      "question": "Quel événement a marqué le début de la Révolution française?",
-      "propositions": ["La convocation des États généraux", "L'exécution de Louis XVI", "La prise de la Bastille"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 25,
-      "question": "Quelle fut la première colonie française à devenir indépendante au XIXe siècle?",
-      "propositions": ["L'Algérie", "Haïti", "Le Canada"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 26,
-      "question": "Quel monarque est associé à l'édit de Nantes?",
-      "propositions": ["François Ier", "Henri IV", "Louis XIV"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 27,
-      "question": "Quelle bataille a marqué la fin de l'Empire napoléonien?",
-      "propositions": ["Bataille de Leipzig", "Bataille d'Austerlitz", "Bataille de Waterloo"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 28,
-      "question": "Quelle période de l'histoire de France est connue sous le nom de 'Belle Époque'?",
-      "propositions": ["Début du XXe siècle", "Entre-deux-guerres", "Fin du XIXe siècle"],
+      "question": "Qu’est-ce qu’un innovateur ?",
+      "propositions": [
+        "Une personne qui introduit des changements significatifs, des idées nouvelles.",
+        "Une personne qui suit toujours les tendances établies.",        
+        "Une personne qui évite tout risque et préfère rester dans sa zone de confort."
+      ],
       "reponseCorrecte": "A"
-    },
-    {
-      "id": 29,
-      "question": "Qui a fondé l'Académie française?",
-      "propositions": ["Louis XIV", "François Ier", "Cardinal de Richelieu"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 30,
-      "question": "Quel événement historique est associé à l'année 732?",
-      "propositions": ["Le couronnement de Charlemagne", "La bataille de Poitiers", "La fondation de l'Académie française"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 31,
-      "question": "Qui a été le premier empereur des Français?",
-      "propositions": ["Louis XIV", "Napoléon Bonaparte", "Charles de Gaulle"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 32,
-      "question": "Quelle révolution a aboli la monarchie et établi la Première République française?",
-      "propositions": ["La Révolution de 1848", "La Révolution française de 1789", "Les journées de Juillet 1830"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 33,
-      "question": "Quel roi de France est connu pour avoir révoqué l'Édit de Nantes?",
-      "propositions": ["Louis XIV", "Henri IV", "François Ier"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 34,
-      "question": "Dans quel château la signature du traité de paix de la Guerre de Cent Ans a-t-elle eu lieu?",
-      "propositions": ["Château de Chambord", "Château de Versailles", "Château de Picquigny"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 35,
-      "question": "Quelle est la date de la chute du régime de Vichy et de la libération de Paris pendant la Seconde Guerre mondiale?",
-      "propositions": ["25 août 1944", "6 juin 1944", "8 mai 1945"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 36,
-      "question": "Quel traité a marqué la fin de la guerre de Succession d'Espagne impliquant la France?",
-      "propositions": ["Traité de Paris", "Traité d'Utrecht", "Traité de Versailles"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 37,
-      "question": "Qui était le ministre des Finances de Louis XIV, célèbre pour ses réformes économiques?",
-      "propositions": ["Jean-Baptiste Colbert", "Nicolas Fouquet", "Sully"],
-      "reponseCorrecte": "A"
-    },
-    {
-      "id": 38,
-      "question": "Quelle guerre a vu l'utilisation massive de la ligne Maginot par la France?",
-      "propositions": ["La Première Guerre mondiale", "La guerre franco-prussienne", "La Seconde Guerre mondiale"],
-      "reponseCorrecte": "C"
-    },
-    {
-      "id": 39,
-      "question": "Quel est le nom du roi de France exécuté en 1793?",
-      "propositions": ["Charles Ier", "Louis XVI", "Louis XVIII"],
-      "reponseCorrecte": "B"
-    },
-    {
-      "id": 40,
-      "question": "Qui était le général français vainqueur à la bataille d'Austerlitz?",
-      "propositions": ["Maréchal Ney", "Napoléon Bonaparte", "Louis-Nicolas Davout"],
-      "reponseCorrecte": "B"
     }
   ]
 }
