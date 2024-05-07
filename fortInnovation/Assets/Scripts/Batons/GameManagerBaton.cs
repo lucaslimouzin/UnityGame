@@ -259,14 +259,11 @@ public class GameManagerBaton : MonoBehaviour
 
     private void TourDuMj(bool reponseJuste){
         int nbRetraitBaton;
-        //pour faire en sorte d'ajouter un peu de complexité
         if (batonTailleTab >= 4) {
-            //retire un nombre aléatoire entre 1 et 3 (inclus)
-            nbRetraitBaton = UnityEngine.Random.Range(1, 4);
+            nbRetraitBaton = 3;
         }
         else if (batonTailleTab == 3){
-            //retire un nombre aléatoire entre 1 et 2 (inclus)
-            nbRetraitBaton = UnityEngine.Random.Range(1, 3);
+            nbRetraitBaton = 2;
         } else {
             nbRetraitBaton = 1;
         }
