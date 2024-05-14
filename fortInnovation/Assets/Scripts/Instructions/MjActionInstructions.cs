@@ -15,13 +15,39 @@ public class MjActionInstructions : MonoBehaviour
     public GameObject panelUi_Move;
     public GameObject panelUi_Jump;
     private StarterAssets.ThirdPersonController thirdPersonController;
+
+
+    //--------pour mettre à jour le score --------------------------------------
+        private void OnEnable()
+        {
+            // S'abonner à l'événement OnScoreUpdated
+            MainGameManager.OnScoreUpdated += HandleScoreUpdated;
+        }
+
+        private void OnDisable()
+        {
+            // Se désabonner de l'événement OnScoreUpdated lors de la désactivation du script
+            MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
+        }
+
+        // Méthode appelée lorsque le score est mis à jour
+        private void HandleScoreUpdated(int scorePaires, int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
+        {
+            // Faire quelque chose avec le nouveau score
+            MainGameManager.Instance.scoreReco = scorePaires + scoreBaton + scoreClou + scoreBassin + scoreEnigmes; 
+        
+        }
+    //-------------------------------------------------------------------
+
+
     // Start is called before the first frame update
     void Start()
     {   
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
         
-        
+        //envoi vers le Main Game Manager le scoreEnigme
+        MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 0);
         MainGameManager.Instance.tutoCompteur = 0;
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);

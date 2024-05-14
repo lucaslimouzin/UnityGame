@@ -8,6 +8,18 @@ public class resetGAme : MonoBehaviour
 
 
     public void recommencerGame(){
+
+    // variables pour jeu des paires
+    MainGameManager.Instance.scoreRecoPaires = 0;
+    MainGameManager.Instance.nbPartiePairesJoue = 0;
+    MainGameManager.Instance.nbPartiePaires = 3;
+    MainGameManager.Instance.gamePairesFait = false;
+    // variables pour jeu des batons
+    MainGameManager.Instance.scoreRecoBaton = 0;
+    MainGameManager.Instance.nbPartieBatonJoue = 0;
+    MainGameManager.Instance.nbPartieBaton = 4;
+    MainGameManager.Instance.gameBatonFait = false;
+
     // variables pour jeu du clou
     MainGameManager.Instance.scoreRecoClou = 0;
     MainGameManager.Instance.nbPartieClouJoue = 0;
