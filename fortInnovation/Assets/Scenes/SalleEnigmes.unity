@@ -4973,6 +4973,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestEnigmes, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6686850155602306534, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: "Penser et agir en \"\xE9cosysteme\""
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4060476280855995772, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe, type: 3}

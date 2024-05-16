@@ -593,6 +593,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestClou, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6686850155602306534, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: Maintenir l'envie d'innover
+      objectReference: {fileID: 0}
     - target: {fileID: 9207319454112688312, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
