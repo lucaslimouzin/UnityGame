@@ -601,6 +601,7 @@ MonoBehaviour:
   panelInfoMJ: {fileID: 712702743}
   MJText: {fileID: 458034346}
   tourJoueur: 0
+  deuxCartesRetournees: 0
   isMoving: 0
   panelQuestions: {fileID: 5069128}
   questionText: {fileID: 5069127}
@@ -3633,6 +3634,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
+        type: 3}
+      propertyPath: m_text
+      value: "R\xE8gles du jeu : \nR\xE9pondre aux questions sur le principe 1 :
+        \nDonner du sens et la direction.\n\nSi vous r\xE9pondez juste vous aurez
+        la possibilit\xE9 de retourner une carte de la ligne du haut et une carte
+        de la ligne du bas pour former une paire.\n\nSi vous r\xE9pondez faux, \xE7a
+        sera au maitre du jeu de jouer et il trouvera une paire !\n\nLe gagnant est
+        celui qui aura rassembl\xE9 3 paires"
       objectReference: {fileID: 0}
     - target: {fileID: 7979451799127922400, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}

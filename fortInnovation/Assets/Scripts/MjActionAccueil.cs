@@ -8,9 +8,12 @@ public class MjActionAccueil : MonoBehaviour
 {
     public GameObject panelMjInfo;
     public GameObject panelRoom;
+    public GameObject pointExclamation;
     public TextMeshProUGUI textMjRoom;
     public TextMeshProUGUI textMjInfo;
     private StarterAssets.ThirdPersonController thirdPersonController;
+    public GameObject panelQuest;
+    public TMP_Text checklistText;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +35,16 @@ public class MjActionAccueil : MonoBehaviour
            textMjRoom.text = "Bravo vous avez fini toutes les épreuves!\n On se retrouve dans la salle des récompenses !"; 
            StartCoroutine(LoadSceneAfterDelay("SalleFinDuJeu", 4f));
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
+                panelQuest.SetActive(false);
                 textMjRoom.text = "Bienvenue dans Fort Innovation !!! \n Approche toi de moi pour avoir les explications sur ton aventure \n dans le fort ...";
         }
         else {
             //change le message du panel Room
+            pointExclamation.SetActive(false);
+            panelQuest.SetActive(true);
             textMjRoom.text = "Continue d'explorer les autres salles \n Avance vers la voie de l'innovation...";
         }
+        MettreAJourChecklist();
        
     }
 
@@ -53,6 +60,7 @@ public class MjActionAccueil : MonoBehaviour
             if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
+                pointExclamation.SetActive(false);
                 textMjInfo.text = "\nHéros de l'innovation,\nbienvenue dans l'enceinte sacrée du Fort de l'Innovation.\n\nVotre quête ici est noble et essentielle. En parcourant les cinq cellules mystiques de ce fort, vous serez initiés aux principes sacrés de l'innovation participative.\n\nChaque cellule est un sanctuaire dédié à un principe spécifique, un lieu où se révèlent les leviers d'action - les bonnes pratiques - et les pièges - les écueils à éviter - qui façonnent le paysage de l'innovation.Votre périple à travers ces cellules a un double objectif. Premièrement, il vise à approfondir votre compréhension et votre mise en œuvre des bonnes pratiques et des écueils à éviter, afin de cultiver un terreau fertile pour l'innovation au sein de la Caisse.\n\nDeuxièmement, il est conçu pour vous équiper d'une sagesse pratique, vous permettant d'identifier et d'activer les leviers nécessaires pour animer l'innovation participative au sein de vos équipes. \n \n À chaque étape de ce voyage, vous serez confrontés à des défis qui testeront votre capacité à répondre à des questions opérationnelles.\n\nCes défis sont des portes vers la connaissance, ouvrant sur des recommandations précieuses que vous, et l'ensemble des managers, pourrez embrasser dans vos pratiques futures. Préparez-vous à plonger dans l'essence même de l'innovation participative, à découvrir ses principes fondateurs et à les incarner dans votre quête pour transformer et inspirer.\n\nQue votre voyage au sein du Fort de l'Innovation soit riche d'enseignements et de découvertes.\n\nQue la sagesse acquise ici guide vos pas vers une ère d'innovation sans précédent au sein de la Caisse.\n\n En avant, braves innovateurs, votre aventure commence maintenant!";
                 
                 
@@ -82,6 +90,8 @@ public class MjActionAccueil : MonoBehaviour
 
     public void textSuivant(){
         panelRoom.SetActive(true);
+        pointExclamation.SetActive(false);
+        panelQuest.SetActive(true);
         textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
         MainGameManager.Instance.tutoCompteur = 3;
         panelMjInfo.SetActive(false);
@@ -114,5 +124,33 @@ public class MjActionAccueil : MonoBehaviour
         yield return new WaitForSeconds(delayInSeconds);
         SceneManager.LoadScene(sceneName);
     }
+
+    // Méthode pour mettre à jour la checklist
+    void MettreAJourChecklist()
+    {
+        // Initialiser le texte avec les noms de jeux
+        string[] nomsJeux = { "Jeu des paires", "Jeu des bâtons", "Jeu des bassins", "Jeu des clous", "Jeu des énigmes"};
+        bool[] statutJeux = { MainGameManager.Instance.gamePairesFait, MainGameManager.Instance.gameBatonFait, MainGameManager.Instance.gameBassinFait, MainGameManager.Instance.gameClouFait, MainGameManager.Instance.gameEnigmesFait};
+
+        string checklist = "Jeux à faire :\n";
+        for (int i = 0; i < nomsJeux.Length; i++)
+        {
+            // Si le jeu est fait, le barrer avec `<s>`, sinon l'afficher normalement
+            checklist += statutJeux[i] ? $"<s>- {nomsJeux[i]}</s>\n" : $"- {nomsJeux[i]}\n";
+        }
+
+        // Mettre à jour le texte du TextMeshPro
+        checklistText.text = checklist;
+    }
+
+    // Méthode publique pour mettre à jour la checklist après modification des booléens
+    // public void UpdateJeuxChecklist(bool nouveauJeu1, bool nouveauJeu2, bool nouveauJeu3)
+    // {
+    //     jeu1 = nouveauJeu1;
+    //     jeu2 = nouveauJeu2;
+    //     jeu3 = nouveauJeu3;
+
+    //     MettreAJourChecklist();
+    // }
 
 }

@@ -3347,11 +3347,12 @@ PrefabInstance:
     - target: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
       propertyPath: m_text
-      value: "R\xE8gles du jeu : \nR\xE9pondre aux questions sur [principe 2].\n\nSi
-        vous r\xE9pondez juste vous aurez la possibilit\xE9 de retirer 1, 2 ou 3
-        b\xE2tonnets \xE0 l'aide des boutons. \n\nSi vous r\xE9pondez faux, \xE7a
-        sera au maitre du jeu de retirer 1, 2 ou 3 b\xE2tonnets.\n\nLe gagnant est
-        celui qui retirera l'avant dernier b\xE2tonnets."
+      value: "R\xE8gles du jeu : \nR\xE9pondre aux questions sur le principe 2 :
+        \nExprimer et faire remonter les id\xE9es.\n\nSi vous r\xE9pondez juste vous
+        aurez la possibilit\xE9 de retirer 1, 2 ou 3 b\xE2tonnets \xE0 l'aide des
+        boutons. \n\nSi vous r\xE9pondez faux, \xE7a sera au maitre du jeu de retirer
+        1, 2 ou 3 b\xE2tonnets.\n\nLe gagnant est celui qui retirera l'avant dernier
+        b\xE2tonnets."
       objectReference: {fileID: 0}
     - target: {fileID: 7504648372669050673, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}

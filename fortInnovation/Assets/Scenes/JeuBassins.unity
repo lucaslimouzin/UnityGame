@@ -3291,6 +3291,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5857846406643700161, guid: 4088c2b37a05c194b84cb39d7506bd77,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857846406643700161, guid: 4088c2b37a05c194b84cb39d7506bd77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -156
+      objectReference: {fileID: 0}
     - target: {fileID: 6089853686479055996, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
       propertyPath: m_Name
@@ -3304,12 +3314,12 @@ PrefabInstance:
     - target: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
       propertyPath: m_text
-      value: "R\xE8gles du jeu : \nR\xE9pondre aux questions sur [principe 3].\n\nSi
+      value: "R\xE8gles du jeu : \nR\xE9pondre aux questions sur le principe 3 :
+        Accompagner l'exp\xE9rimentation et le d\xE9ploiement de l'inovation.\n\nSi
         vous r\xE9pondez juste vous aurez la possibilit\xE9 de d\xE9poser une bille
-        dans le verre du maitre du jeu. [image verre MJ]\n\nSi vous r\xE9pondez faux,
-        \xE7a sera au maitre du jeu de jouer et il d\xE9posera une bille dans votre
-        verre. [image verre joueur]\n\nLe gagnant est celui qui aura rempli le verre
-        de l'autre de 3 billes."
+        dans le verre du maitre du jeu. \n\nSi vous r\xE9pondez faux, \xE7a sera
+        au maitre du jeu de jouer et il d\xE9posera une bille dans votre verre. \n\nLe
+        gagnant est celui qui aura rempli le verre de l'autre de 3 billes."
       objectReference: {fileID: 0}
     - target: {fileID: 7504648372669050673, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
