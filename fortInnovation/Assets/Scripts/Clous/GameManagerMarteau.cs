@@ -270,10 +270,8 @@ public class GameManagerMarteau : MonoBehaviour
         Input.ResetInputAxes(); // reset toutes les entrées utilisateur
         ignoreInput = true; // ignore les inputs 
         phaseQuestion = true;
-        //Debug.Log("PhaseQ 2 = " + phaseQuestion);
         tourJoueur = false;
         isSpaceEnabled = false;
-        //Debug.Log("Espace 3 = " + isSpaceEnabled);
         ResetGauge();
         //choisi les questions de 1 à taille Json
         //comme on vise un tableau on est obligé de commencer à 0
