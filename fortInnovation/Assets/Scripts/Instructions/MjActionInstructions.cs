@@ -60,7 +60,7 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Pour te déplacer utilise ZQSD ou les flèches. \n Essaie d'atteindre le coffre !";
+        textMjRoom.text = "Pour te déplacer, utilise les flèches ou les touches ZQSD de ton clavier. \n Pour t'entrainer, essaie d'atteindre le coffre,";
         textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
     
     }
@@ -129,7 +129,7 @@ public class MjActionInstructions : MonoBehaviour
         panelRoom.SetActive(true);
         //desactive le deplacement
         DisableGameplayInput();
-        textMjRoom.text = "Maintenant, va vers la porte pour débuter l'aventure !";
+        textMjRoom.text = "Dirige toi à présent vers la porte pour débuter l'aventure !";
         MainGameManager.Instance.tutoCompteur = 1;
         
     }
