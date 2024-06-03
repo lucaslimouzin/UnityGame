@@ -11157,6 +11157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelDoor: {fileID: 150072982}
+  panelQuest: {fileID: 1425471894}
   objetADeplacer: {fileID: 1719452736}
   distanceDuDeplacement: 5
   dureeDuDeplacement: 3

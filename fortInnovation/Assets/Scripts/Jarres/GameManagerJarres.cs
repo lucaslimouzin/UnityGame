@@ -226,7 +226,12 @@ public class GameManagerPaires : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
-
+        
+        //color le texte en noir 
+        propositionAtext.color = Color.black;
+        propositionBtext.color = Color.black;
+        propositionCtext.color = Color.black;
+                
         if (Input.GetKey(KeyCode.Space)) {
 
         } else {
@@ -247,14 +252,58 @@ public class GameManagerPaires : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            // Mettre en vert le texte qu'il a cliqué
+            switch (choix)
+            {
+                case "A":
+                    propositionAtext.color = Color.green;
+                    break;
+                case "B":
+                    propositionBtext.color = Color.green;
+                    break;
+                case "C":
+                    propositionCtext.color = Color.green;
+                    break;
+            }
         }
         else {
             aJuste = false;
+            // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
+            switch (choix)
+            {
+                case "A":
+                    propositionAtext.color = Color.red;
+                    break;
+                case "B":
+                    propositionBtext.color = Color.red;
+                    break;
+                case "C":
+                    propositionCtext.color = Color.red;
+                    break;
+            }
+            switch (reponseCorrecte)
+            {
+                case "A":
+                    propositionAtext.color = Color.green;
+                    break;
+                case "B":
+                    propositionBtext.color = Color.green;
+                    break;
+                case "C":
+                    propositionCtext.color = Color.green;
+                    break;
+            }
         }
-        //on enlève le panneau des questions
-        RetraitPanneauQuestions(aJuste);
+        // Appeler la coroutine pour le délai avant de retirer le panneau des questions
+        StartCoroutine(WaitAndRetraitPanneauQuestions());
     }
 
+    // Coroutine pour attendre 3 secondes avant de retirer le panneau des questions
+    private IEnumerator WaitAndRetraitPanneauQuestions()
+    {
+        yield return new WaitForSeconds(3);
+        RetraitPanneauQuestions(aJuste);
+    }
     //retrait panneau Question
     private void RetraitPanneauQuestions(bool reponseJuste){
 
