@@ -231,13 +231,13 @@ public class GameManagerBassin : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Maitre du jeu : Bien répondu, vous pouvez déposer une bille  dans mon verre";
+            MJText.text = "Vous avez bien répondu ! \n Vous pouvez donc déplacer une bille dans mon verre.";
             tourJoueur = true;
             TourDuJoueur();
             
         } 
         else {
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans votre verre";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\n C'est donc à moi de placer un bille dans votre verre.";
             tourJoueur = false;
             TourDuMj();
         }

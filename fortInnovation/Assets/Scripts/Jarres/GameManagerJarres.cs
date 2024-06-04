@@ -317,12 +317,12 @@ public class GameManagerPaires : MonoBehaviour
         if(reponseJuste){
             tourJoueur= true;
             phaseQuestion = false;
-            MJText.text = "Maitre du jeu : Bien répondu, vous pouvez retourner deux cartes";
+            MJText.text = "Vous avez bien répondu ! \n Vous pouvez retourner deux cartes.";
             TourDuJoueur();
         } 
         else {
             tourJoueur = false;
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\n C'est donc à moi de retourner deux cartes.";
             TourDuMj();
         }
         
@@ -456,11 +456,11 @@ public class GameManagerPaires : MonoBehaviour
                 StartCoroutine(ShowAndHideTrueText());
                 if(tourJoueur){
                     scorePlayer++;
-                    scorePlayerText.text = scorePlayer.ToString() + "/3 paires Joueur";
+                    scorePlayerText.text = "Nombre de paires : \n" + scorePlayer.ToString()+ "/3" ;
                 }
                 else {
                     scoreMj++;
-                    scoreMjText.text = scoreMj.ToString() + "/3 paires MJ";
+                    scoreMjText.text = "Nombre de paires : \n" + scoreMj.ToString() + "/3";
                 }
                 if (scorePlayer == 3 || scoreMj ==3) {
                     //fin du jeu

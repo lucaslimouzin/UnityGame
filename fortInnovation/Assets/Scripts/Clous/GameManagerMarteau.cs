@@ -345,7 +345,7 @@ public class GameManagerMarteau : MonoBehaviour
             phaseQuestion = false;
             ignoreInput = false; // autorise les inputs
             //Debug.Log("PhaseQ 3 = " + phaseQuestion);
-            MJText.text = "Maitre du jeu : Bien répondu, à vous de jouer ! \n Cliquez sur le bouton pour déterminer la puissance (jauge rouge) de votre marteau";
+            MJText.text = "Vous avez bien répondu !\n Vous pouvez donc frapper votre clou.";
             isSpaceEnabled = true; //active la touche espace
             //Debug.Log("Espace 4 = " + isSpaceEnabled);
             TourDuJoueur();
@@ -354,7 +354,7 @@ public class GameManagerMarteau : MonoBehaviour
             tourJoueur = false;
             isSpaceEnabled = false; // désactive la touche espace
           //  Debug.Log("Espace 5 = " + isSpaceEnabled);
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de frapper mon clou.";
             TourDuMj();
         }
         
