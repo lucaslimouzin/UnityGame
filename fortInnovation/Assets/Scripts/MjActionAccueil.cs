@@ -129,14 +129,14 @@ public class MjActionAccueil : MonoBehaviour
     void MettreAJourChecklist()
     {
         // Initialiser le texte avec les noms de jeux
-        string[] nomsJeux = { "Jeu des paires", "Jeu des bâtons", "Jeu des bassins", "Jeu des clous", "Jeu des énigmes"};
+        string[] nomsJeux = { "Cellule des paires", "Cellule des bâtonnets", "Cellule des bassins", "Cellule des clous", "Cellule des énigmes"};
         bool[] statutJeux = { MainGameManager.Instance.gamePairesFait, MainGameManager.Instance.gameBatonFait, MainGameManager.Instance.gameBassinFait, MainGameManager.Instance.gameClouFait, MainGameManager.Instance.gameEnigmesFait};
 
-        string checklist = "Jeux à faire :\n";
+        string checklist = "Les cellules restantes à visiter :\n";
         for (int i = 0; i < nomsJeux.Length; i++)
         {
             // Si le jeu est fait, le barrer avec `<s>`, sinon l'afficher normalement
-            checklist += statutJeux[i] ? $"<s>- {nomsJeux[i]}</s>\n" : $"- {nomsJeux[i]}\n";
+            checklist += statutJeux[i] ? $"<s>. {nomsJeux[i]}</s>\n" : $". {nomsJeux[i]}\n";
         }
 
         // Mettre à jour le texte du TextMeshPro

@@ -14,7 +14,7 @@ public class GestionCinematiques : MonoBehaviour
         GameObject buttonSuivant = GameObject.Find("ButtonSuivant");
         buttonSuivant.SetActive(false);
         // Commencez une coroutine pour attendre 3 secondes
-        StartCoroutine(MakeButtonVisibleAfterDelay(buttonSuivant, 25.0f));
+        StartCoroutine(MakeButtonVisibleAfterDelay(buttonSuivant, 10.0f));
         panelCinematiqueIntro.SetActive(false);
         switch (MainGameManager.Instance.cinematiqueEnCours){
             case "Introduction":
