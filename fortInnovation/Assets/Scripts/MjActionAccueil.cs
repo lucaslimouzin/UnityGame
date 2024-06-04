@@ -36,7 +36,7 @@ public class MjActionAccueil : MonoBehaviour
            StartCoroutine(LoadSceneAfterDelay("SalleFinDuJeu", 4f));
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
                 panelQuest.SetActive(false);
-                textMjRoom.text = "Bienvenue dans Fort Innovation !!! \n Approche toi de moi pour avoir les explications sur ton aventure \n dans le fort ...";
+                textMjRoom.text = "Bienvenue dans Fort Innovation. \nApproche-toi et viens en apprendre davantage sur ton aventure !";
         }
         else {
             //change le message du panel Room
@@ -61,7 +61,7 @@ public class MjActionAccueil : MonoBehaviour
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
                 pointExclamation.SetActive(false);
-                textMjInfo.text = "\nHéros de l'innovation,\nbienvenue dans l'enceinte sacrée du Fort de l'Innovation.\n\nVotre quête ici est noble et essentielle. En parcourant les cinq cellules mystiques de ce fort, vous serez initiés aux principes sacrés de l'innovation participative.\n\nChaque cellule est un sanctuaire dédié à un principe spécifique, un lieu où se révèlent les leviers d'action - les bonnes pratiques - et les pièges - les écueils à éviter - qui façonnent le paysage de l'innovation.Votre périple à travers ces cellules a un double objectif. Premièrement, il vise à approfondir votre compréhension et votre mise en œuvre des bonnes pratiques et des écueils à éviter, afin de cultiver un terreau fertile pour l'innovation au sein de la Caisse.\n\nDeuxièmement, il est conçu pour vous équiper d'une sagesse pratique, vous permettant d'identifier et d'activer les leviers nécessaires pour animer l'innovation participative au sein de vos équipes. \n \n À chaque étape de ce voyage, vous serez confrontés à des défis qui testeront votre capacité à répondre à des questions opérationnelles.\n\nCes défis sont des portes vers la connaissance, ouvrant sur des recommandations précieuses que vous, et l'ensemble des managers, pourrez embrasser dans vos pratiques futures. Préparez-vous à plonger dans l'essence même de l'innovation participative, à découvrir ses principes fondateurs et à les incarner dans votre quête pour transformer et inspirer.\n\nQue votre voyage au sein du Fort de l'Innovation soit riche d'enseignements et de découvertes.\n\nQue la sagesse acquise ici guide vos pas vers une ère d'innovation sans précédent au sein de la Caisse.\n\n En avant, braves innovateurs, votre aventure commence maintenant!";
+                textMjInfo.text = "Pour terminer ta quête, tu devras visiter les 5 cellules du Fort qui se trouvent derière moi et affronter le maître du jeu. \n \n Au cours de ton aventure, un parchemin t'indique les cellules qu'il te reste à visiter. \n \n Bonne chance à toi aventurier de l'innovation !";
                 
                 
                 

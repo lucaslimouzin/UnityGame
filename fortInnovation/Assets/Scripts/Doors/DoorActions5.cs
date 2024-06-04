@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DoorActions5 : MonoBehaviour
 {
      public GameObject panelDoor;
+     public GameObject panelQuest;
      public GameObject objetADeplacer;
     public float distanceDuDeplacement = 5f; // Distance à déplacer sur l'axe Y
     public float dureeDuDeplacement = 3f;
@@ -26,7 +27,8 @@ public class DoorActions5 : MonoBehaviour
         if (MainGameManager.Instance.tutoCompteur == 3) {
             if (other.gameObject.CompareTag("Player")){
                 panelDoor.SetActive(true);
-                
+                panelQuest.SetActive(false);
+                panelQuest.SetActive(true);
                 
                 
             }

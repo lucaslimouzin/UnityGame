@@ -1957,6 +1957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelDoor: {fileID: 919731769}
+  panelQuest: {fileID: 1425471894}
   objetADeplacer: {fileID: 221495475}
   distanceDuDeplacement: 5
   dureeDuDeplacement: 3
@@ -2489,12 +2490,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1970.2
+      value: 931.99994
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1245
+      value: 1272.4906
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
@@ -3552,12 +3553,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1970.2
+      value: 931.99994
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1245
+      value: 1272.4906
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
@@ -5574,12 +5575,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1970.2
+      value: 931.99994
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1245
+      value: 1272.4906
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
@@ -6070,12 +6071,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1970.2
+      value: 931.99994
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1245
+      value: 1272.4906
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
@@ -7889,6 +7890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelDoor: {fileID: 314136045}
+  panelQuest: {fileID: 1425471894}
   objetADeplacer: {fileID: 1257412474}
   distanceDuDeplacement: 5
   dureeDuDeplacement: 3
@@ -9833,21 +9835,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 478945887}
-    - target: {fileID: 1733586388800944020, guid: 92734152d5388aa419c2e787bb6064b7,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1733586388800944020, guid: 92734152d5388aa419c2e787bb6064b7,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1733586388800944020, guid: 92734152d5388aa419c2e787bb6064b7,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.40882885
-      objectReference: {fileID: 0}
     - target: {fileID: 5476711525407635970, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -9881,12 +9868,12 @@ PrefabInstance:
     - target: {fileID: 5476711525407635970, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1970.2
+      value: 931.99994
       objectReference: {fileID: 0}
     - target: {fileID: 5476711525407635970, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1245
+      value: 1272.4906
       objectReference: {fileID: 0}
     - target: {fileID: 5476711525407635970, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
@@ -9961,22 +9948,12 @@ PrefabInstance:
     - target: {fileID: 7270497251440019873, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 483.8
+      value: 246.02997
       objectReference: {fileID: 0}
-    - target: {fileID: 7350064155857851280, guid: 92734152d5388aa419c2e787bb6064b7,
+    - target: {fileID: 7270497251440019873, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7350064155857851280, guid: 92734152d5388aa419c2e787bb6064b7,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7350064155857851280, guid: 92734152d5388aa419c2e787bb6064b7,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -17
+      propertyPath: m_AnchoredPosition.x
+      value: 14.455307
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10481,6 +10458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelDoor: {fileID: 544940592}
+  panelQuest: {fileID: 1425471894}
   objetADeplacer: {fileID: 1646773666}
   distanceDuDeplacement: 5
   dureeDuDeplacement: 3
@@ -10632,6 +10610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelDoor: {fileID: 791162142}
+  panelQuest: {fileID: 1425471894}
   objetADeplacer: {fileID: 1671915759}
   distanceDuDeplacement: 5
   dureeDuDeplacement: 3
@@ -27693,6 +27672,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1809774950}
     m_Modifications:
+    - target: {fileID: 1908819110866013963, guid: f001c1dc876ec3f429cb58f6a9446275,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 73.04288
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220800511994698075, guid: f001c1dc876ec3f429cb58f6a9446275,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 367
+      objectReference: {fileID: 0}
     - target: {fileID: 4410307963062093221, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_Name
@@ -27736,12 +27725,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1970.2
+      value: 931.99994
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1245
+      value: 1272.4906
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: f001c1dc876ec3f429cb58f6a9446275,
         type: 3}
