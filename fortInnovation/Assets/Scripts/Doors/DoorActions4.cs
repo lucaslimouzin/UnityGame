@@ -28,7 +28,7 @@ public class DoorActions4 : MonoBehaviour
             if (other.gameObject.CompareTag("Player")){
                 panelDoor.SetActive(true);
                 panelQuest.SetActive(false);
-                panelQuest.SetActive(true);
+                
                 
                 
                 
@@ -41,6 +41,7 @@ public class DoorActions4 : MonoBehaviour
             if (other.gameObject.CompareTag("Player")){
                 if (panelDoor.activeSelf){
                     panelDoor.SetActive(false);
+                    panelQuest.SetActive(true);
                     
                     
                     

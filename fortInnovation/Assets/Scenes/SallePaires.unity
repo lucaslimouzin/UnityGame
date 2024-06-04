@@ -209,6 +209,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1809774950}
     m_Modifications:
+    - target: {fileID: 3209534671513301288, guid: a5d11ee75e5788043a94fc3415679a62,
+        type: 3}
+      propertyPath: m_text
+      value: "Bienvenue dans la cellule des Paires ! \r\n\r\nVous allez affronter
+        le Ma\xEEtre du jeu dans une \xE9preuve de m\xE9moire pour tenter de remporter
+        les 5 recommandations du principe 1 de l'innovation participative : \"Donner
+        du sens et la direction\".\r\r\nBonne chance !"
+      objectReference: {fileID: 0}
     - target: {fileID: 4410307963062093221, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_Name
@@ -297,12 +305,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -289
+      value: -890
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -655
+      value: -709
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
