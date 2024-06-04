@@ -34,6 +34,8 @@ public class GameManagerPaires : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public Sprite[] imagesButton;
+    public GameObject buttonFermer;
     public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
@@ -227,10 +229,13 @@ public class GameManagerPaires : MonoBehaviour
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
         
-        //color le texte en noir 
-        propositionAtext.color = Color.black;
-        propositionBtext.color = Color.black;
-        propositionCtext.color = Color.black;
+        //met le fond des boutons en noir
+        buttonA.image.sprite = imagesButton[0]; // "black"
+        buttonB.image.sprite = imagesButton[0]; // "black"
+        buttonC.image.sprite = imagesButton[0]; // "black"
+        //desactive le boutonFermer
+        buttonFermer.SetActive(false);
+                    
                 
         if (Input.GetKey(KeyCode.Space)) {
 
@@ -252,58 +257,57 @@ public class GameManagerPaires : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
             // Mettre en vert le texte qu'il a cliqué
             switch (choix)
             {
                 case "A":
-                    propositionAtext.color = Color.green;
+                    buttonA.image.sprite = imagesButton[2]; // "green"
                     break;
                 case "B":
-                    propositionBtext.color = Color.green;
+                    buttonB.image.sprite = imagesButton[2]; // "green"
                     break;
                 case "C":
-                    propositionCtext.color = Color.green;
+                    buttonC.image.sprite = imagesButton[2]; // "green"
                     break;
             }
         }
         else {
             aJuste = false;
             // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
-            switch (choix)
-            {
-                case "A":
-                    propositionAtext.color = Color.red;
-                    break;
-                case "B":
-                    propositionBtext.color = Color.red;
-                    break;
-                case "C":
-                    propositionCtext.color = Color.red;
-                    break;
-            }
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            
+            //on recolor juste la réponse juste
             switch (reponseCorrecte)
             {
                 case "A":
-                    propositionAtext.color = Color.green;
+                    buttonA.image.sprite = imagesButton[2]; // "green"
                     break;
                 case "B":
-                    propositionBtext.color = Color.green;
+                    buttonB.image.sprite = imagesButton[2]; // "green"
                     break;
                 case "C":
-                    propositionCtext.color = Color.green;
+                    buttonC.image.sprite = imagesButton[2]; // "green"
                     break;
             }
+            
         }
-        // Appeler la coroutine pour le délai avant de retirer le panneau des questions
-        StartCoroutine(WaitAndRetraitPanneauQuestions());
+        // affiche le bouton fermer
+        buttonFermer.SetActive(true);
+        
     }
 
-    // Coroutine pour attendre 3 secondes avant de retirer le panneau des questions
-    private IEnumerator WaitAndRetraitPanneauQuestions()
-    {
-        yield return new WaitForSeconds(3);
+    //action du bouton fermer
+    public void clicBoutonFermer(){
         RetraitPanneauQuestions(aJuste);
     }
+   
     //retrait panneau Question
     private void RetraitPanneauQuestions(bool reponseJuste){
 

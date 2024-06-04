@@ -234,6 +234,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 260763175}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clicBoutonFermer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManagerPaires, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1277576334427563431, guid: 67d1a0e37588eb446a15a042dda5a645,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -267,7 +302,7 @@ PrefabInstance:
     - target: {fileID: 3541168054158414050, guid: 67d1a0e37588eb446a15a042dda5a645,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7148740761591081210, guid: 67d1a0e37588eb446a15a042dda5a645,
         type: 3}
@@ -686,6 +721,11 @@ MonoBehaviour:
   buttonA: {fileID: 5069126}
   buttonB: {fileID: 5069124}
   buttonC: {fileID: 5069122}
+  imagesButton:
+  - {fileID: 21300000, guid: e0f8421649cb99e419e0e84d01b7017c, type: 3}
+  - {fileID: 21300000, guid: 6d1106d00643f2d47a674a187d33e107, type: 3}
+  - {fileID: 21300000, guid: 67a829115c26dd149a04e7f3a70593bb, type: 3}
+  buttonFermer: {fileID: 682268643}
   gagnePerduText: {fileID: 417164537518411840}
   ligne1Cartes:
   - {fileID: 255725453}
@@ -1164,6 +1204,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629306323}
   m_CullTransparentMesh: 1
+--- !u!1 &682268643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412134485874335039, guid: 67d1a0e37588eb446a15a042dda5a645,
+    type: 3}
+  m_PrefabInstance: {fileID: 5069119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &712702743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3398476469246547364, guid: d65d1ca6c2612204a932f767bf6547a7,
