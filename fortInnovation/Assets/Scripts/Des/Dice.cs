@@ -45,7 +45,7 @@ public class Dice : MonoBehaviour
 
     public void determQuiCommencePlayer () {
        if (MainGameManager.Instance.scoreDesMj > MainGameManager.Instance.scoreDesPlayer) {
-            texteQuiCommence.text = "Le Maître du jeu commence !";
+            texteQuiCommence.text = "Vous avez réalisé le score le plus bas, c'est au Maitre du jeu de commencer.";
             MainGameManager.Instance.quiCommence = "Mj";
             panelInstructions.SetActive(true);
         } 
@@ -53,7 +53,7 @@ public class Dice : MonoBehaviour
             panelTirageDesDes.SetActive(true);
             }
         if (MainGameManager.Instance.scoreDesMj < MainGameManager.Instance.scoreDesPlayer) {
-            texteQuiCommence.text = "Vous commencez !";
+            texteQuiCommence.text = "Vous avez réalisé le score le plus élevé, c'est donc à vous de commencer.";
             MainGameManager.Instance.quiCommence = "Player";
             panelInstructions.SetActive(true);
         }

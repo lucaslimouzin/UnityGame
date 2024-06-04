@@ -65,10 +65,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\" A l'aide des indices trouvez le mot de l'\xE9nigme.\""
+  m_text: "Lancez le d\xE9 pour d\xE9terminer le joueur qui d\xE9butera la partie,
+    le score le plus haut l'emporte.\nEn Cas d'\xE9galit\xE9, relancez les d\xE9s."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
+  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98,8 +100,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -128,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -341.18076, y: 8.529281, z: -518.70044, w: -52.773643}
+  m_margin: {x: -377.7515, y: -4.1929207, z: -575.619, w: -67.61599}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -372,15 +374,15 @@ RectTransform:
   m_GameObject: {fileID: 3822102014296009268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3807161, y: 0.3807161, z: 0.3807161}
+  m_LocalScale: {x: 0.51788116, y: 0.51788116, z: 0.51788116}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9058120274001217509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 249, y: 6}
-  m_SizeDelta: {x: 1289.4601, y: 725.3214}
+  m_AnchoredPosition: {x: 171, y: -9}
+  m_SizeDelta: {x: 300, y: 301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5814957635380206465
 CanvasRenderer:
@@ -410,7 +412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5492b2396487a8b4d82e1afd278d5222, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a80980d3b493d8478ca58326d566dd9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -447,7 +449,7 @@ RectTransform:
   m_GameObject: {fileID: 8113387856368664073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8710445, y: 0.8710445, z: 0.8710445}
+  m_LocalScale: {x: 0.8179695, y: 0.8179695, z: 0.8179695}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3948354722209674488}
@@ -456,8 +458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 6.3446, y: -122}
-  m_SizeDelta: {x: 1564.3295, y: 303.55}
+  m_AnchoredPosition: {x: -18.9959, y: -135}
+  m_SizeDelta: {x: 1506.1454, y: 247.3223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &318972832263650475
 CanvasRenderer:
@@ -487,7 +489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b2b445969700eb64890bd9319f1c9962, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82403eecb0e578241bace8c895c2f3f0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
