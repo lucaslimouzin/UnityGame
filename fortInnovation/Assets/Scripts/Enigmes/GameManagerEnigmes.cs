@@ -12,7 +12,7 @@ using System.Linq;
 
 public class GameManagerEnigmes : MonoBehaviour
 {
-    public GameObject panelInstruction;
+    //public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelEnigmes;
     public GameObject buttonTextEnigmes;
@@ -94,7 +94,8 @@ public class GameManagerEnigmes : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
         //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -133,14 +134,14 @@ public class GameManagerEnigmes : MonoBehaviour
     }
 
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+        // panelInstruction.SetActive(false);
         TourDuJoueur();
     }
 

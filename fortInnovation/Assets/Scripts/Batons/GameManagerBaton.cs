@@ -11,7 +11,7 @@ using UnityEngine.Networking;
 public class GameManagerBaton : MonoBehaviour
 {
     public GameObject[] baton; 
-    public GameObject panelInstruction;
+    //public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelButtonBaton;
 
@@ -97,7 +97,8 @@ public class GameManagerBaton : MonoBehaviour
         batonTailleTab = baton.Length;
         firstTimeMj = false;
       //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -131,14 +132,14 @@ public class GameManagerBaton : MonoBehaviour
     }
 
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+        //panelInstruction.SetActive(false);
 
         if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
@@ -174,9 +175,9 @@ public class GameManagerBaton : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }

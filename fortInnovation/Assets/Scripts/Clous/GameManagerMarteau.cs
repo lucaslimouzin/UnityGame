@@ -14,7 +14,7 @@ public class GameManagerMarteau : MonoBehaviour
     public GameObject clouMj;
     public GameObject marteauPlayer;
     public GameObject marteauMj;
-    public GameObject panelInstruction;
+    //public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelJauge;
     public GameObject buttonTextMarteau;
@@ -127,7 +127,8 @@ public class GameManagerMarteau : MonoBehaviour
        // Debug.Log("Espace 1 = " + isSpaceEnabled);
         ResetGauge();
       //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -244,14 +245,14 @@ public class GameManagerMarteau : MonoBehaviour
 
 
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+       // panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
             Invoke("AfficheLaQuestion",0f);
@@ -290,9 +291,9 @@ public class GameManagerMarteau : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }

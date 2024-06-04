@@ -14,7 +14,7 @@ public class GameManagerBassin : MonoBehaviour
     public GameObject playerSpherePrefab;
     private GameObject mjSphere;
     public GameObject mjSpherePrefab;
-    public GameObject panelInstruction;
+    //public GameObject panelInstructions;
     public GameObject panelInfoMJ;
     public GameObject panelBassin;
     public TextMeshProUGUI MJText;
@@ -105,7 +105,8 @@ public class GameManagerBassin : MonoBehaviour
         textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \n avant que votre verre \n  ne coule ";
         textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \n avant que le verre \n du MJ ne coule ";
         //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -145,14 +146,14 @@ public class GameManagerBassin : MonoBehaviour
     }
 
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+        //panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
             Invoke("AfficheLaQuestion",0f);
@@ -187,9 +188,9 @@ public class GameManagerBassin : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }

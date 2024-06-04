@@ -13,7 +13,7 @@ public class GameManagerPaires : MonoBehaviour
  
 
 
-    public GameObject panelInstruction;
+    //public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public TextMeshProUGUI MJText;
   
@@ -125,7 +125,8 @@ public class GameManagerPaires : MonoBehaviour
         // Initialiser et mélanger les tableaux de références
         InitialiserEtMelangerRefs();
         //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -167,14 +168,14 @@ public class GameManagerPaires : MonoBehaviour
 
     
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+       // panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
             Invoke("AfficheLaQuestion",0f);
@@ -214,9 +215,9 @@ public class GameManagerPaires : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }
