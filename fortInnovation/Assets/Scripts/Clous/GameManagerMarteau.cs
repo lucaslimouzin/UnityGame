@@ -53,6 +53,8 @@ public class GameManagerMarteau : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public Sprite[] imagesButton;
+    public GameObject buttonFermer;
     public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
@@ -119,8 +121,8 @@ public class GameManagerMarteau : MonoBehaviour
         vieDuClouJoueur = 250f;
         vieDuClouMj = 300f;
         //affichage de la vie du clou
-        textVieClouJoueur.text = vieDuClouJoueur.ToString();
-        textVieClouMj.text = vieDuClouMj.ToString();
+        textVieClouJoueur.text = "Vie du clou : " + vieDuClouJoueur.ToString();
+        textVieClouMj.text = "Vie du clou : " + vieDuClouMj.ToString();
         isSpaceEnabled = false;
         phaseQuestion = true;
         //Debug.Log("PhaseQ 1 = " + phaseQuestion);
@@ -306,6 +308,13 @@ public class GameManagerMarteau : MonoBehaviour
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
 
+        //met le fond des boutons en noir
+        buttonA.image.sprite = imagesButton[0]; // "black"
+        buttonB.image.sprite = imagesButton[0]; // "black"
+        buttonC.image.sprite = imagesButton[0]; // "black"
+        //desactive le boutonFermer
+        buttonFermer.SetActive(false);
+
         if (Input.GetKey(KeyCode.Space)) {
 
         } else {
@@ -326,11 +335,54 @@ public class GameManagerMarteau : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            // Mettre en vert le texte qu'il a cliqué
+            switch (choix)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
         }
         else {
             aJuste = false;
+            // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            
+            //on recolor juste la réponse juste
+            switch (reponseCorrecte)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
+            
         }
-        //on enlève le panneau des questions
+        // affiche le bouton fermer
+        buttonFermer.SetActive(true);
+        
+    }
+
+    //action du bouton fermer
+    public void clicBoutonFermer(){
         RetraitPanneauQuestions(aJuste);
     }
 
@@ -426,7 +478,7 @@ public class GameManagerMarteau : MonoBehaviour
                 vieDuClouJoueur = 0;
             }
             //affichage de la vie du clou
-            textVieClouJoueur.text = vieDuClouJoueur.ToString();
+            textVieClouJoueur.text = "Vie du clou : " + vieDuClouJoueur.ToString();
         }
         else
         {
@@ -459,7 +511,7 @@ public class GameManagerMarteau : MonoBehaviour
                 vieDuClouMj = 0;
             }
             //affichage de la vie du clou
-            textVieClouMj.text = vieDuClouMj.ToString();
+            textVieClouMj.text = "Vie du clou : " + vieDuClouMj.ToString();
         }
         else
         {

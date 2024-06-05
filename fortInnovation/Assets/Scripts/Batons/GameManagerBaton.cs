@@ -37,6 +37,8 @@ public class GameManagerBaton : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public Sprite[] imagesButton;
+    public GameObject buttonFermer;
     public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
@@ -190,6 +192,13 @@ public class GameManagerBaton : MonoBehaviour
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
 
+        //met le fond des boutons en noir
+        buttonA.image.sprite = imagesButton[0]; // "black"
+        buttonB.image.sprite = imagesButton[0]; // "black"
+        buttonC.image.sprite = imagesButton[0]; // "black"
+        //desactive le boutonFermer
+        buttonFermer.SetActive(false);
+
         buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
         buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
         buttonC.onClick.AddListener(() => OnButtonClick("C", question.reponseCorrecte));
@@ -205,11 +214,54 @@ public class GameManagerBaton : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            // Mettre en vert le texte qu'il a cliqué
+            switch (choix)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
         }
         else {
             aJuste = false;
+            // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            
+            //on recolor juste la réponse juste
+            switch (reponseCorrecte)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
+            
         }
-        //on enlève le panneau des questions
+        // affiche le bouton fermer
+        buttonFermer.SetActive(true);
+        
+    }
+
+    //action du bouton fermer
+    public void clicBoutonFermer(){
         RetraitPanneauQuestions(aJuste);
     }
 

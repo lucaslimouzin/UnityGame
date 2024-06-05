@@ -244,6 +244,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "1. Identifier et s\xE9lectionner les \xE9cosyst\xE8mes permettant d\u2019augmenter
+        le potentiel d\u2019innovation dans ses \xE9quipes de travail\r\n\r\nCe travail
+        passe par\_:\r\n   - La clarification de ce que l\u2019on recherche au sein
+        de ces \xE9cosyst\xE8mes : de l\u2019inspiration, de nouvelles id\xE9es,
+        de nouvelles solutions, des r\xE9ponses techniques, \u2026\r\n   - L\u2019inventaire
+        des connaissances et des expertises dont on b\xE9n\xE9ficie d\xE9j\xE0 dans
+        ses propres \xE9quipes.\r\n   - L\u2019identification des r\xE9seaux existants,
+        de leurs connaissances et expertises, et de leurs compl\xE9mentarit\xE9s
+        possibles.\r\n   - La d\xE9termination de ce que l\u2019on apporte aux acteurs
+        externes"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Penser et agir en \xAB\_\xE9cosyst\xE8me\_\xBB"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -854,6 +873,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "2. D\xE9passer les r\xE9sistances internes \xE0 faire participer un
+        nombre de parties prenantes \xE9largies au processus d\u2019innovation\r\n\r\nFaire
+        participer un nombre de parties prenantes \xE9largi \xE0 l\u2019effort d\u2019innovation
+        suppose de\_:\r\n- D\xE9montrer l\u2019int\xE9r\xEAt de travailler en \xE9cosyst\xE8mes
+        \xE9largis : compl\xE9mentarit\xE9, temps gagn\xE9, coup \xE9vit\xE9, accroissement
+        des connaissances internes, \u2026\r\n- Favoriser l\u2019alignement des parties
+        prenantes \xE0 chaque \xE9tape du processus d\u2019innovation :\r\ndans toute
+        collaboration faire \xE9merger une vision partag\xE9e, des objectifs communs
+        et des crit\xE8res de r\xE9ussites, sont essentiels.\r\n- D\xE9finir un objectif
+        commun en coh\xE9rence avec les objectifs de chaque partie prenante, qu\u2019elle
+        soit interne ou externe, qu\u2019elle soit positionn\xE9e dans des entit\xE9s
+        op\xE9rationnelles, support ou strat\xE9gique.\r\n- Encourager la cr\xE9ation
+        de communaut\xE9 de pratiques informelles pour faciliter le partage d\u2019informations
+        et de pratiques entre des \xE9quipes qui ne se seraient pas rencontr\xE9es
+        autrement."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Penser et agir en \xAB\_\xE9cosyst\xE8me\_\xBB"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1468,6 +1511,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Penser et agir en \xAB\_\xE9cosyst\xE8me\_\xBB"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1591,12 +1639,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -289
+      value: -890
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -655
+      value: -709
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
@@ -1645,6 +1693,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 812949130}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &812949133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3209534671513301288, guid: a5d11ee75e5788043a94fc3415679a62,
+    type: 3}
+  m_PrefabInstance: {fileID: 812949130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &906240248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2521,7 +2581,7 @@ MonoBehaviour:
   panelMjInfo: {fileID: 812949132}
   panelReco: {fileID: 2003561763}
   panelRoom: {fileID: 1590896136}
-  textMjRoom: {fileID: 1590896134}
+  textMjRoom: {fileID: 812949133}
   chest: {fileID: 218342119}
 --- !u!1001 &1341859576
 PrefabInstance:
@@ -3032,6 +3092,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Penser et agir en \xAB\_\xE9cosyst\xE8me\_\xBB"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3485,18 +3550,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1590896132}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1590896134 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 382501411976735561, guid: 543be44a80c5fdd49a77778342df57ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 1590896132}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1590896135 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4204150611015947083, guid: 543be44a80c5fdd49a77778342df57ca,
@@ -4172,6 +4225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Penser et agir en \xAB\_\xE9cosyst\xE8me\_\xBB"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

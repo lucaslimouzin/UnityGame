@@ -1294,6 +1294,11 @@ MonoBehaviour:
   buttonA: {fileID: 364621129}
   buttonB: {fileID: 364621128}
   buttonC: {fileID: 364621127}
+  imagesButton:
+  - {fileID: 21300000, guid: e0f8421649cb99e419e0e84d01b7017c, type: 3}
+  - {fileID: 21300000, guid: 6d1106d00643f2d47a674a187d33e107, type: 3}
+  - {fileID: 21300000, guid: 67a829115c26dd149a04e7f3a70593bb, type: 3}
+  buttonFermer: {fileID: 1462705016}
   gagnePerduText: {fileID: 1701631920}
 --- !u!1 &261635840
 GameObject:
@@ -2807,6 +2812,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 260763175}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clicBoutonFermer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManagerBassin, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3541168054158414050, guid: 67d1a0e37588eb446a15a042dda5a645,
         type: 3}
@@ -7459,6 +7499,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25885105, y: 1.8886516, z: 1}
   m_Center: {x: -0.37057567, y: 0.44432598, z: -3.0985174e-25}
+--- !u!1 &1462705016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412134485874335039, guid: 67d1a0e37588eb446a15a042dda5a645,
+    type: 3}
+  m_PrefabInstance: {fileID: 364621125}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1549967137
 GameObject:
   m_ObjectHideFlags: 0
@@ -8259,6 +8305,22 @@ PrefabInstance:
     - target: {fileID: 3765102215214511447, guid: d65d1ca6c2612204a932f767bf6547a7,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8,
+        type: 2}
+    - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

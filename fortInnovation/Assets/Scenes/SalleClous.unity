@@ -1519,18 +1519,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 551962088}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &551962090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 382501411976735561, guid: 543be44a80c5fdd49a77778342df57ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 551962088}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &551962091 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4204150611015947083, guid: 543be44a80c5fdd49a77778342df57ca,
@@ -2118,12 +2106,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -289
+      value: -890
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -655
+      value: -709
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
@@ -2172,6 +2160,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 774603191}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &774603194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3209534671513301288, guid: a5d11ee75e5788043a94fc3415679a62,
+    type: 3}
+  m_PrefabInstance: {fileID: 774603191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &816133803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,7 +3294,7 @@ MonoBehaviour:
   panelMjInfo: {fileID: 774603193}
   panelReco: {fileID: 246188603}
   panelRoom: {fileID: 551962092}
-  textMjRoom: {fileID: 551962090}
+  textMjRoom: {fileID: 774603194}
   chest: {fileID: 882537662}
 --- !u!1001 &1294183900
 PrefabInstance:
@@ -3895,6 +3895,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4752,6 +4757,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5136,6 +5146,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "2. Identifier les formes de r\xE9compenses dont peuvent b\xE9n\xE9ficier
+        les innovateurs\r\nL\u2019engagement des innovateurs, mat\xE9rialis\xE9 par
+        leur participation \xE0 l\u2019effort d\u2019innovation au-del\xE0 de leurs
+        responsabilit\xE9s op\xE9rationnelles, doit \xEAtre reconnu. Ces formes d\u2019innovation
+        peuvent \xEAtre :\r\n\r\n   - Symbolique : mise en visibilit\xE9 lors d\u2019une
+        r\xE9union d\u2019\xE9quipe, lors d\u2019une c\xE9r\xE9monie de remise des
+        prix si dans le cadre des d\xE9fis et des challenges, \u2026\r\n   - Mat\xE9rielle
+        : cadeau de type goodies ou autres (participation \xE0 un \xE9v\xE8nement
+        de coh\xE9sion d\u2019\xE9quipe par exemple).\r\n   - Professionnelle : formation,
+        invitation \xE0 une conf\xE9rence / webinaire, int\xE9gration d\u2019un groupe
+        projet / de travail, participation \xE0 un challenge d\u2019innovation, \u2026."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5270,6 +5300,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "1. Syst\xE9matiser le retour (feedback) aux innovateurs dans des d\xE9lais
+        raccourcis, quelle que soit la r\xE9ponse \xE0 leur proposition\r\n\r\nUn
+        des principaux leviers d\u2019engagement des collaborateurs vis-\xE0-vis
+        de l\u2019innovation r\xE9side dans la r\xE9activit\xE9 des r\xE9ponses qui
+        peuvent leur \xEAtre faites quand ils \xE9mettent une id\xE9e de fa\xE7on
+        spontan\xE9e dans le cadre des d\xE9fis et challenges.\r\n\r\nL\u2019enjeu
+        d\u2019explication est central, notamment dans le cas de r\xE9ponses n\xE9gatives,
+        sans quoi les collaborateurs peuvent nourrir un sentiment de m\xE9fiance
+        quant \xE0 des processus qu\u2019ils estiment opaques, ce sentiment contribuant
+        \xE0 leur d\xE9sengagement"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5605,6 +5654,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "3. Accompagner le d\xE9veloppement et la valorisation des comp\xE9tences
+        acquises dans le processus d\u2019innovation pas les innovateurs\r\n\r\nUne
+        des raisons de l\u2019engagement des collaborateurs dans la d\xE9marche l\u2019innovation
+        participative tient \xE0 ce qu\u2019elle permet de r\xE9v\xE9ler chez eux,
+        en termes de comp\xE9tences, d\u2019envies et de motivations.\r\n\r\nLes
+        collaborateurs s\u2019engagent parce que cette d\xE9marche leur permet de
+        (re)donner du sens \xE0 leur travail, d\u2019investir des comp\xE9tences
+        ou des savoirs extra-professionnels dans la sph\xE8re professionnelle. Il
+        est donc n\xE9cessaire d\u2019accompagner au niveau RH ces innovateurs, de
+        suivre leur mont\xE9e en comp\xE9tences, voire d\u2019en valoriser certaines."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

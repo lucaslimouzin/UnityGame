@@ -3626,8 +3626,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "paire non trouv\xE9e"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
+  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3657,7 +3658,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 1024
   m_textAlignment: 65535
@@ -4047,6 +4048,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8,
         type: 2}
+    - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
         type: 3}
       propertyPath: m_hasFontAssetChanged

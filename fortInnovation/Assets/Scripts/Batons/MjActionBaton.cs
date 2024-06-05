@@ -31,7 +31,7 @@ public class MjActionBaton : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la salle aux batonnets. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Bienvenue dans la cellule des Batonnets !\n\nVous allez affronter le Maître du jeu dans une épreuve de stratégie pour tenter de remporter les 4 recommandations du principe 2 de l'innovation participative : \"Exprimer et faire remonter les idées\".\nBonne chance !";
         }
        
     }

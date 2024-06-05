@@ -349,6 +349,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 107317709}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &107317712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3209534671513301288, guid: a5d11ee75e5788043a94fc3415679a62,
+    type: 3}
+  m_PrefabInstance: {fileID: 107317709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &129222512 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1534622112997355132, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
@@ -718,6 +730,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "4. D\xE9finir l\u2019objectif de l\u2019innovation participative en
+        acceptant la divergence et en organisant la convergence.\r\n\r\nAccepter
+        la divergence de point de vue et vision sur la d\xE9marche d\u2019innovation
+        participative dans un premier temps, puis organiser la convergence. Se lancer
+        dans l\u2019innovation participative sans prendre le temps de d\xE9finir
+        de fa\xE7on coll\xE9giale l\u2019objectif que doit atteindre la d\xE9marche,
+        peut entrainer de la d\xE9ception chez ceux qui peuvent estimer ne pas y
+        trouver les r\xE9ponses qu\u2019ils attendaient.\r\n\r\nC\u2019est pourquoi
+        il peut \xEAtre judicieux de\_:\r\n   - A partir de l\u2019ensemble des propositions
+        faites, r\xE9aliser un vote pour s\xE9lectionner l\u2019objectif \xE0 retenir
+        en demandant \xE0 chacun de ne voter que pour une seule proposition.\r\n  
+        - Organiser le d\xE9bat autour de l\u2019objectif s\xE9lectionn\xE9 pour
+        \xE9couter les avis divergents et faire \xE9voluer \xE0 la marge l\u2019objectif
+        initial pour y int\xE9grer les propositions divergentes.\r\n   - Privil\xE9gier
+        la convergence vers un objectif ambitieux mais r\xE9aliste par rapport \xE0
+        l\u2019histoire et \xE0 la culture de l\u2019\xE9quipe."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: Donner du sens et la direction
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1372,6 +1424,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "2. Envisager l\u2019innovation participative comme un moyen pouvant
+        permettre aux \xE9quipes de trouver des solutions \xE0 leurs irritants du
+        quotidien.\r\n\r\nL\u2019innovation participative n\u2019est pas uniquement
+        l\u2019affaire de sp\xE9cialistes mais potentiellement l\u2019affaire de
+        tous. En parler ensemble c\u2019est prendre conscience et montrer qu\u2019elle
+        peut se d\xE9velopper autant dans le quotidien de l\u2019activit\xE9 en r\xE9solvant
+        les irritants que dans tout l\u2019organisme voire en dehors de l\u2019organisme."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: Donner du sens et la direction
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1905,6 +1983,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "5. Se doter d\u2019indicateurs de performance pour s\u2019assurer que
+        la d\xE9marche d\u2019innovation participative r\xE9ponde bien \xE0 l\u2019objectif
+        qui lui a \xE9t\xE9 assign\xE9.\r\n\r\nEn effet, un des principaux \xE9cueils
+        est de ne pas pourvoir mesurer l\u2019impact de la d\xE9marche d\u2019innovation
+        participative sur l\u2019organisation par rapport \xE0 l\u2019objectif qui
+        lui est attribu\xE9. Pour prouver que la d\xE9marche \xE0 une utilit\xE9,
+        il faut mettre sur pied des indicateurs de performance (impact strat\xE9gique,
+        QVT, culturel et sur la mont\xE9e en comp\xE9tence)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: Donner du sens et la direction
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2051,18 +2156,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 978707733}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &978707735 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 382501411976735561, guid: 543be44a80c5fdd49a77778342df57ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 978707733}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &978707736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7889085259882885391, guid: 543be44a80c5fdd49a77778342df57ca,
@@ -2803,7 +2896,7 @@ MonoBehaviour:
   panelMjInfo: {fileID: 107317711}
   panelReco: {fileID: 709726220}
   panelRoom: {fileID: 978707736}
-  textMjRoom: {fileID: 978707735}
+  textMjRoom: {fileID: 107317712}
   chest: {fileID: 2110367814}
 --- !u!1001 &1256081322
 PrefabInstance:
@@ -3686,6 +3779,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "3. Choisir le degr\xE9 d\u2019ouverture de la contribution \xE0 l\u2019innovation
+        participative\r\nTrois degr\xE9s d\u2019ouverture sont possibles :\r\n\r\n  
+        - Ferm\xE9 (seulement vous)\r\n   - Entre-ouvert (vous, votre N+1 et/ou une
+        partie de l\u2019\xE9quipe)\r\n   - Ouvert (tous)\r\n\r\nChacun de ces 3
+        degr\xE9s d\u2019ouverture poss\xE8de des co\xFBts et des b\xE9n\xE9fices,
+        qui lui sont propres, qui doivent \xEAtre connus avant de d\xE9cider du p\xE9rim\xE8tre
+        des personnes qui pourront participer activement \xE0 l\u2019innovation participative.
+        Quoiqu\u2019il en soit, ce choix n\u2019est pas d\xE9finitif et peut/doit
+        \xE9voluer en fonction de votre environnement"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: Donner du sens et la direction
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4508,7 +4629,7 @@ MonoBehaviour:
   - {fileID: 1448724914}
   - {fileID: 1521363733}
   - {fileID: 1533373372}
-  unlockSprite: {fileID: 21300000, guid: 9c329c4dcc542014d963935f6e855f2a, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
 --- !u!65 &2110367816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5269,6 +5390,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1809774950}
     m_Modifications:
+    - target: {fileID: 77592937877953229, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102246430899440492, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102246430899440492, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -315
+      objectReference: {fileID: 0}
     - target: {fileID: 5230355744238918662, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
       propertyPath: m_Name
@@ -5277,7 +5413,7 @@ PrefabInstance:
     - target: {fileID: 5230355744238918662, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8464657174984252340, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
@@ -5378,6 +5514,40 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "1. S\u2019assurer que l\u2019intention de l\u2019innovation participative
+        est connue par tous\r\n\nCertains peuvent \xE9prouver des difficult\xE9s
+        \xE0 savoir ce que l\u2019organisme, la direction, les managers strat\xE9giques
+        ou op\xE9rationnels, ou encore ce qu\u2019eux-m\xEAmes attendent de l\u2019innovation
+        participative. Il y a donc l\xE0, une premi\xE8re ambigu\xEFt\xE9 \xE0 lever
+        : \xC0 quoi sert la d\xE9marche d\u2019innovation participative, et\r\nquelle
+        est son intention ? :\r\n\r\nR\xE9pondre \xE0 cela est un imp\xE9ratif. En
+        fonction de la ou des r\xE9ponses qu\u2019elle appelle, les dispositifs mis
+        en \u0153uvre, pour permettre aux collaborateurs de s\u2019impliquer dans
+        la d\xE9marche, varieront de m\xEAme que ceux qui les porteront."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: Donner du sens et la direction
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

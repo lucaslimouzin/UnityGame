@@ -1404,7 +1404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2474b8511adfb4f9b38e64a1540e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInstruction: {fileID: 1566164946}
   panelInfoMJ: {fileID: 1611861899}
   panelEnigmes: {fileID: 230284473}
   buttonTextEnigmes: {fileID: 45022281}
@@ -6904,12 +6903,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1566164944}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1566164946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6089853686479055996, guid: 4088c2b37a05c194b84cb39d7506bd77,
-    type: 3}
-  m_PrefabInstance: {fileID: 1566164944}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1575671964
 GameObject:
   m_ObjectHideFlags: 0
@@ -7469,6 +7462,22 @@ PrefabInstance:
     - target: {fileID: 3765102215214511447, guid: d65d1ca6c2612204a932f767bf6547a7,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8,
+        type: 2}
+    - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500147290924980877, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
