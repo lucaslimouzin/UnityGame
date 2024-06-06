@@ -14,6 +14,7 @@ public class MjActionAccueil : MonoBehaviour
     private StarterAssets.ThirdPersonController thirdPersonController;
     public GameObject panelQuest;
     public TMP_Text checklistText;
+    public GameObject Bulle;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,7 @@ public class MjActionAccueil : MonoBehaviour
         #endif
         //si on a fini l'ensemble du jeu on se tp vers la salle de fin
         if (MainGameManager.Instance.gamePairesFait && MainGameManager.Instance.gameBatonFait && MainGameManager.Instance.gameBassinFait && MainGameManager.Instance.gameClouFait && MainGameManager.Instance.gameEnigmesFait){
-           textMjRoom.text = "Bravo vous avez fini toutes les épreuves!\n On se retrouve dans la salle des récompenses !"; 
+           textMjRoom.text = "Bravo vous avez fini toutes les épreuves!\nOn se retrouve dans la salle des récompenses !"; 
            StartCoroutine(LoadSceneAfterDelay("SalleFinDuJeu", 4f));
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
                 panelQuest.SetActive(false);
@@ -40,9 +41,10 @@ public class MjActionAccueil : MonoBehaviour
         }
         else {
             //change le message du panel Room
+            Bulle.SetActive(false);
             pointExclamation.SetActive(false);
             panelQuest.SetActive(true);
-            textMjRoom.text = "Continue d'explorer les autres salles \n Avance vers la voie de l'innovation...";
+            textMjRoom.text = "Continue d'explorer les autres salles \nAvance vers la voie de l'innovation...";
         }
         MettreAJourChecklist();
        
@@ -57,25 +59,33 @@ public class MjActionAccueil : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (MainGameManager.Instance.tutoCompteur == 2){
+            Bulle.SetActive(false);
             if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
                 pointExclamation.SetActive(false);
-                textMjInfo.text = "Pour terminer ta quête, tu devras visiter les 5 cellules du Fort qui se trouvent derière moi et affronter le maître du jeu. \n \n Au cours de ton aventure, un parchemin t'indique les cellules qu'il te reste à visiter. \n \n Bonne chance à toi aventurier de l'innovation !";
+                textMjInfo.text = "Pour terminer ta quête, tu devras visiter les 5 cellules du Fort qui se trouvent derière moi et affronter le Maître du jeu. \n\nAu cours de ton aventure, un parchemin t'indique les cellules qu'il te reste à visiter. \n\nBonne chance à toi aventurier de l'innovation !";
                 
                 
                 
                 // Désactive les entrées de gameplay
                 DisableGameplayInput();
             }
-        } 
+        }
+        else {
+            panelRoom.SetActive(true);
+            pointExclamation.SetActive(false);
+            textMjRoom.text = "Continue d'explorer les autres salles \nAvance vers la voie de l'innovation...";
+            panelMjInfo.SetActive(false);
+        }
+        
     }
 
     private void OnTriggerExit(Collider other) {
         if (MainGameManager.Instance.tutoCompteur == 2){
             // if (other.gameObject.CompareTag("Player")){
             //     panelRoom.SetActive(true);
-            //     textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
+            //     textMjRoom.text = "Dirige toi vers une cellule \nPour commencer ton aventure...";
             //     // desactive les entrées de gameplay
             //     DisableGameplayInput();
             //     if (panelMjInfo.activeSelf){
@@ -92,7 +102,7 @@ public class MjActionAccueil : MonoBehaviour
         panelRoom.SetActive(true);
         pointExclamation.SetActive(false);
         panelQuest.SetActive(true);
-        textMjRoom.text = "Dirige toi vers une cellule \n Pour commencer ton aventure...";
+        textMjRoom.text = "Dirige toi vers une cellule \nPour commencer ton aventure...";
         MainGameManager.Instance.tutoCompteur = 3;
         panelMjInfo.SetActive(false);
         
@@ -132,11 +142,11 @@ public class MjActionAccueil : MonoBehaviour
         string[] nomsJeux = { "Cellule des paires", "Cellule des bâtonnets", "Cellule des bassins", "Cellule des clous", "Cellule des énigmes"};
         bool[] statutJeux = { MainGameManager.Instance.gamePairesFait, MainGameManager.Instance.gameBatonFait, MainGameManager.Instance.gameBassinFait, MainGameManager.Instance.gameClouFait, MainGameManager.Instance.gameEnigmesFait};
 
-        string checklist = "Les cellules restantes à visiter :\n";
+        string checklist = "Les cellules restantes à visiter :\n\n";
         for (int i = 0; i < nomsJeux.Length; i++)
         {
             // Si le jeu est fait, le barrer avec `<s>`, sinon l'afficher normalement
-            checklist += statutJeux[i] ? $"<s>. {nomsJeux[i]}</s>\n" : $". {nomsJeux[i]}\n";
+            checklist += statutJeux[i] ? $"<s>. {nomsJeux[i]}</s>\n" : $". {nomsJeux[i]}\n\n";
         }
 
         // Mettre à jour le texte du TextMeshPro

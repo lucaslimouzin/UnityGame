@@ -13,10 +13,21 @@ public class chestBaton : MonoBehaviour
     public GameObject panelReco5;
     public GameObject[] buttonCadenas;
     public Sprite unlockSprite;
+    public Sprite whiteSprite;
+    public GameObject buttonClose;
+    private int nbReco;
+    private bool openReco1;
+    private bool openReco2;
+    private bool openReco3;
+    private bool openReco4;
+    private bool openReco5;
     // Start is called before the first frame update
     void Start()
     {
         ActivateButton(MainGameManager.Instance.scoreRecoBaton);
+        buttonClose.SetActive(false);
+        nbReco = 0;
+        openReco1 = openReco2 = openReco3 = openReco4 = openReco5 = false;
         
         
     }
@@ -26,6 +37,9 @@ public class chestBaton : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        if (nbReco == MainGameManager.Instance.scoreRecoBaton){
+            buttonClose.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -60,21 +74,51 @@ public class chestBaton : MonoBehaviour
     //ouverture des reco
     public void OpenReco1() {
         panelReco1.SetActive(true);
+        Image image = buttonCadenas[0].GetComponent<Image>();
+        image.sprite = whiteSprite;
+        if (!openReco1) {
+            nbReco +=1;
+            openReco1 = true;
+        }       
     }
 
     public void OpenReco2() {
         panelReco2.SetActive(true);
+        Image image = buttonCadenas[1].GetComponent<Image>();
+        image.sprite = whiteSprite;
+        if (!openReco2) {
+            nbReco +=1;
+            openReco2 = true;
+        }
     }
 
     public void OpenReco3() {
         panelReco3.SetActive(true);
+        Image image = buttonCadenas[2].GetComponent<Image>();
+        image.sprite = whiteSprite;
+        if (!openReco3) {
+            nbReco +=1;
+            openReco3 = true;
+        }
     }
 
     public void OpenReco4() {
         panelReco4.SetActive(true);
+        Image image = buttonCadenas[3].GetComponent<Image>();
+        image.sprite = whiteSprite;
+        if (!openReco4) {
+            nbReco +=1;
+            openReco4 = true;
+        }
     }
 
     public void OpenReco5() {
         panelReco5.SetActive(true);
+        Image image = buttonCadenas[4].GetComponent<Image>();
+        image.sprite = whiteSprite;
+        if (!openReco5) {
+            nbReco +=1;
+            openReco5 = true;
+        }
     }
 }

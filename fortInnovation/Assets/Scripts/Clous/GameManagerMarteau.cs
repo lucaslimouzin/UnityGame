@@ -119,7 +119,7 @@ public class GameManagerMarteau : MonoBehaviour
         forceMarteau.value = 0;
         playerForce = 10;
         vieDuClouJoueur = 250f;
-        vieDuClouMj = 300f;
+        vieDuClouMj = 250f;
         //affichage de la vie du clou
         textVieClouJoueur.text = "Vie du clou : " + vieDuClouJoueur.ToString();
         textVieClouMj.text = "Vie du clou : " + vieDuClouMj.ToString();
@@ -397,7 +397,7 @@ public class GameManagerMarteau : MonoBehaviour
             phaseQuestion = false;
             ignoreInput = false; // autorise les inputs
             //Debug.Log("PhaseQ 3 = " + phaseQuestion);
-            MJText.text = "Vous avez bien répondu !\n Vous pouvez donc frapper votre clou.";
+            MJText.text = "Vous avez bien répondu !\nVous pouvez donc frapper votre clou.";
             isSpaceEnabled = true; //active la touche espace
             //Debug.Log("Espace 4 = " + isSpaceEnabled);
             TourDuJoueur();
@@ -523,8 +523,8 @@ public class GameManagerMarteau : MonoBehaviour
         int mjForce;
         
             //si on a faux alors le mj tapera entre 50 et 101
-            //mjForce = UnityEngine.Random.Range(50,101);
-            mjForce = 100;
+            mjForce = UnityEngine.Random.Range(70,101);
+            //mjForce = 100;
             isSpaceEnabled = false; //on desactive la touche espace 
             //Debug.Log("Espace = 7 " + isSpaceEnabled);
             //faire tourner le marteau du player

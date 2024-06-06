@@ -270,7 +270,7 @@ public class GameManagerBaton : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Vous avez bien répondu !\n Vous pouvez retirer 1, 2 ou 3 bâtonnets.";
+            MJText.text = "Vous avez bien répondu !\nVous pouvez retirer 1, 2 ou 3 bâtonnets.";
             win = true;
             panelButtonBaton.SetActive(true);
             if (batonTailleTab >= 4) {
@@ -294,7 +294,7 @@ public class GameManagerBaton : MonoBehaviour
         } 
         else {
             
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\n C'est donc à moi de retirer des bâtonnets.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de retirer des bâtonnets.";
             
             win = false;
             panelButtonBaton.SetActive(false);

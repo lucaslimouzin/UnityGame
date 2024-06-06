@@ -560,7 +560,7 @@ RectTransform:
   m_GameObject: {fileID: 230284473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7795173, y: 0.7795173, z: 0.7795173}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 255725452}
@@ -580,8 +580,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.3888889}
-  m_AnchoredPosition: {x: 0, y: 190.04242}
-  m_SizeDelta: {x: 0, y: 380.0848}
+  m_AnchoredPosition: {x: 0.0007324219, y: 190.04242}
+  m_SizeDelta: {x: 455.7, y: 380.0848}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &230284475
 MonoBehaviour:
@@ -817,11 +817,11 @@ MonoBehaviour:
   - {fileID: 1980435888}
   - {fileID: 1044344346}
   cardDos: {fileID: 21300000, guid: 5b4d6d490143e554881d57afa28603a5, type: 3}
-  cardChat: {fileID: 21300000, guid: 2f59c9b548ffccf4c9d2f1d8bf834bef, type: 3}
-  cardEtoile: {fileID: 21300000, guid: 285c821ac69032b4dba6b07d4e4fd87f, type: 3}
-  cardNuage: {fileID: 21300000, guid: 5959184d1114ea842aab4701172faf78, type: 3}
-  cardPlanete: {fileID: 21300000, guid: e15176d670e9c324aa88c1247858b3c0, type: 3}
-  cardSoleil: {fileID: 21300000, guid: e287278523451064c954b980188ff039, type: 3}
+  cardChat: {fileID: 21300000, guid: 064259153999c044f989b928e2f13e6e, type: 3}
+  cardEtoile: {fileID: 21300000, guid: 7a0a820eb8710e14faf30e31e46bc8b5, type: 3}
+  cardNuage: {fileID: 21300000, guid: 5aa345cecfc233248a0d8f0a5a98c1f1, type: 3}
+  cardPlanete: {fileID: 21300000, guid: 2064665c1a8d94d43a43261eb7a2d473, type: 3}
+  cardSoleil: {fileID: 21300000, guid: a0a49b243fc5b124887e4eab6056d43a, type: 3}
   scorePlayerText: {fileID: 1602598045}
   scoreMjText: {fileID: 629306325}
   trueWrongText: {fileID: 2116685190}
@@ -1454,7 +1454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -1685, y: 90}
+  m_AnchoredPosition: {x: -2129, y: 90}
   m_SizeDelta: {x: 385.1, y: 325.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638545416
@@ -1721,7 +1721,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -1741,7 +1741,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -3113,6 +3113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelUIMain
       objectReference: {fileID: 0}
+    - target: {fileID: 8620216625050301935, guid: 364cc89a7d63c81498bfa4f3941933f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3715,6 +3720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelHome
       objectReference: {fileID: 0}
+    - target: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3793,7 +3803,7 @@ PrefabInstance:
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.2000122
+      value: 0.19995117
       objectReference: {fileID: 0}
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}

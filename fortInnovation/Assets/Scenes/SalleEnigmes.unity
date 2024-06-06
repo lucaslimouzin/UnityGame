@@ -409,7 +409,9 @@ MonoBehaviour:
   buttonCadenas:
   - {fileID: 2003561762}
   - {fileID: 2003561760}
-  unlockSprite: {fileID: 21300000, guid: 9c329c4dcc542014d963935f6e855f2a, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
+  whiteSprite: {fileID: 21300000, guid: 503cdcb20efcedb45a2160135bf8233c, type: 3}
+  buttonClose: {fileID: 2003561764}
 --- !u!1 &270808424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: panelHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5564642422658290719, guid: 094aee8385040f045a284abf58893531,
         type: 3}
@@ -4743,7 +4750,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -4768,7 +4775,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -4890,6 +4897,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestEnigmes, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: "Questions op\xE9rationnelles\_:\r\n   - Comment identifier et s\xE9lectionner
+        les \xE9cosyst\xE8mes permettant d\u2019augmenter le potentiel d\u2019innovation
+        ?\r\n   - Comment d\xE9passer les r\xE9sistances internes \xE0 faire participer
+        un nombre \xE9largi de parties prenantes au processus d\u2019innovation ?\r\n  
+        - Comment d\xE9velopper la transversalit\xE9 entre les diff\xE9rents \xE9cosyst\xE8mes
+        et d\xE9passer les silos organisationnels ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -7.61549
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 131.59921
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 44.898697
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2639255598349577586, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5016,6 +5063,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MjActionEnigmes, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -311
+      objectReference: {fileID: 0}
     - target: {fileID: 6315472129314537161, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5035,6 +5092,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "Penser et agir en \"\xE9cosysteme\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00003894391
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14.194107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -111
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -5065,6 +5142,12 @@ GameObject:
 --- !u!1 &2003561763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2914813475793133786, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2003561759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2003561764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6561058348217528698, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
     type: 3}
   m_PrefabInstance: {fileID: 2003561759}
   m_PrefabAsset: {fileID: 0}

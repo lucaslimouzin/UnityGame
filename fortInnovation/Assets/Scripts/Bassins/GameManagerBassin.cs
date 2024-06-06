@@ -104,8 +104,8 @@ public class GameManagerBassin : MonoBehaviour
         vieDuVerreMj = 3;
         vieDuVerreJoueur= 3;
         
-        textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \n avant que votre verre \n  ne coule ";
-        textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \n avant que le verre \n du MJ ne coule ";
+        textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \navant que votre verre \n ne coule ";
+        textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que le verre \ndu MJ ne coule ";
         //on affiche le panneau des régles
         //PanneauRegle();
         RetraitPanneauRegle();
@@ -282,13 +282,13 @@ public class GameManagerBassin : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Vous avez bien répondu ! \n Vous pouvez donc déplacer une bille dans mon verre.";
+            MJText.text = "Vous avez bien répondu ! \nVous pouvez donc déplacer une bille, jusqu'à ce qu'elle devienne verte, dans mon verre.";
             tourJoueur = true;
             TourDuJoueur();
             
         } 
         else {
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\n C'est donc à moi de placer un bille dans votre verre.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de placer un bille dans votre verre.";
             tourJoueur = false;
             TourDuMj();
         }
@@ -341,7 +341,7 @@ public class GameManagerBassin : MonoBehaviour
             {   
                 isMoving = false;
                 vieDuVerreMj -= 1;
-                textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \n avant que le verre du MJ \n ne coule";
+                textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que le verre du MJ \nne coule";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
                 if (vieDuVerreMj > 0){
@@ -360,7 +360,7 @@ public class GameManagerBassin : MonoBehaviour
             {   
                 isMoving = false;
                 vieDuVerreJoueur -= 1;
-                textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \n avant que votre verre \n  ne coule";
+                textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \navant que votre verre \n ne coule";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
                 if (vieDuVerreJoueur > 0){

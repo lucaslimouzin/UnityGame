@@ -38,7 +38,7 @@ public class DiceMj : MonoBehaviour
         rb.freezeRotation = false; // Allow rotation
         rb.angularDrag = 0.5f; // Adjust as needed
 
-        rb.AddForce(transform.up * 100f);
+        rb.AddForce(transform.up * 200f);
         rb.AddForce(dirX, dirY, dirZ);
         rb.AddTorque(Random.Range(0, 500), Random.Range(0, 500), Random.Range(0, 500));
      Invoke("determQuiCommenceMj", 5f);
@@ -47,7 +47,7 @@ public class DiceMj : MonoBehaviour
 
     public void determQuiCommenceMj () {
         if (MainGameManager.Instance.scoreDesMj > MainGameManager.Instance.scoreDesPlayer) {
-            texteQuiCommence.text = "Vous avez réalisé le score le plus bas, c'est au Maitre du jeu de commencer.";
+            texteQuiCommence.text = "Le Maître du jeu a réalisé le score le plus élevé, c'est à lui de commencer.";
             MainGameManager.Instance.quiCommence = "Mj";
             panelInstructions.SetActive(true);
         } 

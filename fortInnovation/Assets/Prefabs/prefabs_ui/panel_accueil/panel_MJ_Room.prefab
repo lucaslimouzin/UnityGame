@@ -405,7 +405,7 @@ RectTransform:
   m_GameObject: {fileID: 8599584868975336848}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6551797, y: 2.6551797, z: 2.6551797}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4809667511795434787}
@@ -587,8 +587,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ma\xEEtre du jeu : Bienvenue dans Fort Innovation !!! \\n Approche toi
-    de moi pour avoir les explications sur ton aventure \\n dans le fort ..."
+  m_text: "Ma\xEEtre du jeu : Bienvenue dans Fort Innovation !!! \\nApproche toi
+    de moi pour avoir les explications sur ton aventure \\ndans le fort ..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
   m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535

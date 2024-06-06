@@ -215,6 +215,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 98b7be26391082840bc0297d5dfd8cd2, type: 3}
+--- !u!1 &30261463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6561058348217528698, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 246188601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &31967274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,6 +459,29 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestClou, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: "Questions op\xE9rationnelles\_:\r\n   - Comment recevoir une proposition
+        d\u2019innovation, quelle que soit sa pertinence et la r\xE9ponse qui y sera
+        apport\xE9e ?\r\n   - Comment remercier les innovateurs ?\r\n   - Comment
+        valoriser le d\xE9veloppement de comp\xE9tences des innovateurs ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2639255598349577586, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_Pivot.x
@@ -563,6 +592,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000027260736
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -174.00015
+      objectReference: {fileID: 0}
     - target: {fileID: 4426094841757471948, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -577,6 +616,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MjActionClou, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -293
       objectReference: {fileID: 0}
     - target: {fileID: 6315472129314537161, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -597,6 +651,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Maintenir l'envie d'innover
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000027260736
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73.80619
       objectReference: {fileID: 0}
     - target: {fileID: 9207319454112688312, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -2412,7 +2486,9 @@ MonoBehaviour:
   - {fileID: 246188606}
   - {fileID: 246188605}
   - {fileID: 246188604}
-  unlockSprite: {fileID: 21300000, guid: 9c329c4dcc542014d963935f6e855f2a, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
+  whiteSprite: {fileID: 21300000, guid: 503cdcb20efcedb45a2160135bf8233c, type: 3}
+  buttonClose: {fileID: 30261463}
 --- !u!1001 &921344370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4908,7 +4984,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -4928,7 +5004,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}

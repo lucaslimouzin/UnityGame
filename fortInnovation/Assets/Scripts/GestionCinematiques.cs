@@ -7,21 +7,37 @@ using UnityEngine.UI;
 public class GestionCinematiques : MonoBehaviour
 {
     public GameObject panelCinematiqueIntro;
-   
+    private AsyncOperation asyncOperation;
+
     // Start is called before the first frame update
     void Start() {
         // Recherchez le bouton par son nom
         GameObject buttonSuivant = GameObject.Find("ButtonSuivant");
         buttonSuivant.SetActive(false);
         // Commencez une coroutine pour attendre 3 secondes
-        StartCoroutine(MakeButtonVisibleAfterDelay(buttonSuivant, 10.0f));
+        StartCoroutine(MakeButtonVisibleAfterDelay(buttonSuivant, 0.1f));
         panelCinematiqueIntro.SetActive(false);
-        switch (MainGameManager.Instance.cinematiqueEnCours){
+        switch (MainGameManager.Instance.cinematiqueEnCours) {
             case "Introduction":
                 panelCinematiqueIntro.SetActive(true);
                 break;
         }
-        
+
+        // Précharger la scène suivante
+        StartCoroutine(PreloadScene(MainGameManager.Instance.jeuEnCours));
+    }
+
+    private IEnumerator PreloadScene(string sceneName)
+    {
+        asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+        asyncOperation.allowSceneActivation = false;
+
+        while (!asyncOperation.isDone)
+        {
+            // Optionally, you can display the loading progress here
+            // Example: progressBar.fillAmount = asyncOperation.progress;
+            yield return null;
+        }
     }
 
     IEnumerator MakeButtonVisibleAfterDelay(GameObject button, float delay)
@@ -33,10 +49,15 @@ public class GestionCinematiques : MonoBehaviour
         button.SetActive(true);
     }
 
-   public void PressSuivant() {
-        //redirige vers la map suivante
-        SceneManager.LoadScene(MainGameManager.Instance.jeuEnCours);
+    public void PressSuivant() {
+        // Redirige vers la map suivante
+        if (asyncOperation != null && asyncOperation.isDone)
+        {
+            asyncOperation.allowSceneActivation = true;
+        }
+        else
+        {
+            SceneManager.LoadScene(MainGameManager.Instance.jeuEnCours);
+        }
     }
-
-//fin script
 }

@@ -432,6 +432,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelUIMain
       objectReference: {fileID: 0}
+    - target: {fileID: 8620216625050301935, guid: 364cc89a7d63c81498bfa4f3941933f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1131,7 +1136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -132}
+  m_AnchoredPosition: {x: -33.6, y: -103.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259063355
@@ -2416,7 +2421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -71, y: -132}
+  m_AnchoredPosition: {x: -40.4, y: -105.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &293453233
@@ -4305,7 +4310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -389, y: -68}
+  m_AnchoredPosition: {x: -638.3, y: -68}
   m_SizeDelta: {x: 385.1, y: 278.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704671887
@@ -4584,7 +4589,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -4604,7 +4609,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -7623,6 +7628,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelHome
       objectReference: {fileID: 0}
+    - target: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7701,7 +7711,7 @@ PrefabInstance:
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.2000122
+      value: 0.19995117
       objectReference: {fileID: 0}
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}

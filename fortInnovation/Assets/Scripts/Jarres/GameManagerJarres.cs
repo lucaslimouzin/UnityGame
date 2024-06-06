@@ -317,12 +317,12 @@ public class GameManagerPaires : MonoBehaviour
         if(reponseJuste){
             tourJoueur= true;
             phaseQuestion = false;
-            MJText.text = "Vous avez bien répondu ! \n Vous pouvez retourner deux cartes.";
+            MJText.text = "Vous avez bien répondu ! \nVous pouvez retourner deux cartes.";
             TourDuJoueur();
         } 
         else {
             tourJoueur = false;
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\n C'est donc à moi de retourner deux cartes.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de retourner deux cartes.";
             TourDuMj();
         }
         

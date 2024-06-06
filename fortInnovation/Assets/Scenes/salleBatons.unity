@@ -361,6 +361,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &46242310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6561058348217528698, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630940370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &88291878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1484,6 +1490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: panelHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5564642422658290719, guid: 094aee8385040f045a284abf58893531,
         type: 3}
@@ -4990,6 +5001,39 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestBaton, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: "Questions op\xE9rationnelles\_:\r\n   - Comment s\xE9curiser les collaborateurs
+        quant aux id\xE9es qu\u2019ils proposent ?\r\n   - Par quels canaux les id\xE9es
+        peuvent-elles remonter ?\r\n   - Comment impliquer les collaborateurs dans
+        l\u2019expression et la remont\xE9e des id\xE9es ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 133.73117
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 63.42354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2639255598349577586, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5100,6 +5144,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00021419149
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -170.00027
+      objectReference: {fileID: 0}
     - target: {fileID: 4426094841757471948, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5115,6 +5169,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MjActionBaton, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031780421506461092, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00021419149
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031780421506461092, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -274.00027
+      objectReference: {fileID: 0}
     - target: {fileID: 6315472129314537161, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5129,6 +5203,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestBaton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00021419149
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -69.806305
       objectReference: {fileID: 0}
     - target: {fileID: 7352480871702447892, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5327,7 +5421,9 @@ MonoBehaviour:
   - {fileID: 1630940374}
   - {fileID: 1630940373}
   - {fileID: 1630940372}
-  unlockSprite: {fileID: 21300000, guid: 9c329c4dcc542014d963935f6e855f2a, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
+  whiteSprite: {fileID: 21300000, guid: 503cdcb20efcedb45a2160135bf8233c, type: 3}
+  buttonClose: {fileID: 46242310}
 --- !u!1001 &1645781191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6283,7 +6379,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -6303,7 +6399,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}

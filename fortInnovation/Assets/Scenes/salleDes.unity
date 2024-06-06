@@ -1078,6 +1078,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelInfoJeuxMJ
       objectReference: {fileID: 0}
+    - target: {fileID: 5262526158727413381, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_text
+      value: "Lancez le d\xE9 pour d\xE9terminer le joueur qui d\xE9butera la partie,
+        le score le plus haut l'emporte.\nEn cas d'\xE9galit\xE9, relancez les d\xE9s."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1773,6 +1779,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelHome
       objectReference: {fileID: 0}
+    - target: {fileID: 421756009855957808, guid: 094aee8385040f045a284abf58893531,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6140837762787559925, guid: 094aee8385040f045a284abf58893531,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2023,7 +2034,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -2043,7 +2054,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -3228,8 +3239,8 @@ Transform:
   m_GameObject: {fileID: 1308359230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.11, y: 0, z: -3.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.6156, y: 0, z: -4.314}
+  m_LocalScale: {x: 0.49347207, y: 1, z: 0.47155693}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3694,8 +3705,8 @@ Transform:
   m_GameObject: {fileID: 1559699189}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.78}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3226, y: 0, z: -2.0194}
+  m_LocalScale: {x: 0.47155693, y: 1, z: 0.49347207}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4235,8 +4246,8 @@ Transform:
   m_GameObject: {fileID: 1855812668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 7.88, y: 0, z: -3.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.0387, y: 0, z: -4.314}
+  m_LocalScale: {x: 0.49347207, y: 1, z: 0.47155693}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4702,8 +4713,8 @@ Transform:
   m_GameObject: {fileID: 2041602440}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3226, y: 0, z: -5.592}
+  m_LocalScale: {x: 0.47155693, y: 1, z: 0.49347207}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5113,22 +5124,22 @@ PrefabInstance:
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90789247
+      value: 0.923242
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2341917
+      value: 0.21413898
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2548782
+      value: 0.27194327
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.23647976
+      value: 0.16678023
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
@@ -5143,7 +5154,7 @@ PrefabInstance:
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 35.182
+      value: 26.463
       objectReference: {fileID: 0}
     - target: {fileID: 736731971929836160, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
@@ -5236,22 +5247,22 @@ PrefabInstance:
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.08975595
+      value: 0.0854748
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.98983055
+      value: 0.9822922
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.08893046
+      value: 0.15091468
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.06535193
+      value: -0.07085946
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
@@ -5266,7 +5277,7 @@ PrefabInstance:
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 170.366
+      value: 163.166
       objectReference: {fileID: 0}
     - target: {fileID: 5568361868481017991, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}

@@ -4284,7 +4284,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -4304,7 +4304,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -4630,6 +4630,8 @@ MonoBehaviour:
   - {fileID: 1521363733}
   - {fileID: 1533373372}
   unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
+  whiteSprite: {fileID: 21300000, guid: 503cdcb20efcedb45a2160135bf8233c, type: 3}
+  buttonClose: {fileID: 6514947974517955658}
 --- !u!65 &2110367816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5237,11 +5239,57 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2110367815}
+    - target: {fileID: 696312293003660404, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00005208748
+      objectReference: {fileID: 0}
+    - target: {fileID: 696312293003660404, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -352
+      objectReference: {fileID: 0}
     - target: {fileID: 781042286578051340, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2110367815}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: "Questions op\xE9rationnelles\_:\r\n   - Que peut-on mettre en \u0153uvre
+        pour donner du sens \xE0 la d\xE9marche d\u2019innovation participative ?\r\n  
+        - Comment poser un cadre clair et partag\xE9 autour de la d\xE9marche d\u2019innovation
+        participative et des objectifs qu\u2019elle vise \xE0 atteindre ?\r\n   -
+        Qui peut participer \xE0 l\u2019innovation participative ?\r\n   - Comment
+        rallier les collaborateurs dont il est attendu qu\u2019ils contribuent d\u2019une
+        mani\xE8re ou d\u2019une autre \xE0 l\u2019effort d\u2019innovation ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404550851277223823, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000028721133
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404550851277223823, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 77.99997
+      objectReference: {fileID: 0}
     - target: {fileID: 2639255598349577586, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5352,11 +5400,61 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00005208748
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -147
+      objectReference: {fileID: 0}
     - target: {fileID: 4426094841757471948, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1222168289}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -312
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031780421506461092, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00005208748
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031780421506461092, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -251
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948503364500754795, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1642.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948503364500754795, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1384.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948503364500754795, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948503364500754795, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6315472129314537161, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5366,6 +5464,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Donner du sens et la direction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000028721133
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 49.99996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00005208748
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.80603
       objectReference: {fileID: 0}
     - target: {fileID: 7352480871702447892, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5382,6 +5500,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe, type: 3}
+--- !u!1 &6514947974517955658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6561058348217528698, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 6514947974517955657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7785657483959038256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5413,7 +5537,7 @@ PrefabInstance:
     - target: {fileID: 5230355744238918662, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8464657174984252340, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
