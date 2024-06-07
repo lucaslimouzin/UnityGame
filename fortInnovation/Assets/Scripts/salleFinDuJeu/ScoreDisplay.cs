@@ -50,7 +50,7 @@ public class ScoreDisplay : MonoBehaviour
             Debug.LogError("ThirdPersonController not found in the scene.");
         }
         score = MainGameManager.Instance.scoreReco;
-        playerScoreText.text = "Votre score est de " + score.ToString() + " / 17 recommandations.";
+        playerScoreText.text = "Votre avez remporté " + score.ToString() + " / 17\nrecommandations.";
         
         // Ajoutez le gestionnaire de clics pour le texte avec lien
         playerScoreText.gameObject.AddComponent<LinkHandler>();

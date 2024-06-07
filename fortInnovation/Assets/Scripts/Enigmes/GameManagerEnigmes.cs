@@ -101,7 +101,7 @@ public class GameManagerEnigmes : MonoBehaviour
    
      public void ValidateWord()
     {
-        
+        compteurEssai +=1;
         string selectedWord = "";
         foreach (LetterButton letterButton in allLetterButtons)
         {
@@ -122,12 +122,12 @@ public class GameManagerEnigmes : MonoBehaviour
         else //il n'a pas trouvé le mot
         {
             //verifie combien de partie il a fait
-            if (compteurEssai > 3) {
+            if (compteurEssai > 2) {
                 //il n'a plus d'essai et i
                 tourJoueur = true;
                 FinDuJeu();
             } else {
-                compteurEssai +=1;
+                Debug.Log(compteurEssai);
                 //on appelle la fonction de reset et de l'indice
                 ResetLettre();
                 AfficheIndice();
@@ -154,11 +154,11 @@ public class GameManagerEnigmes : MonoBehaviour
         switch(compteurEssai){
             case 1:
                 //indice 1
-                 MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\nIndice 1 : Le mot commence par un E";
+                 MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un E</color>";
                 break;
             case 2:
                 //indice 2
-                MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\nIndice 2 : Le mot commence par ECO";
+                MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot commence par un ECO</color>";
                 break;
         }
     }

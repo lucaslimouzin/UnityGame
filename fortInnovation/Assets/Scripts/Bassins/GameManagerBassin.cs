@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
+    public GameObject wall;
     public GameObject panelBassinHead;
     public Sprite[] headCharacter;
     public Image headAffiche;
@@ -95,7 +96,7 @@ public class GameManagerBassin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        wall.SetActive(false);
         switch (MainGameManager.Instance.selectedCharacter) {
             case 0: 
                 headAffiche.sprite = headCharacter[0];
@@ -316,6 +317,7 @@ public class GameManagerBassin : MonoBehaviour
     private void TourDuJoueur(){
         if(tourJoueur) {
             isMoving = true;
+            wall.SetActive(true);
             ////debug.Log("Debut tour joueur");
             AfficherPlayerSphere();
             
@@ -326,6 +328,7 @@ public class GameManagerBassin : MonoBehaviour
     private void TourDuMj(){
         if (!tourJoueur) {
             isMoving = true;
+            wall.SetActive(false);
             ////debug.Log("Debut tour Mj");
             LancerMouvementMjSphere();
         }        
