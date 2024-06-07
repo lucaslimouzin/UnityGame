@@ -412,6 +412,8 @@ MonoBehaviour:
   unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
   whiteSprite: {fileID: 21300000, guid: 503cdcb20efcedb45a2160135bf8233c, type: 3}
   buttonClose: {fileID: 2003561764}
+  textButtonReco1: {fileID: 1280126036}
+  textButtonReco2: {fileID: 1562791219}
 --- !u!1 &270808424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,6 +2592,18 @@ MonoBehaviour:
   panelRoom: {fileID: 1590896136}
   textMjRoom: {fileID: 812949133}
   chest: {fileID: 218342119}
+--- !u!114 &1280126036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8578938015735817886, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2003561759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1341859576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3418,6 +3432,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1562791219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8195833910797014067, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2003561759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1590896132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4898,6 +4924,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestEnigmes, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1201145117410053088, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_text
@@ -5101,7 +5132,7 @@ PrefabInstance:
     - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.194107
+      value: 202
       objectReference: {fileID: 0}
     - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5111,7 +5142,7 @@ PrefabInstance:
     - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -111
+      value: 105.19415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

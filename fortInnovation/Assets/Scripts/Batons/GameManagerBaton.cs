@@ -150,7 +150,7 @@ public class GameManagerBaton : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             firstTimeMj = true;
-            MJText.text = "Maitre du jeu : Je commence à retirer des bâtons !";
+            MJText.text = "Maître du jeu : Je commence à retirer des bâtons !";
             TourDuMj(false);
         }
         
@@ -398,13 +398,13 @@ public class GameManagerBaton : MonoBehaviour
         else
         {
             if (win){
-                MJText.text = "Maitre du jeu : bravo vous avez remporté l'Epreuve et une recommandation !";
+                MJText.text = "Maître du jeu : bravo vous avez remporté une recommandation !";
                 //envoi vers le Main Game Manager le scoreBaton 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoBaton += 1);
                 StartCoroutine(ShowAndHideGagneText());
             }
             else {
-                MJText.text = "Maitre du jeu : Dommage, vous avez échoué si près du but je détruis la recommandation !";
+                MJText.text = "Maître du jeu : Dommage, vous avez échoué si près du but je détruis la recommandation !";
                 StartCoroutine(ShowAndHidePerduText());
             }
             // Toutes les questions ont été posées, fin du jeu

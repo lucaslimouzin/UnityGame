@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class chestPaires : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class chestPaires : MonoBehaviour
     private bool openReco3;
     private bool openReco4;
     private bool openReco5;
+
+     public TextMeshProUGUI textButtonReco1;
+    public TextMeshProUGUI textButtonReco2;
+    public TextMeshProUGUI textButtonReco3;
+    public TextMeshProUGUI textButtonReco4;
+    public TextMeshProUGUI textButtonReco5;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,11 +78,13 @@ public class chestPaires : MonoBehaviour
         }
     }
 
-     //ouverture des reco
+    //ouverture des reco
     public void OpenReco1() {
         panelReco1.SetActive(true);
         Image image = buttonCadenas[0].GetComponent<Image>();
         image.sprite = whiteSprite;
+        textButtonReco1.color = Color.black;
+
         if (!openReco1) {
             nbReco +=1;
             openReco1 = true;
@@ -86,6 +95,7 @@ public class chestPaires : MonoBehaviour
         panelReco2.SetActive(true);
         Image image = buttonCadenas[1].GetComponent<Image>();
         image.sprite = whiteSprite;
+        textButtonReco2.color = Color.black;
         if (!openReco2) {
             nbReco +=1;
             openReco2 = true;
@@ -96,6 +106,7 @@ public class chestPaires : MonoBehaviour
         panelReco3.SetActive(true);
         Image image = buttonCadenas[2].GetComponent<Image>();
         image.sprite = whiteSprite;
+        textButtonReco3.color = Color.black;
         if (!openReco3) {
             nbReco +=1;
             openReco3 = true;
@@ -106,6 +117,7 @@ public class chestPaires : MonoBehaviour
         panelReco4.SetActive(true);
         Image image = buttonCadenas[3].GetComponent<Image>();
         image.sprite = whiteSprite;
+        textButtonReco4.color = Color.black;
         if (!openReco4) {
             nbReco +=1;
             openReco4 = true;
@@ -116,6 +128,7 @@ public class chestPaires : MonoBehaviour
         panelReco5.SetActive(true);
         Image image = buttonCadenas[4].GetComponent<Image>();
         image.sprite = whiteSprite;
+        textButtonReco5.color = Color.black;
         if (!openReco5) {
             nbReco +=1;
             openReco5 = true;

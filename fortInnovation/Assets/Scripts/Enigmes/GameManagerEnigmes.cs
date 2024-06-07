@@ -12,7 +12,7 @@ using System.Linq;
 
 public class GameManagerEnigmes : MonoBehaviour
 {
-    //public GameObject panelInstruction;
+    public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelEnigmes;
     public GameObject buttonTextEnigmes;
@@ -86,7 +86,8 @@ public class GameManagerEnigmes : MonoBehaviour
     void Start()
     {
         
-        
+        panelEnigmes.SetActive(false);
+        panelInfoMJ.SetActive(false);
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 
@@ -94,8 +95,8 @@ public class GameManagerEnigmes : MonoBehaviour
         //charge la coroutine qui va récupérer le fichier Json 
         StartCoroutine(LoadJsonFromLocal());
         //on affiche le panneau des régles
-        //PanneauRegle();
-        RetraitPanneauRegle();
+        PanneauRegle();
+        //RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -134,14 +135,17 @@ public class GameManagerEnigmes : MonoBehaviour
     }
 
     //affichage du panneau des règles
-    // private void PanneauRegle (){
-    //     panelInstruction.SetActive(true);
-    // }
+    private void PanneauRegle (){
+        panelInstruction.SetActive(true);
+    }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        // panelInstruction.SetActive(false);
+        panelInstruction.SetActive(false);
+        panelEnigmes.SetActive(true);
+        panelInfoMJ.SetActive(true);
+
         TourDuJoueur();
     }
 
@@ -214,7 +218,7 @@ public class GameManagerEnigmes : MonoBehaviour
         panelInfoMJ.SetActive(true);
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scoreEnigme
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
             StartCoroutine(ShowAndHideGagneText());

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,9 +6,11 @@ using UnityEngine.UI;
 public class Instruction : MonoBehaviour
 {
     private AsyncOperation asyncOperation;
+    public GameObject continueButton; // Assurez-vous de lier ce bouton dans l'inspecteur
 
     void Start()
     {
+        continueButton.SetActive(false); // Masquer le bouton au démarrage
         StartCoroutine(PreloadScene("SalleInstructions"));
     }
 
@@ -20,21 +21,30 @@ public class Instruction : MonoBehaviour
 
         while (!asyncOperation.isDone)
         {
-            // Optionally, you can display the loading progress here
-            // Example: progressBar.fillAmount = asyncOperation.progress;
+            // Afficher le bouton lorsque la scène est complètement chargée (progress atteint 0.9f)
+            if (asyncOperation.progress >= 0.9f)
+            {
+                continueButton.SetActive(true);
+            }
+
             yield return null;
         }
     }
 
     public void PlayGame()
     {
-        if (asyncOperation != null && asyncOperation.isDone)
+        Debug.Log("j'ai appuyé");
+        // Vérifier si la scène est prête à être activée (progress atteint 0.9f)
+        if (asyncOperation != null && asyncOperation.progress >= 0.9f)
         {
             asyncOperation.allowSceneActivation = true;
+            SceneManager.LoadScene("SalleInstructions");
+            Debug.Log("j'ai appuyé là");
         }
         else
         {
             SceneManager.LoadScene("SalleInstructions");
+            Debug.Log("j'ai appuyé ici");
         }
     }
 }

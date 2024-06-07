@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
+    public GameObject panelBassinHead;
+    public Sprite[] headCharacter;
+    public Image headAffiche;
     private GameObject playerSphere;
     public GameObject playerSpherePrefab;
     private GameObject mjSphere;
@@ -93,7 +96,18 @@ public class GameManagerBassin : MonoBehaviour
     void Start()
     {
         
-        
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }   
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 
@@ -197,6 +211,7 @@ public class GameManagerBassin : MonoBehaviour
             panelInfoMJ.SetActive(false);
         }
         panelQuestions.SetActive(true);
+        panelBassinHead.SetActive(false);
 
         QuestionData question = listQuestions.questions[numQuestions];
         //affichage des données
@@ -274,6 +289,7 @@ public class GameManagerBassin : MonoBehaviour
     }
      //action du bouton fermer
     public void clicBoutonFermer(){
+        panelBassinHead.SetActive(true);
         RetraitPanneauQuestions(aJuste);
     }
 
@@ -453,7 +469,7 @@ public class GameManagerBassin : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
                 StartCoroutine(ShowAndHideGagneText());

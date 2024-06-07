@@ -15,14 +15,17 @@ public class MjActionAccueil : MonoBehaviour
     public GameObject panelQuest;
     public TMP_Text checklistText;
     public GameObject Bulle;
+    public GameObject[] doorGameObjects;
+    public GameObject buttonFermer;
+    public GameObject buttonTeleportation;
 
     // Start is called before the first frame update
     void Start()
     {   
          // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
-        
-        
+        buttonFermer.SetActive(true);
+        buttonTeleportation.SetActive(false);
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         // desactive les entrées de gameplay
@@ -31,10 +34,12 @@ public class MjActionAccueil : MonoBehaviour
             // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
             WebGLInput.stickyCursorLock = true;
         #endif
-        //si on a fini l'ensemble du jeu on se tp vers la salle de fin
         if (MainGameManager.Instance.gamePairesFait && MainGameManager.Instance.gameBatonFait && MainGameManager.Instance.gameBassinFait && MainGameManager.Instance.gameClouFait && MainGameManager.Instance.gameEnigmesFait){
-           textMjRoom.text = "Bravo vous avez fini toutes les épreuves!\nOn se retrouve dans la salle des récompenses !"; 
-           StartCoroutine(LoadSceneAfterDelay("SalleFinDuJeu", 4f));
+           panelRoom.SetActive(false);
+           buttonFermer.SetActive(false);
+           buttonTeleportation.SetActive(true);
+           EnableGameplayInput();
+           
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
                 panelQuest.SetActive(false);
                 textMjRoom.text = "Bienvenue dans Fort Innovation. \nApproche-toi et viens en apprendre davantage sur ton aventure !";
@@ -58,13 +63,18 @@ public class MjActionAccueil : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (MainGameManager.Instance.tutoCompteur == 2){
+         if (MainGameManager.Instance.gamePairesFait && MainGameManager.Instance.gameBatonFait && MainGameManager.Instance.gameBassinFait && MainGameManager.Instance.gameClouFait && MainGameManager.Instance.gameEnigmesFait){
+           panelRoom.SetActive(true);
+           textMjRoom.text = "Bravo vous avez fini toutes les épreuves!\nOn se retrouve dans la dernière cellule !"; 
+           buttonFermer.SetActive(false);
+           buttonTeleportation.SetActive(true);
+        } else if (MainGameManager.Instance.tutoCompteur == 2){
             Bulle.SetActive(false);
             if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
                 pointExclamation.SetActive(false);
-                textMjInfo.text = "Pour terminer ta quête, tu devras visiter les 5 cellules du Fort qui se trouvent derière moi et affronter le Maître du jeu. \n\nAu cours de ton aventure, un parchemin t'indique les cellules qu'il te reste à visiter. \n\nBonne chance à toi aventurier de l'innovation !";
+                textMjInfo.text = "Pour terminer ta quête, tu devras visiter les 5 cellules du Fort qui se trouvent derière moi et affronter le Maître du jeu. \n\nAu cours de ton aventure, un panneau t'indique les cellules qu'il te reste à visiter. \n\nBonne chance à toi aventurier de l'innovation !";
                 
                 
                 
@@ -75,7 +85,7 @@ public class MjActionAccueil : MonoBehaviour
         else {
             panelRoom.SetActive(true);
             pointExclamation.SetActive(false);
-            textMjRoom.text = "Continue d'explorer les autres salles \nAvance vers la voie de l'innovation...";
+            textMjRoom.text = "Continue d'explorer les autres salles.\nAvance vers la voie de l'innovation...";
             panelMjInfo.SetActive(false);
         }
         
@@ -96,6 +106,7 @@ public class MjActionAccueil : MonoBehaviour
             //     }  
             // }
         }
+        panelRoom.SetActive(false);
     }
 
     public void textSuivant(){
@@ -111,6 +122,10 @@ public class MjActionAccueil : MonoBehaviour
         // desactive les entrées de gameplay
         DisableGameplayInput();
         
+    }
+
+    public void goFinDuJeu(){
+       SceneManager.LoadScene("SalleFinDuJeu");
     }
     public void DisableGameplayInput()
     {
@@ -145,12 +160,21 @@ public class MjActionAccueil : MonoBehaviour
         string checklist = "Les cellules restantes à visiter :\n\n";
         for (int i = 0; i < nomsJeux.Length; i++)
         {
-            // Si le jeu est fait, le barrer avec `<s>`, sinon l'afficher normalement
-            checklist += statutJeux[i] ? $"<s>. {nomsJeux[i]}</s>\n" : $". {nomsJeux[i]}\n\n";
+            // Si le jeu est fait, le barrer et réduire l'opacité, sinon l'afficher normalement
+            checklist += statutJeux[i] ? $"<color=#80808080><s>. {nomsJeux[i]}</s></color>\n\n" : $". {nomsJeux[i]}\n\n";
         }
+
 
         // Mettre à jour le texte du TextMeshPro
         checklistText.text = checklist;
+
+        //modifie l'opacité des pancartes si les salles sont faites
+        // Modifier l'opacité des pancartes si les salles sont faites
+        UpdateDoorOpacity(MainGameManager.Instance.gamePairesFait, doorGameObjects[0]);
+        UpdateDoorOpacity(MainGameManager.Instance.gameBatonFait, doorGameObjects[1]);
+        UpdateDoorOpacity(MainGameManager.Instance.gameBassinFait, doorGameObjects[2]);
+        UpdateDoorOpacity(MainGameManager.Instance.gameClouFait, doorGameObjects[3]);
+        UpdateDoorOpacity(MainGameManager.Instance.gameEnigmesFait, doorGameObjects[4]);
     }
 
     // Méthode publique pour mettre à jour la checklist après modification des booléens
@@ -162,5 +186,29 @@ public class MjActionAccueil : MonoBehaviour
 
     //     MettreAJourChecklist();
     // }
+    void UpdateDoorOpacity(bool gameStatus, GameObject doorGameObject)
+    {
+        if (gameStatus)
+        {
+            // Récupérer le composant TextMeshPro du GameObject
+            TextMeshPro textDoor = doorGameObject.GetComponent<TextMeshPro>();
+
+            if (textDoor != null)
+            {
+                // Récupérer la couleur actuelle
+                Color currentColor = textDoor.color;
+
+                // Définir l'alpha à 40% (0.4)
+                currentColor.a = 0.4f;
+
+                // Appliquer la nouvelle couleur
+                textDoor.color = currentColor;
+            }
+            else
+            {
+                Debug.LogError($"TextMeshPro component not found on the GameObject: {doorGameObject.name}");
+            }
+        }
+    }
 
 }

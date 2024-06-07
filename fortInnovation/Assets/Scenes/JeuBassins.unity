@@ -1281,6 +1281,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece149193c0bca849ac77b43e5af61da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelBassinHead: {fileID: 230284473}
+  headCharacter:
+  - {fileID: 21300000, guid: 46bef27efba61234c8092717cbd62aff, type: 3}
+  - {fileID: 21300000, guid: b48f1660ef29eda43bd39d8d68bb1703, type: 3}
+  - {fileID: 21300000, guid: e4f91c0857b723947b7cef0de6307c79, type: 3}
+  headAffiche: {fileID: 432041129}
   playerSpherePrefab: {fileID: 1185095481601369147, guid: 5ea7dcccadf7b574b8ad37b503be8474,
     type: 3}
   mjSpherePrefab: {fileID: 3820888339432866802, guid: c063fee94dde22b44924a66753d7742a,

@@ -219,14 +219,14 @@ public class GameManagerInstructions : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Maitre du jeu : Bien répondu, je dépose une bille dans le verre";
+            MJText.text = "Maître du jeu : Bien répondu, je dépose une bille dans le verre";
             tourJoueur = false;
             
             TourDuMj();
             
         } 
         else {
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans le verre";
+            MJText.text = "Maître du jeu : Ce n'est pas la bonne réponse, déposez une bille dans le verre";
             tourJoueur = true;
             
             TourDuJoueur();
@@ -297,7 +297,7 @@ public class GameManagerInstructions : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scoreEnigme
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
         }

@@ -6,6 +6,8 @@ using TMPro;
 
 public class DiceMj : MonoBehaviour
 {
+     public Sprite[] headCharacter;
+    public Image headAffiche;
     static Rigidbody rb;
     public GameObject panelInstructions;
     public GameObject panelTirageDesDes;
@@ -14,6 +16,18 @@ public class DiceMj : MonoBehaviour
 
     void Start(){
         rb = GetComponent<Rigidbody>();
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }
     }
 
     void Update(){

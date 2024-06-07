@@ -60,8 +60,8 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Pour te déplacer, utilise les flèches ou les touches ZQSD de ton clavier. \n Pour t'entrainer, essaie d'atteindre le coffre,";
-        textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
+        textMjRoom.text = "Pour te déplacer,\nutilise les flèches de ton clavier.\nPour t'entrainer, essaie d'atteindre le coffre,";
+        //textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
     
     }
 

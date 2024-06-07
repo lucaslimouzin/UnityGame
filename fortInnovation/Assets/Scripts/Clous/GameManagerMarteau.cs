@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerMarteau : MonoBehaviour
 {
+    public Sprite[] headCharacter;
+    public Image headAffiche;
     public GameObject clouJoueur; 
     public GameObject clouMj;
     public GameObject marteauPlayer;
@@ -107,7 +109,18 @@ public class GameManagerMarteau : MonoBehaviour
     void Start()
     {
         
-        
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }
         buttonPressed = false;
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
@@ -263,7 +276,7 @@ public class GameManagerMarteau : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             tourJoueur = false;
-            MJText.text = "Maitre du jeu : Je commence à frapper !";
+            MJText.text = "Maître du jeu : Je commence à frapper !";
             TourDuMj();
         } 
     }
@@ -300,6 +313,7 @@ public class GameManagerMarteau : MonoBehaviour
             panelInfoMJ.SetActive(false);
         }
         panelQuestions.SetActive(true);
+        panelJauge.SetActive(false);
 
         QuestionData question = listQuestions.questions[numQuestions];
         //affichage des données
@@ -383,6 +397,7 @@ public class GameManagerMarteau : MonoBehaviour
 
     //action du bouton fermer
     public void clicBoutonFermer(){
+        panelJauge.SetActive(true);
         RetraitPanneauQuestions(aJuste);
     }
 
@@ -618,7 +633,7 @@ public class GameManagerMarteau : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
             StartCoroutine(ShowAndHideGagneText());

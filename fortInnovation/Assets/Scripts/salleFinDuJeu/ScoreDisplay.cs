@@ -7,6 +7,7 @@ using System.Collections;
 using System.Text;
 using UnityEngine.UI;
 using StarterAssets;
+using UnityEngine.SceneManagement;
 
 
 // Classe pour correspondre à la structure des données reçues de l'API
@@ -35,7 +36,8 @@ public class ScoreDisplay : MonoBehaviour
     public Button submitButton; // Ajoutez cette ligne en haut de votre script
     private List<GameObject> currentScoreObjects = new List<GameObject>();
     private StarterAssets.ThirdPersonController thirdPersonController;
-
+    public Button openUrlButton; // Référence au bouton pour ouvrir l'URL
+    public string url = "https://givrosgaming.fr/fortInnov/principes_participative.pdf"; // URL de destination
     // Start is called before the first frame update
     
     void Start()
@@ -48,9 +50,61 @@ public class ScoreDisplay : MonoBehaviour
             Debug.LogError("ThirdPersonController not found in the scene.");
         }
         score = MainGameManager.Instance.scoreReco;
-        playerScoreText.text = "Votre score est de " + score.ToString() + " / 17 recommandations";
+        playerScoreText.text = "Votre score est de " + score.ToString() + " / 17 recommandations.";
+        
+        // Ajoutez le gestionnaire de clics pour le texte avec lien
+        playerScoreText.gameObject.AddComponent<LinkHandler>();
         //StartCoroutine(GetScores());
+        // Configurez le bouton pour ouvrir l'URL
+        if (openUrlButton != null)
+        {
+            openUrlButton.onClick.AddListener(OpenUrl);
+        }
+        else
+        {
+            Debug.LogError("OpenUrlButton is not assigned in the inspector.");
+        }
     }
+   public  void OpenUrl()
+    {
+        Application.OpenURL(url);
+    }
+    public void recommencerGame(){
+
+    // variables pour jeu des paires
+    MainGameManager.Instance.scoreRecoPaires = 0;
+    MainGameManager.Instance.nbPartiePairesJoue = 0;
+    MainGameManager.Instance.nbPartiePaires = 3;
+    MainGameManager.Instance.gamePairesFait = false;
+    // variables pour jeu des batons
+    MainGameManager.Instance.scoreRecoBaton = 0;
+    MainGameManager.Instance.nbPartieBatonJoue = 0;
+    MainGameManager.Instance.nbPartieBaton = 4;
+    MainGameManager.Instance.gameBatonFait = false;
+
+    // variables pour jeu du clou
+    MainGameManager.Instance.scoreRecoClou = 0;
+    MainGameManager.Instance.nbPartieClouJoue = 0;
+    MainGameManager.Instance.nbPartieClou = 3;
+    MainGameManager.Instance.gameClouFait = false;
+
+    // variables pour jeu du Bassin
+    MainGameManager.Instance.scoreRecobassin = 0;
+    MainGameManager.Instance.nbPartieBassinJoue = 0;
+    MainGameManager.Instance.nbPartieBassin = 3;
+    MainGameManager.Instance.gameBassinFait = false;
+
+    // variables pour jeu des Enigmes
+    MainGameManager.Instance.scoreRecoEnigmes = 0;
+    MainGameManager.Instance.nbPartieEnigmesJoue = 0;
+    MainGameManager.Instance.nbPartieEnigmes = 1;
+    MainGameManager.Instance.gameEnigmesFait = false ;
+
+    //retour vers accueil
+    SceneManager.LoadScene("Accueil");
+
+    }
+    
 
     // IEnumerator GetScores()
     // {

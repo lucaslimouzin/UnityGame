@@ -247,7 +247,12 @@ PrefabInstance:
     - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
       propertyPath: m_text
-      value: "4. Communiquer sur les r\xE8gles de remont\xE9e des id\xE9es\n\n???"
+      value: "4. Communiquer sur les r\xE8gles de remont\xE9e des id\xE9es\n\nPour
+        que cela fonctionne, il faut de la transparence et de la simplicit\xE9. Expliquez
+        clairement comment les id\xE9es doivent \xEAtre soumises, les \xE9tapes du
+        processus d'\xE9valuation, et les crit\xE8res de s\xE9lection. Enfin, assurez-vous
+        que les r\xE8gles sont simples et faciles \xE0 comprendre pour \xE9viter
+        toute confusion."
       objectReference: {fileID: 0}
     - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
@@ -430,6 +435,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 88291878}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &104951717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3528377730240676866, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630940370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &104951718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3226543308906739418, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630940370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &104951719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8195833910797014067, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630940370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &104951720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8578938015735817886, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630940370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &110827421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5001,6 +5054,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestBaton, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1201145117410053088, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_text
@@ -5152,7 +5210,7 @@ PrefabInstance:
     - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170.00027
+      value: -15.00032
       objectReference: {fileID: 0}
     - target: {fileID: 4426094841757471948, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5187,7 +5245,7 @@ PrefabInstance:
     - target: {fileID: 5031780421506461092, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -274.00027
+      value: -119.00032
       objectReference: {fileID: 0}
     - target: {fileID: 6315472129314537161, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5204,6 +5262,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestBaton, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6686850155602306534, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: "Exprimer et faire remonter les id\xE9es"
+      objectReference: {fileID: 0}
     - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -5212,7 +5275,7 @@ PrefabInstance:
     - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 27
+      value: 182
       objectReference: {fileID: 0}
     - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5222,7 +5285,7 @@ PrefabInstance:
     - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -69.806305
+      value: 85.19365
       objectReference: {fileID: 0}
     - target: {fileID: 7352480871702447892, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -5424,6 +5487,10 @@ MonoBehaviour:
   unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
   whiteSprite: {fileID: 21300000, guid: 503cdcb20efcedb45a2160135bf8233c, type: 3}
   buttonClose: {fileID: 46242310}
+  textButtonReco1: {fileID: 104951720}
+  textButtonReco2: {fileID: 104951719}
+  textButtonReco3: {fileID: 104951718}
+  textButtonReco4: {fileID: 104951717}
 --- !u!1001 &1645781191
 PrefabInstance:
   m_ObjectHideFlags: 0

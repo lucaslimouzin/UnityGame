@@ -13,7 +13,9 @@ public class GameManagerPaires : MonoBehaviour
  
 
 
-    //public GameObject panelInstruction;
+    public GameObject panelJarreHead;
+    public Sprite[] headCharacter;
+    public Image headAffiche;
     public GameObject panelInfoMJ;
     public TextMeshProUGUI MJText;
   
@@ -104,7 +106,18 @@ public class GameManagerPaires : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
         toursIA = 0;
         scoreMj = 0;
@@ -185,7 +198,7 @@ public class GameManagerPaires : MonoBehaviour
             panelInfoMJ.SetActive(true);
            // tourJoueur = false;
            tourJoueur = true;
-            MJText.text = "Maitre du jeu : Je commence à jouer !";
+            MJText.text = "Maître du jeu : Je commence à jouer !";
             TourDuMj();
         } 
     }
@@ -222,6 +235,7 @@ public class GameManagerPaires : MonoBehaviour
             panelInfoMJ.SetActive(false);
         }
         panelQuestions.SetActive(true);
+        panelJarreHead.SetActive(false);
 
         QuestionData question = listQuestions.questions[numQuestions];
         //affichage des données
@@ -306,6 +320,7 @@ public class GameManagerPaires : MonoBehaviour
 
     //action du bouton fermer
     public void clicBoutonFermer(){
+        panelJarreHead.SetActive(true);
         RetraitPanneauQuestions(aJuste);
     }
    
@@ -651,7 +666,7 @@ public class GameManagerPaires : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scorePaires
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 2);
             if (MainGameManager.Instance.scoreRecoPaires == 6) {

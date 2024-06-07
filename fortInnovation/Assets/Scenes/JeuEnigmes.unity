@@ -1404,6 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2474b8511adfb4f9b38e64a1540e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelInstruction: {fileID: 1566164946}
   panelInfoMJ: {fileID: 1611861899}
   panelEnigmes: {fileID: 230284473}
   buttonTextEnigmes: {fileID: 45022281}
@@ -7023,11 +7024,9 @@ PrefabInstance:
     - target: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
       propertyPath: m_text
-      value: "R\xE8gles du jeu : \n\nR\xE9pondez aux trois \xE9nigmes du parchemin
-        \xE0 gauche afin de trouver le mot myst\xE8re.\n\nUne fois que vous avez
-        le mot, cliquez sur les lettres du damier, pour s\xE9lectionner les lettres
-        du mot myst\xE8re.\n\nLorsque vous avez termin\xE9, cliquez sur le bouton
-        SOUMETTRE pour valider votre mot myst\xE8re et voir si vous avez gagn\xE9."
+      value: "R\xE8gles du jeu : \\nTentez de r\xE9soudre une charade pour d\xE9couvrir
+        le mot myst\xE8re.\\nLorsque vous pensez avoir d\xE9couvert le mot myst\xE8re,
+        inscrivez le sur le damier \xE0 droit de l'\xE9cran en cliquant sur les lettres."
       objectReference: {fileID: 0}
     - target: {fileID: 7504648372669050673, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
@@ -7057,6 +7056,12 @@ PrefabInstance:
 --- !u!224 &1566164945 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2641117456171304347, guid: 4088c2b37a05c194b84cb39d7506bd77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566164944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1566164946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6089853686479055996, guid: 4088c2b37a05c194b84cb39d7506bd77,
     type: 3}
   m_PrefabInstance: {fileID: 1566164944}
   m_PrefabAsset: {fileID: 0}
