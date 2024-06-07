@@ -18,4 +18,11 @@ public class LetterButton : MonoBehaviour
         isSelected = !isSelected;
         buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, isSelected ? 0.5f : 0f);
     }
+
+    // Nouvelle méthode pour désélectionner le bouton
+    public void Deselect()
+    {
+        isSelected = false;
+        buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0f);
+    }
 }

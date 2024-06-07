@@ -644,7 +644,7 @@ public class GameManagerMarteau : MonoBehaviour
         }
         MainGameManager.Instance.nbPartieClouJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieClouJoue == 3 ){
+        if(MainGameManager.Instance.nbPartieClouJoue > 3 ){
             MainGameManager.Instance.gameClouFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleClous", 4f));
         }

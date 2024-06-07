@@ -642,7 +642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &230284474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1083,6 +1083,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: panelInfoJeuxMJ
       objectReference: {fileID: 0}
+    - target: {fileID: 3398476469246547364, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5262526158727413381, guid: d65d1ca6c2612204a932f767bf6547a7,
         type: 3}
       propertyPath: m_text
@@ -1359,6 +1364,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: panelInfoJeuxMJ
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262526158727413381, guid: d65d1ca6c2612204a932f767bf6547a7,
+        type: 3}
+      propertyPath: m_text
+      value: "Lancez le d\xE9 pour d\xE9terminer le joueur qui d\xE9butera la partie,
+        le score le plus haut l'emporte.\nEn cas d'\xE9galit\xE9, relancez les d\xE9s."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5134,58 +5145,63 @@ PrefabInstance:
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.59
+      value: 0.597
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.94
+      value: 2.954
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.17
+      value: -4.345
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.923242
+      value: 0.7213351
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21413898
+      value: 0.59370714
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.27194327
+      value: 0.32844582
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.16678023
+      value: 0.13896367
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 17.74
+      value: 49.928
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 37.028
+      value: 82.927
       objectReference: {fileID: 0}
     - target: {fileID: 104345301187121210, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 26.463
+      value: 66.528
       objectReference: {fileID: 0}
     - target: {fileID: 736731971929836160, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: m_Name
       value: DieMj
       objectReference: {fileID: 0}
+    - target: {fileID: 8495913284962549868, guid: 398ee0b153b3a1d4da2665279c0dc0da,
+        type: 3}
+      propertyPath: headAffiche
+      value: 
+      objectReference: {fileID: 103405440}
     - target: {fileID: 8495913284962549868, guid: 398ee0b153b3a1d4da2665279c0dc0da,
         type: 3}
       propertyPath: texteQuiCommence
@@ -5201,6 +5217,29 @@ PrefabInstance:
       propertyPath: panelTirageDesDes
       value: 
       objectReference: {fileID: 230284473}
+    - target: {fileID: 8495913284962549868, guid: 398ee0b153b3a1d4da2665279c0dc0da,
+        type: 3}
+      propertyPath: headCharacter.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495913284962549868, guid: 398ee0b153b3a1d4da2665279c0dc0da,
+        type: 3}
+      propertyPath: headCharacter.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 46bef27efba61234c8092717cbd62aff,
+        type: 3}
+    - target: {fileID: 8495913284962549868, guid: 398ee0b153b3a1d4da2665279c0dc0da,
+        type: 3}
+      propertyPath: headCharacter.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: b48f1660ef29eda43bd39d8d68bb1703,
+        type: 3}
+    - target: {fileID: 8495913284962549868, guid: 398ee0b153b3a1d4da2665279c0dc0da,
+        type: 3}
+      propertyPath: headCharacter.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4f91c0857b723947b7cef0de6307c79,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5272,37 +5311,37 @@ PrefabInstance:
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0854748
+      value: -0.1630739
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.9822922
+      value: 0.9337966
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.15091468
+      value: -0.037375078
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07085946
+      value: -0.31628162
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 10.913
+      value: -19.159
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 186.632
+      value: 217.765
       objectReference: {fileID: 0}
     - target: {fileID: 4958445471983481907, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 163.166
+      value: 177.977
       objectReference: {fileID: 0}
     - target: {fileID: 5568361868481017991, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
@@ -5326,6 +5365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7997682270149181011, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
+      propertyPath: headAffiche
+      value: 
+      objectReference: {fileID: 1346511331}
+    - target: {fileID: 7997682270149181011, guid: 2d69381669369c548850f3e9ffccf6fe,
+        type: 3}
       propertyPath: texteQuiCommence
       value: 
       objectReference: {fileID: 360863765}
@@ -5339,6 +5383,29 @@ PrefabInstance:
       propertyPath: panelTirageDesDes
       value: 
       objectReference: {fileID: 230284473}
+    - target: {fileID: 7997682270149181011, guid: 2d69381669369c548850f3e9ffccf6fe,
+        type: 3}
+      propertyPath: headCharacter.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997682270149181011, guid: 2d69381669369c548850f3e9ffccf6fe,
+        type: 3}
+      propertyPath: headCharacter.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 46bef27efba61234c8092717cbd62aff,
+        type: 3}
+    - target: {fileID: 7997682270149181011, guid: 2d69381669369c548850f3e9ffccf6fe,
+        type: 3}
+      propertyPath: headCharacter.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: b48f1660ef29eda43bd39d8d68bb1703,
+        type: 3}
+    - target: {fileID: 7997682270149181011, guid: 2d69381669369c548850f3e9ffccf6fe,
+        type: 3}
+      propertyPath: headCharacter.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4f91c0857b723947b7cef0de6307c79,
+        type: 3}
     - target: {fileID: 8145263462822008773, guid: 2d69381669369c548850f3e9ffccf6fe,
         type: 3}
       propertyPath: m_TagString

@@ -65,7 +65,7 @@ public class MjActionAccueil : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
          if (MainGameManager.Instance.gamePairesFait && MainGameManager.Instance.gameBatonFait && MainGameManager.Instance.gameBassinFait && MainGameManager.Instance.gameClouFait && MainGameManager.Instance.gameEnigmesFait){
            panelRoom.SetActive(true);
-           textMjRoom.text = "Bravo vous avez fini toutes les épreuves!\nOn se retrouve dans la dernière cellule !"; 
+           textMjRoom.text = "Bravo vous avez fini toutes les épreuves !\nOn se retrouve dans la dernière cellule !"; 
            buttonFermer.SetActive(false);
            buttonTeleportation.SetActive(true);
         } else if (MainGameManager.Instance.tutoCompteur == 2){

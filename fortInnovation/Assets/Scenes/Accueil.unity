@@ -1172,6 +1172,31 @@ PrefabInstance:
       propertyPath: textReco
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7887930704291822812, guid: dc70c21048bfdd84280e95604e9c418d,
+        type: 3}
+      propertyPath: nbPartieClouJoue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887930704291822812, guid: dc70c21048bfdd84280e95604e9c418d,
+        type: 3}
+      propertyPath: nbPartieBatonJoue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887930704291822812, guid: dc70c21048bfdd84280e95604e9c418d,
+        type: 3}
+      propertyPath: nbPartieBassinJoue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887930704291822812, guid: dc70c21048bfdd84280e95604e9c418d,
+        type: 3}
+      propertyPath: nbPartiePairesJoue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887930704291822812, guid: dc70c21048bfdd84280e95604e9c418d,
+        type: 3}
+      propertyPath: nbPartieEnigmesJoue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7967665753380492279, guid: dc70c21048bfdd84280e95604e9c418d,
         type: 3}
       propertyPath: m_Name

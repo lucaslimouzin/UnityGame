@@ -680,7 +680,7 @@ public class GameManagerPaires : MonoBehaviour
         }
         MainGameManager.Instance.nbPartiePairesJoue += 1;
         
-        if(MainGameManager.Instance.nbPartiePairesJoue == 3 ){
+        if(MainGameManager.Instance.nbPartiePairesJoue > 3 ){
             MainGameManager.Instance.gamePairesFait = true;
             StartCoroutine(LoadSceneAfterDelay("SallePaires", 4f));
         }

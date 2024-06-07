@@ -480,7 +480,7 @@ public class GameManagerBassin : MonoBehaviour
         }
         MainGameManager.Instance.nbPartieBassinJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieBassinJoue == 3 ){
+        if(MainGameManager.Instance.nbPartieBassinJoue > 3 ){
             MainGameManager.Instance.gameBassinFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleBassins", 4f));
         }

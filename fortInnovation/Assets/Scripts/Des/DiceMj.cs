@@ -42,9 +42,9 @@ public class DiceMj : MonoBehaviour
         MainGameManager.Instance.scoreDesPlayer = 0;
        
         diceMjVelocity = rb.velocity;
-        float dirX = Random.Range(0, 200);
-        float dirY = Random.Range(0, 200);
-        float dirZ = Random.Range(0, 200);
+        float dirX = Random.Range(0, 300);
+        float dirY = Random.Range(0, 150);
+        float dirZ = Random.Range(0, 100);
 
         transform.position = new Vector3(-0.65f, 3.68f, -4.31f);
         transform.rotation = Quaternion.identity;
@@ -52,9 +52,9 @@ public class DiceMj : MonoBehaviour
         rb.freezeRotation = false; // Allow rotation
         rb.angularDrag = 0.5f; // Adjust as needed
 
-        rb.AddForce(transform.up * 200f);
+        rb.AddForce(transform.up * 100f);
         rb.AddForce(dirX, dirY, dirZ);
-        rb.AddTorque(Random.Range(0, 500), Random.Range(0, 500), Random.Range(0, 500));
+        rb.AddTorque(Random.Range(0, 450), Random.Range(0, 450), Random.Range(0, 450));
      Invoke("determQuiCommenceMj", 5f);
     
     }
