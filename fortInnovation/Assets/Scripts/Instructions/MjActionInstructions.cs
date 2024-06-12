@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MjActionInstructions : MonoBehaviour
 {
     public GameObject panelMjInfo;
-    public TextMeshProUGUI textMjInfo;
+    //public TextMeshProUGUI textMjInfo;
     public GameObject panelReco;
     public GameObject panelRoom;
     public TextMeshProUGUI textMjRoom;
