@@ -34,6 +34,15 @@ public class Instruction : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("j'ai appuyé");
+        // Réduire l'opacité du bouton
+        Image buttonImage = continueButton.GetComponent<Image>();
+        if (buttonImage != null)
+        {
+            Color color = buttonImage.color;
+            color.a = 0.5f; // Réduire l'opacité à 50%
+            buttonImage.color = color;
+        }
+
         // Vérifier si la scène est prête à être activée (progress atteint 0.9f)
         if (asyncOperation != null && asyncOperation.progress >= 0.9f)
         {

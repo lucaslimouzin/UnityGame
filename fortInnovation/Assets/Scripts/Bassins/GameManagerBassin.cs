@@ -120,7 +120,7 @@ public class GameManagerBassin : MonoBehaviour
         vieDuVerreJoueur= 3;
         
         textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \navant que votre verre \n ne coule ";
-        textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que le verre \ndu MJ ne coule ";
+        textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que son verre ne coule ";
         //on affiche le panneau des régles
         //PanneauRegle();
         RetraitPanneauRegle();
@@ -360,7 +360,7 @@ public class GameManagerBassin : MonoBehaviour
             {   
                 isMoving = false;
                 vieDuVerreMj -= 1;
-                textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que le verre du MJ \nne coule";
+                textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que son verre ne coule";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
                 if (vieDuVerreMj > 0){
