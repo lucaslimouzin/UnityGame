@@ -31,7 +31,7 @@ public class MjActionClou : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la cellule aux clous enfoncés. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Bienvenue dans la cellule des Clous !\n\nVous allez affronter le Maître du jeu dans une épreuve de force pour tenter de remporter les 3 recommandations du principe 4 de l'innovation participative : \"Maintenir l'envie d'innover\".\nBonne chance !";
         }
        
     }

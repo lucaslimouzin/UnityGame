@@ -13,7 +13,9 @@ public class GameManagerPaires : MonoBehaviour
  
 
 
-    public GameObject panelInstruction;
+    public GameObject panelJarreHead;
+    public Sprite[] headCharacter;
+    public Image headAffiche;
     public GameObject panelInfoMJ;
     public TextMeshProUGUI MJText;
   
@@ -34,6 +36,8 @@ public class GameManagerPaires : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public Sprite[] imagesButton;
+    public GameObject buttonFermer;
     public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
@@ -102,7 +106,18 @@ public class GameManagerPaires : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
         toursIA = 0;
         scoreMj = 0;
@@ -123,7 +138,8 @@ public class GameManagerPaires : MonoBehaviour
         // Initialiser et mélanger les tableaux de références
         InitialiserEtMelangerRefs();
         //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -165,14 +181,14 @@ public class GameManagerPaires : MonoBehaviour
 
     
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+       // panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
             Invoke("AfficheLaQuestion",0f);
@@ -182,7 +198,7 @@ public class GameManagerPaires : MonoBehaviour
             panelInfoMJ.SetActive(true);
            // tourJoueur = false;
            tourJoueur = true;
-            MJText.text = "Maitre du jeu : Je commence à jouer !";
+            MJText.text = "Maître du jeu : Je commence à jouer !";
             TourDuMj();
         } 
     }
@@ -212,13 +228,14 @@ public class GameManagerPaires : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }
         panelQuestions.SetActive(true);
+        panelJarreHead.SetActive(false);
 
         QuestionData question = listQuestions.questions[numQuestions];
         //affichage des données
@@ -226,7 +243,15 @@ public class GameManagerPaires : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
-
+        
+        //met le fond des boutons en noir
+        buttonA.image.sprite = imagesButton[0]; // "black"
+        buttonB.image.sprite = imagesButton[0]; // "black"
+        buttonC.image.sprite = imagesButton[0]; // "black"
+        //desactive le boutonFermer
+        buttonFermer.SetActive(false);
+                    
+                
         if (Input.GetKey(KeyCode.Space)) {
 
         } else {
@@ -247,14 +272,58 @@ public class GameManagerPaires : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            // Mettre en vert le texte qu'il a cliqué
+            switch (choix)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
         }
         else {
             aJuste = false;
+            // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            
+            //on recolor juste la réponse juste
+            switch (reponseCorrecte)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
+            
         }
-        //on enlève le panneau des questions
-        RetraitPanneauQuestions(aJuste);
+        // affiche le bouton fermer
+        buttonFermer.SetActive(true);
+        
     }
 
+    //action du bouton fermer
+    public void clicBoutonFermer(){
+        panelJarreHead.SetActive(true);
+        RetraitPanneauQuestions(aJuste);
+    }
+   
     //retrait panneau Question
     private void RetraitPanneauQuestions(bool reponseJuste){
 
@@ -263,12 +332,12 @@ public class GameManagerPaires : MonoBehaviour
         if(reponseJuste){
             tourJoueur= true;
             phaseQuestion = false;
-            MJText.text = "Maitre du jeu : Bien répondu, vous pouvez retourner deux cartes";
+            MJText.text = "Vous avez bien répondu ! \nVous pouvez retourner deux cartes.";
             TourDuJoueur();
         } 
         else {
             tourJoueur = false;
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de retourner deux cartes.";
             TourDuMj();
         }
         
@@ -402,11 +471,11 @@ public class GameManagerPaires : MonoBehaviour
                 StartCoroutine(ShowAndHideTrueText());
                 if(tourJoueur){
                     scorePlayer++;
-                    scorePlayerText.text = scorePlayer.ToString() + "/3 paires Joueur";
+                    scorePlayerText.text = "Nombre de paires : \n" + scorePlayer.ToString()+ "/3" ;
                 }
                 else {
                     scoreMj++;
-                    scoreMjText.text = scoreMj.ToString() + "/3 paires MJ";
+                    scoreMjText.text = "Nombre de paires : \n" + scoreMj.ToString() + "/3";
                 }
                 if (scorePlayer == 3 || scoreMj ==3) {
                     //fin du jeu
@@ -597,7 +666,7 @@ public class GameManagerPaires : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scorePaires
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 2);
             if (MainGameManager.Instance.scoreRecoPaires == 6) {
@@ -611,7 +680,7 @@ public class GameManagerPaires : MonoBehaviour
         }
         MainGameManager.Instance.nbPartiePairesJoue += 1;
         
-        if(MainGameManager.Instance.nbPartiePairesJoue == 3 ){
+        if(MainGameManager.Instance.nbPartiePairesJoue > 3 ){
             MainGameManager.Instance.gamePairesFait = true;
             StartCoroutine(LoadSceneAfterDelay("SallePaires", 4f));
         }

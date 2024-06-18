@@ -10,11 +10,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
+    public GameObject wall;
+    public GameObject panelBassinHead;
+    public Sprite[] headCharacter;
+    public Image headAffiche;
     private GameObject playerSphere;
     public GameObject playerSpherePrefab;
     private GameObject mjSphere;
     public GameObject mjSpherePrefab;
-    public GameObject panelInstruction;
+    //public GameObject panelInstructions;
     public GameObject panelInfoMJ;
     public GameObject panelBassin;
     public TextMeshProUGUI MJText;
@@ -41,6 +45,8 @@ public class GameManagerBassin : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+     public Sprite[] imagesButton;
+    public GameObject buttonFermer;
     public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
@@ -90,8 +96,19 @@ public class GameManagerBassin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        wall.SetActive(false);
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }   
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 
@@ -102,10 +119,11 @@ public class GameManagerBassin : MonoBehaviour
         vieDuVerreMj = 3;
         vieDuVerreJoueur= 3;
         
-        textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \n avant que votre verre \n  ne coule ";
-        textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \n avant que le verre \n du MJ ne coule ";
+        textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \navant que votre verre \n ne coule ";
+        textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que son verre ne coule ";
         //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -145,14 +163,14 @@ public class GameManagerBassin : MonoBehaviour
     }
 
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+        //panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
             Invoke("AfficheLaQuestion",0f);
@@ -187,13 +205,14 @@ public class GameManagerBassin : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }
         panelQuestions.SetActive(true);
+        panelBassinHead.SetActive(false);
 
         QuestionData question = listQuestions.questions[numQuestions];
         //affichage des données
@@ -201,6 +220,13 @@ public class GameManagerBassin : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+
+        //met le fond des boutons en noir
+        buttonA.image.sprite = imagesButton[0]; // "black"
+        buttonB.image.sprite = imagesButton[0]; // "black"
+        buttonC.image.sprite = imagesButton[0]; // "black"
+        //desactive le boutonFermer
+        buttonFermer.SetActive(false);
 
         buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
         buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
@@ -217,11 +243,54 @@ public class GameManagerBassin : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            // Mettre en vert le texte qu'il a cliqué
+            switch (choix)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
         }
         else {
             aJuste = false;
+            // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            
+            //on recolor juste la réponse juste
+            switch (reponseCorrecte)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
+            
         }
-        //on enlève le panneau des questions
+        // affiche le bouton fermer
+        buttonFermer.SetActive(true);
+        
+    }
+     //action du bouton fermer
+    public void clicBoutonFermer(){
+        panelBassinHead.SetActive(true);
         RetraitPanneauQuestions(aJuste);
     }
 
@@ -230,13 +299,13 @@ public class GameManagerBassin : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Maitre du jeu : Bien répondu, vous pouvez déposer une bille  dans mon verre";
+            MJText.text = "Vous avez bien répondu ! \nVous pouvez donc déplacer une bille, jusqu'à ce qu'elle devienne verte, dans mon verre.";
             tourJoueur = true;
             TourDuJoueur();
             
         } 
         else {
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, déposez une bille dans votre verre";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de placer un bille dans votre verre.";
             tourJoueur = false;
             TourDuMj();
         }
@@ -248,6 +317,7 @@ public class GameManagerBassin : MonoBehaviour
     private void TourDuJoueur(){
         if(tourJoueur) {
             isMoving = true;
+            wall.SetActive(true);
             ////debug.Log("Debut tour joueur");
             AfficherPlayerSphere();
             
@@ -258,6 +328,7 @@ public class GameManagerBassin : MonoBehaviour
     private void TourDuMj(){
         if (!tourJoueur) {
             isMoving = true;
+            wall.SetActive(false);
             ////debug.Log("Debut tour Mj");
             LancerMouvementMjSphere();
         }        
@@ -289,7 +360,7 @@ public class GameManagerBassin : MonoBehaviour
             {   
                 isMoving = false;
                 vieDuVerreMj -= 1;
-                textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \n avant que le verre du MJ \n ne coule";
+                textVieVerreMJ.text = vieDuVerreMj.ToString() + " billes restantes \navant que son verre ne coule";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
                 if (vieDuVerreMj > 0){
@@ -308,7 +379,7 @@ public class GameManagerBassin : MonoBehaviour
             {   
                 isMoving = false;
                 vieDuVerreJoueur -= 1;
-                textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \n avant que votre verre \n  ne coule";
+                textVieVerreJoueur.text = vieDuVerreJoueur.ToString() + " billes restantes \navant que votre verre \n ne coule";
                 //Debug.Log(vieDuVerre);
                 //vérifie si le verre peut encore recevoir une bille
                 if (vieDuVerreJoueur > 0){
@@ -401,7 +472,7 @@ public class GameManagerBassin : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
                 StartCoroutine(ShowAndHideGagneText());
@@ -412,7 +483,7 @@ public class GameManagerBassin : MonoBehaviour
         }
         MainGameManager.Instance.nbPartieBassinJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieBassinJoue == 3 ){
+        if(MainGameManager.Instance.nbPartieBassinJoue > 3 ){
             MainGameManager.Instance.gameBassinFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleBassins", 4f));
         }

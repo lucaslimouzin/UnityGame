@@ -31,7 +31,7 @@ public class MjActionEnigmes : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la cellule aux Enigmes. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Bienvenue dans la cellule des Enigmes !\n\nVous allez affronter le Maître du jeu dans une épreuve de réflexion pour tenter de remporter les 2 recommandations du principe 5 de l'innovation participative : \"Penser et agir en ecosystème\".\nBonne chance !";
         }
        
     }

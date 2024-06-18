@@ -31,7 +31,7 @@ public class MjActionBassin : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la cellule des bassins coulants. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Bienvenue dans la cellule des Bassins !\n\nVous allez affronter le Maître du jeu dans une épreuve d'adresse pour tenter de remporter les 3 recommandations du principe 3 de l'innovation participative : \"Accompagner l'expérimentation et le déploiement des innovations\".\nBonne chance !";
         }
        
     }
