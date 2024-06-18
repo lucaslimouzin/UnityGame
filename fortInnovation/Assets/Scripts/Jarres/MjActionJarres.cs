@@ -31,7 +31,7 @@ public class MjActionPaires : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Maître du jeu : Bienvenue dans la salle des Paires. Approche toi pour lancer le jeu";
+            textMjRoom.text = "Bienvenue dans la cellule des Paires ! \n\nVous allez affronter le Maître du jeu dans une épreuve de mémoire pour tenter de remporter les 5 recommandations du principe 1 de l'innovation participative : \"Donner du sens et la direction\". \nBonne chance !";
         }
        
     }

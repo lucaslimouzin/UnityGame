@@ -9,6 +9,7 @@ public class chestInstructions : MonoBehaviour
     public GameObject panelRoom;
     public TextMeshProUGUI textMjRoom;
     public GameObject panelReco;
+    public GameObject exclamation;
     
     private StarterAssets.ThirdPersonController thirdPersonController;
     
@@ -47,6 +48,7 @@ public class chestInstructions : MonoBehaviour
             //desactive le deplacement
             DisableGameplayInput();
             textMjRoom.text = "Maintenant, va vers la table pour débuter l'aventure !";
+            exclamation.SetActive(false);
             
             
             

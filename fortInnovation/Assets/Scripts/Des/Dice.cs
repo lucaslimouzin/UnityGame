@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 public class Dice : MonoBehaviour
 {
+     public Sprite[] headCharacter;
+    public Image headAffiche;
     static Rigidbody rb;
     public GameObject panelInstructions;
     public GameObject panelTirageDesDes;
@@ -13,6 +15,18 @@ public class Dice : MonoBehaviour
 
     void Start(){
         rb = GetComponent<Rigidbody>();
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+    }
     }
 
     void Update(){
@@ -36,7 +50,7 @@ public class Dice : MonoBehaviour
         rb.freezeRotation = false; // Allow rotation
         rb.angularDrag = 0.5f; // Adjust as needed
 
-        rb.AddForce(transform.up * 100f);
+        rb.AddForce(transform.up * 200f);
         rb.AddForce(dirX, dirY, dirZ);
         rb.AddTorque(Random.Range(0, 500), Random.Range(0, 500), Random.Range(0, 500));
         Invoke("determQuiCommencePlayer", 5f);
@@ -45,7 +59,7 @@ public class Dice : MonoBehaviour
 
     public void determQuiCommencePlayer () {
        if (MainGameManager.Instance.scoreDesMj > MainGameManager.Instance.scoreDesPlayer) {
-            texteQuiCommence.text = "Le Maître du jeu commence !";
+            texteQuiCommence.text = "Le Maître du jeu a réalisé le score le plus élevé, c'est à lui de commencer.";
             MainGameManager.Instance.quiCommence = "Mj";
             panelInstructions.SetActive(true);
         } 
@@ -53,7 +67,7 @@ public class Dice : MonoBehaviour
             panelTirageDesDes.SetActive(true);
             }
         if (MainGameManager.Instance.scoreDesMj < MainGameManager.Instance.scoreDesPlayer) {
-            texteQuiCommence.text = "Vous commencez !";
+            texteQuiCommence.text = "Vous avez réalisé le score le plus élevé, c'est donc à vous de commencer.";
             MainGameManager.Instance.quiCommence = "Player";
             panelInstructions.SetActive(true);
         }

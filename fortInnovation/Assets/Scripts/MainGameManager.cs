@@ -12,35 +12,35 @@ public class MainGameManager : MonoBehaviour
 
     // variables pour jeu des Paires/paires
     public int scoreRecoPaires = 0;
-    public int nbPartiePairesJoue = 0;
+    public int nbPartiePairesJoue = 1;
     public int nbPartiePaires = 3;
     public bool gamePairesFait = false;
     public List<int> questionsPairesPosees = new List<int>();
 
     // variables pour jeu du baton
     public int scoreRecoBaton = 0;
-    public int nbPartieBatonJoue = 0;
+    public int nbPartieBatonJoue = 1;
     public int nbPartieBaton = 4;
     public bool gameBatonFait = false;
     public List<int> questionsBatonPosees = new List<int>();
 
     // variables pour jeu du clou
     public int scoreRecoClou = 0;
-    public int nbPartieClouJoue = 0;
+    public int nbPartieClouJoue = 1;
     public int nbPartieClou = 3;
     public bool gameClouFait = false;
     public List<int> questionsClouPosees = new List<int>();
 
     // variables pour jeu du Bassin
     public int scoreRecobassin = 0;
-    public int nbPartieBassinJoue = 0;
+    public int nbPartieBassinJoue = 1;
     public int nbPartieBassin = 3;
     public bool gameBassinFait = false;
     public List<int> questionsBassinPosees = new List<int>();
 
     // variables pour jeu des Enigmes
     public int scoreRecoEnigmes = 0;
-    public int nbPartieEnigmesJoue = 0;
+    public int nbPartieEnigmesJoue = 1;
     public int nbPartieEnigmes = 1;
     public bool gameEnigmesFait = false;
     public List<int> questionsEnigmesPosees = new List<int>();

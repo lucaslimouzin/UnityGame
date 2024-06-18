@@ -5,13 +5,15 @@ using UnityEngine;
 public class DragAndDrop : MonoBehaviour
 {
     private Vector3 offset;
-    private bool peutEtreLache = false; // Flag pour savoir si l'objet peut être lâché
     private Rigidbody rb; // Référence au Rigidbody de l'objet
+    private bool isStopped = false; // Flag pour savoir si l'objet doit être arrêté
+
     void Start()
     {
         ChangerCouleur(Color.red);
         rb = GetComponent<Rigidbody>();
     }
+
     // Méthode pour désactiver le script
     public void DisableScript()
     {
@@ -20,35 +22,47 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Calculer la différence entre la position de la souris et la position de l'objet
-        offset = transform.position - GetMouseWorldPos();
+        if (!isStopped)
+        {
+            // Calculer la différence entre la position de la souris et la position de l'objet
+            offset = transform.position - GetMouseWorldPos();
+        }
     }
 
     private void OnMouseDrag()
     {
-        // Obtenir la nouvelle position de la souris dans le monde
-        Vector3 newPosition = GetMouseWorldPos() + offset;
-
-        // maintenir la position Z reste constante
-        newPosition.z = transform.position.z;
-
-        // maintenir la position Z reste constante
-        newPosition.y = 2.00f; 
-
-        
-        // Vérifier si la position en X est dans l'intervalle désiré
-        if (transform.position.x >= 0.036f && transform.position.x <= 0.542f)
+        if (!isStopped)
         {
-            ChangerCouleur(Color.green); 
-            rb.constraints = RigidbodyConstraints.None;
+            // Obtenir la nouvelle position de la souris dans le monde
+            Vector3 newPosition = GetMouseWorldPos() + offset;
+
+            // maintenir la position Z reste constante
+            newPosition.z = transform.position.z;
+
+            // maintenir la position Y reste constante
+            newPosition.y = 2.00f; 
+
+            // Vérifier si la position en X est dans l'intervalle désiré
+            if (transform.position.x >= 0.036f && transform.position.x <= 0.542f)
+            {
+                ChangerCouleur(Color.green); 
+                rb.constraints = RigidbodyConstraints.None;
+            }
+            else
+            {
+                ChangerCouleur(Color.red); 
+                rb.constraints = RigidbodyConstraints.FreezePositionY;
+            }
+
+            // Mettre à jour la position de l'objet
+            transform.position = newPosition;
+
+            // Vérifier si la position en X a atteint la valeur spécifique
+            if (transform.position.x >= 0.04f && transform.position.x <= 0.3f)
+            {
+                StopObject();
+            }
         }
-        else
-        {
-            ChangerCouleur(Color.red); 
-            rb.constraints = RigidbodyConstraints.FreezePositionY;
-        }
-        // Mettre à jour la position de l'objet
-        transform.position = newPosition;
     }
 
     private Vector3 GetMouseWorldPos()
@@ -56,7 +70,6 @@ public class DragAndDrop : MonoBehaviour
         // Convertir la position de la souris en coordonnées mondiales
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = -Camera.main.transform.position.z;
-        //mousePos.y = -Camera.main.transform.position.y;
         return Camera.main.ScreenToWorldPoint(mousePos);
     }
 
@@ -67,5 +80,12 @@ public class DragAndDrop : MonoBehaviour
         {
             renderer.material.color = nouvelleCouleur;
         }
+    }
+
+    private void StopObject()
+    {
+        isStopped = true;
+        rb.constraints = RigidbodyConstraints.FreezePositionX;
+        
     }
 }

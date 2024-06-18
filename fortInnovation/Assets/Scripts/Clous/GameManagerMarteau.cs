@@ -10,11 +10,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerMarteau : MonoBehaviour
 {
+    public Sprite[] headCharacter;
+    public Image headAffiche;
     public GameObject clouJoueur; 
     public GameObject clouMj;
     public GameObject marteauPlayer;
     public GameObject marteauMj;
-    public GameObject panelInstruction;
+    //public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelJauge;
     public GameObject buttonTextMarteau;
@@ -53,6 +55,8 @@ public class GameManagerMarteau : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public Sprite[] imagesButton;
+    public GameObject buttonFermer;
     public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
@@ -105,7 +109,18 @@ public class GameManagerMarteau : MonoBehaviour
     void Start()
     {
         
-        
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }
         buttonPressed = false;
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
@@ -117,17 +132,18 @@ public class GameManagerMarteau : MonoBehaviour
         forceMarteau.value = 0;
         playerForce = 10;
         vieDuClouJoueur = 250f;
-        vieDuClouMj = 300f;
+        vieDuClouMj = 250f;
         //affichage de la vie du clou
-        textVieClouJoueur.text = vieDuClouJoueur.ToString();
-        textVieClouMj.text = vieDuClouMj.ToString();
+        textVieClouJoueur.text = "Vie du clou : " + vieDuClouJoueur.ToString();
+        textVieClouMj.text = "Vie du clou : " + vieDuClouMj.ToString();
         isSpaceEnabled = false;
         phaseQuestion = true;
         //Debug.Log("PhaseQ 1 = " + phaseQuestion);
        // Debug.Log("Espace 1 = " + isSpaceEnabled);
         ResetGauge();
       //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -244,14 +260,14 @@ public class GameManagerMarteau : MonoBehaviour
 
 
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+       // panelInstruction.SetActive(false);
        if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
             Invoke("AfficheLaQuestion",0f);
@@ -260,7 +276,7 @@ public class GameManagerMarteau : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             tourJoueur = false;
-            MJText.text = "Maitre du jeu : Je commence à frapper !";
+            MJText.text = "Maître du jeu : Je commence à frapper !";
             TourDuMj();
         } 
     }
@@ -270,10 +286,8 @@ public class GameManagerMarteau : MonoBehaviour
         Input.ResetInputAxes(); // reset toutes les entrées utilisateur
         ignoreInput = true; // ignore les inputs 
         phaseQuestion = true;
-        //Debug.Log("PhaseQ 2 = " + phaseQuestion);
         tourJoueur = false;
         isSpaceEnabled = false;
-        //Debug.Log("Espace 3 = " + isSpaceEnabled);
         ResetGauge();
         //choisi les questions de 1 à taille Json
         //comme on vise un tableau on est obligé de commencer à 0
@@ -292,13 +306,14 @@ public class GameManagerMarteau : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }
         panelQuestions.SetActive(true);
+        panelJauge.SetActive(false);
 
         QuestionData question = listQuestions.questions[numQuestions];
         //affichage des données
@@ -306,6 +321,13 @@ public class GameManagerMarteau : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+
+        //met le fond des boutons en noir
+        buttonA.image.sprite = imagesButton[0]; // "black"
+        buttonB.image.sprite = imagesButton[0]; // "black"
+        buttonC.image.sprite = imagesButton[0]; // "black"
+        //desactive le boutonFermer
+        buttonFermer.SetActive(false);
 
         if (Input.GetKey(KeyCode.Space)) {
 
@@ -327,11 +349,55 @@ public class GameManagerMarteau : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            // Mettre en vert le texte qu'il a cliqué
+            switch (choix)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
         }
         else {
             aJuste = false;
+            // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            
+            //on recolor juste la réponse juste
+            switch (reponseCorrecte)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
+            
         }
-        //on enlève le panneau des questions
+        // affiche le bouton fermer
+        buttonFermer.SetActive(true);
+        
+    }
+
+    //action du bouton fermer
+    public void clicBoutonFermer(){
+        panelJauge.SetActive(true);
         RetraitPanneauQuestions(aJuste);
     }
 
@@ -346,7 +412,7 @@ public class GameManagerMarteau : MonoBehaviour
             phaseQuestion = false;
             ignoreInput = false; // autorise les inputs
             //Debug.Log("PhaseQ 3 = " + phaseQuestion);
-            MJText.text = "Maitre du jeu : Bien répondu, à vous de jouer ! \n Cliquez sur le bouton pour déterminer la puissance (jauge rouge) de votre marteau";
+            MJText.text = "Vous avez bien répondu !\nVous pouvez donc frapper votre clou.";
             isSpaceEnabled = true; //active la touche espace
             //Debug.Log("Espace 4 = " + isSpaceEnabled);
             TourDuJoueur();
@@ -355,7 +421,7 @@ public class GameManagerMarteau : MonoBehaviour
             tourJoueur = false;
             isSpaceEnabled = false; // désactive la touche espace
           //  Debug.Log("Espace 5 = " + isSpaceEnabled);
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, c'est à moi de jouer";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de frapper mon clou.";
             TourDuMj();
         }
         
@@ -427,7 +493,7 @@ public class GameManagerMarteau : MonoBehaviour
                 vieDuClouJoueur = 0;
             }
             //affichage de la vie du clou
-            textVieClouJoueur.text = vieDuClouJoueur.ToString();
+            textVieClouJoueur.text = "Vie du clou : " + vieDuClouJoueur.ToString();
         }
         else
         {
@@ -460,7 +526,7 @@ public class GameManagerMarteau : MonoBehaviour
                 vieDuClouMj = 0;
             }
             //affichage de la vie du clou
-            textVieClouMj.text = vieDuClouMj.ToString();
+            textVieClouMj.text = "Vie du clou : " + vieDuClouMj.ToString();
         }
         else
         {
@@ -472,8 +538,8 @@ public class GameManagerMarteau : MonoBehaviour
         int mjForce;
         
             //si on a faux alors le mj tapera entre 50 et 101
-            //mjForce = UnityEngine.Random.Range(50,101);
-            mjForce = 100;
+            mjForce = UnityEngine.Random.Range(70,101);
+            //mjForce = 100;
             isSpaceEnabled = false; //on desactive la touche espace 
             //Debug.Log("Espace = 7 " + isSpaceEnabled);
             //faire tourner le marteau du player
@@ -567,7 +633,7 @@ public class GameManagerMarteau : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scoreClou 
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
             StartCoroutine(ShowAndHideGagneText());
@@ -578,7 +644,7 @@ public class GameManagerMarteau : MonoBehaviour
         }
         MainGameManager.Instance.nbPartieClouJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieClouJoue == 3 ){
+        if(MainGameManager.Instance.nbPartieClouJoue > 3 ){
             MainGameManager.Instance.gameClouFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleClous", 4f));
         }

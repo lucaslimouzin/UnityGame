@@ -21,44 +21,18 @@ public class GameManagerEnigmes : MonoBehaviour
     private bool tourJoueur = true;
     private bool finDuJeu = false;
     
+    
 
     //variables damier
     public List<LetterButton> allLetterButtons; // Liste de tous les boutons de lettres
     public string wordToFind = "ECOSYSTEME"; // Le mot à trouver
- 
-   //variables pour les questions//////////////////////
-   // URL du fichier JSON sur le réseau
-    private string jsonURL = "https://givrosgaming.fr/fortInnov/BatonQuestions.json";
-    public GameObject panelQuestions;
-    public TextMeshProUGUI questionText;
-    public TextMeshProUGUI propositionAtext;
-    public TextMeshProUGUI propositionBtext;
-    public TextMeshProUGUI propositionCtext;
-    public Button buttonA;
-    public Button buttonB;
-    public Button buttonC;
+    private int compteurEssai;
+  
     public TextMeshProUGUI gagnePerduText;
     
     
 
-    [System.Serializable]
-    public class QuestionData
-    {
-        public int idQuestion;
-        public string question;
-        public string[] propositions;
-        public string reponseCorrecte;
-    }
-
-    [System.Serializable]
-    public class Questions
-    {
-        public QuestionData[] questions;
-    }
-
-    private Questions listQuestions; 
-
-    //fin variables pour les questions ////////////////////
+    
 
     //--------pour mettre à jour le score --------------------------------------
     private void OnEnable()
@@ -86,47 +60,17 @@ public class GameManagerEnigmes : MonoBehaviour
     void Start()
     {
         
-        
+        panelEnigmes.SetActive(false);
+        panelInfoMJ.SetActive(false);
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
-
-        //charge la coroutine qui va récupérer le fichier Json 
-        //StartCoroutine(LoadJsonFromNetwork()); //a activer lors du déploiment
-        //charge la coroutine qui va récupérer le fichier Json 
-        StartCoroutine(LoadJsonFromLocal());
+        compteurEssai = 0;
+        
         //on affiche le panneau des régles
         PanneauRegle();
+        //RetraitPanneauRegle();
     }
 
-    //fonction qui charge les questions depuis local
-    IEnumerator LoadJsonFromLocal(){
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
-        // Désérialiser les données JSON
-        listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
-        yield return null;
-    }
-    //fonction qui charge les questions depuis le réseau
-    IEnumerator LoadJsonFromNetwork()
-    {
-        using (UnityWebRequest www = UnityWebRequest.Get(jsonURL))
-        {
-            yield return www.SendWebRequest();
-
-            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-            {
-                Debug.LogError("Erreur lors du chargement du fichier JSON depuis le réseau: " + www.error);
-            }
-            else
-            {
-                // Les données JSON ont été téléchargées avec succès
-                string jsonText = www.downloadHandler.text;
-
-                // Désérialiser les données JSON
-                listQuestions = JsonUtility.FromJson<Questions>(jsonText);
-            }
-        }
-    }
-
+   
     private void Update()
     {
        
@@ -141,6 +85,9 @@ public class GameManagerEnigmes : MonoBehaviour
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
         panelInstruction.SetActive(false);
+        panelEnigmes.SetActive(true);
+        panelInfoMJ.SetActive(true);
+
         TourDuJoueur();
     }
 
@@ -154,6 +101,7 @@ public class GameManagerEnigmes : MonoBehaviour
    
      public void ValidateWord()
     {
+        compteurEssai +=1;
         string selectedWord = "";
         foreach (LetterButton letterButton in allLetterButtons)
         {
@@ -171,15 +119,49 @@ public class GameManagerEnigmes : MonoBehaviour
             tourJoueur = false;
             FinDuJeu();
         }
-        else
+        else //il n'a pas trouvé le mot
         {
-            Debug.Log("Mot incorrect.");
-            // Actions pour un mot incorrect
-            tourJoueur = true;
-            FinDuJeu();
+            //verifie combien de partie il a fait
+            if (compteurEssai > 2) {
+                //il n'a plus d'essai et i
+                tourJoueur = true;
+                FinDuJeu();
+            } else {
+                Debug.Log(compteurEssai);
+                //on appelle la fonction de reset et de l'indice
+                ResetLettre();
+                AfficheIndice();
+
+            }
+            
         }
     }
 
+    //fonction qui reset les lettres
+    public void ResetLettre()
+    {
+        foreach (LetterButton letterButton in allLetterButtons)
+        {
+            if (letterButton.isSelected)
+            {
+                letterButton.Deselect();
+            }
+        }
+    }
+
+    //fonction qui affiche un indice
+    public void AfficheIndice(){
+        switch(compteurEssai){
+            case 1:
+                //indice 1
+                 MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un E</color>";
+                break;
+            case 2:
+                //indice 2
+                MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot commence par un ECO</color>";
+                break;
+        }
+    }
     bool IsWordCorrect(string selectedWord, string wordToFind)
     {
         return selectedWord.OrderBy(c => c).SequenceEqual(wordToFind.OrderBy(c => c));
@@ -213,25 +195,20 @@ public class GameManagerEnigmes : MonoBehaviour
         panelInfoMJ.SetActive(true);
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo le mot était bien Ecosystème, vous avez remporté l'épreuve et une recommandation";
+            MJText.text = "Bravo le mot était bien Ecosystème, vous avez remporté deux recommandations";
             //envoi vers le Main Game Manager le scoreEnigme
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
             StartCoroutine(ShowAndHideGagneText());
         }
         else {
-            MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            MJText.text = "Maître du jeu : Vous avez échoué, je détruis les deux recommandations";
             StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieEnigmesJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieEnigmesJoue == 1 ){
+        
             MainGameManager.Instance.gameEnigmesFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleEnigmes", 4f));
-        }
-        else
-        {
-            StartCoroutine(LoadSceneAfterDelay("SalleDes", 4f));
-        }
 
     }
     // Coroutine pour charger la scène après un délai

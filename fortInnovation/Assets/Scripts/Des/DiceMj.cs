@@ -6,6 +6,8 @@ using TMPro;
 
 public class DiceMj : MonoBehaviour
 {
+     public Sprite[] headCharacter;
+    public Image headAffiche;
     static Rigidbody rb;
     public GameObject panelInstructions;
     public GameObject panelTirageDesDes;
@@ -14,6 +16,18 @@ public class DiceMj : MonoBehaviour
 
     void Start(){
         rb = GetComponent<Rigidbody>();
+        switch (MainGameManager.Instance.selectedCharacter) {
+            case 0: 
+                headAffiche.sprite = headCharacter[0];
+                break;
+            case 1: 
+                headAffiche.sprite = headCharacter[1];
+                break;
+            case 2: 
+                headAffiche.sprite = headCharacter[2];
+                break;
+
+        }
     }
 
     void Update(){
@@ -28,9 +42,9 @@ public class DiceMj : MonoBehaviour
         MainGameManager.Instance.scoreDesPlayer = 0;
        
         diceMjVelocity = rb.velocity;
-        float dirX = Random.Range(0, 200);
-        float dirY = Random.Range(0, 200);
-        float dirZ = Random.Range(0, 200);
+        float dirX = Random.Range(0, 300);
+        float dirY = Random.Range(0, 150);
+        float dirZ = Random.Range(0, 100);
 
         transform.position = new Vector3(-0.65f, 3.68f, -4.31f);
         transform.rotation = Quaternion.identity;
@@ -40,14 +54,14 @@ public class DiceMj : MonoBehaviour
 
         rb.AddForce(transform.up * 100f);
         rb.AddForce(dirX, dirY, dirZ);
-        rb.AddTorque(Random.Range(0, 500), Random.Range(0, 500), Random.Range(0, 500));
+        rb.AddTorque(Random.Range(0, 450), Random.Range(0, 450), Random.Range(0, 450));
      Invoke("determQuiCommenceMj", 5f);
     
     }
 
     public void determQuiCommenceMj () {
         if (MainGameManager.Instance.scoreDesMj > MainGameManager.Instance.scoreDesPlayer) {
-            texteQuiCommence.text = "Le Maître du jeu commence !";
+            texteQuiCommence.text = "Le Maître du jeu a réalisé le score le plus élevé, c'est à lui de commencer.";
             MainGameManager.Instance.quiCommence = "Mj";
             panelInstructions.SetActive(true);
         } 
@@ -55,7 +69,7 @@ public class DiceMj : MonoBehaviour
             panelTirageDesDes.SetActive(true);
             }
         if (MainGameManager.Instance.scoreDesMj < MainGameManager.Instance.scoreDesPlayer) {
-            texteQuiCommence.text = "Vous commencez !";
+            texteQuiCommence.text = "Vous avez réalisé le score le plus élevé, c'est donc à vous de commencer.";
             MainGameManager.Instance.quiCommence = "Player";
             panelInstructions.SetActive(true);
         }

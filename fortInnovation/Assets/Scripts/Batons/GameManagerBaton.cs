@@ -11,7 +11,7 @@ using UnityEngine.Networking;
 public class GameManagerBaton : MonoBehaviour
 {
     public GameObject[] baton; 
-    public GameObject panelInstruction;
+    //public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelButtonBaton;
 
@@ -37,6 +37,8 @@ public class GameManagerBaton : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+    public Sprite[] imagesButton;
+    public GameObject buttonFermer;
     public TextMeshProUGUI gagnePerduText;
     private bool aJuste = false;
     private int numQuestions = 0;
@@ -97,7 +99,8 @@ public class GameManagerBaton : MonoBehaviour
         batonTailleTab = baton.Length;
         firstTimeMj = false;
       //on affiche le panneau des régles
-        PanneauRegle();
+        //PanneauRegle();
+        RetraitPanneauRegle();
     }
 
     //fonction qui charge les questions depuis local
@@ -131,14 +134,14 @@ public class GameManagerBaton : MonoBehaviour
     }
 
     //affichage du panneau des règles
-    private void PanneauRegle (){
-        panelInstruction.SetActive(true);
-    }
+    // private void PanneauRegle (){
+    //     panelInstruction.SetActive(true);
+    // }
     
     // retrait panneau des règles
     //affichage du panneau de la règle
     public void RetraitPanneauRegle (){
-        panelInstruction.SetActive(false);
+        //panelInstruction.SetActive(false);
 
         if (MainGameManager.Instance.quiCommence == "Player"){
             //On affiche la question
@@ -147,7 +150,7 @@ public class GameManagerBaton : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             firstTimeMj = true;
-            MJText.text = "Maitre du jeu : Je commence à retirer des bâtons !";
+            MJText.text = "Maître du jeu : Je commence à retirer des bâtons !";
             TourDuMj(false);
         }
         
@@ -174,9 +177,9 @@ public class GameManagerBaton : MonoBehaviour
         }
 
         //gestion des panneaux
-        if (panelInstruction.activeSelf){
-            panelInstruction.SetActive(false);
-        }
+        // if (panelInstruction.activeSelf){
+        //     panelInstruction.SetActive(false);
+        // }
         if (panelInfoMJ.activeSelf){
             panelInfoMJ.SetActive(false);
         }
@@ -188,6 +191,13 @@ public class GameManagerBaton : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+
+        //met le fond des boutons en noir
+        buttonA.image.sprite = imagesButton[0]; // "black"
+        buttonB.image.sprite = imagesButton[0]; // "black"
+        buttonC.image.sprite = imagesButton[0]; // "black"
+        //desactive le boutonFermer
+        buttonFermer.SetActive(false);
 
         buttonA.onClick.AddListener(() => OnButtonClick("A", question.reponseCorrecte));
         buttonB.onClick.AddListener(() => OnButtonClick("B", question.reponseCorrecte));
@@ -204,11 +214,54 @@ public class GameManagerBaton : MonoBehaviour
 
         if (choix == reponseCorrecte){
             aJuste = true;
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            // Mettre en vert le texte qu'il a cliqué
+            switch (choix)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
         }
         else {
             aJuste = false;
+            // Mettre en rouge le texte qu'il a cliqué et en vert le texte de la bonne réponse
+            //on met tout en rouge 
+            buttonA.image.sprite = imagesButton[1]; // "red"
+            buttonB.image.sprite = imagesButton[1]; // "red"
+            buttonC.image.sprite = imagesButton[1]; // "red"
+            
+            //on recolor juste la réponse juste
+            switch (reponseCorrecte)
+            {
+                case "A":
+                    buttonA.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "B":
+                    buttonB.image.sprite = imagesButton[2]; // "green"
+                    break;
+                case "C":
+                    buttonC.image.sprite = imagesButton[2]; // "green"
+                    break;
+            }
+            
         }
-        //on enlève le panneau des questions
+        // affiche le bouton fermer
+        buttonFermer.SetActive(true);
+        
+    }
+
+    //action du bouton fermer
+    public void clicBoutonFermer(){
         RetraitPanneauQuestions(aJuste);
     }
 
@@ -217,7 +270,7 @@ public class GameManagerBaton : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Maitre du jeu : Bien répondu, vous pouvez retirer des bâtons !";
+            MJText.text = "Vous avez bien répondu !\nVous pouvez retirer 1, 2 ou 3 bâtonnets.";
             win = true;
             panelButtonBaton.SetActive(true);
             if (batonTailleTab >= 4) {
@@ -241,7 +294,7 @@ public class GameManagerBaton : MonoBehaviour
         } 
         else {
             
-            MJText.text = "Maitre du jeu : Ce n'est pas la bonne réponse, je retire des bâtons !";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de retirer des bâtonnets.";
             
             win = false;
             panelButtonBaton.SetActive(false);
@@ -345,13 +398,13 @@ public class GameManagerBaton : MonoBehaviour
         else
         {
             if (win){
-                MJText.text = "Maitre du jeu : bravo vous avez remporté l'Epreuve et une recommandation !";
+                MJText.text = "Maître du jeu : bravo vous avez remporté une recommandation !";
                 //envoi vers le Main Game Manager le scoreBaton 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoBaton += 1);
                 StartCoroutine(ShowAndHideGagneText());
             }
             else {
-                MJText.text = "Maitre du jeu : Dommage, vous avez échoué si près du but je détruis la recommandation !";
+                MJText.text = "Maître du jeu : Dommage, vous avez échoué si près du but je détruis la recommandation !";
                 StartCoroutine(ShowAndHidePerduText());
             }
             // Toutes les questions ont été posées, fin du jeu
@@ -381,7 +434,7 @@ public class GameManagerBaton : MonoBehaviour
 
     //fin du jeu 
     private void FinDuJeu(){
-        if(MainGameManager.Instance.nbPartieBatonJoue == 4 ){
+        if(MainGameManager.Instance.nbPartieBatonJoue > 4 ){
             MainGameManager.Instance.gameBatonFait = true;
             SceneManager.LoadScene("SalleBatons");
         }

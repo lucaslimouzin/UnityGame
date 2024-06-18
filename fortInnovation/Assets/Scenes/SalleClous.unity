@@ -215,6 +215,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 98b7be26391082840bc0297d5dfd8cd2, type: 3}
+--- !u!1 &30261463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6561058348217528698, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 246188601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &31967274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,6 +459,39 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: chestClou, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1201145117410053088, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_text
+      value: "Questions op\xE9rationnelles\_:\r\n   - Comment recevoir une proposition
+        d\u2019innovation, quelle que soit sa pertinence et la r\xE9ponse qui y sera
+        apport\xE9e ?\r\n   - Comment remercier les innovateurs ?\r\n   - Comment
+        valoriser le d\xE9veloppement de comp\xE9tences des innovateurs ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415503478102198673, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404550851277223823, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 134
+      objectReference: {fileID: 0}
     - target: {fileID: 2639255598349577586, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_Pivot.x
@@ -563,6 +602,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000027260736
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936141104204609558, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15.000183
+      objectReference: {fileID: 0}
     - target: {fileID: 4426094841757471948, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -577,6 +626,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MjActionClou, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657706874634561082, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -293
       objectReference: {fileID: 0}
     - target: {fileID: 6315472129314537161, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -597,6 +661,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Maintenir l'envie d'innover
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042978394743464495, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000027260736
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201193923500781197, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 85.19378
       objectReference: {fileID: 0}
     - target: {fileID: 9207319454112688312, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
         type: 3}
@@ -800,6 +884,42 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &352132176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3226543308906739418, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 246188601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &352132177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8195833910797014067, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 246188601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &352132178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8578938015735817886, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 246188601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &365440351
@@ -1519,18 +1639,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 551962088}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &551962090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 382501411976735561, guid: 543be44a80c5fdd49a77778342df57ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 551962088}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &551962091 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4204150611015947083, guid: 543be44a80c5fdd49a77778342df57ca,
@@ -2118,12 +2226,12 @@ PrefabInstance:
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -289
+      value: -890
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -655
+      value: -709
       objectReference: {fileID: 0}
     - target: {fileID: 6635094583251960922, guid: a5d11ee75e5788043a94fc3415679a62,
         type: 3}
@@ -2172,6 +2280,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 774603191}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &774603194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3209534671513301288, guid: a5d11ee75e5788043a94fc3415679a62,
+    type: 3}
+  m_PrefabInstance: {fileID: 774603191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &816133803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,7 +2532,12 @@ MonoBehaviour:
   - {fileID: 246188606}
   - {fileID: 246188605}
   - {fileID: 246188604}
-  unlockSprite: {fileID: 21300000, guid: 9c329c4dcc542014d963935f6e855f2a, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 1f24d4ddfacf9e14cabf38596dd32ad4, type: 3}
+  whiteSprite: {fileID: 21300000, guid: 503cdcb20efcedb45a2160135bf8233c, type: 3}
+  buttonClose: {fileID: 30261463}
+  textButtonReco1: {fileID: 352132178}
+  textButtonReco2: {fileID: 352132177}
+  textButtonReco3: {fileID: 352132176}
 --- !u!1001 &921344370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3294,7 +3419,7 @@ MonoBehaviour:
   panelMjInfo: {fileID: 774603193}
   panelReco: {fileID: 246188603}
   panelRoom: {fileID: 551962092}
-  textMjRoom: {fileID: 551962090}
+  textMjRoom: {fileID: 774603194}
   chest: {fileID: 882537662}
 --- !u!1001 &1294183900
 PrefabInstance:
@@ -3895,6 +4020,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4752,6 +4882,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4898,7 +5033,7 @@ PrefabInstance:
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380401371110083211, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -4918,7 +5053,7 @@ PrefabInstance:
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6483554099135143963, guid: 2f7f3dde7ae722a4aafffe20691ad702,
         type: 3}
@@ -5136,6 +5271,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "2. Identifier les formes de r\xE9compenses dont peuvent b\xE9n\xE9ficier
+        les innovateurs\r\nL\u2019engagement des innovateurs, mat\xE9rialis\xE9 par
+        leur participation \xE0 l\u2019effort d\u2019innovation au-del\xE0 de leurs
+        responsabilit\xE9s op\xE9rationnelles, doit \xEAtre reconnu. Ces formes d\u2019innovation
+        peuvent \xEAtre :\r\n\r\n   - Symbolique : mise en visibilit\xE9 lors d\u2019une
+        r\xE9union d\u2019\xE9quipe, lors d\u2019une c\xE9r\xE9monie de remise des
+        prix si dans le cadre des d\xE9fis et des challenges, \u2026\r\n   - Mat\xE9rielle
+        : cadeau de type goodies ou autres (participation \xE0 un \xE9v\xE8nement
+        de coh\xE9sion d\u2019\xE9quipe par exemple).\r\n   - Professionnelle : formation,
+        invitation \xE0 une conf\xE9rence / webinaire, int\xE9gration d\u2019un groupe
+        projet / de travail, participation \xE0 un challenge d\u2019innovation, \u2026."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5270,6 +5425,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "1. Syst\xE9matiser le retour (feedback) aux innovateurs dans des d\xE9lais
+        raccourcis, quelle que soit la r\xE9ponse \xE0 leur proposition\r\n\r\nUn
+        des principaux leviers d\u2019engagement des collaborateurs vis-\xE0-vis
+        de l\u2019innovation r\xE9side dans la r\xE9activit\xE9 des r\xE9ponses qui
+        peuvent leur \xEAtre faites quand ils \xE9mettent une id\xE9e de fa\xE7on
+        spontan\xE9e dans le cadre des d\xE9fis et challenges.\r\n\r\nL\u2019enjeu
+        d\u2019explication est central, notamment dans le cas de r\xE9ponses n\xE9gatives,
+        sans quoi les collaborateurs peuvent nourrir un sentiment de m\xE9fiance
+        quant \xE0 des processus qu\u2019ils estiment opaques, ce sentiment contribuant
+        \xE0 leur d\xE9sengagement"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5605,6 +5779,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "3. Accompagner le d\xE9veloppement et la valorisation des comp\xE9tences
+        acquises dans le processus d\u2019innovation pas les innovateurs\r\n\r\nUne
+        des raisons de l\u2019engagement des collaborateurs dans la d\xE9marche l\u2019innovation
+        participative tient \xE0 ce qu\u2019elle permet de r\xE9v\xE9ler chez eux,
+        en termes de comp\xE9tences, d\u2019envies et de motivations.\r\n\r\nLes
+        collaborateurs s\u2019engagent parce que cette d\xE9marche leur permet de
+        (re)donner du sens \xE0 leur travail, d\u2019investir des comp\xE9tences
+        ou des savoirs extra-professionnels dans la sph\xE8re professionnelle. Il
+        est donc n\xE9cessaire d\u2019accompagner au niveau RH ces innovateurs, de
+        suivre leur mont\xE9e en comp\xE9tences, voire d\u2019en valoriser certaines."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_text
+      value: "Maintenir l\u2019envie d\u2019innover"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
