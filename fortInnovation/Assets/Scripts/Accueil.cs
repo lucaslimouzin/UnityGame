@@ -36,10 +36,7 @@ public class Accueil : MonoBehaviour
         MainGameManager.Instance.cinematiqueEnCours = "Introduction";
         SceneManager.LoadScene("Cinematiques");
         //modification des parties en fonction de la difficulté
-        MainGameManager.Instance.nbPartiePaires = 3;
-        MainGameManager.Instance.nbPartieBaton = 4;
-        MainGameManager.Instance.nbPartieClou = 3;
-        MainGameManager.Instance.nbPartieBassin = 3;
+        MainGameManager.Instance.LoadSettings("reglagesModeNormal.json");
     }
     public void PlayInstructionModeEasy() {
         MainGameManager.Instance.selectedCharacter = selectedCharacter;
@@ -47,9 +44,6 @@ public class Accueil : MonoBehaviour
         MainGameManager.Instance.cinematiqueEnCours = "Introduction";
         SceneManager.LoadScene("Cinematiques");
         //modification des parties en fonction de la difficulté
-        MainGameManager.Instance.nbPartiePaires = 1;
-        MainGameManager.Instance.nbPartieBaton = 1;
-        MainGameManager.Instance.nbPartieClou = 1;
-        MainGameManager.Instance.nbPartieBassin = 1;
+        MainGameManager.Instance.LoadSettings("reglagesModeEasy.json");
     }
 }
