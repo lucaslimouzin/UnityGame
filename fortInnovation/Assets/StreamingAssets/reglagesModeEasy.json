@@ -31,12 +31,13 @@
       "scoreDesMj": 0,
       "scoreDesPlayer": 0,
       "quiCommence": "",
-      
+
       "jeuEnCours": "Instruction",
       "cinematiqueEnCours": "Introduction",
       "selectedCharacter": 0,
       "panelUiMobile": false,
-      "tutoCompteur": 0
+      "tutoCompteur": 0,
+      "nbRecoMax": "/5"
     },
     "dialogueSallePaires": {
       "dialogue1": "Bienvenue dans la salle des Paires !\n\nPréparez-vous pour un défi simple des paires.",

@@ -3,6 +3,8 @@ using System.IO;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class MainGameManager : MonoBehaviour
 {
@@ -51,6 +53,7 @@ public class MainGameManager : MonoBehaviour
     public int selectedCharacter;
     public bool panelUiMobile;
     public int tutoCompteur;
+    public string nbRecoMax;
 
     // Dialogues
     public Dictionary<string, string> dialogueSallePaires = new Dictionary<string, string>();
@@ -121,7 +124,7 @@ public class MainGameManager : MonoBehaviour
     {
         if (scoreTextReco != null)
         {
-            scoreTextReco.text = scoreReco.ToString() + "/17";
+            scoreTextReco.text = scoreReco.ToString() + nbRecoMax;
         }
         else
         {
@@ -144,18 +147,33 @@ public class MainGameManager : MonoBehaviour
     }
 
     public void LoadSettings(string difficulty)
+{
+    StartCoroutine(LoadSettingsCoroutine(difficulty));
+}
+
+    private IEnumerator LoadSettingsCoroutine(string difficulty)
     {
-        string path = Application.streamingAssetsPath + "/" + difficulty;
-        if (File.Exists(path))
+        string path = Path.Combine(Application.streamingAssetsPath, difficulty);
+
+    #if UNITY_WEBGL && !UNITY_EDITOR
+        path = Application.streamingAssetsPath + "/" + difficulty;
+    #endif
+
+        UnityWebRequest request = UnityWebRequest.Get(path);
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
         {
-            string json = File.ReadAllText(path);
+            string json = request.downloadHandler.text;
             LoadJson(json);
         }
         else
         {
-            Debug.LogError("Settings file not found: " + path);
+            Debug.LogError("Failed to load settings file: " + request.error);
         }
     }
+
 
     private void LoadJson(string json)
     {
@@ -205,6 +223,7 @@ public class MainGameManager : MonoBehaviour
         selectedCharacter = settings.reglagesJeux.selectedCharacter;
         panelUiMobile = settings.reglagesJeux.panelUiMobile;
         tutoCompteur = settings.reglagesJeux.tutoCompteur;
+        nbRecoMax = settings.reglagesJeux.nbRecoMax;
 
         dialogueSallePaires = settings.dialogueSallePaires;
         dialogueSalleBaton = settings.dialogueSalleBaton;
@@ -259,6 +278,7 @@ public class MainGameManager : MonoBehaviour
         public int selectedCharacter;
         public bool panelUiMobile;
         public int tutoCompteur;
+        public string nbRecoMax;
     }
 
     [System.Serializable]

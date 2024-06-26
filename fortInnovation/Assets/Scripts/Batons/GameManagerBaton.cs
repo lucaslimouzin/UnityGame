@@ -434,7 +434,7 @@ public class GameManagerBaton : MonoBehaviour
 
     //fin du jeu 
     private void FinDuJeu(){
-        if(MainGameManager.Instance.nbPartieBatonJoue > 4 ){
+        if(MainGameManager.Instance.nbPartieBatonJoue > MainGameManager.Instance.nbPartieBaton ){
             MainGameManager.Instance.gameBatonFait = true;
             SceneManager.LoadScene("SalleBatons");
         }

@@ -36,7 +36,8 @@
       "cinematiqueEnCours": "Introduction",
       "selectedCharacter": 0,
       "panelUiMobile": false,
-      "tutoCompteur": 0
+      "tutoCompteur": 0,
+      "nbRecoMax": "/17"
     },
     "dialogueSallePaires": {
       "dialogue1": "Bienvenue dans la salle des Paires !\n\nPréparez-vous pour le défi des paires.",
