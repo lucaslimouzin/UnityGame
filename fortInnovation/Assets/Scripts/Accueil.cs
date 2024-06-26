@@ -30,10 +30,26 @@ public class Accueil : MonoBehaviour
         characters[selectedCharacter].enabled = true;
     }
 
-    public void PlayInstruction() {
+    public void PlayInstructionModeNormal() {
         MainGameManager.Instance.selectedCharacter = selectedCharacter;
         MainGameManager.Instance.jeuEnCours = "Instruction";
         MainGameManager.Instance.cinematiqueEnCours = "Introduction";
         SceneManager.LoadScene("Cinematiques");
+        //modification des parties en fonction de la difficulté
+        MainGameManager.Instance.nbPartiePaires = 3;
+        MainGameManager.Instance.nbPartieBaton = 4;
+        MainGameManager.Instance.nbPartieClou = 3;
+        MainGameManager.Instance.nbPartieBassin = 3;
+    }
+    public void PlayInstructionModeEasy() {
+        MainGameManager.Instance.selectedCharacter = selectedCharacter;
+        MainGameManager.Instance.jeuEnCours = "Instruction";
+        MainGameManager.Instance.cinematiqueEnCours = "Introduction";
+        SceneManager.LoadScene("Cinematiques");
+        //modification des parties en fonction de la difficulté
+        MainGameManager.Instance.nbPartiePaires = 1;
+        MainGameManager.Instance.nbPartieBaton = 1;
+        MainGameManager.Instance.nbPartieClou = 1;
+        MainGameManager.Instance.nbPartieBassin = 1;
     }
 }
