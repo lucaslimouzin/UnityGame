@@ -17,39 +17,28 @@ public class MjActionInstructions : MonoBehaviour
     private StarterAssets.ThirdPersonController thirdPersonController;
 
 
-    //-------------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start()
-    {
-        StartCoroutine(Initialize());
-    }
-
-    private IEnumerator Initialize()
-    {
-        // Attendre que les paramètres soient chargés
-        yield return new WaitUntil(() => MainGameManager.Instance.settingsLoaded);
-
+    {   
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
-
+        
         MainGameManager.Instance.tutoCompteur = 0;
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
-        // Désactive le déplacement
+        //desactive le deplacement
         DisableGameplayInput();
-
-#if !UNITY_EDITOR && UNITY_WEBGL
-        // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
-        WebGLInput.stickyCursorLock = true;
-#endif
-        // Active le coffre
-        chest.SetActive(true);
-
-        // Change le message du panel Room
+        #if !UNITY_EDITOR && UNITY_WEBGL
+            // disable WebGLInput.stickyCursorLock so if the browser unlocks the cursor (with the ESC key) the cursor will unlock in Unity
+            WebGLInput.stickyCursorLock = true;
+        #endif
+        //active le coffre
+            chest.SetActive(true);
+        //change le message du panel Room
         textMjRoom.text = MainGameManager.Instance.dialogueSalleIntroduction[0];
-
         //textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
+    
     }
 
     // Update is called once per frame
@@ -59,49 +48,41 @@ public class MjActionInstructions : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (MainGameManager.Instance.tutoCompteur == 1)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
+    private void OnTriggerEnter(Collider other) {
+        if (MainGameManager.Instance.tutoCompteur == 1) {
+            if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
+ 
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (MainGameManager.Instance.tutoCompteur == 1)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                panelRoom.SetActive(false);
-                if (panelMjInfo.activeSelf)
-                {
-                    panelMjInfo.SetActive(false);
-                }
-            }
+    private void OnTriggerExit(Collider other) {
+        if (MainGameManager.Instance.tutoCompteur == 1) {
+            if (other.gameObject.CompareTag("Player")){
+            panelRoom.SetActive(false);
+            if (panelMjInfo.activeSelf){
+                panelMjInfo.SetActive(false);
+
+            }   
         }
+        }
+        
     }
 
-    public void ExitPanel()
-    {
-        if (panelMjInfo.activeSelf)
-        {
-            panelReco.SetActive(false);
-        }
+    public void ExitPanel(){
+        if (panelMjInfo.activeSelf){
+            panelReco.SetActive(false); 
+        }   
     }
 
-    public void PlayGame()
-    {
+     public void PlayGame() {
         MainGameManager.Instance.tutoCompteur = 2;
         SceneManager.LoadScene("FortAccueil");
     }
 
-    public void GoAccueil()
-    {
+    public void GoAccueil(){
         SceneManager.LoadScene("FortAccueil");
     }
 
@@ -122,9 +103,10 @@ public class MjActionInstructions : MonoBehaviour
             thirdPersonController.enabled = true;
         }
         panelRoom.SetActive(true);
-        // Désactive le déplacement
+        //desactive le deplacement
         DisableGameplayInput();
         textMjRoom.text = "Dirige toi à présent vers la porte pour débuter l'aventure !";
         MainGameManager.Instance.tutoCompteur = 1;
+        
     }
 }
