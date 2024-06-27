@@ -1,9 +1,9 @@
 {
     "reglagesJeux": {
-      "nbPartiePaires": 1,
-      "nbPartieBaton": 1,
-      "nbPartieClou": 1,
-      "nbPartieBassin": 1,
+      "nbPartiePaires": 3,
+      "nbPartieBaton": 4,
+      "nbPartieClou": 3,
+      "nbPartieBassin": 3,
       "nbPartieEnigmes": 1,
       
       "scoreRecoPaires": 0,
@@ -39,57 +39,56 @@
       "tutoCompteur": 0,
       "nbRecoMax": "/17"
     },
-    "dialogueSallePaires": {
-      "dialogue1": "Bienvenue dans la salle des Paires !\n\nPréparez-vous pour le défi des paires.",
-      "dialogue2": "Rappelez-vous, chaque paire que vous trouvez vous rapproche de la victoire."
-    },
-    "dialogueSalleBaton": {
-      "dialogue1": "Bienvenue dans la salle du Bâton !\n\nVous allez affronter un défi de dextérité.",
-      "dialogue2": "Soyez précis et rapide pour réussir ce défi."
-    },
-    "dialogueSalleClou": {
-      "dialogue1": "Bienvenue dans la salle des Clous !\n\nUn défi de précision vous attend.",
-      "dialogue2": "Placez chaque clou avec soin pour réussir."
-    },
-    "dialogueSalleBassin": {
-      "dialogue1": "Bienvenue dans la salle du Bassin !\n\nTestez votre équilibre et votre patience.",
-      "dialogue2": "Gardez votre calme et concentrez-vous pour réussir."
-    },
-    "dialogueSalleEnigmes": {
-      "dialogue1": "Bienvenue dans la salle des Enigmes !\n\nRésolvez les énigmes pour avancer.",
-      "dialogue2": "Chaque énigme vous rapproche un peu plus de la victoire."
-    },
-    "dialogueSalleIntroduction": {
-      "dialogue1": "Bienvenue dans la cellule des Enigmes !\n\nVous allez affronter le Maître du jeu dans une épreuve de réflexion.",
-      "dialogue2": "Prenez votre temps pour réfléchir et trouvez les bonnes réponses."
-    },
-    "dialogueSalleAccueil": {
-      "dialogue1": "Bienvenue dans la salle d'Accueil !\n\nPréparez-vous à commencer votre aventure.",
-      "dialogue2": "Nous espérons que vous passerez un bon moment."
-    },
-    "dialogueSalleFin": {
-      "dialogue1": "Félicitations !\n\nVous avez terminé toutes les épreuves avec succès.",
-      "dialogue2": "Merci d'avoir joué et à bientôt pour de nouvelles aventures."
-    },
-    "dialogueJeuPaires": {
-      "dialogue1": "C'est l'heure de jouer au jeu des Paires. Concentrez-vous pour trouver toutes les paires.",
-      "dialogue2": "Chaque paire trouvée vous rapproche de la victoire."
-    },
-    "dialogueJeuBaton": {
-      "dialogue1": "C'est l'heure de jouer au jeu du Bâton. Soyez rapide et précis pour gagner.",
-      "dialogue2": "La dextérité est la clé de ce jeu."
-    },
-    "dialogueJeuClou": {
-      "dialogue1": "C'est l'heure de jouer au jeu des Clous. Montrez votre précision en plaçant les clous correctement.",
-      "dialogue2": "Un coup bien placé est crucial pour réussir."
-    },
-    "dialogueJeuBassin": {
-      "dialogue1": "C'est l'heure de jouer au jeu du Bassin. Gardez votre équilibre pour réussir.",
-      "dialogue2": "Restez calme et concentré pour passer ce défi."
-    },
-    "dialogueJeuEnigme": {
-      "dialogue1": "C'est l'heure de jouer au jeu des Enigmes. Résolvez les énigmes pour avancer.",
-      "dialogue2": "Chaque énigme résolue est une étape de plus vers la victoire."
-    }
-  }
-  
+    "dialogueSallePaires": [
+      "Bienvenue dans la salle des Paires !\n\nPréparez-vous pour le défi des paires.",
+      "Rappelez-vous, chaque paire que vous trouvez vous rapproche de la victoire."
+    ],
+    "dialogueSalleBaton": [
+      "Bienvenue dans la salle du Bâton !\n\nVous allez affronter un défi de dextérité.",
+      "Soyez précis et rapide pour réussir ce défi."
+    ],
+    "dialogueSalleClou": [
+      "Bienvenue dans la salle des Clous !\n\nUn défi de précision vous attend.",
+      "Placez chaque clou avec soin pour réussir."
+    ],
+    "dialogueSalleBassin": [
+      "Bienvenue dans la salle du Bassin !\n\nTestez votre équilibre et votre patience.",
+      "Gardez votre calme et concentrez-vous pour réussir."
+    ],
+    "dialogueSalleEnigmes": [
+      "Bienvenue dans la salle des Enigmes !\n\nRésolvez les énigmes pour avancer.",
+      "Chaque énigme vous rapproche un peu plus de la victoire."
+    ],
+    "dialogueSalleIntroduction": [
+      "Pour te déplacer,\nutilise les flèches de ton clavier.\nPour t'entrainer, essaie d'atteindre le coffre.",
+      "Dirige toi à présent vers la porte pour débuter l'aventure !"
+    ],
+    "dialogueSalleAccueil": [
+      "Bienvenue dans la salle d'Accueil !\n\nPréparez-vous à commencer votre aventure.",
+      "Nous espérons que vous passerez un bon moment."
+    ],
+    "dialogueSalleFin": [
+      "Félicitations !\n\nVous avez terminé toutes les épreuves avec succès.",
+      "Merci d'avoir joué et à bientôt pour de nouvelles aventures."
+    ],
+    "dialogueJeuPaires": [
+      "C'est l'heure de jouer au jeu des Paires. Concentrez-vous pour trouver toutes les paires.",
+      "Chaque paire trouvée vous rapproche de la victoire."
+    ],
+    "dialogueJeuBaton": [
+      "C'est l'heure de jouer au jeu du Bâton. Soyez rapide et précis pour gagner.",
+      "La dextérité est la clé de ce jeu."
+    ],
+    "dialogueJeuClou": [
+      "C'est l'heure de jouer au jeu des Clous. Montrez votre précision en plaçant les clous correctement.",
+      "Un coup bien placé est crucial pour réussir."
+    ],
+    "dialogueJeuBassin": [
+      "C'est l'heure de jouer au jeu du Bassin. Gardez votre équilibre pour réussir.",
+      "Restez calme et concentré pour passer ce défi."
+    ],
+    "dialogueJeuEnigme": [
+      "C'est l'heure de jouer au jeu des Enigmes. Résolvez les énigmes pour avancer.",
+      "Chaque énigme résolue est une étape de plus vers la victoire."
+    ]
+}

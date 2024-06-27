@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Networking;
 
+
 public class MainGameManager : MonoBehaviour
 {
     public static MainGameManager Instance;
@@ -56,23 +57,24 @@ public class MainGameManager : MonoBehaviour
     public string nbRecoMax;
 
     // Dialogues
-    public Dictionary<string, string> dialogueSallePaires = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueSalleBaton = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueSalleClou = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueSalleBassin = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueSalleEnigmes = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueSalleIntroduction = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueSalleAccueil = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueSalleFin = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueJeuPaires = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueJeuBaton = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueJeuClou = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueJeuBassin = new Dictionary<string, string>();
-    public Dictionary<string, string> dialogueJeuEnigme = new Dictionary<string, string>();
+    public List<string> dialogueSallePaires = new List<string>();
+    public List<string> dialogueSalleBaton = new List<string>();
+    public List<string> dialogueSalleClou = new List<string>();
+    public List<string> dialogueSalleBassin = new List<string>();
+    public List<string> dialogueSalleEnigmes = new List<string>();
+    public List<string> dialogueSalleIntroduction = new List<string>();
+    public List<string> dialogueSalleAccueil = new List<string>();
+    public List<string> dialogueSalleFin = new List<string>();
+    public List<string> dialogueJeuPaires = new List<string>();
+    public List<string> dialogueJeuBaton = new List<string>();
+    public List<string> dialogueJeuClou = new List<string>();
+    public List<string> dialogueJeuBassin = new List<string>();
+    public List<string> dialogueJeuEnigme = new List<string>();
 
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScorePaires, int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);
     public static event ScoreUpdated OnScoreUpdated;
+    public bool settingsLoaded = false;
 
     private void Awake()
     {
@@ -146,10 +148,11 @@ public class MainGameManager : MonoBehaviour
         panelUiMobile = !panelUiMobile; // Basculer l'état de panelUiMobile
     }
 
-    public void LoadSettings(string difficulty)
-{
-    StartCoroutine(LoadSettingsCoroutine(difficulty));
-}
+    public IEnumerator LoadSettings(string difficulty)
+    {
+            yield return StartCoroutine(LoadSettingsCoroutine(difficulty));
+            settingsLoaded = true;
+    }
 
     private IEnumerator LoadSettingsCoroutine(string difficulty)
     {
@@ -238,6 +241,87 @@ public class MainGameManager : MonoBehaviour
         dialogueJeuClou = settings.dialogueJeuClou;
         dialogueJeuBassin = settings.dialogueJeuBassin;
         dialogueJeuEnigme = settings.dialogueJeuEnigme;
+
+        // Debug log for each list
+    Debug.Log("Contents of dialogueSalleIntroduction:");
+    foreach (var dialogue in dialogueSalleIntroduction)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueSallePaires:");
+    foreach (var dialogue in dialogueSallePaires)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueSalleBaton:");
+    foreach (var dialogue in dialogueSalleBaton)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueSalleClou:");
+    foreach (var dialogue in dialogueSalleClou)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueSalleBassin:");
+    foreach (var dialogue in dialogueSalleBassin)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueSalleEnigmes:");
+    foreach (var dialogue in dialogueSalleEnigmes)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueSalleAccueil:");
+    foreach (var dialogue in dialogueSalleAccueil)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueSalleFin:");
+    foreach (var dialogue in dialogueSalleFin)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueJeuPaires:");
+    foreach (var dialogue in dialogueJeuPaires)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueJeuBaton:");
+    foreach (var dialogue in dialogueJeuBaton)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueJeuClou:");
+    foreach (var dialogue in dialogueJeuClou)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueJeuBassin:");
+    foreach (var dialogue in dialogueJeuBassin)
+    {
+        Debug.Log(dialogue);
+    }
+
+    Debug.Log("Contents of dialogueJeuEnigme:");
+    foreach (var dialogue in dialogueJeuEnigme)
+    {
+        Debug.Log(dialogue);
+    }
+       
+
     }
 
     [System.Serializable]
@@ -280,23 +364,22 @@ public class MainGameManager : MonoBehaviour
         public int tutoCompteur;
         public string nbRecoMax;
     }
-
-    [System.Serializable]
-    public class Settings
-    {
-        public ReglagesJeux reglagesJeux;
-        public Dictionary<string, string> dialogueSallePaires;
-        public Dictionary<string, string> dialogueSalleBaton;
-        public Dictionary<string, string> dialogueSalleClou;
-        public Dictionary<string, string> dialogueSalleBassin;
-        public Dictionary<string, string> dialogueSalleEnigmes;
-        public Dictionary<string, string> dialogueSalleIntroduction;
-        public Dictionary<string, string> dialogueSalleAccueil;
-        public Dictionary<string, string> dialogueSalleFin;
-        public Dictionary<string, string> dialogueJeuPaires;
-        public Dictionary<string, string> dialogueJeuBaton;
-        public Dictionary<string, string> dialogueJeuClou;
-        public Dictionary<string, string> dialogueJeuBassin;
-        public Dictionary<string, string> dialogueJeuEnigme;
-    }
+[System.Serializable]
+public class Settings
+{
+    public ReglagesJeux reglagesJeux;
+    public List<string> dialogueSallePaires;
+    public List<string> dialogueSalleBaton;
+    public List<string> dialogueSalleClou;
+    public List<string> dialogueSalleBassin;
+    public List<string> dialogueSalleEnigmes;
+    public List<string> dialogueSalleIntroduction;
+    public List<string> dialogueSalleAccueil;
+    public List<string> dialogueSalleFin;
+    public List<string> dialogueJeuPaires;
+    public List<string> dialogueJeuBaton;
+    public List<string> dialogueJeuClou;
+    public List<string> dialogueJeuBassin;
+    public List<string> dialogueJeuEnigme;
+}
 }
