@@ -61,7 +61,10 @@
     ],
     "dialogueSalleIntroduction": [
       "Pour te déplacer,\nutilise les flèches de ton clavier.\nPour t'entrainer, essaie d'atteindre le coffre.",
-      "Dirige toi à présent vers la porte pour débuter l'aventure !"
+      "Durant la partie tu vas retrouver des panneaux d'instructions comme celui-çi.",
+      "Ils te donneront des consignes pour les jeux et te permettront également de lire les recommandations gagnées.",
+      "Dirige toi à présent vers la porte pour débuter l'aventure !",
+      "Te voilà fin prêt(e) à débuter ton aventure !\n\nClique sur le bouton “entrer” et retrouve-moi dans la salle suivante."
     ],
     "dialogueSalleAccueil": [
       "Bienvenue dans la salle d'Accueil !\n\nPréparez-vous à commencer votre aventure.",

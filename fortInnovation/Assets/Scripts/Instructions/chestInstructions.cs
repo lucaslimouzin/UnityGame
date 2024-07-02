@@ -47,7 +47,7 @@ public class chestInstructions : MonoBehaviour
             panelRoom.SetActive(true);
             //desactive le deplacement
             DisableGameplayInput();
-            textMjRoom.text = "Maintenant, va vers la table pour débuter l'aventure !";
+            
             exclamation.SetActive(false);
             
             

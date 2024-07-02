@@ -14,6 +14,9 @@ public class MjActionInstructions : MonoBehaviour
     public GameObject chest;
     public GameObject panelUi_Move;
     public GameObject panelUi_Jump;
+    public TextMeshProUGUI texte1Coffre;
+    public TextMeshProUGUI texte2Coffre;
+    public TextMeshProUGUI texte1MjInfo;
     private StarterAssets.ThirdPersonController thirdPersonController;
 
 
@@ -38,7 +41,10 @@ public class MjActionInstructions : MonoBehaviour
         //change le message du panel Room
         textMjRoom.text = MainGameManager.Instance.dialogueSalleIntroduction[0];
         //textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
-    
+        //initialisation du texte du panel coffre
+        texte1Coffre.text = MainGameManager.Instance.dialogueSalleIntroduction[1];
+        texte2Coffre.text = MainGameManager.Instance.dialogueSalleIntroduction[2];
+        texte1MjInfo.text = MainGameManager.Instance.dialogueSalleIntroduction[4];
     }
 
     // Update is called once per frame
@@ -105,7 +111,7 @@ public class MjActionInstructions : MonoBehaviour
         panelRoom.SetActive(true);
         //desactive le deplacement
         DisableGameplayInput();
-        textMjRoom.text = "Dirige toi à présent vers la porte pour débuter l'aventure !";
+        textMjRoom.text = MainGameManager.Instance.dialogueSalleIntroduction[3];
         MainGameManager.Instance.tutoCompteur = 1;
         
     }

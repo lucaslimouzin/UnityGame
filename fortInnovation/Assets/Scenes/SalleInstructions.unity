@@ -571,7 +571,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218342119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bb4861c287b1c24a95b0b2ceec5907e, type: 3}
   m_Name: 
@@ -1807,7 +1807,7 @@ GameObject:
   - component: {fileID: 749081413}
   - component: {fileID: 749081412}
   m_Layer: 5
-  m_Name: textMJ
+  m_Name: text1Coffre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2061,6 +2061,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774579960040828976, guid: 1c9eb2d9988ce9346af08a53b3444aa8,
+        type: 3}
+      propertyPath: m_Name
+      value: texte1MjInfo
       objectReference: {fileID: 0}
     - target: {fileID: 3515127116462673223, guid: 1c9eb2d9988ce9346af08a53b3444aa8,
         type: 3}
@@ -2353,6 +2358,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 868043089}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &868043091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7123589199992926293, guid: 1c9eb2d9988ce9346af08a53b3444aa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 868043089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &868043092 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6565912097428778298, guid: 1c9eb2d9988ce9346af08a53b3444aa8,
@@ -3540,6 +3557,9 @@ MonoBehaviour:
   chest: {fileID: 218342119}
   panelUi_Move: {fileID: 1493265654}
   panelUi_Jump: {fileID: 1998119611}
+  texte1Coffre: {fileID: 749081412}
+  texte2Coffre: {fileID: 2109142659}
+  texte1MjInfo: {fileID: 868043091}
 --- !u!1001 &1271391041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5852,7 +5872,7 @@ GameObject:
   - component: {fileID: 2109142660}
   - component: {fileID: 2109142659}
   m_Layer: 5
-  m_Name: textcadenas
+  m_Name: text2Coffre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
