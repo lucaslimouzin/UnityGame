@@ -19,7 +19,7 @@ public class CheckZoneDiceMj : MonoBehaviour
             switch (other.tag)
                 {
                     case "SIDEMJ1":
-                        if (compteurDesMj >100){
+                        if (compteurDesMj >150){
                             MainGameManager.Instance.scoreDesMj = 6;
                             
                             compteurDesMj = 0;
@@ -28,7 +28,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                         }        
                         break;
                     case "SIDEMJ2":
-                        if (compteurDesMj >100){
+                        if (compteurDesMj >150){
                             MainGameManager.Instance.scoreDesMj = 5;
                             
                             compteurDesMj = 0;
@@ -37,7 +37,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                         }
                         break;
                     case "SIDEMJ3":
-                        if (compteurDesMj >100){
+                        if (compteurDesMj >150){
                             MainGameManager.Instance.scoreDesMj = 4;
                             
                             compteurDesMj = 0;
@@ -46,7 +46,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                         }
                         break;
                     case "SIDEMJ4":
-                        if (compteurDesMj >100){
+                        if (compteurDesMj >150){
                             MainGameManager.Instance.scoreDesMj = 3;
                             
                             compteurDesMj = 0;
@@ -55,7 +55,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                         }
                         break;
                     case "SIDEMJ5":
-                        if (compteurDesMj >100){
+                        if (compteurDesMj >150){
                             MainGameManager.Instance.scoreDesMj = 2;
                             
                             compteurDesMj = 0;
@@ -64,7 +64,7 @@ public class CheckZoneDiceMj : MonoBehaviour
                         }
                         break;
                     case "SIDEMJ6":
-                        if (compteurDesMj >100){
+                        if (compteurDesMj >150){
                             MainGameManager.Instance.scoreDesMj = 1;
                             
                             compteurDesMj = 0;
