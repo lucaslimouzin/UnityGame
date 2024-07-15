@@ -223,7 +223,7 @@ public class MainGameManager : MonoBehaviour
         jeuEnCours = settings.reglagesJeux.jeuEnCours;
         cinematiqueEnCours = settings.reglagesJeux.cinematiqueEnCours;
 
-        selectedCharacter = settings.reglagesJeux.selectedCharacter;
+        //selectedCharacter = settings.reglagesJeux.selectedCharacter;
         panelUiMobile = settings.reglagesJeux.panelUiMobile;
         tutoCompteur = settings.reglagesJeux.tutoCompteur;
         nbRecoMax = settings.reglagesJeux.nbRecoMax;
@@ -282,7 +282,7 @@ public class MainGameManager : MonoBehaviour
         public string quiCommence;
         public string jeuEnCours;
         public string cinematiqueEnCours;
-        public int selectedCharacter;
+        //public int selectedCharacter;
         public bool panelUiMobile;
         public int tutoCompteur;
         public string nbRecoMax;
