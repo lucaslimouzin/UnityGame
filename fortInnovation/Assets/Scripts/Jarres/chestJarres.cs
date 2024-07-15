@@ -50,21 +50,32 @@ public class chestPaires : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Player")){
-                panelReco.SetActive(true);
-                
-                
-                
+        //ajout de la condition en fonction du choix du niveau
+        if(MainGameManager.Instance.niveauSelect == "Normal"){
+            if (other.gameObject.CompareTag("Player")){
+                panelReco.SetActive(true);           
+            }
+        }//sinon c'est le mode Facile        
+        else {
+            if (other.gameObject.CompareTag("Player")){
+                panelReco.SetActive(true);           
+            }
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (panelReco.activeSelf){
-            panelReco.SetActive(false);
-            
-            
-            
+        //ajout de la condition en fonction du choix du niveau
+        if(MainGameManager.Instance.niveauSelect == "Normal"){
+            if (panelReco.activeSelf){
+                panelReco.SetActive(false);
+             }
+        }//sinon c'est le mode normal
+        else {
+             if (panelReco.activeSelf){
+                panelReco.SetActive(false);
+             }
         }
+        
     }
 
     private void ActivateButton(int score){

@@ -39,7 +39,7 @@ public class Accueil : MonoBehaviour
         MainGameManager.Instance.selectedCharacter = selectedCharacter;
         MainGameManager.Instance.jeuEnCours = "Instruction";
         MainGameManager.Instance.cinematiqueEnCours = "Introduction";
-
+        MainGameManager.Instance.niveauSelect = "Normal";
         StartCoroutine(LoadSettingsAndStartGame("reglagesModeNormal.json"));
     }
 
@@ -48,7 +48,7 @@ public class Accueil : MonoBehaviour
         MainGameManager.Instance.selectedCharacter = selectedCharacter;
         MainGameManager.Instance.jeuEnCours = "Instruction";
         MainGameManager.Instance.cinematiqueEnCours = "Introduction";
-
+        MainGameManager.Instance.niveauSelect = "Facile";
         StartCoroutine(LoadSettingsAndStartGame("reglagesModeEasy.json"));
     }
 

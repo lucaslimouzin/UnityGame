@@ -55,6 +55,7 @@ public class MainGameManager : MonoBehaviour
     public bool panelUiMobile;
     public int tutoCompteur;
     public string nbRecoMax;
+    public string niveauSelect;
 
     // Dialogues
     public List<string> dialogueSallePaires = new List<string>();
