@@ -13,6 +13,8 @@ public class GameManagerPaires : MonoBehaviour
  
 
 
+    public GameObject panelComplémentReponse;
+    public TextMeshProUGUI textComplementReponse;
     public GameObject panelJarreHead;
     public Sprite[] headCharacter;
     public Image headAffiche;
@@ -61,6 +63,7 @@ public class GameManagerPaires : MonoBehaviour
     public TextMeshProUGUI trueWrongText;
     public int scoreMj = 0;
     public int scorePlayer = 0;
+    private string nomDoc;
 
     [System.Serializable]
     public class QuestionData
@@ -69,6 +72,7 @@ public class GameManagerPaires : MonoBehaviour
         public string question;
         public string[] propositions;
         public string reponseCorrecte;
+        public string complementReponse;
     }
 
     [System.Serializable]
@@ -144,8 +148,13 @@ public class GameManagerPaires : MonoBehaviour
 
     //fonction qui charge les questions depuis local
     IEnumerator LoadJsonFromLocal(){
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("PaireQuestions");
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            nomDoc = "PaireQuestions";
+        }else{
+            nomDoc = "PaireQuestionsFacile";//Mode facile
+        }
+        // Charger le fichier JSON Normal
+        TextAsset jsonFile = Resources.Load<TextAsset>(nomDoc);
         // Désérialiser les données JSON
         listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
         yield return null;
@@ -243,6 +252,9 @@ public class GameManagerPaires : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            textComplementReponse.text = "Complément de réponse : \n"+ question.complementReponse;
+        }
         
         //met le fond des boutons en noir
         buttonA.image.sprite = imagesButton[0]; // "black"
@@ -315,6 +327,10 @@ public class GameManagerPaires : MonoBehaviour
         }
         // affiche le bouton fermer
         buttonFermer.SetActive(true);
+        //si on a choisi le mode Facile
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            panelComplémentReponse.SetActive(true);
+        }
         
     }
 
@@ -322,6 +338,9 @@ public class GameManagerPaires : MonoBehaviour
     public void clicBoutonFermer(){
         panelJarreHead.SetActive(true);
         RetraitPanneauQuestions(aJuste);
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            panelComplémentReponse.SetActive(false);
+        }
     }
    
     //retrait panneau Question
