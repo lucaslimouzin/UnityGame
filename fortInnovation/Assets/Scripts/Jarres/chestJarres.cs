@@ -58,6 +58,7 @@ public class chestPaires : MonoBehaviour
         }//sinon c'est le mode Facile        
         else {
             if (other.gameObject.CompareTag("Player")){
+                nbReco =  MainGameManager.Instance.scoreRecoPaires;
                 panelReco.SetActive(true);           
             }
         }
