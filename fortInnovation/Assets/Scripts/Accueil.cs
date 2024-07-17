@@ -34,31 +34,13 @@ public class Accueil : MonoBehaviour
         characters[selectedCharacter].enabled = true;
     }
 
-    public void PlayInstructionModeNormal()
+    public void PlayGame()
     {
         MainGameManager.Instance.selectedCharacter = selectedCharacter;
         MainGameManager.Instance.jeuEnCours = "Instruction";
         MainGameManager.Instance.cinematiqueEnCours = "Introduction";
-        MainGameManager.Instance.niveauSelect = "Normal";
-        StartCoroutine(LoadSettingsAndStartGame("reglagesModeNormal.json"));
-    }
-
-    public void PlayInstructionModeEasy()
-    {
-        MainGameManager.Instance.selectedCharacter = selectedCharacter;
-        MainGameManager.Instance.jeuEnCours = "Instruction";
-        MainGameManager.Instance.cinematiqueEnCours = "Introduction";
-        MainGameManager.Instance.niveauSelect = "Facile";
-        StartCoroutine(LoadSettingsAndStartGame("reglagesModeEasy.json"));
-    }
-
-    private IEnumerator LoadSettingsAndStartGame(string settingsFileName)
-{
-    yield return MainGameManager.Instance.LoadSettings(settingsFileName);
-
+        SceneManager.LoadScene("AccueilPageLancement");
     
-
-    SceneManager.LoadScene("Cinematiques");
-}
+    }
 
 }
