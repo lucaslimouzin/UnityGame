@@ -15,6 +15,8 @@ public class GameManagerPaires : MonoBehaviour
 
     public GameObject panelComplémentReponse;
     public TextMeshProUGUI textComplementReponse;
+    public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI boutonTextReponse;
     public GameObject panelJarreHead;
     public Sprite[] headCharacter;
     public Image headAffiche;
@@ -253,7 +255,8 @@ public class GameManagerPaires : MonoBehaviour
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
         if (MainGameManager.Instance.niveauSelect == "Facile"){
-            textComplementReponse.text = "Complément de réponse : \n"+ question.complementReponse;
+            questionTextReponse.text = question.question;
+            textComplementReponse.text = question.complementReponse;
         }
         
         //met le fond des boutons en noir
@@ -326,21 +329,31 @@ public class GameManagerPaires : MonoBehaviour
             
         }
         // affiche le bouton fermer
-        buttonFermer.SetActive(true);
-        //si on a choisi le mode Facile
         if (MainGameManager.Instance.niveauSelect == "Facile"){
-            panelComplémentReponse.SetActive(true);
+            boutonTextReponse.text = "Suivant";
         }
+        buttonFermer.SetActive(true);
+        
+        
+    }
+    //action du bouton fermer
+    public void clicBoutonSuivant(){
+        panelComplémentReponse.SetActive(false);
+        panelJarreHead.SetActive(true);
+        RetraitPanneauQuestions(aJuste);
         
     }
 
     //action du bouton fermer
     public void clicBoutonFermer(){
-        panelJarreHead.SetActive(true);
-        RetraitPanneauQuestions(aJuste);
+        //si on a choisi le mode Facile
         if (MainGameManager.Instance.niveauSelect == "Facile"){
-            panelComplémentReponse.SetActive(false);
+            panelComplémentReponse.SetActive(true);
+        }else {
+            panelJarreHead.SetActive(true);
+            RetraitPanneauQuestions(aJuste);
         }
+        
     }
    
     //retrait panneau Question
