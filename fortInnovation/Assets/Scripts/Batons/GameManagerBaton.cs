@@ -10,6 +10,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBaton : MonoBehaviour
 {
+
+    // ajout v2
+    public GameObject panelComplémentReponse;
+    public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI textComplementReponse;
+    
+    public TextMeshProUGUI boutonTextReponse;
+    private string nomDoc;
+    //fin ajout v2
+
     public GameObject[] baton; 
     //public GameObject panelInstruction;
     public GameObject panelInfoMJ;
@@ -50,6 +60,7 @@ public class GameManagerBaton : MonoBehaviour
         public string question;
         public string[] propositions;
         public string reponseCorrecte;
+        public string complementReponse;
     }
 
     [System.Serializable]
@@ -105,8 +116,13 @@ public class GameManagerBaton : MonoBehaviour
 
     //fonction qui charge les questions depuis local
     IEnumerator LoadJsonFromLocal(){
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("BatonQuestions");
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            nomDoc = "BatonQuestions";
+        }else{
+            nomDoc = "BatonQuestionsFacile";//Mode facile
+        }
+        // Charger le fichier JSON Normal
+        TextAsset jsonFile = Resources.Load<TextAsset>(nomDoc);
         // Désérialiser les données JSON
         listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
         yield return null;
@@ -192,6 +208,12 @@ public class GameManagerBaton : MonoBehaviour
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
 
+        //ajout v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            questionTextReponse.text = question.question;
+            textComplementReponse.text = question.complementReponse;
+        }
+
         //met le fond des boutons en noir
         buttonA.image.sprite = imagesButton[0]; // "black"
         buttonB.image.sprite = imagesButton[0]; // "black"
@@ -255,14 +277,30 @@ public class GameManagerBaton : MonoBehaviour
             }
             
         }
-        // affiche le bouton fermer
+        // affiche le bouton fermer & v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            boutonTextReponse.text = "Suivant";
+        }
         buttonFermer.SetActive(true);
         
     }
 
-    //action du bouton fermer
-    public void clicBoutonFermer(){
+    //action du bouton fermer v2
+    public void clicBoutonPanelReponse(){
+        panelComplémentReponse.SetActive(false);
         RetraitPanneauQuestions(aJuste);
+        
+    }
+
+    //action du bouton fermer
+    public void clicBoutonPanelQuestion(){
+        //si on a choisi le mode Facile v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            panelComplémentReponse.SetActive(true);
+        }else {
+            RetraitPanneauQuestions(aJuste);
+        }
+        
     }
 
     //retrait panneau Question

@@ -10,6 +10,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerMarteau : MonoBehaviour
 {
+
+    // ajout v2
+    public GameObject panelComplémentReponse;
+    public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI textComplementReponse;
+    
+    public TextMeshProUGUI boutonTextReponse;
+    private string nomDoc;
+    //fin ajout v2
+
     public Sprite[] headCharacter;
     public Image headAffiche;
     public GameObject clouJoueur; 
@@ -71,6 +81,7 @@ public class GameManagerMarteau : MonoBehaviour
         public string question;
         public string[] propositions;
         public string reponseCorrecte;
+        public string complementReponse;
     }
 
     [System.Serializable]
@@ -148,8 +159,13 @@ public class GameManagerMarteau : MonoBehaviour
 
     //fonction qui charge les questions depuis local
     IEnumerator LoadJsonFromLocal(){
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("ClouQuestions");
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            nomDoc = "ClouQuestions";
+        }else{
+            nomDoc = "ClouQuestionsFacile";//Mode facile
+        }
+        // Charger le fichier JSON Normal
+        TextAsset jsonFile = Resources.Load<TextAsset>(nomDoc);
         // Désérialiser les données JSON
         listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
         yield return null;
@@ -322,6 +338,12 @@ public class GameManagerMarteau : MonoBehaviour
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
 
+        //ajout v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            questionTextReponse.text = question.question;
+            textComplementReponse.text = question.complementReponse;
+        }
+
         //met le fond des boutons en noir
         buttonA.image.sprite = imagesButton[0]; // "black"
         buttonB.image.sprite = imagesButton[0]; // "black"
@@ -390,15 +412,31 @@ public class GameManagerMarteau : MonoBehaviour
             }
             
         }
-        // affiche le bouton fermer
+        // affiche le bouton fermer & v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            boutonTextReponse.text = "Suivant";
+        }
         buttonFermer.SetActive(true);
+        
+    }
+    //action du bouton fermer v2
+    public void clicBoutonPanelReponse(){
+        panelComplémentReponse.SetActive(false);
+        panelJauge.SetActive(true);
+        RetraitPanneauQuestions(aJuste);
         
     }
 
     //action du bouton fermer
-    public void clicBoutonFermer(){
-        panelJauge.SetActive(true);
-        RetraitPanneauQuestions(aJuste);
+    public void clicBoutonPanelQuestion(){
+        //si on a choisi le mode Facile v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            panelComplémentReponse.SetActive(true);
+        }else {
+            panelJauge.SetActive(true);
+            RetraitPanneauQuestions(aJuste);
+        }
+        
     }
 
     //retrait panneau Question

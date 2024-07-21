@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: clicBoutonFermer
+      value: clicBoutonPanelQuestion
       objectReference: {fileID: 0}
     - target: {fileID: 1112545122510352132, guid: 67d1a0e37588eb446a15a042dda5a645,
         type: 3}
@@ -786,8 +786,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "panelCompl\xE9mentReponse": {fileID: 9081315371745701118}
-  textComplementReponse: {fileID: 2074475298603657191}
   questionTextReponse: {fileID: 8137029003776607039}
+  textComplementReponse: {fileID: 2074475298603657191}
   boutonTextReponse: {fileID: 1282785247}
   panelJarreHead: {fileID: 230284473}
   headCharacter:
@@ -4462,7 +4462,7 @@ PrefabInstance:
     - target: {fileID: 4060259424884070848, guid: 85c916fdc05468a46bbc79b2fcd95678,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: clicBoutonSuivant
+      value: clicBoutonPanelReponse
       objectReference: {fileID: 0}
     - target: {fileID: 4936870209161730562, guid: 85c916fdc05468a46bbc79b2fcd95678,
         type: 3}

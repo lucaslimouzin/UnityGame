@@ -12,11 +12,15 @@ public class GameManagerPaires : MonoBehaviour
 {
  
 
-
+    // ajout v2
     public GameObject panelComplémentReponse;
-    public TextMeshProUGUI textComplementReponse;
     public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI textComplementReponse;
+    
     public TextMeshProUGUI boutonTextReponse;
+    private string nomDoc;
+    //fin ajout v2
+
     public GameObject panelJarreHead;
     public Sprite[] headCharacter;
     public Image headAffiche;
@@ -65,7 +69,7 @@ public class GameManagerPaires : MonoBehaviour
     public TextMeshProUGUI trueWrongText;
     public int scoreMj = 0;
     public int scorePlayer = 0;
-    private string nomDoc;
+    
 
     [System.Serializable]
     public class QuestionData
@@ -254,6 +258,8 @@ public class GameManagerPaires : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+
+        //ajout v2
         if (MainGameManager.Instance.niveauSelect == "Facile"){
             questionTextReponse.text = question.question;
             textComplementReponse.text = question.complementReponse;
@@ -328,7 +334,7 @@ public class GameManagerPaires : MonoBehaviour
             }
             
         }
-        // affiche le bouton fermer
+        // affiche le bouton fermer & v2
         if (MainGameManager.Instance.niveauSelect == "Facile"){
             boutonTextReponse.text = "Suivant";
         }
@@ -336,8 +342,8 @@ public class GameManagerPaires : MonoBehaviour
         
         
     }
-    //action du bouton fermer
-    public void clicBoutonSuivant(){
+    //action du bouton fermer v2
+    public void clicBoutonPanelReponse(){
         panelComplémentReponse.SetActive(false);
         panelJarreHead.SetActive(true);
         RetraitPanneauQuestions(aJuste);
@@ -345,8 +351,8 @@ public class GameManagerPaires : MonoBehaviour
     }
 
     //action du bouton fermer
-    public void clicBoutonFermer(){
-        //si on a choisi le mode Facile
+    public void clicBoutonPanelQuestion(){
+        //si on a choisi le mode Facile v2
         if (MainGameManager.Instance.niveauSelect == "Facile"){
             panelComplémentReponse.SetActive(true);
         }else {
