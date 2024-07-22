@@ -7,6 +7,7 @@ using TMPro;
 public class chestPaires : MonoBehaviour
 {
     public GameObject panelReco;
+    public GameObject panelModeSimple;
     public GameObject panelReco1;
     public GameObject panelReco2;
     public GameObject panelReco3;
@@ -53,13 +54,14 @@ public class chestPaires : MonoBehaviour
         //ajout de la condition en fonction du choix du niveau
         if(MainGameManager.Instance.niveauSelect == "Normal"){
             if (other.gameObject.CompareTag("Player")){
+                
                 panelReco.SetActive(true);           
             }
         }//sinon c'est le mode Facile        
         else {
             if (other.gameObject.CompareTag("Player")){
                 nbReco =  MainGameManager.Instance.scoreRecoPaires;
-                panelReco.SetActive(true);           
+                panelModeSimple.SetActive(true);           
             }
         }
     }
@@ -73,7 +75,7 @@ public class chestPaires : MonoBehaviour
         }//sinon c'est le mode normal
         else {
              if (panelReco.activeSelf){
-                panelReco.SetActive(false);
+                panelModeSimple.SetActive(false);
              }
         }
         

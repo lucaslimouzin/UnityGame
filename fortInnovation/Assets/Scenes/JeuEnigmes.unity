@@ -1410,6 +1410,7 @@ MonoBehaviour:
   buttonTextEnigmes: {fileID: 45022281}
   MJText: {fileID: 1611861898}
   textEnigmeInfo: {fileID: 965714790}
+  textEnigme: {fileID: 569936062}
   allLetterButtons:
   - {fileID: 1850071546}
   - {fileID: 724539438}
@@ -2264,7 +2265,7 @@ GameObject:
   - component: {fileID: 569936063}
   - component: {fileID: 569936062}
   m_Layer: 5
-  m_Name: TexteMaitreDuJeu (1)
+  m_Name: TexteIndice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

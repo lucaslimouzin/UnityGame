@@ -706,7 +706,14 @@ public class GameManagerPaires : MonoBehaviour
         if (tourJoueur) {
             MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
             //envoi vers le Main Game Manager le scorePaires
-            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 2);
+
+            //ajout v2 choix mode de jeu
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 2);
+            }else{
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 1);
+            } 
+            
             if (MainGameManager.Instance.scoreRecoPaires == 6) {
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires-= 1);
             }

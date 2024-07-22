@@ -18,6 +18,7 @@ public class GameManagerEnigmes : MonoBehaviour
     public GameObject buttonTextEnigmes;
     public TextMeshProUGUI MJText;
     public TextMeshProUGUI textEnigmeInfo;
+    public TextMeshProUGUI textEnigme;
     private bool tourJoueur = true;
     private bool finDuJeu = false;
     
@@ -59,7 +60,12 @@ public class GameManagerEnigmes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            wordToFind = "ECOSYSTEME";
+        }else{
+            wordToFind = "PARTICIPATIF";//Mode facile
+            textEnigme.text = "Je suis souvent synonyme de collaboration, un processus où chacun peut apporter sa contribution. Je valorise l'implication collective, pour créer ensemble quelque chose de positif.";
+        }
         panelEnigmes.SetActive(false);
         panelInfoMJ.SetActive(false);
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
@@ -154,11 +160,21 @@ public class GameManagerEnigmes : MonoBehaviour
         switch(compteurEssai){
             case 1:
                 //indice 1
-                 MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un E</color>";
+                if(MainGameManager.Instance.niveauSelect =="Normal"){
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un E</color>";
+                }else{
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un P</color>";
+                }
+                 
                 break;
             case 2:
                 //indice 2
-                MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot commence par un ECO</color>";
+                if(MainGameManager.Instance.niveauSelect =="Normal"){
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot commence par un ECO</color>";
+                }else{
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot comporte 12 lettres</color>";
+                }
+                
                 break;
         }
     }
