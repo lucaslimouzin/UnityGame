@@ -15,8 +15,17 @@ public class DesGameManager : MonoBehaviour
     public TextMeshProUGUI textNbParties;
     public TextMeshProUGUI textConsignes;
     public TextMeshProUGUI textTitre;
+      public Image imageScore;
 
     void Start() {
+        
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
+        
         panelQuiCommence.SetActive(false);
         panelTirageDesDes.SetActive(false);
         panelConsignes.SetActive(true);

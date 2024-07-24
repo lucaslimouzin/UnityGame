@@ -456,10 +456,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bienvenue dans la cellule des Paires ! \r\n\r\nVous allez affronter le
-    Ma\xEEtre du jeu dans une \xE9preuve de m\xE9moire pour tenter de remporter les
-    5 recommandations du principe 1 de l'innovation participative : \"Donner du sens
-    et la direction\".\r\r\nBonne chance !"
+  m_text: "Bravo tu as remport\xE9 cette \xE9preuve, tu peux d\xE9sormais quitter
+    cette salle.\nRends toi \xE0 la prochaine \xE9preuve pour affronter un autre
+    maitre de l'innovation.\nBon courage"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
   m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,

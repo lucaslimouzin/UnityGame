@@ -785,6 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8eb61e8e2d83845a70982492e6fa72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageScore: {fileID: 1620567968}
   "panelCompl\xE9mentReponse": {fileID: 9081315371745701118}
   questionTextReponse: {fileID: 8137029003776607039}
   textComplementBonneReponse: {fileID: 8926517523401447671}
@@ -3166,6 +3167,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1620567966}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1620567968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7622861838475153917, guid: 364cc89a7d63c81498bfa4f3941933f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1620567966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1630658794
 GameObject:
   m_ObjectHideFlags: 0

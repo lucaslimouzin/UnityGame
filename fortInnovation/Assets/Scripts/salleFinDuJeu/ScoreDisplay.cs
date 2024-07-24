@@ -28,6 +28,8 @@ public class ScoresList
 
 public class ScoreDisplay : MonoBehaviour
 {
+    public Image imageScore;
+
     public TextMeshProUGUI texteNiveau;
     public GameObject scorePrefab; // Référence au prefab Text ou TextMeshPro
     public Transform scoresParent; // Référence au parent sous le Canvas où les scores seront affichés
@@ -44,6 +46,12 @@ public class ScoreDisplay : MonoBehaviour
     
     void Start()
     {
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
          // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
 
@@ -63,10 +71,10 @@ public class ScoreDisplay : MonoBehaviour
                     texteNiveau.text = "<u>Niveau Débutant :</u> Tu as compris les concepts de base de l’innovation et tu es familiarisé avec quelques exemples d’innovations historiques et contemporaines. Recommence le jeu pour atteindre un niveau supérieur.";
                 break;
                 case <5:
-                    texteNiveau.text = "Niveau Intermédiaire : Les concepts de base sont maitrisés et tu as une bonne connaissance des approches et outils en innovation. Tu as compris la gestion de l'innovation et ces cycles de vie. Tu as déjà atteint un très haut niveau, encore quelques efforts est tu seras un expert en innovation.";
+                    texteNiveau.text = "<u>Niveau Intermédiaire :</u> Les concepts de base sont maitrisés et tu as une bonne connaissance des approches et outils en innovation. Tu as compris la gestion de l'innovation et ces cycles de vie. Tu as déjà atteint un très haut niveau, encore quelques efforts est tu seras un expert en innovation.";
                 break;
                 case >4:
-                    texteNiveau.text = "Niveau Expert : Félicitation, te voilà expert en innovation. Maintenant que tu as une connaissance approfondie des bases de l’innovation, découvre une approche de l’innovation fondée sur le collectif : l’innovation participative.";
+                    texteNiveau.text = "<u>Niveau Expert :</u> Félicitation, te voilà expert en innovation. Maintenant que tu as une connaissance approfondie des bases de l’innovation, découvre une approche de l’innovation fondée sur le collectif : l’innovation participative.";
                 break;
             }
 

@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 419183785}
   - component: {fileID: 419183784}
   m_Layer: 5
-  m_Name: textInstructions1 (1)
+  m_Name: textInstructions2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,6 +1388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueButton: {fileID: 1160805230}
+  imageScore: {fileID: 898374428}
+  texteObjectif: {fileID: 1011134869}
 --- !u!1 &980058180
 GameObject:
   m_ObjectHideFlags: 0

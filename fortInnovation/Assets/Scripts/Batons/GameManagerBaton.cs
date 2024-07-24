@@ -12,6 +12,7 @@ public class GameManagerBaton : MonoBehaviour
 {
 
     // ajout v2
+    public Image imageScore;
     public GameObject panelComplémentReponse;
     public TextMeshProUGUI questionTextReponse;
     public TextMeshProUGUI textComplementReponse;
@@ -99,7 +100,12 @@ public class GameManagerBaton : MonoBehaviour
     void Start()
     {
         
-        
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
 
         //charge la coroutine qui va récupérer le fichier Json 

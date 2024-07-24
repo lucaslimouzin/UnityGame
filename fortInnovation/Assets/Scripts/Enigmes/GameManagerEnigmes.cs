@@ -12,6 +12,7 @@ using System.Linq;
 
 public class GameManagerEnigmes : MonoBehaviour
 {
+    public Image imageScore;
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelEnigmes;
@@ -60,6 +61,12 @@ public class GameManagerEnigmes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
         if(MainGameManager.Instance.niveauSelect =="Normal"){
             wordToFind = "ECOSYSTEME";
         }else{

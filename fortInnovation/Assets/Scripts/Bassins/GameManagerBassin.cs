@@ -11,6 +11,7 @@ using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
     // ajout v2
+    public Image imageScore;
     public GameObject panelComplémentReponse;
     public TextMeshProUGUI questionTextReponse;
     public TextMeshProUGUI textComplementReponse;
@@ -107,6 +108,13 @@ public class GameManagerBassin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
+        
         wall.SetActive(false);
         switch (MainGameManager.Instance.selectedCharacter) {
             case 0: 

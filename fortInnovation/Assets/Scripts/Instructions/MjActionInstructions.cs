@@ -28,8 +28,16 @@ public class MjActionInstructions : MonoBehaviour
     {   
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
-        imageScore.sprite= MainGameManager.Instance.imageScore[1];
+
         MainGameManager.Instance.tutoCompteur = 0;
+
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
+        
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         //desactive le deplacement

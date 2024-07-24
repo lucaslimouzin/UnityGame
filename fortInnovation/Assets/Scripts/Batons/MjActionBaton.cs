@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MjActionBaton : MonoBehaviour
 {
@@ -11,10 +12,16 @@ public class MjActionBaton : MonoBehaviour
     public GameObject panelRoom;
     public TextMeshProUGUI textMjRoom;
     public GameObject chest;
+     public Image imageScore;
     // Start is called before the first frame update
     void Start()
     {   
-        
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
         
         //Cursor.lockState = CursorLockMode.Locked;
         //panelRoom.SetActive(true);

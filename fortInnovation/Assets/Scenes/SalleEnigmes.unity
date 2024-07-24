@@ -2592,6 +2592,7 @@ MonoBehaviour:
   panelRoom: {fileID: 1590896136}
   textMjRoom: {fileID: 812949133}
   chest: {fileID: 218342119}
+  imageScore: {fileID: 1546170340}
 --- !u!114 &1280126036 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8578938015735817886, guid: 2cc26dbccc1f2bc488bb3459aa17ecfe,
@@ -3326,6 +3327,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1546170338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1546170340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7622861838475153917, guid: 364cc89a7d63c81498bfa4f3941933f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1546170338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1550858006
 GameObject:
   m_ObjectHideFlags: 0
