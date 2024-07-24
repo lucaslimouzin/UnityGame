@@ -7,10 +7,18 @@ using UnityEngine.UI;
 public class GestionCinematiques : MonoBehaviour
 {
     public GameObject panelCinematiqueIntro;
+    public GameObject imageCinematique;
+    public Texture[] textureCinematiques;
     private AsyncOperation asyncOperation;
 
     // Start is called before the first frame update
     void Start() {
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+                imageCinematique.GetComponent<RawImage>().texture = textureCinematiques[0];                
+            }
+        else {
+            imageCinematique.GetComponent<RawImage>().texture = textureCinematiques[1]; 
+        }
         // Recherchez le bouton par son nom
         GameObject buttonSuivant = GameObject.Find("ButtonSuivant");
         buttonSuivant.SetActive(false);

@@ -28,10 +28,12 @@ public class ScoresList
 
 public class ScoreDisplay : MonoBehaviour
 {
+    public TextMeshProUGUI texteNiveau;
     public GameObject scorePrefab; // Référence au prefab Text ou TextMeshPro
     public Transform scoresParent; // Référence au parent sous le Canvas où les scores seront affichés
     public TMP_InputField playerNameInput; // Référence à l'InputField du nom du joueur
-    public TextMeshProUGUI playerScoreText; // Référence à l'InputField du nom du joueur
+    public TextMeshProUGUI playerScoreText; 
+    public TextMeshProUGUI playerScoreTextModeSimple; 
     public int score = 0; 
     public Button submitButton; // Ajoutez cette ligne en haut de votre script
     private List<GameObject> currentScoreObjects = new List<GameObject>();
@@ -50,8 +52,26 @@ public class ScoreDisplay : MonoBehaviour
             Debug.LogError("ThirdPersonController not found in the scene.");
         }
         score = MainGameManager.Instance.scoreReco;
-        playerScoreText.text = "Votre avez remporté " + score.ToString() + " / 17\nrecommandations.";
-        
+        //ajout v2
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            playerScoreText.text = "Votre avez remporté " + score.ToString() + " / 17\nrecommandations.";
+        }else{
+            playerScoreTextModeSimple.text = "Votre avez remporté " + score.ToString() + " / 5\nduels.";
+            
+            switch (score){
+                case <3:
+                    texteNiveau.text = "<u>Niveau Débutant :</u> Tu as compris les concepts de base de l’innovation et tu es familiarisé avec quelques exemples d’innovations historiques et contemporaines. Recommence le jeu pour atteindre un niveau supérieur.";
+                break;
+                case <5:
+                    texteNiveau.text = "Niveau Intermédiaire : Les concepts de base sont maitrisés et tu as une bonne connaissance des approches et outils en innovation. Tu as compris la gestion de l'innovation et ces cycles de vie. Tu as déjà atteint un très haut niveau, encore quelques efforts est tu seras un expert en innovation.";
+                break;
+                case >4:
+                    texteNiveau.text = "Niveau Expert : Félicitation, te voilà expert en innovation. Maintenant que tu as une connaissance approfondie des bases de l’innovation, découvre une approche de l’innovation fondée sur le collectif : l’innovation participative.";
+                break;
+            }
+
+        }
+                
         // Ajoutez le gestionnaire de clics pour le texte avec lien
         playerScoreText.gameObject.AddComponent<LinkHandler>();
         //StartCoroutine(GetScores());

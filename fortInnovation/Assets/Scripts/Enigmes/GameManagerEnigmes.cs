@@ -64,7 +64,8 @@ public class GameManagerEnigmes : MonoBehaviour
             wordToFind = "ECOSYSTEME";
         }else{
             wordToFind = "PARTICIPATIF";//Mode facile
-            textEnigme.text = "Je suis souvent synonyme de collaboration, un processus où chacun peut apporter sa contribution. Je valorise l'implication collective, pour créer ensemble quelque chose de positif.";
+            textEnigme.text = "Je suis souvent synonyme de collaboration, un processus où chacun peut apporter sa contribution.\n Je valorise l'implication collective, pour créer ensemble quelque chose de positif.";
+            textEnigme.fontSize = 35;
         }
         panelEnigmes.SetActive(false);
         panelInfoMJ.SetActive(false);
@@ -211,13 +212,23 @@ public class GameManagerEnigmes : MonoBehaviour
         panelInfoMJ.SetActive(true);
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
-            MJText.text = "Bravo le mot était bien Ecosystème, vous avez remporté deux recommandations";
             //envoi vers le Main Game Manager le scoreEnigme
-            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Bravo le mot était bien Ecosystème, vous avez remporté deux recommandations";
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
+            }else{
+                MJText.text = "Bravo le mot était bien Participatif, vous avez remporté la partie";
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 1);
+            } 
+            
             StartCoroutine(ShowAndHideGagneText());
         }
         else {
-            MJText.text = "Maître du jeu : Vous avez échoué, je détruis les deux recommandations";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Maître du jeu : Vous avez échoué, je détruis les deux recommandations";
+            }else{
+                MJText.text = "Maître du jeu : Vous avez échoué !";
+            } 
             StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieEnigmesJoue += 1;

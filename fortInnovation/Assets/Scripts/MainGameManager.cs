@@ -57,21 +57,7 @@ public class MainGameManager : MonoBehaviour
     public string nbRecoMax;
     public string niveauSelect;
 
-    // Dialogues
-    public List<string> dialogueSallePaires = new List<string>();
-    public List<string> dialogueSalleBaton = new List<string>();
-    public List<string> dialogueSalleClou = new List<string>();
-    public List<string> dialogueSalleBassin = new List<string>();
-    public List<string> dialogueSalleEnigmes = new List<string>();
-    public List<string> dialogueSalleIntroduction = new List<string>();
-    public List<string> dialogueSalleAccueil = new List<string>();
-    public List<string> dialogueSalleFin = new List<string>();
-    public List<string> dialogueJeuPaires = new List<string>();
-    public List<string> dialogueJeuBaton = new List<string>();
-    public List<string> dialogueJeuClou = new List<string>();
-    public List<string> dialogueJeuBassin = new List<string>();
-    public List<string> dialogueJeuEnigme = new List<string>();
-
+    
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScorePaires, int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);
     public static event ScoreUpdated OnScoreUpdated;
@@ -228,24 +214,6 @@ public class MainGameManager : MonoBehaviour
         panelUiMobile = settings.reglagesJeux.panelUiMobile;
         tutoCompteur = settings.reglagesJeux.tutoCompteur;
         nbRecoMax = settings.reglagesJeux.nbRecoMax;
-
-        dialogueSallePaires = settings.dialogueSallePaires;
-        dialogueSalleBaton = settings.dialogueSalleBaton;
-        dialogueSalleClou = settings.dialogueSalleClou;
-        dialogueSalleBassin = settings.dialogueSalleBassin;
-        dialogueSalleEnigmes = settings.dialogueSalleEnigmes;
-        dialogueSalleIntroduction = settings.dialogueSalleIntroduction;
-        dialogueSalleAccueil = settings.dialogueSalleAccueil;
-        dialogueSalleFin = settings.dialogueSalleFin;
-        dialogueJeuPaires = settings.dialogueJeuPaires;
-        dialogueJeuBaton = settings.dialogueJeuBaton;
-        dialogueJeuClou = settings.dialogueJeuClou;
-        dialogueJeuBassin = settings.dialogueJeuBassin;
-        dialogueJeuEnigme = settings.dialogueJeuEnigme;
-
-        
-       
-
     }
 
     [System.Serializable]
@@ -292,18 +260,5 @@ public class MainGameManager : MonoBehaviour
 public class Settings
 {
     public ReglagesJeux reglagesJeux;
-    public List<string> dialogueSallePaires;
-    public List<string> dialogueSalleBaton;
-    public List<string> dialogueSalleClou;
-    public List<string> dialogueSalleBassin;
-    public List<string> dialogueSalleEnigmes;
-    public List<string> dialogueSalleIntroduction;
-    public List<string> dialogueSalleAccueil;
-    public List<string> dialogueSalleFin;
-    public List<string> dialogueJeuPaires;
-    public List<string> dialogueJeuBaton;
-    public List<string> dialogueJeuClou;
-    public List<string> dialogueJeuBassin;
-    public List<string> dialogueJeuEnigme;
 }
 }

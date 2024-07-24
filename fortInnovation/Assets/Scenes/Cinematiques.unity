@@ -855,6 +855,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelCinematiqueIntro: {fileID: 1905033753}
+  imageCinematique: {fileID: 979656417}
+  textureCinematiques:
+  - {fileID: 2800000, guid: ee27cf7b0f6edda4dab08fbb60d8f7b5, type: 3}
+  - {fileID: 2800000, guid: 66e5b36652609bf4ea73e6680d361761, type: 3}
 --- !u!1 &979656417
 GameObject:
   m_ObjectHideFlags: 0

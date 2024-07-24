@@ -39,12 +39,12 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = MainGameManager.Instance.dialogueSalleIntroduction[0];
+        textMjRoom.text = "Pour te déplacer,\nutilise les flèches de ton clavier.\nPour t'entrainer, essaie d'atteindre le coffre.";
         //textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
         //initialisation du texte du panel coffre
-        texte1Coffre.text = MainGameManager.Instance.dialogueSalleIntroduction[1];
-        texte2Coffre.text = MainGameManager.Instance.dialogueSalleIntroduction[2];
-        texte1MjInfo.text = MainGameManager.Instance.dialogueSalleIntroduction[4];
+        texte1Coffre.text = "Durant la partie tu vas retrouver des panneaux d'instructions comme celui-çi.";
+        texte2Coffre.text = "Ils te donneront des consignes pour les jeux et te permettront également de lire les recommandations gagnées.";
+        texte1MjInfo.text = "Te voilà fin prêt(e) à débuter ton aventure !\n\nClique sur le bouton “entrer” et retrouve-moi dans la salle suivante.";
     }
 
     // Update is called once per frame
@@ -111,7 +111,7 @@ public class MjActionInstructions : MonoBehaviour
         panelRoom.SetActive(true);
         //desactive le deplacement
         DisableGameplayInput();
-        textMjRoom.text = MainGameManager.Instance.dialogueSalleIntroduction[3];
+        textMjRoom.text = "Dirige toi à présent vers la porte pour débuter l'aventure !";
         MainGameManager.Instance.tutoCompteur = 1;
         
     }

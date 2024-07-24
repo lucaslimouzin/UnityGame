@@ -625,7 +625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8d7b24572f0a84798b2b9cf5127d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dieMj: {fileID: 5108346168988538270}
 --- !u!1 &230284473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,7 +1668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c409adc84d56bb49b7002c5648d693c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diePlayer: {fileID: 8999226257607911055}
 --- !u!65 &687032400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3755,7 +3753,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5108346168988538269}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108346168988538270}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8805b9f694c596a4cb0ea1d781669cf0, type: 3}
@@ -4563,7 +4561,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8999226257607911054}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8999226257607911055}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb2f8253abdc67843a47f6b7e1d162cb, type: 3}
@@ -5247,12 +5245,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 398ee0b153b3a1d4da2665279c0dc0da, type: 3}
---- !u!1 &5108346168988538270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 736731971929836160, guid: 398ee0b153b3a1d4da2665279c0dc0da,
-    type: 3}
-  m_PrefabInstance: {fileID: 5108346168988538269}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8999226257607911054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5429,12 +5421,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d69381669369c548850f3e9ffccf6fe, type: 3}
---- !u!1 &8999226257607911055 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5729774231655837321, guid: 2d69381669369c548850f3e9ffccf6fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 8999226257607911054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
