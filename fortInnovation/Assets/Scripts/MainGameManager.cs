@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 
 public class MainGameManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class MainGameManager : MonoBehaviour
     public static MainGameManager Instance;
     private TextMeshProUGUI scoreTextReco;
     public int scoreReco = 0;
+    public Sprite[] imageScore;
 
     // Variables de jeu
     public int nbPartiePaires;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MjActionInstructions : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class MjActionInstructions : MonoBehaviour
     public TextMeshProUGUI texte2Coffre;
     public TextMeshProUGUI texte1MjInfo;
     private StarterAssets.ThirdPersonController thirdPersonController;
+    public Image imageScore;
 
 
 
@@ -26,7 +28,7 @@ public class MjActionInstructions : MonoBehaviour
     {   
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
-        
+        imageScore.sprite= MainGameManager.Instance.imageScore[1];
         MainGameManager.Instance.tutoCompteur = 0;
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
