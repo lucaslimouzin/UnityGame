@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 public class MjActionPaires : MonoBehaviour
 {
     public GameObject panelMjInfo;
+    public TextMeshProUGUI textMjInfo;
     public GameObject panelReco;
-    public GameObject panelRoom;
-    public TextMeshProUGUI textMjRoom;
     public GameObject chest;
     // Start is called before the first frame update
     void Start()
@@ -25,13 +24,17 @@ public class MjActionPaires : MonoBehaviour
         if (MainGameManager.Instance.gamePairesFait) {
                 //active le coffre
                 chest.SetActive(true);
-                textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
+                textMjInfo.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
         }
         else {
             //desactive le coffre
                 chest.SetActive(false);
-            //change le message du panel Room
-            textMjRoom.text = "Bienvenue dans la cellule des Paires ! \n\nVous allez affronter le Maître du jeu dans une épreuve de mémoire pour tenter de remporter les 5 recommandations du principe 1 de l'innovation participative : \"Donner du sens et la direction\". \nBonne chance !";
+            //change le message du panel info
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                textMjInfo.text = "Bienvenue dans la cellule des Paires ! \n\nVous allez affronter le Maître du jeu dans une épreuve de mémoire pour tenter de remporter les 5 recommandations du principe 1 de l'innovation participative : \"Donner du sens et la direction\". \nBonne chance !";
+            }else{
+                textMjInfo.text = "Bienvenue dans la cellule des Paires ! \n\nVous allez affronter le Maître du jeu dans une épreuve de mémoire.\nBonne chance !";
+            }
         }
        
     }
@@ -45,12 +48,8 @@ public class MjActionPaires : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gamePairesFait) {
-                panelMjInfo.SetActive(true);
-                
-                
-                
+                panelMjInfo.SetActive(true);   
             }
              
         }
@@ -58,25 +57,17 @@ public class MjActionPaires : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gamePairesFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
-                    
-                    
-                    
                 }   
-            }
-            
+            }  
         }
     }
 
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
-            panelReco.SetActive(false);
-            
-            
-            
+            panelReco.SetActive(false);  
         }   
     }
 

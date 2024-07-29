@@ -224,7 +224,7 @@ public class GameManagerEnigmes : MonoBehaviour
                 MJText.text = "Bravo le mot était bien Ecosystème, vous avez remporté deux recommandations";
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
             }else{
-                MJText.text = "Bravo le mot était bien Participatif, vous avez remporté la partie";
+                MJText.text = "Bravo le mot était bien Participatif, vous avez remporté le duel";
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 1);
             } 
             
@@ -234,7 +234,7 @@ public class GameManagerEnigmes : MonoBehaviour
             if(MainGameManager.Instance.niveauSelect =="Normal"){
                 MJText.text = "Maître du jeu : Vous avez échoué, je détruis les deux recommandations";
             }else{
-                MJText.text = "Maître du jeu : Vous avez échoué !";
+                MJText.text = "Maître du jeu : Vous avez échoué ce duel !";
             } 
             StartCoroutine(ShowAndHidePerduText());
         }

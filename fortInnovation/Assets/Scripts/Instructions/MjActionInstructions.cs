@@ -53,7 +53,12 @@ public class MjActionInstructions : MonoBehaviour
         //textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
         //initialisation du texte du panel coffre
         texte1Coffre.text = "Durant la partie tu vas retrouver des panneaux d'instructions comme celui-çi.";
-        texte2Coffre.text = "Ils te donneront des consignes pour les jeux et te permettront également de lire les recommandations gagnées.";
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+                texte2Coffre.text = "Ils te donneront des consignes pour les jeux et te permettront également de lire les recommandations gagnées.";
+            }else{
+                texte2Coffre.text = "Ils te donneront des consignes pour les jeux.";
+        }
+        
         texte1MjInfo.text = "Te voilà fin prêt(e) à débuter ton aventure !\n\nClique sur le bouton “entrer” et retrouve-moi dans la salle suivante.";
     }
 

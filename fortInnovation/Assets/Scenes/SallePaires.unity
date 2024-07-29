@@ -2894,9 +2894,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelMjInfo: {fileID: 107317711}
+  textMjInfo: {fileID: 107317712}
   panelReco: {fileID: 709726220}
   panelRoom: {fileID: 978707736}
-  textMjRoom: {fileID: 107317712}
   chest: {fileID: 2110367814}
 --- !u!1001 &1256081322
 PrefabInstance:

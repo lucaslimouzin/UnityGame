@@ -442,13 +442,22 @@ public class GameManagerBaton : MonoBehaviour
         else
         {
             if (win){
-                MJText.text = "Maître du jeu : bravo vous avez remporté une recommandation !";
+                //ajout v2
+                if(MainGameManager.Instance.niveauSelect =="Normal"){
+                    MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+                }else{
+                    MJText.text = "Maître du jeu : Bravo vous avez remporté le duel";
+                }
                 //envoi vers le Main Game Manager le scoreBaton 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoBaton += 1);
                 StartCoroutine(ShowAndHideGagneText());
             }
             else {
-                MJText.text = "Maître du jeu : Dommage, vous avez échoué si près du but je détruis la recommandation !";
+                if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+                }else{
+                    MJText.text = "Maître du jeu : Vous avez échoué ce duel";
+                }
                 StartCoroutine(ShowAndHidePerduText());
             }
             // Toutes les questions ont été posées, fin du jeu

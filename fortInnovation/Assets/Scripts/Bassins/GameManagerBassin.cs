@@ -519,13 +519,22 @@ public class GameManagerBassin : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+            //ajout v2
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+            }else{
+                MJText.text = "Maître du jeu : Bravo vous avez remporté le duel";
+            }
             //envoi vers le Main Game Manager le scoreClou 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
                 StartCoroutine(ShowAndHideGagneText());
         }
         else {
-            MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            }else{
+                MJText.text = "Maître du jeu : Vous avez échoué ce duel";
+            }
             StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieBassinJoue += 1;
