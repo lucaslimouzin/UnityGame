@@ -8,7 +8,6 @@ public class MjActionPaires : MonoBehaviour
 {
     public GameObject panelMjInfo;
     public TextMeshProUGUI textMjInfo;
-    public GameObject panelReco;
     public GameObject chest;
     // Start is called before the first frame update
     void Start()
@@ -67,7 +66,6 @@ public class MjActionPaires : MonoBehaviour
 
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
-            panelReco.SetActive(false);  
         }   
     }
 
