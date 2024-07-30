@@ -8,9 +8,7 @@ using UnityEngine.UI;
 public class MjActionEnigmes : MonoBehaviour
 {
     public GameObject panelMjInfo;
-    public GameObject panelReco;
-    public GameObject panelRoom;
-    public TextMeshProUGUI textMjRoom;
+    public TextMeshProUGUI textMjInfo;
     public GameObject chest;
     public Image imageScore;
     // Start is called before the first frame update
@@ -32,13 +30,18 @@ public class MjActionEnigmes : MonoBehaviour
         if (MainGameManager.Instance.gameEnigmesFait) {
                 //active le coffre
                 chest.SetActive(true);
-                textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
+                textMjInfo.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
         }
         else {
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Bienvenue dans la cellule des Enigmes !\n\nVous allez affronter le Maître du jeu dans une épreuve de réflexion pour tenter de remporter les 2 recommandations du principe 5 de l'innovation participative : \"Penser et agir en ecosystème\".\nBonne chance !";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                textMjInfo.text = "Bienvenue dans la cellule des Enigmes !\n\nVous allez affronter le Maître du jeu dans une épreuve de réflexion pour tenter de remporter les 2 recommandations du principe 5 de l'innovation participative : \"Penser et agir en ecosystème\".\nBonne chance !";
+            }else{
+               textMjInfo.text = "Bienvenue dans la cellule des Enigmes !\n\nVous allez affronter le Maître du jeu dans une épreuve de réflexion.\nBonne chance !";
+            }
+            
         }
        
     }
@@ -52,7 +55,6 @@ public class MjActionEnigmes : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gameEnigmesFait) {
                 panelMjInfo.SetActive(true);
                 
@@ -65,7 +67,6 @@ public class MjActionEnigmes : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gameEnigmesFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
@@ -80,10 +81,6 @@ public class MjActionEnigmes : MonoBehaviour
 
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
-            panelReco.SetActive(false);
-            
-            
-            
         }   
     }
 

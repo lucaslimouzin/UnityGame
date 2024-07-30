@@ -36,7 +36,12 @@ public class MjActionBassin : MonoBehaviour
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjInfo.text = "Bienvenue dans la cellule des Bassins !\n\nVous allez affronter le Maître du jeu dans une épreuve d'adresse pour tenter de remporter les 3 recommandations du principe 3 de l'innovation participative : \"Accompagner l'expérimentation et le déploiement des innovations\".\nBonne chance !";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                textMjInfo.text = "Bienvenue dans la cellule des Bassins !\n\nVous allez affronter le Maître du jeu dans une épreuve d'adresse pour tenter de remporter les 3 recommandations du principe 3 de l'innovation participative : \"Accompagner l'expérimentation et le déploiement des innovations\".\nBonne chance !";
+            }else{
+                textMjInfo.text = "Bienvenue dans la cellule des Bassins !\n\nVous allez affronter le Maître du jeu dans une épreuve d'adresse.\nBonne chance !";
+            }
+            
         }
        
     }

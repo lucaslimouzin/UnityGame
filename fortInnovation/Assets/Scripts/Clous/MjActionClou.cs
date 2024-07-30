@@ -8,9 +8,7 @@ using UnityEngine.UI;
 public class MjActionClou : MonoBehaviour
 {
     public GameObject panelMjInfo;
-    public GameObject panelReco;
-    public GameObject panelRoom;
-    public TextMeshProUGUI textMjRoom;
+    public TextMeshProUGUI textMjInfo;
     public GameObject chest;
     public Image imageScore;
     // Start is called before the first frame update
@@ -32,13 +30,18 @@ public class MjActionClou : MonoBehaviour
         if (MainGameManager.Instance.gameClouFait) {
                 //active le coffre
                 chest.SetActive(true);
-                textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
+                textMjInfo.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
         }
         else {
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
-            textMjRoom.text = "Bienvenue dans la cellule des Clous !\n\nVous allez affronter le Maître du jeu dans une épreuve de force pour tenter de remporter les 3 recommandations du principe 4 de l'innovation participative : \"Maintenir l'envie d'innover\".\nBonne chance !";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                textMjInfo.text = "Bienvenue dans la cellule des Clous !\n\nVous allez affronter le Maître du jeu dans une épreuve de force pour tenter de remporter les 3 recommandations du principe 4 de l'innovation participative : \"Maintenir l'envie d'innover\".\nBonne chance !";
+            }else{
+                textMjInfo.text = "Bienvenue dans la cellule des Clous !\n\nVous allez affronter le Maître du jeu dans une épreuve de force.\nBonne chance !";
+            }
+            
         }
        
     }
@@ -52,12 +55,8 @@ public class MjActionClou : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gameClouFait) {
-                panelMjInfo.SetActive(true);
-                
-                
-                
+                panelMjInfo.SetActive(true); 
             }
              
         }
@@ -65,13 +64,9 @@ public class MjActionClou : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gameClouFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
-                    
-                    
-                    
                 }   
             }
             
@@ -80,10 +75,6 @@ public class MjActionClou : MonoBehaviour
 
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
-            panelReco.SetActive(false);
-            
-            
-            
         }   
     }
 
