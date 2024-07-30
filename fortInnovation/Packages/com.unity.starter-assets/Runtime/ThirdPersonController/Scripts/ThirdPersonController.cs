@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -109,7 +110,9 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
-
+        //ajout lucas 
+        private NavMeshAgent _navAgent;
+        private Transform goal;
         private bool IsCurrentDeviceMouse
         {
             get
@@ -150,6 +153,27 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            // _navAgent = GetComponent<NavMeshAgent>();
+            // if (_navAgent == null)
+            // {
+            //     Debug.LogError("NavMeshAgent is null");
+            // }
+            // else
+            // {
+            //     Debug.Log("NavMeshAgent successfully initialized");
+            // }
+
+            // GameObject treasureChest = GameObject.Find("treasure_chest");
+            // if (treasureChest != null)
+            // {
+            //     goal = treasureChest.GetComponent<Transform>();
+            //     Debug.Log("Goal successfully found");
+            // }
+            // else
+            // {
+            //     Debug.LogError("Treasure Chest not found");
+            // }
         }
 
         private void Update()
@@ -159,6 +183,69 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            //  if (Input.GetMouseButtonDown(0))
+            //     {
+            //         if (_navAgent != null && goal != null)
+            //         {
+            //             _navAgent.isStopped = false; // Assurez-vous que l'agent n'est pas arrêté
+            //             _navAgent.SetDestination(goal.position);
+            //             Debug.Log("Setting destination to goal position: " + goal.position);
+
+            //             // Vérifiez l'état du chemin du NavMeshAgent
+            //             if (_navAgent.pathStatus == NavMeshPathStatus.PathComplete)
+            //             {
+            //                 Debug.Log("Path complete");
+            //             }
+            //             else if (_navAgent.pathStatus == NavMeshPathStatus.PathPartial)
+            //             {
+            //                 Debug.LogWarning("Path is partial");
+            //             }
+            //             else if (_navAgent.pathStatus == NavMeshPathStatus.PathInvalid)
+            //             {
+            //                 Debug.LogError("Path is invalid");
+            //             }
+
+            //             // Ajoutez une vérification pour voir si l'agent est en mouvement
+            //             if (_navAgent.hasPath)
+            //             {
+            //                 Debug.Log("NavMeshAgent has a path");
+            //             }
+            //             else
+            //             {
+            //                 Debug.LogError("NavMeshAgent does not have a path");
+            //             }
+
+            //             // Vérifiez si l'agent est bloqué ou arrêté
+            //             if (_navAgent.isStopped)
+            //             {
+            //                 Debug.LogWarning("NavMeshAgent is stopped");
+            //             }
+            //             else
+            //             {
+            //                 Debug.Log("NavMeshAgent is moving");
+
+            //                 // Affichez la vitesse actuelle de l'agent
+            //                 Debug.Log("NavMeshAgent velocity: " + _navAgent.velocity);
+            //             }
+            //         }
+            //         else
+            //         {
+            //             Debug.LogError("NavMeshAgent or goal is null");
+            //         }
+            //     }
+
+            //     // Vérifiez continuellement si l'agent a un chemin et s'il se déplace
+            //     if (_navAgent != null)
+            //     {
+            //         if (_navAgent.hasPath)
+            //         {
+            //             Debug.Log("NavMeshAgent is still on path");
+            //         }
+            //         else
+            //         {
+            //             Debug.LogError("NavMeshAgent lost the path during Update");
+            //         }
+            //     }
         }
 
         private void LateUpdate()
