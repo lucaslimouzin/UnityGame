@@ -1296,6 +1296,7 @@ MonoBehaviour:
   imageScore: {fileID: 39816322}
   "panelCompl\xE9mentReponse": {fileID: 583581163}
   questionTextReponse: {fileID: 583581161}
+  textComplementBonneReponse: {fileID: 583581164}
   textComplementReponse: {fileID: 583581162}
   boutonTextReponse: {fileID: 1359871780}
   wall: {fileID: 1174724156}
@@ -4087,6 +4088,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 583581159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &583581164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4308541272244870473, guid: 85c916fdc05468a46bbc79b2fcd95678,
+    type: 3}
+  m_PrefabInstance: {fileID: 583581159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &597046558
 GameObject:
   m_ObjectHideFlags: 0

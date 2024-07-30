@@ -57,9 +57,6 @@ public class MjActionBassin : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
             if (!MainGameManager.Instance.gameBassinFait) {
                 panelMjInfo.SetActive(true);
-                
-                
-                
             }
              
         }

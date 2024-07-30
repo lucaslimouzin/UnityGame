@@ -127,6 +127,7 @@ public class ScoreDisplay : MonoBehaviour
     MainGameManager.Instance.nbPartieEnigmesJoue = 0;
     MainGameManager.Instance.nbPartieEnigmes = 1;
     MainGameManager.Instance.gameEnigmesFait = false ;
+    MainGameManager.Instance.scoreReco = 0;
 
     //retour vers accueil
     SceneManager.LoadScene("Accueil");

@@ -588,6 +588,7 @@ MonoBehaviour:
   "panelCompl\xE9mentReponse": {fileID: 1730296927}
   questionTextReponse: {fileID: 1730296926}
   textComplementReponse: {fileID: 1730296925}
+  textComplementBonneReponse: {fileID: 1730296929}
   boutonTextReponse: {fileID: 1905354440}
   baton:
   - {fileID: 1126215940}
@@ -3131,6 +3132,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1730296924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1730296929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4308541272244870473, guid: 85c916fdc05468a46bbc79b2fcd95678,
+    type: 3}
+  m_PrefabInstance: {fileID: 1730296924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1905354440 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1010771515912813768, guid: 67d1a0e37588eb446a15a042dda5a645,

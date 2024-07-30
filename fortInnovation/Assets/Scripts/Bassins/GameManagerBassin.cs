@@ -14,6 +14,7 @@ public class GameManagerBassin : MonoBehaviour
     public Image imageScore;
     public GameObject panelComplémentReponse;
     public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI textComplementBonneReponse;
     public TextMeshProUGUI textComplementReponse;
     
     public TextMeshProUGUI boutonTextReponse;
@@ -248,6 +249,20 @@ public class GameManagerBassin : MonoBehaviour
         //ajout v2
         if (MainGameManager.Instance.niveauSelect == "Facile"){
             questionTextReponse.text = question.question;
+             //on recolor juste la réponse juste
+            switch (question.reponseCorrecte)
+            {
+                case "A":
+                    textComplementBonneReponse.text = question.propositions[0];
+                    break;
+                case "B":
+                    textComplementBonneReponse.text = question.propositions[1];
+                    break;
+                case "C":
+                    textComplementBonneReponse.text = question.propositions[2];
+                    break;
+            }
+            
             textComplementReponse.text = question.complementReponse;
         }
 
