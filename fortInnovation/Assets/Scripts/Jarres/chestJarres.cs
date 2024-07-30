@@ -8,6 +8,7 @@ public class chestPaires : MonoBehaviour
 {
     public GameObject panelReco;
     public GameObject panelModeSimple;
+    public TextMeshProUGUI textModeSimple;
     public GameObject panelReco1;
     public GameObject panelReco2;
     public GameObject panelReco3;
@@ -61,7 +62,12 @@ public class chestPaires : MonoBehaviour
         else {
             if (other.gameObject.CompareTag("Player")){
                 nbReco =  MainGameManager.Instance.scoreRecoPaires;
-                panelModeSimple.SetActive(true);           
+                panelModeSimple.SetActive(true);
+                if (MainGameManager.Instance.scoreRecoPaires > 0) {
+                    textModeSimple.text = "Bravo tu as remporté cette épreuve, tu peux désormais quitter cette salle.\nRends toi à la prochaine épreuve pour affronter un autre maitre de l'innovation.\nBon courage...";
+                }else {
+                    textModeSimple.text = "Tu n'as pas remporté cette épreuve.\nRends toi à la prochaine épreuve pour affronter un autre maitre de l'innovation.\nBon courage...";
+                }          
             }
         }
     }
@@ -77,8 +83,7 @@ public class chestPaires : MonoBehaviour
              if (panelReco.activeSelf){
                 panelModeSimple.SetActive(false);
              }
-        }
-        
+        } 
     }
 
     private void ActivateButton(int score){
