@@ -62,9 +62,9 @@ public class ScoreDisplay : MonoBehaviour
         score = MainGameManager.Instance.scoreReco;
         //ajout v2
         if(MainGameManager.Instance.niveauSelect =="Normal"){
-            playerScoreText.text = "Votre avez remporté " + score.ToString() + " / 17\nrecommandations.";
+            playerScoreText.text = "Vous avez remporté " + score.ToString() + " / 17\nrecommandations.";
         }else{
-            playerScoreTextModeSimple.text = "Votre avez remporté " + score.ToString() + " / 5\nduels.";
+            playerScoreTextModeSimple.text = "Vous avez remporté " + score.ToString() + " / 5\nduels.";
             
             switch (score){
                 case <3:

@@ -42,7 +42,6 @@ public class Instruction : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("j'ai appuyé");
         // Réduire l'opacité du bouton
         Image buttonImage = continueButton.GetComponent<Image>();
         if (buttonImage != null)
@@ -57,12 +56,10 @@ public class Instruction : MonoBehaviour
         {
             asyncOperation.allowSceneActivation = true;
             SceneManager.LoadScene("SalleInstructions");
-            Debug.Log("j'ai appuyé là");
         }
         else
         {
             SceneManager.LoadScene("SalleInstructions");
-            Debug.Log("j'ai appuyé ici");
         }
     }
 }
