@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
@@ -7,6 +6,8 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 offset;
     private Rigidbody rb; // Référence au Rigidbody de l'objet
     private bool isStopped = false; // Flag pour savoir si l'objet doit être arrêté
+    private float outOfBoundsTime = 0f; // Temps passé en dehors de la zone
+    private bool isCoroutineRunning = false; // Flag pour savoir si la coroutine est en cours d'exécution
 
     void Start()
     {
@@ -40,17 +41,17 @@ public class DragAndDrop : MonoBehaviour
             newPosition.z = transform.position.z;
 
             // maintenir la position Y reste constante
-            newPosition.y = 2.00f; 
+            newPosition.y = 2.00f;
 
             // Vérifier si la position en X est dans l'intervalle désiré
-            if (transform.position.x >= 0.036f && transform.position.x <= 0.542f)
+            if (newPosition.x >= 0.036f && newPosition.x <= 0.542f)
             {
-                ChangerCouleur(Color.green); 
+                ChangerCouleur(Color.green);
                 rb.constraints = RigidbodyConstraints.None;
             }
             else
             {
-                ChangerCouleur(Color.red); 
+                ChangerCouleur(Color.red);
                 rb.constraints = RigidbodyConstraints.FreezePositionY;
             }
 
@@ -61,6 +62,21 @@ public class DragAndDrop : MonoBehaviour
             if (transform.position.x >= 0.04f && transform.position.x <= 0.3f)
             {
                 StopObject();
+            }
+
+            // Vérifier si l'objet est en dehors de la zone et démarrer la coroutine si nécessaire
+            if (newPosition.x < 0.036f || newPosition.x > 0.542f)
+            {
+                if (!isCoroutineRunning)
+                {
+                    StartCoroutine(CheckOutOfBounds());
+                }
+            }
+            else
+            {
+                outOfBoundsTime = 0f;
+                isCoroutineRunning = false;
+                StopCoroutine(CheckOutOfBounds());
             }
         }
     }
@@ -86,6 +102,26 @@ public class DragAndDrop : MonoBehaviour
     {
         isStopped = true;
         rb.constraints = RigidbodyConstraints.FreezePositionX;
-        
+    }
+
+    private IEnumerator CheckOutOfBounds()
+    {
+        isCoroutineRunning = true;
+        while (outOfBoundsTime < 10f)
+        {
+            outOfBoundsTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Réinitialiser la position de l'objet si il reste en dehors de la zone plus de 20 secondes
+        if (outOfBoundsTime >= 10f)
+        {
+            transform.position = new Vector3(0.2f, transform.position.y, transform.position.z);
+            ChangerCouleur(Color.green);
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
+        outOfBoundsTime = 0f;
+        isCoroutineRunning = false;
     }
 }

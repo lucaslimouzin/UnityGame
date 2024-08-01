@@ -68,13 +68,13 @@ public class ScoreDisplay : MonoBehaviour
             
             switch (score){
                 case <3:
-                    texteNiveau.text = "<u>Niveau Débutant :</u> Tu as compris les concepts de base de l’innovation et tu es familiarisé avec quelques exemples d’innovations historiques et contemporaines. Recommence le jeu pour atteindre un niveau supérieur.";
+                    texteNiveau.text = "<u>Niveau Débutant :</u> Vous avez compris les concepts de base de l’innovation et vous êtes familiarisé avec quelques exemples d’innovations historiques et contemporaines. Recommencez le jeu pour atteindre un niveau supérieur.";
                 break;
                 case <5:
-                    texteNiveau.text = "<u>Niveau Intermédiaire :</u> Les concepts de base sont maitrisés et tu as une bonne connaissance des approches et outils en innovation. Tu as compris la gestion de l'innovation et ces cycles de vie. Tu as déjà atteint un très haut niveau, encore quelques efforts est tu seras un expert en innovation.";
+                    texteNiveau.text = "<u>Niveau Intermédiaire :</u> Les concepts de base sont maitrisés et vous avez une bonne connaissance des approches et outils en innovation. Vous avez compris la gestion de l'innovation et ces cycles de vie. Vous avez déjà atteint un très haut niveau, encore quelques efforts est vous serez un expert en innovation.";
                 break;
                 case >4:
-                    texteNiveau.text = "<u>Niveau Expert :</u> Félicitation, te voilà expert en innovation. Maintenant que tu as une connaissance approfondie des bases de l’innovation, découvre une approche de l’innovation fondée sur le collectif : l’innovation participative.";
+                    texteNiveau.text = "<u>Niveau Expert :</u> Félicitation, vous voilà expert en innovation. Maintenant que vous avez une connaissance approfondie des bases de l’innovation, découvrez une approche de l’innovation fondée sur le collectif : l’innovation participative.";
                 break;
             }
 

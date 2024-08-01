@@ -1036,7 +1036,6 @@ GameObject:
   - component: {fileID: 4314713996258362654}
   - component: {fileID: 959926765601274548}
   - component: {fileID: 1035002870252928832}
-  - component: {fileID: -1754993210458468888}
   m_Layer: 8
   m_Name: PlayerArmature_Homme
   m_TagString: Player
@@ -1295,28 +1294,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!195 &-1754993210458468888
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3151727175966077227}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 17.33
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &3175113150067330800
 GameObject:
   m_ObjectHideFlags: 0
