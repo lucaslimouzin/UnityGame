@@ -572,10 +572,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1750908119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300.05, y: -36.665}
-  m_SizeDelta: {x: 600.1, y: 73.33}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191164309
 MonoBehaviour:
@@ -600,8 +600,8 @@ MonoBehaviour:
   m_text: "F\xE9licitations, vous avez termin\xE9 toutes \nles \xE9preuves de Fort
     Innovation"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 827b8dd55e35b8244944ea56f83a8ecd, type: 2}
+  m_sharedMaterial: {fileID: 9161827694724749760, guid: 827b8dd55e35b8244944ea56f83a8ecd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -626,8 +626,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33
-  m_fontSizeBase: 33
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2084,7 +2084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &685984437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2441,8 +2441,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <u>Quitter le jeu</u>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 827b8dd55e35b8244944ea56f83a8ecd, type: 2}
+  m_sharedMaterial: {fileID: 9161827694724749760, guid: 827b8dd55e35b8244944ea56f83a8ecd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4433,8 +4433,8 @@ MonoBehaviour:
     et tu es familiaris\xE9 avec quelques exemples d\u2019innovations historiques
     et contemporaines.\r\n\r\nRecommence le jeu pour atteindre un niveau sup\xE9rieur."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
+  m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4459,8 +4459,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4947,7 +4947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 84, y: 74}
+  m_AnchoredPosition: {x: 84, y: 52}
   m_SizeDelta: {x: 1113.6, y: 40.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547099437
@@ -4972,8 +4972,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Votre avez remport\xE9 0/5\nduels"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 827b8dd55e35b8244944ea56f83a8ecd, type: 2}
+  m_sharedMaterial: {fileID: 9161827694724749760, guid: 827b8dd55e35b8244944ea56f83a8ecd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4998,8 +4998,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5034,7 +5034,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 169.27734, w: 0}
+  m_margin: {x: 41.525085, y: 0, z: 208.16064, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5650,7 +5650,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -34, y: 78}
-  m_SizeDelta: {x: 600.1, y: 73.33}
+  m_SizeDelta: {x: 600.1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750908120
 MonoBehaviour:
