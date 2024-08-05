@@ -232,9 +232,9 @@ public class GameManagerEnigmes : MonoBehaviour
         }
         else {
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Vous avez échoué, je détruis les deux recommandations";
+                MJText.text = "Vous avez échoué, je détruis les deux recommandations";
             }else{
-                MJText.text = "Maître du jeu : Vous avez échoué ce duel !";
+                MJText.text = "Vous avez échoué ce duel !";
             } 
             StartCoroutine(ShowAndHidePerduText());
         }

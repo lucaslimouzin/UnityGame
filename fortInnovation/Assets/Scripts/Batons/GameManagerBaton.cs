@@ -172,7 +172,7 @@ public class GameManagerBaton : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             firstTimeMj = true;
-            MJText.text = "Maître du jeu : Je commence à retirer des bâtons !";
+            MJText.text = "Le Maître du jeu commence à retirer des bâtons !";
             TourDuMj(false);
         }
         
@@ -352,7 +352,7 @@ public class GameManagerBaton : MonoBehaviour
         } 
         else {
             
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de retirer des bâtonnets.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nLe Maître du jeu va retirer des bâtonnets.";
             
             win = false;
             panelButtonBaton.SetActive(false);
@@ -458,9 +458,9 @@ public class GameManagerBaton : MonoBehaviour
             if (win){
                 //ajout v2
                 if(MainGameManager.Instance.niveauSelect =="Normal"){
-                    MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+                    MJText.text = "Bravo vous avez remporté une recommandation";
                 }else{
-                    MJText.text = "Maître du jeu : Bravo vous avez remporté le duel";
+                    MJText.text = "Bravo vous avez remporté le duel";
                 }
                 //envoi vers le Main Game Manager le scoreBaton 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoBaton += 1);
@@ -468,9 +468,9 @@ public class GameManagerBaton : MonoBehaviour
             }
             else {
                 if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+                MJText.text = "Vous avez échoué, je détruis une recommandation";
                 }else{
-                    MJText.text = "Maître du jeu : Vous avez échoué ce duel";
+                    MJText.text = "Vous avez échoué ce duel";
                 }
                 StartCoroutine(ShowAndHidePerduText());
             }

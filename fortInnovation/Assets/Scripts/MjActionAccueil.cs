@@ -50,14 +50,14 @@ public class MjActionAccueil : MonoBehaviour
            
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
                 panelQuest.SetActive(false);
-                textMjRoom.text = "Bienvenue dans Fort Innovation. \nApproche-toi et viens en apprendre davantage sur ton aventure !";
+                textMjRoom.text = "Bienvenue dans Fort Innovation. \nApprochez-vous et venez en apprendre davantage sur votre aventure !";
         }
         else {
             //change le message du panel Room
             Bulle.SetActive(false);
             pointExclamation.SetActive(false);
             panelQuest.SetActive(true);
-            textMjRoom.text = "Continue d'explorer les autres salles \nAvance vers la voie de l'innovation...";
+            textMjRoom.text = "Continue d'explorer les autres salles \nAvancez vers la voie de l'innovation...";
         }
         MettreAJourChecklist();
        
@@ -82,7 +82,7 @@ public class MjActionAccueil : MonoBehaviour
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
                 pointExclamation.SetActive(false);
-                textMjInfo.text = "Pour terminer ta quête, tu devras visiter les 5 cellules du Fort qui se trouvent derière moi et affronter le Maître du jeu. \n\nAu cours de ton aventure, un panneau t'indique les cellules qu'il te reste à visiter. \n\nBonne chance à toi aventurier de l'innovation !";
+                textMjInfo.text = "Pour terminer votre quête, vous devrez visiter les 5 cellules du Fort qui se trouvent derrière moi et affronter le Maître du jeu. \n\nAu cours de votre aventure, un panneau vous indiquera les cellules qu'il vous resterons à visiter. \n\nBonne chance à vous aventurier de l'innovation !";
                 
                 
                 

@@ -49,17 +49,17 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Pour te déplacer,\nutilise les flèches de ton clavier.\nPour t'entrainer, essaie d'atteindre le coffre.";
+        textMjRoom.text = "Pour vous déplacer,\nutilisez les flèches de votre clavier.\nPour vous entrainer, essayez d'atteindre le coffre.";
         //textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
         //initialisation du texte du panel coffre
-        texte1Coffre.text = "Durant la partie tu vas retrouver des panneaux d'instructions comme celui-çi.";
+        texte1Coffre.text = "Durant la partie vous allez retrouver des panneaux d'instructions comme celui-çi.";
         if(MainGameManager.Instance.niveauSelect =="Normal"){
-                texte2Coffre.text = "Ils te donneront des consignes pour les jeux et te permettront également de lire les recommandations gagnées.";
+                texte2Coffre.text = "Ils vous donneront des consignes pour les jeux et vous permettront également de lire les recommandations gagnées.";
             }else{
-                texte2Coffre.text = "Ils te donneront des consignes pour les jeux.";
+                texte2Coffre.text = "Ils vous donneront des consignes pour les jeux.";
         }
         
-        texte1MjInfo.text = "Te voilà fin prêt(e) à débuter ton aventure !\n\nClique sur le bouton “entrer” et retrouve-moi dans la salle suivante.";
+        texte1MjInfo.text = "Vous voilà fin prêt(e) à débuter votre aventure !\n\nCliquez sur le bouton “entrer” et retrouvez-moi dans la salle suivante.";
     }
 
     // Update is called once per frame

@@ -222,7 +222,7 @@ public class GameManagerPaires : MonoBehaviour
             panelInfoMJ.SetActive(true);
            // tourJoueur = false;
            tourJoueur = true;
-            MJText.text = "Maître du jeu : Je commence à jouer !";
+            MJText.text = "Le Maître du jeu commence à jouer !";
             TourDuMj();
         } 
     }
@@ -398,7 +398,7 @@ public class GameManagerPaires : MonoBehaviour
         } 
         else {
             tourJoueur = false;
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de retourner deux cartes.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nLe Maître du jeu va retourner deux cartes.";
             TourDuMj();
         }
         
@@ -729,9 +729,9 @@ public class GameManagerPaires : MonoBehaviour
         if (tourJoueur) {
             //ajout v2
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+                MJText.text = "Bravo vous avez remporté une recommandation";
             }else{
-                MJText.text = "Maître du jeu : Bravo vous avez remporté le duel";
+                MJText.text = "Bravo vous avez remporté le duel";
             }
             
             //envoi vers le Main Game Manager le scorePaires
@@ -750,9 +750,9 @@ public class GameManagerPaires : MonoBehaviour
         }
         else {
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+                MJText.text = "Vous avez échoué, je détruis une recommandation";
             }else{
-                MJText.text = "Maître du jeu : Vous avez échoué ce duel";
+                MJText.text = "Vous avez échoué ce duel";
             }
             StartCoroutine(ShowAndHidePerduText());
         }

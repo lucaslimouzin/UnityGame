@@ -204,7 +204,7 @@ public class GameManagerBassin : MonoBehaviour
             
             //tour du MJ  
             panelInfoMJ.SetActive(true);
-            MJText.text = "Maître du jeu : J'ai gagné aux dés, je dépose une bille dans votre verre";
+            MJText.text = "le Maître du jeu a gagné aux dés, il dépose une bille dans votre verre";
             tourJoueur = false;
             TourDuMj();
         } 
@@ -361,13 +361,13 @@ public class GameManagerBassin : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Vous avez bien répondu ! \nVous pouvez donc déplacer une bille, jusqu'à ce qu'elle devienne verte, dans mon verre.";
+            MJText.text = "Vous avez bien répondu ! \nVous pouvez donc déplacer une bille, jusqu'à ce qu'elle devienne verte, dans son verre.";
             tourJoueur = true;
             TourDuJoueur();
             
         } 
         else {
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de placer un bille dans votre verre.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nLe Maître du jeu va placer une bille dans votre verre.";
             tourJoueur = false;
             TourDuMj();
         }
@@ -536,9 +536,9 @@ public class GameManagerBassin : MonoBehaviour
         if (tourJoueur) {
             //ajout v2
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+                MJText.text = "Bravo vous avez remporté une recommandation";
             }else{
-                MJText.text = "Maître du jeu : Bravo vous avez remporté le duel";
+                MJText.text = "Bravo vous avez remporté le duel";
             }
             //envoi vers le Main Game Manager le scoreClou 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
@@ -546,9 +546,9 @@ public class GameManagerBassin : MonoBehaviour
         }
         else {
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+                MJText.text = "Vous avez échoué, je détruis une recommandation";
             }else{
-                MJText.text = "Maître du jeu : Vous avez échoué ce duel";
+                MJText.text = "Vous avez échoué ce duel";
             }
             StartCoroutine(ShowAndHidePerduText());
         }

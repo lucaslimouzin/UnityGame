@@ -30,16 +30,16 @@ public class MjActionEnigmes : MonoBehaviour
         if (MainGameManager.Instance.gameEnigmesFait) {
                 //active le coffre
                 chest.SetActive(true);
-                textMjInfo.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
+                textMjInfo.text = "Approchez-vous du coffre pour débloquer les recommandations gagnées !";
         }
         else {
             //desactive le coffre
                 chest.SetActive(false);
             //change le message du panel Room
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                textMjInfo.text = "Bienvenue dans la cellule des Enigmes !\n\nVous allez affronter le Maître du jeu dans une épreuve de réflexion pour tenter de remporter les 2 recommandations du principe 5 de l'innovation participative : \"Penser et agir en ecosystème\".\nBonne chance !";
+                textMjInfo.text = "Bienvenue dans la cellule des Enigmes !\n\nJe suis le Maître du jeu vous allez m'affronter dans une épreuve de réflexion pour tenter de remporter les 2 recommandations du principe 5 de l'innovation participative : \"Penser et agir en ecosystème\".\nBonne chance !";
             }else{
-               textMjInfo.text = "Bienvenue dans la cellule des Enigmes !\n\nVous allez affronter le Maître du jeu dans une épreuve de réflexion.\nBonne chance !";
+               textMjInfo.text = "Bienvenue dans la cellule des Enigmes !\n\nJe suis le Maître du jeu vous allez m'affronter dans une épreuve de réflexion.\nBonne chance !";
             }
             
         }

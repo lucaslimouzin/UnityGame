@@ -299,7 +299,7 @@ public class GameManagerMarteau : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             tourJoueur = false;
-            MJText.text = "Maître du jeu : Je commence à frapper !";
+            MJText.text = "Le Maître du jeu commence à frapper !";
             TourDuMj();
         } 
     }
@@ -480,7 +480,7 @@ public class GameManagerMarteau : MonoBehaviour
             tourJoueur = false;
             isSpaceEnabled = false; // désactive la touche espace
           //  Debug.Log("Espace 5 = " + isSpaceEnabled);
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de frapper mon clou.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nLe Maître du jeu va frapper son clou.";
             TourDuMj();
         }
         
@@ -694,9 +694,9 @@ public class GameManagerMarteau : MonoBehaviour
         if (tourJoueur) {
             //ajout v2
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+                MJText.text = "Bravo vous avez remporté une recommandation";
             }else{
-                MJText.text = "Maître du jeu : Bravo vous avez remporté le duel";
+                MJText.text = "Bravo vous avez remporté le duel";
             }
             //envoi vers le Main Game Manager le scoreClou 
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
@@ -704,9 +704,9 @@ public class GameManagerMarteau : MonoBehaviour
         }
         else {
             if(MainGameManager.Instance.niveauSelect =="Normal"){
-                MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+                MJText.text = "Vous avez échoué, je détruis une recommandation";
             }else{
-                MJText.text = "Maître du jeu : Vous avez échoué ce duel";
+                MJText.text = "Vous avez échoué ce duel";
             }
             StartCoroutine(ShowAndHidePerduText());
         }

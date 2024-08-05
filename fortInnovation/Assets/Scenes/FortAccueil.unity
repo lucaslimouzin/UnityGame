@@ -10033,7 +10033,7 @@ PrefabInstance:
     - target: {fileID: 8620216625050301935, guid: 364cc89a7d63c81498bfa4f3941933f0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -10907,7 +10907,7 @@ PrefabInstance:
     - target: {fileID: 7270497251440019873, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 241.01996
+      value: 40.349976
       objectReference: {fileID: 0}
     - target: {fileID: 7270497251440019873, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}

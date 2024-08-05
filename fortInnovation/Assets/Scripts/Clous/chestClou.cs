@@ -62,9 +62,9 @@ public class chestClou : MonoBehaviour
                 nbReco =  MainGameManager.Instance.scoreRecoClou;
                 panelModeSimple.SetActive(true);  
                 if (MainGameManager.Instance.scoreRecoClou > 0) {
-                    textModeSimple.text = "Bravo tu as remporté cette épreuve, tu peux désormais quitter cette salle.\nRends toi à la prochaine épreuve pour affronter un autre maitre de l'innovation.\nBon courage...";
+                    textModeSimple.text = "Bravo vous avez remporté cette épreuve, vous pouvais désormais quitter cette salle.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
                 }else {
-                    textModeSimple.text = "Tu n'as pas remporté cette épreuve.\nRends toi à la prochaine épreuve pour affronter un autre maitre de l'innovation.\nBon courage...";
+                    textModeSimple.text = "Vous n'avez pas remporté cette épreuve.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
                 }               
             }
         }

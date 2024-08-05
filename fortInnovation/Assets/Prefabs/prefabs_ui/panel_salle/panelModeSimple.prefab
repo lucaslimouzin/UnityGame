@@ -458,10 +458,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bravo tu as remport\xE9 cette \xE9preuve, tu peux d\xE9sormais quitter
     cette salle.\nRends toi \xE0 la prochaine \xE9preuve pour affronter un autre
-    maitre de l'innovation.\nBon courage"
+    maitre de l'innovation.\nBon courage."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
+  m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
