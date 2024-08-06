@@ -93,7 +93,7 @@ public class MjActionAccueil : MonoBehaviour
         else {
             panelRoom.SetActive(true);
             pointExclamation.SetActive(false);
-            textMjRoom.text = "Continue d'explorer les autres salles.\nAvance vers la voie de l'innovation...";
+            textMjRoom.text = "Continuez d'explorer les autres salles.\nAvancez vers la voie de l'innovation...";
             panelMjInfo.SetActive(false);
         }
         
@@ -121,7 +121,7 @@ public class MjActionAccueil : MonoBehaviour
         panelRoom.SetActive(true);
         pointExclamation.SetActive(false);
         panelQuest.SetActive(true);
-        textMjRoom.text = "Dirige toi vers une cellule \nPour commencer ton aventure...";
+        textMjRoom.text = "Dirigez-vous vers une cellule \nPour commencer votre aventure...";
         MainGameManager.Instance.tutoCompteur = 3;
         panelMjInfo.SetActive(false);
         
