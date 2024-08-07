@@ -50,7 +50,7 @@ public class MjActionAccueil : MonoBehaviour
            
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
                 panelQuest.SetActive(false);
-                textMjRoom.text = "Bienvenue dans Fort Innovation. \nApprochez-vous et venez en apprendre davantage sur votre aventure !";
+                textMjRoom.text = "Bienvenue dans Fort Innovation. \nJe suis le Maître du temps !\nApprochez-vous et venez en apprendre davantage sur votre aventure !";
         }
         else {
             //change le message du panel Room
@@ -82,7 +82,7 @@ public class MjActionAccueil : MonoBehaviour
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
                 pointExclamation.SetActive(false);
-                textMjInfo.text = "Pour terminer votre quête, vous devrez visiter les 5 cellules du Fort qui se trouvent derrière moi et affronter le Maître du jeu. \n\nAu cours de votre aventure, un panneau vous indiquera les cellules qu'il vous resterons à visiter. \n\nBonne chance à vous aventurier de l'innovation !";
+                textMjInfo.text = "Pour terminer votre quête, vous devrez visiter les 5 cellules du Fort qui se trouvent derrière moi et affronter les Maîtres du jeu. \n\nAu cours de votre aventure, un panneau vous indiquera les cellules qu'il vous restera à visiter. \n\nBonne chance à vous aventurier de l'innovation !";
                 
                 
                 
@@ -93,7 +93,7 @@ public class MjActionAccueil : MonoBehaviour
         else {
             panelRoom.SetActive(true);
             pointExclamation.SetActive(false);
-            textMjRoom.text = "Continuez d'explorer les autres salles.\nAvancez vers la voie de l'innovation...";
+            textMjRoom.text = "Continuez d'explorer les autres cellules.\nAvancez vers la voie de l'innovation...";
             panelMjInfo.SetActive(false);
         }
         

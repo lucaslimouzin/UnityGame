@@ -67,6 +67,10 @@ public class ScoreDisplay : MonoBehaviour
             playerScoreTextModeSimple.text = "Vous avez remporté " + score.ToString() + " / 5\nduels.";
             
             switch (score){
+                case 0:
+                    playerScoreTextModeSimple.text ="Malheureusement, vous n'avez remporté aucun des 5 duels…";
+                    texteNiveau.text = "Il semble que les concepts de base de l'innovation ne soient pas encore bien assimilés. Rejouez pour améliorer votre compréhension et viser un niveau supérieur.";
+                break;
                 case <3:
                     texteNiveau.text = "<u>Niveau Débutant :</u> Vous avez compris les concepts de base de l’innovation et vous êtes familiarisé avec quelques exemples d’innovations historiques et contemporaines. Recommencez le jeu pour atteindre un niveau supérieur.";
                 break;

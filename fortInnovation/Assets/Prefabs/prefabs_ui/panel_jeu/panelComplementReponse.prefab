@@ -447,7 +447,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -700,7 +700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143.88875, y: 103.01282}
+  m_AnchoredPosition: {x: 1, y: 103.01282}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6187813549672048020
@@ -731,7 +731,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  m_text: "Le contenu de ce courriel et ses \xE9ventuelles pi\xE8ces jointes sont
+    confidentiels. Ils s'adressent exclusivement \xE0 la personne destinataire. Si
+    cet envoi ne vous est pas destin\xE9, ou si vous l'avez re\xE7u par erreur, et
+    afin de ne pas violer le secret des correspondances, vous ne devez pas le transmettre
+    \xE0 d'autres personnes ni le reproduire. Merci de le renvoyer \xE0 l'\xE9metteur
+    et de le d\xE9truire.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
   m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
@@ -759,14 +764,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 16
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -795,7 +800,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -180.76015, y: 94.688965, z: -370.58295, w: -304.10492}
+  m_margin: {x: -289.92502, y: 94.688965, z: -273.32742, w: -304.10492}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

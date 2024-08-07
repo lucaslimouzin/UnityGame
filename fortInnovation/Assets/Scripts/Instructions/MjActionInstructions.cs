@@ -126,7 +126,7 @@ public class MjActionInstructions : MonoBehaviour
         panelRoom.SetActive(true);
         //desactive le deplacement
         DisableGameplayInput();
-        textMjRoom.text = "Dirige toi à présent vers la porte pour débuter l'aventure !";
+        textMjRoom.text = "Dirigez-vous à présent vers la porte pour débuter l'aventure !";
         MainGameManager.Instance.tutoCompteur = 1;
         
     }

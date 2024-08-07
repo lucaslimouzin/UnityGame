@@ -1412,6 +1412,7 @@ MonoBehaviour:
   MJText: {fileID: 1611861898}
   textEnigmeInfo: {fileID: 965714790}
   textEnigme: {fileID: 569936062}
+  textInstruction: {fileID: 1566164947}
   allLetterButtons:
   - {fileID: 1850071546}
   - {fileID: 724539438}
@@ -2334,8 +2335,8 @@ MonoBehaviour:
     Il peut \xEAtre interne ou externe et fait contribuer des parties prenantes qui
     ne sont normalement pas associ\xE9es."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
+  m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2360,8 +2361,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7071,6 +7072,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1566164944}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1566164947 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566164944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575671964
 GameObject:
   m_ObjectHideFlags: 0

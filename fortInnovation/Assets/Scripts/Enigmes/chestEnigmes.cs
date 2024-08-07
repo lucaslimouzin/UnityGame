@@ -62,7 +62,7 @@ public class chestEnigmes : MonoBehaviour
                 nbReco =  MainGameManager.Instance.scoreRecoEnigmes;
                 panelModeSimple.SetActive(true);    
                 if (MainGameManager.Instance.scoreRecoEnigmes > 0) {
-                    textModeSimple.text = "Bravo vous avez remporté cette épreuve, vous pouvais désormais quitter cette salle.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
+                    textModeSimple.text = "Bravo vous avez remporté cette épreuve, vous pouvais désormais quitter cette cellule.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
                 }else {
                     textModeSimple.text = "Vous n'avez pas remporté cette épreuve.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
                 }             

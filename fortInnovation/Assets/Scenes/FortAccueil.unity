@@ -6946,7 +6946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: y aller
+  m_text: Y aller
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
   m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
@@ -10907,7 +10907,7 @@ PrefabInstance:
     - target: {fileID: 7270497251440019873, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40.349976
+      value: 132.22998
       objectReference: {fileID: 0}
     - target: {fileID: 7270497251440019873, guid: 92734152d5388aa419c2e787bb6064b7,
         type: 3}

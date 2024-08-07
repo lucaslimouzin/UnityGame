@@ -20,6 +20,7 @@ public class GameManagerEnigmes : MonoBehaviour
     public TextMeshProUGUI MJText;
     public TextMeshProUGUI textEnigmeInfo;
     public TextMeshProUGUI textEnigme;
+    public TextMeshProUGUI textInstruction;
     private bool tourJoueur = true;
     private bool finDuJeu = false;
     
@@ -69,10 +70,12 @@ public class GameManagerEnigmes : MonoBehaviour
         }
         if(MainGameManager.Instance.niveauSelect =="Normal"){
             wordToFind = "ECOSYSTEME";
+            textInstruction.text = "Règles du jeu : \nTentez de résoudre une charade pour découvrir le mot mystère.\nLorsque vous pensez avoir découvert le mot mystère, inscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
         }else{
             wordToFind = "PARTICIPATIF";//Mode facile
             textEnigme.text = "Je suis souvent synonyme de collaboration, un processus où chacun peut apporter sa contribution.\n Je valorise l'implication collective, pour créer ensemble quelque chose de positif.";
             textEnigme.fontSize = 35;
+            textInstruction.text = "Règles du jeu : \nTentez de résoudre une énigme pour découvrir le mot mystère.\nLorsque vous pensez avoir découvert le mot mystère, inscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
         }
         panelEnigmes.SetActive(false);
         panelInfoMJ.SetActive(false);
