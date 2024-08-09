@@ -254,6 +254,16 @@ PrefabInstance:
         que les r\xE8gles sont simples et faciles \xE0 comprendre pour \xE9viter
         toute confusion."
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
       propertyPath: m_text
@@ -2855,6 +2865,16 @@ PrefabInstance:
         en retour, que la hi\xE9rarchie puisse proposer un cadre et une organisation
         propices \xE0 l\u2019accueil de cette pens\xE9e critique."
       objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
       propertyPath: m_text
@@ -3823,6 +3843,16 @@ PrefabInstance:
         \xE0 exprimer leurs id\xE9es. La transmission des r\xE9cits d\u2019exp\xE9rience
         et des t\xE9moignages \xE0 tous les niveaux incarnant les succ\xE8s, les
         \xE9checs et les enseignements tir\xE9s, contribue \xE0 cela."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
@@ -5476,6 +5506,16 @@ PrefabInstance:
         : interdiction de couper la parole, le premier commentaire doit forc\xE9ment
         \xEAtre positif, \u2026\r\n   - Utiliser des m\xE9thodologies originales
         pour animer ces temps d\u2019expression."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601489068048256134, guid: d5ddb4dee231e814290140ad47f303bf,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 9087871123223958887, guid: d5ddb4dee231e814290140ad47f303bf,
         type: 3}
