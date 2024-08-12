@@ -75,9 +75,9 @@ public class DesGameManager : MonoBehaviour
                 textTitre.text = "Le jeu des bâtonnets";
                 //ajout v2
                 if(MainGameManager.Instance.niveauSelect =="Normal"){
-                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier batonnet. \nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation participative. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\nSi le Maître du jeu retire le dernier batonnet, vous remportez la manche et gagnez une recommandation.";
+                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier batonnet. \n\nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation participative. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\n\nSi le Maître du jeu retire le dernier batonnet, vous remportez la manche et gagnez une recommandation.";
                 }else{
-                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier batonnet. \nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\nSi le Maître du jeu retire le dernier batonnet, vous remportez le duel.";
+                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier batonnet. \n\nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\n\nSi le Maître du jeu retire le dernier bâtonnet, vous remportez le duel.";
                     textNbParties.gameObject.SetActive(false);
                     RectTransform rectTransform = boutonCommencer.GetComponent<RectTransform>();
                     rectTransform.anchoredPosition = new Vector2(0, -330);
@@ -95,9 +95,9 @@ public class DesGameManager : MonoBehaviour
                 textTitre.text = "Le jeu des clous";
                 //ajout v2
                 if(MainGameManager.Instance.niveauSelect =="Normal"){
-                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve deux clous, l'un est à vous, l'autre au Maître du jeu.\nVotre mission est d'enfoncer votre clou avant celui du Maître du jeu.\nPour frapper votre clou, répondez correctement à une question sur l'innovation participative. En cas de bonne reponse, munissez-vous de votre marteau, déterminez votre force à l'aide de la jauge avant de frapper votre clou. En cas de mauvaise réponse, c'est au Maître du jeu de frapper son clou.\nSi vous enfoncer votre clou, intégralement dans le bois, en premier, vous remportez la manche et gagnez une recommandation.";
+                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve deux clous, l'un est à vous, l'autre au Maître du jeu.\n\nVotre mission est d'enfoncer votre clou avant celui du Maître du jeu.\n\nPour frapper votre clou, répondez correctement à une question sur l'innovation participative. En cas de bonne reponse, munissez-vous de votre marteau, déterminez votre force à l'aide de la jauge avant de frapper votre clou. En cas de mauvaise réponse, c'est au Maître du jeu de frapper son clou.\n\nSi vous enfoncer votre clou, intégralement dans le bois, en premier, vous remportez la manche et gagnez une recommandation.";
                 }else{
-                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve deux clous, l'un est à vous, l'autre au Maître du jeu.\nVotre mission est d'enfoncer votre clou avant celui du Maître du jeu.\nPour frapper votre clou, répondez correctement à une question sur l'innovation. En cas de bonne reponse, munissez-vous de votre marteau, déterminez votre force à l'aide de la jauge avant de frapper votre clou. En cas de mauvaise réponse, c'est au Maître du jeu de frapper son clou.\nSi vous enfoncer votre clou, intégralement dans le bois, en premier, vous remportez le duel.";
+                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve deux clous, l'un est à vous, l'autre au Maître du jeu.\n\nVotre mission est d'enfoncer votre clou avant celui du Maître du jeu.\n\nPour frapper votre clou, répondez correctement à une question sur l'innovation. En cas de bonne reponse, munissez-vous de votre marteau, déterminez votre force à l'aide de la jauge avant de frapper votre clou. En cas de mauvaise réponse, c'est au Maître du jeu de frapper son clou.\n\nSi vous enfoncer votre clou, intégralement dans le bois, en premier, vous remportez le duel.";
                     textNbParties.gameObject.SetActive(false);
                     RectTransform rectTransform = boutonCommencer.GetComponent<RectTransform>();
                     rectTransform.anchoredPosition = new Vector2(0, -330);
@@ -115,9 +115,9 @@ public class DesGameManager : MonoBehaviour
                 textTitre.text = "Le jeu des bassins";
                 //ajout v2
                 if(MainGameManager.Instance.niveauSelect =="Normal"){
-                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve une bassine dans laquelle flotte 2 verres, l'un est à vous, l'autre au Maître du jeu.\nVotre mission est de faire couler le verre du Maître du jeu, en en y ajoutant des billes, avant qu'il ne coule le votre.\nPour ajouter une bille, répondez correctement à une question sur l'innovation participative. En cas de mauvaise réponse, c'est au Maître du jeu d'ajouter une bille dans votre verre.\nSi vous coulez le verre du Maître du jeu, vous remportez la manche et gagnez une recommandation.";
+                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve une bassine dans laquelle flotte 2 verres, l'un est à vous, l'autre au Maître du jeu.\n\nVotre mission est de faire couler le verre du Maître du jeu, en en y ajoutant des billes, avant qu'il ne coule le votre.\n\nPour ajouter une bille, répondez correctement à une question sur l'innovation participative. En cas de mauvaise réponse, c'est au Maître du jeu d'ajouter une bille dans votre verre.\n\nSi vous coulez le verre du Maître du jeu, vous remportez la manche et gagnez une recommandation.";
                 }else{
-                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve une bassine dans laquelle flotte 2 verres, l'un est à vous, l'autre au Maître du jeu.\nVotre mission est de faire couler le verre du Maître du jeu, en en y ajoutant des billes, avant qu'il ne coule le votre.\nPour ajouter une bille, répondez correctement à une question sur l'innovation. En cas de mauvaise réponse, c'est au Maître du jeu d'ajouter une bille dans votre verre.\nSi vous coulez le verre du Maître du jeu, vous remportez le duel.";
+                    textConsignes.text = "Règles du jeu :\n\nAu centre du plateau se trouve une bassine dans laquelle flotte 2 verres, l'un est à vous, l'autre au Maître du jeu.\n\nVotre mission est de faire couler le verre du Maître du jeu, en en y ajoutant des billes, avant qu'il ne coule le votre.\n\nPour ajouter une bille, répondez correctement à une question sur l'innovation. En cas de mauvaise réponse, c'est au Maître du jeu d'ajouter une bille dans votre verre.\n\nSi vous coulez le verre du Maître du jeu, vous remportez le duel.";
                     textNbParties.gameObject.SetActive(false);
                     RectTransform rectTransform = boutonCommencer.GetComponent<RectTransform>();
                     rectTransform.anchoredPosition = new Vector2(0, -330);
@@ -135,9 +135,9 @@ public class DesGameManager : MonoBehaviour
                 textTitre.text = "L'Enigme";
                 //ajout v2
                 if(MainGameManager.Instance.niveauSelect =="Normal"){
-                    textConsignes.text = "Règles du jeu :\n\nTentez de résoudre une charade pour découvrir le mot mystère.\nLorsque vous pensez avoir découvert le mot mystère, inscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
+                    textConsignes.text = "Règles du jeu :\n\nTentez de résoudre une charade pour découvrir le mot mystère.\n\nLorsque vous pensez avoir découvert le mot mystère, inscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
                 }else{
-                    textConsignes.text = "Règles du jeu :\n\nTentez de résoudre une énigme pour découvrir le mot mystère.\nLorsque vous pensez avoir découvert le mot mystère, inscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
+                    textConsignes.text = "Règles du jeu :\n\nTentez de résoudre une énigme pour découvrir le mot mystère.\n\nLorsque vous pensez avoir découvert le mot mystère, inscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
                     textNbParties.gameObject.SetActive(false);
                     RectTransform rectTransform = boutonCommencer.GetComponent<RectTransform>();
                     rectTransform.anchoredPosition = new Vector2(0, -330);

@@ -59,7 +59,7 @@ public class MjActionInstructions : MonoBehaviour
                 texte2Coffre.text = "Ils vous donneront des consignes pour les jeux.";
         }
         
-        texte1MjInfo.text = "Vous voilà fin prêt(e) à débuter votre aventure !\n\nCliquez sur le bouton “entrer” et retrouvez-moi dans la salle suivante.";
+        texte1MjInfo.text = "Vous voilà fin prêt à débuter votre aventure !\n\nCliquez sur le bouton “Entrer” et retrouvez-moi dans la salle suivante.";
     }
 
     // Update is called once per frame
@@ -126,7 +126,7 @@ public class MjActionInstructions : MonoBehaviour
         panelRoom.SetActive(true);
         //desactive le deplacement
         DisableGameplayInput();
-        textMjRoom.text = "Dirigez-vous à présent vers la porte pour débuter l'aventure !";
+        textMjRoom.text = "Dirigez-vous à présent vers la porte\npour débuter l'aventure !";
         MainGameManager.Instance.tutoCompteur = 1;
         
     }

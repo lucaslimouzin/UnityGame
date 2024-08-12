@@ -9,7 +9,7 @@
         "Favorise la compétition entre les participants pour obtenir une reconnaissance individuelle."
       ],
       "reponseCorrecte": "A",
-      "complementReponse": "Le brainstorming encourage la pensée divergente en permettant aux participants de proposer librement des idées sans jugement ce qui favorise l'exploration d'idées innovantes et non conventionnelles."
+      "complementReponse": "Le brainstorming encourage la pensée divergente en permettant aux participants de proposer librement des idées sans jugement, ce qui favorise l'exploration d'idées innovantes et non conventionnelles."
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
         "Textile"
       ],
       "reponseCorrecte": "B",
-      "complementReponse": "Le secteur de la technologie de l'information (IT) est connu pour ses avancées rapides et constantes notamment dans les domaines du logiciel de l'intelligence artificielle de l'internet et de la cybersécurité transformant ainsi la manière dont les entreprises et les individus fonctionnent au quotidien."
+      "complementReponse": "Le secteur de la technologie de l'information (IT) est connu pour ses avancées rapides et constantes, notamment dans les domaines du logiciel, de l'intelligence artificielle, de l'internet et de la cybersécurité, transformant ainsi la manière dont les entreprises et les individus fonctionnent au quotidien."
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
         "Innovation incrémentale"
       ],
       "reponseCorrecte": "C",
-      "complementReponse": "L'innovation incrémentale se concentre sur l'amélioration continue et progressive des produits services ou processus existants plutôt que sur la création de quelque chose de totalement nouveau. Elle vise à optimiser les performances à réduire les coûts ou à améliorer l'efficacité sans nécessiter de changements radicaux ou disruptifs."
+      "complementReponse": "L'innovation incrémentale se concentre sur l'amélioration continue et progressive des produits, services ou processus existants, plutôt que sur la création de quelque chose de totalement nouveau. Elle vise à optimiser les performances, à réduire les coûts ou à améliorer l'efficacité sans nécessiter de changements radicaux ou disruptifs."
     },
     {
       "id": 4,
@@ -42,15 +42,15 @@
         "Elle n'a aucun impact sur l'innovation."
       ],
       "reponseCorrecte": "B",
-      "complementReponse": "La propriété intellectuelle joue un rôle crucial dans l'innovation en offrant une protection légale aux inventeurs et aux créateurs. Les droits de propriété intellectuelle tels que les brevets les marques déposées et les droits d'auteur permettent aux innovateurs de bénéficier d'une exclusivité temporaire sur leurs créations."
+      "complementReponse": "La propriété intellectuelle joue un rôle crucial dans l'innovation en offrant une protection légale aux inventeurs et aux créateurs. Les droits de propriété intellectuelle, tels que les brevets, les marques déposées et les droits d'auteur, permettent aux innovateurs de bénéficier d'une exclusivité temporaire sur leurs créations."
     },
     {
       "id": 5,
       "question": "Qu’est-ce que la pensée systémique ?",
       "propositions": [
-        "Une approche qui considère les organisations comme des systèmes fermés où les décisions sont prises de manière autonome sans influence extérieure.",
+        "Une approche qui considère les organisations comme des systèmes fermés, où les décisions sont prises de manière autonome sans influence extérieure.",
         "Une méthode analytique qui examine les interactions et les interdépendances entre les différents éléments d'un système pour comprendre leurs impacts globaux.",
-        "Un cadre exclusivement utilisé pour l'analyse de réseaux sociaux en ligne en identifiant les influenceurs et les tendances."
+        "Un cadre exclusivement utilisé pour l'analyse de réseaux sociaux en ligne, en identifiant les influenceurs et les tendances."
       ],
       "reponseCorrecte": "B",
       "complementReponse": "La pensée systémique est une approche qui considère les systèmes comme des ensembles d'éléments interconnectés dont les actions des parties influencent le tout. Elle cherche à comprendre les relations entre ces éléments et comment elles influencent le comportement global du système."
@@ -64,7 +64,7 @@
         "Éviter toute forme de retour utilisateur."
       ],
       "reponseCorrecte": "A",
-      "complementReponse": "Le rôle de l'expérimentation et des prototypes dans le processus d'innovation est de minimiser les risques en permettant de tester rapidement et de manière itérative des idées avant leur mise en production. Cela permet de valider les concepts d'identifier les améliorations nécessaires et d'ajuster le produit ou le service pour répondre au mieux aux besoins du marché et des utilisateurs finaux."
+      "complementReponse": "Le rôle de l'expérimentation et des prototypes dans le processus d'innovation est de minimiser les risques en permettant de tester rapidement et de manière itérative des idées avant leur mise en production. Cela permet de valider les concepts, d'identifier les améliorations nécessaires et d'ajuster le produit ou le service pour répondre au mieux aux besoins du marché et des utilisateurs finaux."
     },
     {
       "id": 7,
@@ -75,18 +75,18 @@
         "L'intégration de connaissances et d'idées externes pour accélérer l'innovation interne."
       ],
       "reponseCorrecte": "C",
-      "complementReponse": "L'innovation ouverte ou open innovation désigne une approche stratégique qui consiste à collaborer avec des sources externes telles que des clients des partenaires des universités ou même des concurrents pour développer de nouvelles idées technologies ou produits. Cette pratique permet d'élargir le vivier d'innovation d'une organisation en exploitant des compétences et des ressources externes."
+      "complementReponse": "L'innovation ouverte, ou open innovation désigne une approche stratégique qui consiste à collaborer avec des sources externes telles que des clients, des partenaires, des universités ou même des concurrents pour développer de nouvelles idées, technologies ou produits. Cette pratique permet d'élargir le vivier d'innovation d'une organisation en exploitant des compétences et des ressources externes."
     },
     {
       "id": 8,
       "question": "Qu'est-ce que l'innovation sociale et comment diffère-t-elle de l'innovation technologique ?",
       "propositions": [
-        "L'innovation sociale vise à résoudre des problèmes sociaux et environnementaux par de nouvelles solutions tandis que l'innovation technologique se concentre sur les avancées techniques.",
-        "L'innovation sociale vise à développer des produits et services basés sur des avancées scientifiques récentes tandis que l'innovation technologique se concentre sur la résolution de problèmes sociaux et environnementaux.",
-        "L'innovation sociale vise à résoudre des problèmes sociaux et environnementaux par de nouvelles solutions tandis que l'innovation technologique se concentre sur les avancées techniques pour répondre aux besoins de marché."
+        "L'innovation sociale vise à résoudre des problèmes sociaux et environnementaux par de nouvelles solutions, tandis que l'innovation technologique se concentre sur les avancées techniques.",
+        "L'innovation sociale vise à développer des produits et services basés sur des avancées scientifiques récentes, tandis que l'innovation technologique se concentre sur la résolution de problèmes sociaux et environnementaux.",
+        "L'innovation sociale vise à résoudre des problèmes sociaux et environnementaux par de nouvelles solutions, tandis que l'innovation technologique se concentre sur les avancées techniques pour répondre aux besoins de marché."
       ],
       "reponseCorrecte": "A",
-      "complementReponse": "L'innovation sociale se concentre sur la résolution de problèmes sociaux et environnementaux spécifiques par le biais de nouvelles solutions souvent en impliquant des communautés et des utilisateurs dans le processus alors que l'innovation technologique met l'accent sur le développement de nouvelles technologies pour répondre aux besoins du marché souvent sans nécessairement prendre en compte leur impact social."
+      "complementReponse": "L'innovation sociale se concentre sur la résolution de problèmes sociaux et environnementaux spécifiques par le biais de nouvelles solutions, souvent en impliquant des communautés et des utilisateurs dans le processus, alors que l'innovation technologique met l'accent sur le développement de nouvelles technologies pour répondre aux besoins du marché, souvent sans nécessairement prendre en compte leur impact social."
     }
   ]
 }

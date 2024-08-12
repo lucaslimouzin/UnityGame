@@ -7031,9 +7031,9 @@ PrefabInstance:
     - target: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
       propertyPath: m_text
-      value: "R\xE8gles du jeu : \\nTentez de r\xE9soudre une charade pour d\xE9couvrir
-        le mot myst\xE8re.\\nLorsque vous pensez avoir d\xE9couvert le mot myst\xE8re,
-        inscrivez le sur le damier \xE0 droit de l'\xE9cran en cliquant sur les lettres."
+      value: "R\xE8gles du jeu : \\n\\nTentez de r\xE9soudre une charade pour d\xE9couvrir
+        le mot myst\xE8re.\\n\\nLorsque vous pensez avoir d\xE9couvert le mot myst\xE8re,\\n\\nInscrivez
+        le sur le damier \xE0 droit de l'\xE9cran en cliquant sur les lettres."
       objectReference: {fileID: 0}
     - target: {fileID: 7504648372669050673, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
@@ -7696,7 +7696,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "Une fois que vous avez le mot, \ncliquez sur les lettres pour les s\xE9lectionner.
-        \nValider votre proposition en appuyant sur le bouton \nci-dessous, vous
+        \nValidez votre proposition en appuyant sur le bouton \nci-dessous, vous
         avez 3 essais !"
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -9,7 +9,7 @@
         "La simple idée de changement."
       ],
       "reponseCorrecte": "A",
-      "complementReponse": "L'innovation est un processus par lequel de nouvelles idées des solutions créatives et des méthodes améliorées sont mises en œuvre pour répondre à des besoins ou exigences émergents.\n"
+      "complementReponse": "L'innovation est un processus par lequel de nouvelles idées, des solutions créatives et des méthodes améliorées sont mises en œuvre pour répondre à des besoins ou exigences émergents.\n"
     },
     {
       "id": 2,
@@ -27,7 +27,7 @@
       "question": "Comment une organisation peut-elle évaluer l'impact de ses innovations sur le marché ?",
       "propositions": [
         "En mesurant uniquement les ventes.",
-        "En utilisant des indicateurs de performance clés (KPI) comme la part de marché le retour sur investissement (ROI) et la satisfaction des clients.",
+        "En utilisant des indicateurs de performance clés (KPI) comme la part de marché, le retour sur investissement (ROI), et la satisfaction des clients.",
         "En observant les réactions des concurrents."
       ],
       "reponseCorrecte": "B",
@@ -38,19 +38,19 @@
       "question": "Quel est le rôle des incubateurs dans l'écosystème de l'innovation ?",
       "propositions": [
         "Fournir un environnement sécurisé pour les expérimentations militaires.",
-        "Aider les startups à se développer en fournissant des ressources des mentorats et des financings.",
+        "Aider les startups à se développer en fournissant des ressources, des mentorats et des financings.",
         "Remplacer les départements de recherche et développement des grandes entreprises."
       ],
       "reponseCorrecte": "B",
-      "complementReponse": "Les incubateurs jouent un rôle crucial dans l'écosystème de l'innovation en offrant un soutien essentiel aux startups et aux jeunes entreprises. Ils fournissent généralement des ressources physiques telles que des espaces de travail partagés des équipements et des infrastructures nécessaires à leurs activités.\n"
+      "complementReponse": "Les incubateurs jouent un rôle crucial dans l'écosystème de l'innovation en offrant un soutien essentiel aux startups et aux jeunes entreprises. Ils fournissent généralement des ressources physiques telles que des espaces de travail partagés, des équipements et des infrastructures nécessaires à leurs activités.\n"
     },
     {
       "id": 5,
       "question": "Comment les partenariats stratégiques peuvent-ils stimuler l'innovation ?",
       "propositions": [
         "En combinant les ressources et les compétences de différentes organisations pour co-développer des solutions innovantes et accéder à de nouveaux marchés.",
-        "En évitant toute collaboration avec des entités externes ce qui permet de maintenir la confidentialité des innovations.",
-        "En éliminant les besoins de recherche et développement vers les partenaires minimisant ainsi les coûts et les risques internes."
+        "En évitant toute collaboration avec des entités externes, ce qui permet de maintenir la confidentialité des innovations.",
+        "En éliminant les besoins de recherche et développement vers les partenaires, minimisant ainsi les coûts et les risques internes."
       ],
       "reponseCorrecte": "A",
       "complementReponse": "Les partenariats stratégiques visent à créer des synergies entre les organisations en combinant leurs forces pour développer des innovations conjointes et atteindre des marchés auxquels elles n'auraient peut-être pas accès seules.\n"
@@ -64,7 +64,7 @@
         "L'innovation incrémentale ne nécessite aucune recherche."
       ],
       "reponseCorrecte": "A",
-      "complementReponse": "L'innovation radicale implique des transformations majeures. Elle peut introduire de nouvelles technologies de nouveaux modèles économiques ou de nouveaux concepts qui changent radicalement la manière dont les produits ou services sont perçus et utilisés. En revanche l'innovation incrémentale consiste à apporter des améliorations graduelles à des produits ou services existants. Elle vise à optimiser les fonctionnalités à révolutionner le marché.\n"
+      "complementReponse": "L'innovation radicale implique des transformations majeures. Elle peut introduire de nouvelles technologies de nouveaux modèles économiques ou de nouveaux concepts qui changent radicalement la manière dont les produits ou services sont perçus et utilisés. En revanche, l'innovation incrémentale consiste à apporter des améliorations graduelles à des produits ou services existants. Elle vise à optimiser les fonctionnalités à révolutionner le marché.\n"
     },
     {
       "id": 7,
@@ -75,7 +75,7 @@
         "Elle permet d'accéder à un plus large éventail d'idées et de solutions."
       ],
       "reponseCorrecte": "C",
-      "complementReponse": "L'innovation ouverte offre la possibilité d'explorer et d'intégrer un large éventail d'idées et de solutions provenant de sources externes à l'entreprise telles que des collaborateurs des partenaires des universités ou même des clients. En permettant cette diversité d'entrées une organisation peut bénéficier d'une richesse d'innovations potentielles qu'elle ne pourrait pas développer seule renforçant ainsi sa capacité à trouver des solutions créatives et adaptées aux besoins du marché.\n"
+      "complementReponse": "L'innovation ouverte offre la possibilité d'explorer et d'intégrer un large éventail d'idées et de solutions provenant de sources externes à l'entreprise, telles que des collaborateurs, des partenaires, des universités, ou même des clients. En permettant cette diversité d'entrées, une organisation peut bénéficier d'une richesse d'innovations potentielles qu'elle ne pourrait pas développer seule, renforçant ainsi sa capacité à trouver des solutions créatives et adaptées aux besoins du marché.\n"
     },
     {
       "id": 8,
@@ -86,7 +86,7 @@
         "Samsung"
       ],
       "reponseCorrecte": "B",
-      "complementReponse": "Apple est souvent associée à l'innovation dans les smartphones grâce à son introduction de l'iPhone qui a révolutionné le marché avec ses fonctionnalités avancées son design élégant et son écosystème intégré d'applications et de services.\n"
+      "complementReponse": "Apple est souvent associée à l'innovation dans les smartphones grâce à son introduction de l'iPhone, qui a révolutionné le marché avec ses fonctionnalités avancées, son design élégant et son écosystème intégré d'applications et de services.\n"
     },
     {
       "id": 9,
@@ -97,7 +97,7 @@
         "Capacité à remettre en question le statu quo et à penser de manière créative."
       ],
       "reponseCorrecte": "C",
-      "complementReponse": "Être capable de remettre en question le statu quo et de penser de manière créative sont des caractéristiques essentielles pour être un innovateur potentiel car cela permet de générer de nouvelles idées et solutions.\n"
+      "complementReponse": "Être capable de remettre en question le statu quo et de penser de manière créative sont des caractéristiques essentielles pour être un innovateur potentiel, car cela permet de générer de nouvelles idées et solutions.\n"
     }
   ]
 }
