@@ -288,28 +288,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a54872bb30ccb046b1d2417d6625d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDroiteJoueur1Button: {fileID: 609523514}
-  mainGaucheJoueur1Button: {fileID: 1644865707}
-  mainDroiteJoueur2Button: {fileID: 368710697}
-  mainGaucheJoueur2Button: {fileID: 955585276}
-  finDuTourJoueur1: {fileID: 1851611231}
-  finDuTourJoueur2: {fileID: 1164125198}
-  transfertJoueur1: {fileID: 351497949}
-  transfertJoueur2: {fileID: 904038141}
-  restartJoueur1: {fileID: 2081405967}
-  restartJoueur2: {fileID: 1934853779}
-  mainDroiteJoueur1Image: {fileID: 1632300060}
-  mainGaucheJoueur1Image: {fileID: 1920472800}
-  mainDroiteJoueur2Image: {fileID: 1163449195}
-  mainGaucheJoueur2Image: {fileID: 612920757}
-  spritesDoigts:
-  - {fileID: 21300000, guid: b8bcbf7100934d54b8bcfc3ea0ccf04e, type: 3}
-  - {fileID: 21300000, guid: 144efb85278ee264ab8ab39344c7829d, type: 3}
-  - {fileID: 21300000, guid: 1b2df9541da1b63499088852c8a8928a, type: 3}
-  - {fileID: 21300000, guid: 731425894f4acf94ea156eed46235590, type: 3}
-  - {fileID: 21300000, guid: 10f53e4f199eb4e4f8b583dc58086ac1, type: 3}
-  TextJoueur1Commence: {fileID: 1842712109}
-  TextJoueur2Commence: {fileID: 544995144}
+  buttonLeftWhite: {fileID: 0}
+  buttonRightWhite: {fileID: 0}
+  buttonLeftBlack: {fileID: 0}
+  buttonRightBlack: {fileID: 0}
+  backgroundWhite: {fileID: 0}
+  backgroundBlack: {fileID: 0}
+  textInfo: {fileID: 0}
 --- !u!4 &75891814
 Transform:
   m_ObjectHideFlags: 0
@@ -2298,7 +2283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9529412, g: 0.7607843, b: 0.21568628, a: 1}
+  m_Color: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2619,7 +2604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9529412, g: 0.7607843, b: 0.21568628, a: 1}
+  m_Color: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

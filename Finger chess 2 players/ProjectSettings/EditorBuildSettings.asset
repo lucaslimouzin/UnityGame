@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Online_Gameplay.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/HorsLigne_Gameplay.unity
+    guid: e243c032ab5bbe04ea071e8a523e7ef1
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 2efa5b57a02c3d2458b4e698c47b616d, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1c9073454620e32489fd79b6789a5c14, type: 2}

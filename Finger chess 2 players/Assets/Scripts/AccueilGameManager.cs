@@ -6,7 +6,7 @@ public class AccueilGameManager : MonoBehaviour
 {
     //lancement du jeu
     public void PlayOfflineMode(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LoadSceneByName("HorsLigne_Gameplay");
     }
     public void PlayOnlineMode()
     {
