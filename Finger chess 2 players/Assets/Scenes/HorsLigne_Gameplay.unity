@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75891814}
-  - component: {fileID: 75891813}
+  - component: {fileID: 75891815}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -276,25 +276,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &75891813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75891812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a54872bb30ccb046b1d2417d6625d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonLeftWhite: {fileID: 0}
-  buttonRightWhite: {fileID: 0}
-  buttonLeftBlack: {fileID: 0}
-  buttonRightBlack: {fileID: 0}
-  backgroundWhite: {fileID: 0}
-  backgroundBlack: {fileID: 0}
-  textInfo: {fileID: 0}
 --- !u!4 &75891814
 Transform:
   m_ObjectHideFlags: 0
@@ -310,6 +291,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &75891815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75891812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2e24fa3e43522439419022a40e7cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainDroiteJoueur1Button: {fileID: 609523514}
+  mainGaucheJoueur1Button: {fileID: 1644865707}
+  mainDroiteJoueur2Button: {fileID: 368710697}
+  mainGaucheJoueur2Button: {fileID: 955585276}
+  finDuTourJoueur1: {fileID: 1851611231}
+  finDuTourJoueur2: {fileID: 1164125198}
+  transfertJoueur1: {fileID: 351497949}
+  transfertJoueur2: {fileID: 904038141}
+  restartJoueur1: {fileID: 2081405967}
+  restartJoueur2: {fileID: 1934853779}
+  mainDroiteJoueur1Image: {fileID: 1632300060}
+  mainGaucheJoueur1Image: {fileID: 1920472800}
+  mainDroiteJoueur2Image: {fileID: 1163449195}
+  mainGaucheJoueur2Image: {fileID: 612920757}
+  spritesDoigts:
+  - {fileID: 21300000, guid: b8bcbf7100934d54b8bcfc3ea0ccf04e, type: 3}
+  - {fileID: 21300000, guid: 144efb85278ee264ab8ab39344c7829d, type: 3}
+  - {fileID: 21300000, guid: 1b2df9541da1b63499088852c8a8928a, type: 3}
+  - {fileID: 21300000, guid: 731425894f4acf94ea156eed46235590, type: 3}
+  - {fileID: 21300000, guid: 10f53e4f199eb4e4f8b583dc58086ac1, type: 3}
+  TextJoueur1Commence: {fileID: 1842712109}
+  TextJoueur2Commence: {fileID: 544995144}
 --- !u!1 &278890874
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,8 +716,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: demandeTransfertJoueur1
         m_Mode: 1
         m_Arguments:
@@ -796,8 +811,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 2
         m_Arguments:
@@ -1359,8 +1374,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 2
         m_Arguments:
@@ -1873,8 +1888,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: demandeTransfertJoueur2
         m_Mode: 1
         m_Arguments:
@@ -1968,8 +1983,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 2
         m_Arguments:
@@ -2214,8 +2229,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: OnEndTurnPlayer2ButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -2787,8 +2802,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 2
         m_Arguments:
@@ -3228,8 +3243,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: OnEndTurnPlayer1ButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -3398,8 +3413,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:
@@ -3531,8 +3546,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75891813}
-        m_TargetAssemblyTypeName: FingerChessGame, Assembly-CSharp
+      - m_Target: {fileID: 75891815}
+        m_TargetAssemblyTypeName: OffLigneFingerChessGame, Assembly-CSharp
         m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:
