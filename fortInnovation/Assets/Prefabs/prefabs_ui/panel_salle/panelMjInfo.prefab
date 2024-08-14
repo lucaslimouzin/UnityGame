@@ -491,8 +491,8 @@ MonoBehaviour:
     5 recommandations du principe 1 de l'innovation participative : \"Donner du sens
     et la direction\".\r\n\rBonne chance !"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
+  m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -517,8 +517,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -67.858765, y: 21.640514, z: 38.132553, w: -167.07565}
+  m_margin: {x: -67.858765, y: 21.640514, z: 16.560226, w: -167.07565}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

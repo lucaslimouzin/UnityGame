@@ -196,8 +196,8 @@ MonoBehaviour:
     de ton aventure, un parchemin t'indique les cellules qu'il te reste \xE0 visiter.\r\n\r\nBonne
     chance \xE0 toi aventurier de l'innovation !"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
+  m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -222,8 +222,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -29.043467, y: -66.38749, z: -82.50659, w: 10}
+  m_margin: {x: -29.043467, y: -66.38749, z: -82.50659, w: -139.349}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

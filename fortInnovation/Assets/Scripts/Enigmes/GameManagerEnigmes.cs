@@ -12,12 +12,15 @@ using System.Linq;
 
 public class GameManagerEnigmes : MonoBehaviour
 {
+    public Image imageScore;
     public GameObject panelInstruction;
     public GameObject panelInfoMJ;
     public GameObject panelEnigmes;
     public GameObject buttonTextEnigmes;
     public TextMeshProUGUI MJText;
     public TextMeshProUGUI textEnigmeInfo;
+    public TextMeshProUGUI textEnigme;
+    public TextMeshProUGUI textInstruction;
     private bool tourJoueur = true;
     private bool finDuJeu = false;
     
@@ -59,7 +62,22 @@ public class GameManagerEnigmes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            wordToFind = "ECOSYSTEME";
+            textInstruction.text = "Règles du jeu : \n\nTentez de résoudre une charade pour découvrir le mot mystère.\n\nLorsque vous pensez avoir découvert le mot mystère\n\nInscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
+        }else{
+            wordToFind = "PARTICIPATIF";//Mode facile
+            textEnigme.text = "Je suis souvent synonyme de collaboration, un processus où chacun peut apporter sa contribution.\n Je valorise l'implication collective, pour créer ensemble quelque chose de positif.";
+            textEnigme.fontSize = 50;
+            textEnigme.alignment = TextAlignmentOptions.Center;
+            textInstruction.text = "Règles du jeu : \n\nTentez de résoudre une énigme pour découvrir le mot mystère.\n\nLorsque vous pensez avoir découvert le mot mystère\n\nInscrivez le sur le damier à droit de l'écran en cliquant sur les lettres.";
+        }
         panelEnigmes.SetActive(false);
         panelInfoMJ.SetActive(false);
         gagnePerduText.gameObject.SetActive(false); // Masque le texte
@@ -154,11 +172,21 @@ public class GameManagerEnigmes : MonoBehaviour
         switch(compteurEssai){
             case 1:
                 //indice 1
-                 MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un E</color>";
+                if(MainGameManager.Instance.niveauSelect =="Normal"){
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un E</color>";
+                }else{
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 1 : Le mot commence par un P</color>";
+                }
+                 
                 break;
             case 2:
                 //indice 2
-                MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot commence par un ECO</color>";
+                if(MainGameManager.Instance.niveauSelect =="Normal"){
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot commence par un ECO</color>";
+                }else{
+                    MJText.text = "Vous n'avez pas donné le bon mot, recommencez.\nPour vous aidez, je vous offre un indice.\n<color=orange>Indice 2 : Le mot comporte 12 lettres</color>";
+                }
+                
                 break;
         }
     }
@@ -195,13 +223,23 @@ public class GameManagerEnigmes : MonoBehaviour
         panelInfoMJ.SetActive(true);
         //si c'est tourJoueur = false alors le player a gagné
         if (!tourJoueur) {
-            MJText.text = "Bravo le mot était bien Ecosystème, vous avez remporté deux recommandations";
             //envoi vers le Main Game Manager le scoreEnigme
-            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Bravo le mot était bien Ecosystème, vous avez remporté deux recommandations";
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 2);
+            }else{
+                MJText.text = "Bravo le mot était bien Participatif, vous avez remporté le duel";
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 1);
+            } 
+            
             StartCoroutine(ShowAndHideGagneText());
         }
         else {
-            MJText.text = "Maître du jeu : Vous avez échoué, je détruis les deux recommandations";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Vous avez échoué, je détruis les deux recommandations";
+            }else{
+                MJText.text = "Vous avez échoué ce duel !";
+            } 
             StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieEnigmesJoue += 1;

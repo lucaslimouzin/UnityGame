@@ -48,6 +48,7 @@ public class OffLigneFingerChessGame : MonoBehaviour
         restartJoueur1.gameObject.SetActive(false);
         restartJoueur2.gameObject.SetActive(false);
         aFaitUnTransfert = false;
+        Debug.Log("Initialisation des cards");
 
         StartCoroutine(AfficherJoueurCommence());
     }
@@ -75,23 +76,30 @@ public class OffLigneFingerChessGame : MonoBehaviour
         {
             joueur1Turn = true;
             joueur2Turn = false;
-            // Activer l'interactivit� des boutons pour le joueur 1
+            // Activer l'interactivit� des boutons pour le joueur 1 et l'opacité
+            //SetButtonOpacity(mainDroiteJoueur1Button, 255f);
+            //SetButtonOpacity(mainGaucheJoueur1Button, 255f);
             mainDroiteJoueur1Button.interactable = true;
             mainGaucheJoueur1Button.interactable = true;
+             Debug.Log("On rend les boutons du joueur 1 Interectable");
         }
         else
         {
             joueur1Turn = false;
             joueur2Turn = true;
-            // Activer l'interactivit� des boutons pour le joueur 2
+            // Activer l'interactivit� des boutons pour le joueur 1 et l'opacité
+            //SetButtonOpacity(mainDroiteJoueur2Button, 255f);
+            //SetButtonOpacity(mainGaucheJoueur2Button, 255f);
             mainDroiteJoueur2Button.interactable = true;
             mainGaucheJoueur2Button.interactable = true;
+            Debug.Log("On rend les boutons du joueur 2 Interectable");
         }
     }
 
     void InitButtonAndImage(Button button, Image image, int nombreDoigts)
     {
         SetFingerCount(button, nombreDoigts);
+        //on appelle la méthode qui gère l'opacité
         SetButtonOpacity(button, 0f);
     }
 
@@ -141,6 +149,7 @@ public class OffLigneFingerChessGame : MonoBehaviour
     //mecanique de changement de joueur
     public void OnButtonClick(Button button)
     {
+       Debug.Log("j'entre dans la fonction OnButtonClick");
         if (joueur1Turn)
         {
          tourJoueur1(button);   
@@ -262,6 +271,7 @@ public class OffLigneFingerChessGame : MonoBehaviour
     }
 
     public void tourJoueur1(Button button) {
+        Debug.Log(button);
         if (boutonMainJoueur1Selected && !aFaitUnTransfert)
         {
             if (button == mainDroiteJoueur2Button || button == mainGaucheJoueur2Button)
@@ -342,6 +352,7 @@ public class OffLigneFingerChessGame : MonoBehaviour
 
     //tour du joueur 2
     public void tourJoueur2(Button button){
+        Debug.Log(button);
         if (boutonMainJoueur2Selected && !aFaitUnTransfert)
             {
                 if (button == mainDroiteJoueur1Button || button == mainGaucheJoueur1Button)

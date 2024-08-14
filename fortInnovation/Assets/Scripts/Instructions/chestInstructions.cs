@@ -12,12 +12,13 @@ public class chestInstructions : MonoBehaviour
     public GameObject exclamation;
     
     private StarterAssets.ThirdPersonController thirdPersonController;
+    private bool ouvertureUneFois;
     
     // Start is called before the first frame update
     void Start()
     {
         //ActivateButton(MainGameManager.Instance.scoreRecoEnigmes);
-        
+        ouvertureUneFois = false;
         
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
@@ -33,11 +34,11 @@ public class chestInstructions : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
                 panelRoom.SetActive(false);
-                panelReco.SetActive(true);
-                DisableGameplayInput();
-                
-                
-                
+                if (!ouvertureUneFois){
+                    panelReco.SetActive(true);
+                    DisableGameplayInput();
+                    ouvertureUneFois = true;
+                }      
         }
     }
 
@@ -47,7 +48,7 @@ public class chestInstructions : MonoBehaviour
             panelRoom.SetActive(true);
             //desactive le deplacement
             DisableGameplayInput();
-            textMjRoom.text = "Maintenant, va vers la table pour débuter l'aventure !";
+            
             exclamation.SetActive(false);
             
             

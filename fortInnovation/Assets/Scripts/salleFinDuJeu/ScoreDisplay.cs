@@ -28,10 +28,14 @@ public class ScoresList
 
 public class ScoreDisplay : MonoBehaviour
 {
+    public Image imageScore;
+
+    public TextMeshProUGUI texteNiveau;
     public GameObject scorePrefab; // Référence au prefab Text ou TextMeshPro
     public Transform scoresParent; // Référence au parent sous le Canvas où les scores seront affichés
     public TMP_InputField playerNameInput; // Référence à l'InputField du nom du joueur
-    public TextMeshProUGUI playerScoreText; // Référence à l'InputField du nom du joueur
+    public TextMeshProUGUI playerScoreText; 
+    public TextMeshProUGUI playerScoreTextModeSimple; 
     public int score = 0; 
     public Button submitButton; // Ajoutez cette ligne en haut de votre script
     private List<GameObject> currentScoreObjects = new List<GameObject>();
@@ -42,6 +46,12 @@ public class ScoreDisplay : MonoBehaviour
     
     void Start()
     {
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
          // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
 
@@ -50,8 +60,30 @@ public class ScoreDisplay : MonoBehaviour
             Debug.LogError("ThirdPersonController not found in the scene.");
         }
         score = MainGameManager.Instance.scoreReco;
-        playerScoreText.text = "Votre avez remporté " + score.ToString() + " / 17\nrecommandations.";
-        
+        //ajout v2
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            playerScoreText.text = "Vous avez remporté " + score.ToString() + " / 17\nrecommandations.";
+        }else{
+            playerScoreTextModeSimple.text = "Vous avez remporté " + score.ToString() + " / 5\nduels.";
+            
+            switch (score){
+                case 0:
+                    playerScoreTextModeSimple.text ="Malheureusement, vous n'avez remporté aucun des 5 duels…";
+                    texteNiveau.text = "Il semble que les concepts de base de l'innovation ne soient pas encore bien assimilés. Rejouez pour améliorer votre compréhension et viser un niveau supérieur.";
+                break;
+                case <3:
+                    texteNiveau.text = "<u>Niveau Débutant :</u> Vous avez compris les concepts de base de l’innovation et vous êtes familiarisé avec quelques exemples d’innovations historiques et contemporaines. Recommencez le jeu pour atteindre un niveau supérieur.";
+                break;
+                case <5:
+                    texteNiveau.text = "<u>Niveau Intermédiaire :</u> Les concepts de base sont maitrisés et vous avez une bonne connaissance des approches et outils en innovation. Vous avez compris la gestion de l'innovation et ces cycles de vie. Vous avez déjà atteint un très haut niveau, encore quelques efforts est vous serez un expert en innovation.";
+                break;
+                case >4:
+                    texteNiveau.text = "<u>Niveau Expert :</u> Félicitation, vous voilà expert en innovation. Maintenant que vous avez une connaissance approfondie des bases de l’innovation, découvrez une approche de l’innovation fondée sur le collectif : l’innovation participative.";
+                break;
+            }
+
+        }
+                
         // Ajoutez le gestionnaire de clics pour le texte avec lien
         playerScoreText.gameObject.AddComponent<LinkHandler>();
         //StartCoroutine(GetScores());
@@ -99,6 +131,7 @@ public class ScoreDisplay : MonoBehaviour
     MainGameManager.Instance.nbPartieEnigmesJoue = 0;
     MainGameManager.Instance.nbPartieEnigmes = 1;
     MainGameManager.Instance.gameEnigmesFait = false ;
+    MainGameManager.Instance.scoreReco = 0;
 
     //retour vers accueil
     SceneManager.LoadScene("Accueil");

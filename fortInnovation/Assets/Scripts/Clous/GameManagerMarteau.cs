@@ -10,6 +10,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerMarteau : MonoBehaviour
 {
+
+    // ajout v2
+    public Image imageScore;
+    public GameObject panelComplémentReponse;
+    public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI textComplementBonneReponse;
+    public TextMeshProUGUI textComplementReponse;
+    
+    public TextMeshProUGUI boutonTextReponse;
+    private string nomDoc;
+    //fin ajout v2
+
     public Sprite[] headCharacter;
     public Image headAffiche;
     public GameObject clouJoueur; 
@@ -71,6 +83,7 @@ public class GameManagerMarteau : MonoBehaviour
         public string question;
         public string[] propositions;
         public string reponseCorrecte;
+        public string complementReponse;
     }
 
     [System.Serializable]
@@ -108,7 +121,12 @@ public class GameManagerMarteau : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
         switch (MainGameManager.Instance.selectedCharacter) {
             case 0: 
                 headAffiche.sprite = headCharacter[0];
@@ -148,8 +166,13 @@ public class GameManagerMarteau : MonoBehaviour
 
     //fonction qui charge les questions depuis local
     IEnumerator LoadJsonFromLocal(){
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("ClouQuestions");
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            nomDoc = "ClouQuestions";
+        }else{
+            nomDoc = "ClouQuestionsFacile";//Mode facile
+        }
+        // Charger le fichier JSON Normal
+        TextAsset jsonFile = Resources.Load<TextAsset>(nomDoc);
         // Désérialiser les données JSON
         listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
         yield return null;
@@ -276,7 +299,7 @@ public class GameManagerMarteau : MonoBehaviour
         else {
             panelInfoMJ.SetActive(true);
             tourJoueur = false;
-            MJText.text = "Maître du jeu : Je commence à frapper !";
+            MJText.text = "Le Maître du jeu commence à frapper !";
             TourDuMj();
         } 
     }
@@ -321,6 +344,26 @@ public class GameManagerMarteau : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+
+        //ajout v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            questionTextReponse.text = question.question;
+             //on recolor juste la réponse juste
+            switch (question.reponseCorrecte)
+            {
+                case "A":
+                    textComplementBonneReponse.text = question.propositions[0];
+                    break;
+                case "B":
+                    textComplementBonneReponse.text = question.propositions[1];
+                    break;
+                case "C":
+                    textComplementBonneReponse.text = question.propositions[2];
+                    break;
+            }
+            
+            textComplementReponse.text = question.complementReponse;
+        }
 
         //met le fond des boutons en noir
         buttonA.image.sprite = imagesButton[0]; // "black"
@@ -390,15 +433,31 @@ public class GameManagerMarteau : MonoBehaviour
             }
             
         }
-        // affiche le bouton fermer
+        // affiche le bouton fermer & v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            boutonTextReponse.text = "Suivant";
+        }
         buttonFermer.SetActive(true);
+        
+    }
+    //action du bouton fermer v2
+    public void clicBoutonPanelReponse(){
+        panelComplémentReponse.SetActive(false);
+        panelJauge.SetActive(true);
+        RetraitPanneauQuestions(aJuste);
         
     }
 
     //action du bouton fermer
-    public void clicBoutonFermer(){
-        panelJauge.SetActive(true);
-        RetraitPanneauQuestions(aJuste);
+    public void clicBoutonPanelQuestion(){
+        //si on a choisi le mode Facile v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            panelComplémentReponse.SetActive(true);
+        }else {
+            panelJauge.SetActive(true);
+            RetraitPanneauQuestions(aJuste);
+        }
+        
     }
 
     //retrait panneau Question
@@ -421,7 +480,7 @@ public class GameManagerMarteau : MonoBehaviour
             tourJoueur = false;
             isSpaceEnabled = false; // désactive la touche espace
           //  Debug.Log("Espace 5 = " + isSpaceEnabled);
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de frapper mon clou.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nLe Maître du jeu va frapper son clou.";
             TourDuMj();
         }
         
@@ -633,18 +692,27 @@ public class GameManagerMarteau : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+            //ajout v2
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Bravo vous avez remporté une recommandation";
+            }else{
+                MJText.text = "Bravo vous avez remporté le duel";
+            }
             //envoi vers le Main Game Manager le scoreClou 
             MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoClou+= 1);
             StartCoroutine(ShowAndHideGagneText());
         }
         else {
-            MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Vous avez échoué, je détruis une recommandation";
+            }else{
+                MJText.text = "Vous avez échoué ce duel";
+            }
             StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieClouJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieClouJoue > 3 ){
+        if(MainGameManager.Instance.nbPartieClouJoue > MainGameManager.Instance.nbPartieClou ){
             MainGameManager.Instance.gameClouFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleClous", 4f));
         }

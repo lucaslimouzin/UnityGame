@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MjActionPaires : MonoBehaviour
 {
     public GameObject panelMjInfo;
-    public GameObject panelReco;
-    public GameObject panelRoom;
-    public TextMeshProUGUI textMjRoom;
+    public TextMeshProUGUI textMjInfo;
     public GameObject chest;
+    public Image imageScore;
     // Start is called before the first frame update
     void Start()
     {   
         
-        
+         //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
         //Cursor.lockState = CursorLockMode.Locked;
         //panelRoom.SetActive(true);
         #if !UNITY_EDITOR && UNITY_WEBGL
@@ -25,13 +30,17 @@ public class MjActionPaires : MonoBehaviour
         if (MainGameManager.Instance.gamePairesFait) {
                 //active le coffre
                 chest.SetActive(true);
-                textMjRoom.text = "Maître du jeu : Approche toi du coffre pour débloquer les recommandations gagnées !";
+                textMjInfo.text = "Approchez vous coffre pour débloquer les recommandations gagnées !";
         }
         else {
             //desactive le coffre
                 chest.SetActive(false);
-            //change le message du panel Room
-            textMjRoom.text = "Bienvenue dans la cellule des Paires ! \n\nVous allez affronter le Maître du jeu dans une épreuve de mémoire pour tenter de remporter les 5 recommandations du principe 1 de l'innovation participative : \"Donner du sens et la direction\". \nBonne chance !";
+            //change le message du panel info
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                textMjInfo.text = "Bienvenue dans la cellule des Paires ! \n\nJe suis le Maître du jeu vous allez m'affronter dans une épreuve de mémoire pour tenter de remporter les 5 recommandations du principe 1 de l'innovation participative : \"Donner du sens et la direction\". \nBonne chance !";
+            }else{
+                textMjInfo.text = "Bienvenue dans la cellule des Paires ! \n\nJe suis le Maître du jeu vous allez m'affronter dans une épreuve de mémoire.\nBonne chance !";
+            }
         }
        
     }
@@ -45,12 +54,8 @@ public class MjActionPaires : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gamePairesFait) {
-                panelMjInfo.SetActive(true);
-                
-                
-                
+                panelMjInfo.SetActive(true);   
             }
              
         }
@@ -58,25 +63,16 @@ public class MjActionPaires : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")){
-            panelRoom.SetActive(false);
             if (!MainGameManager.Instance.gamePairesFait) {
                 if (panelMjInfo.activeSelf){
                     panelMjInfo.SetActive(false);
-                    
-                    
-                    
                 }   
-            }
-            
+            }  
         }
     }
 
     public void ExitPanel(){
         if (panelMjInfo.activeSelf){
-            panelReco.SetActive(false);
-            
-            
-            
         }   
     }
 

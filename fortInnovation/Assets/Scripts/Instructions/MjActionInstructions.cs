@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MjActionInstructions : MonoBehaviour
 {
@@ -14,30 +15,12 @@ public class MjActionInstructions : MonoBehaviour
     public GameObject chest;
     public GameObject panelUi_Move;
     public GameObject panelUi_Jump;
+    public TextMeshProUGUI texte1Coffre;
+    public TextMeshProUGUI texte2Coffre;
+    public TextMeshProUGUI texte1MjInfo;
     private StarterAssets.ThirdPersonController thirdPersonController;
+    public Image imageScore;
 
-
-    //--------pour mettre à jour le score --------------------------------------
-        private void OnEnable()
-        {
-            // S'abonner à l'événement OnScoreUpdated
-            MainGameManager.OnScoreUpdated += HandleScoreUpdated;
-        }
-
-        private void OnDisable()
-        {
-            // Se désabonner de l'événement OnScoreUpdated lors de la désactivation du script
-            MainGameManager.OnScoreUpdated -= HandleScoreUpdated;
-        }
-
-        // Méthode appelée lorsque le score est mis à jour
-        private void HandleScoreUpdated(int scorePaires, int scoreBaton, int scoreClou, int scoreBassin, int scoreEnigmes)
-        {
-            // Faire quelque chose avec le nouveau score
-            MainGameManager.Instance.scoreReco = scorePaires + scoreBaton + scoreClou + scoreBassin + scoreEnigmes; 
-        
-        }
-    //-------------------------------------------------------------------
 
 
     // Start is called before the first frame update
@@ -45,10 +28,16 @@ public class MjActionInstructions : MonoBehaviour
     {   
         // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
-        
-        //envoi vers le Main Game Manager le scoreEnigme
-        MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoEnigmes+= 0);
+
         MainGameManager.Instance.tutoCompteur = 0;
+
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
+        
         //Cursor.lockState = CursorLockMode.Locked;
         panelRoom.SetActive(true);
         //desactive le deplacement
@@ -60,9 +49,17 @@ public class MjActionInstructions : MonoBehaviour
         //active le coffre
             chest.SetActive(true);
         //change le message du panel Room
-        textMjRoom.text = "Pour te déplacer,\nutilise les flèches de ton clavier.\nPour t'entrainer, essaie d'atteindre le coffre,";
+        textMjRoom.text = "Pour vous déplacer,\nutilisez les flèches de votre clavier.\nPour vous entrainer, essayez d'atteindre le coffre.";
         //textMjInfo.text = "Bien tu es prêt(e) à commencer l'aventure !\n Clique sur le bouton SORTIR et retrouve moi dans la salle suivante.\n Bonne chance !";
-    
+        //initialisation du texte du panel coffre
+        texte1Coffre.text = "Durant la partie vous allez retrouver des panneaux d'instructions comme celui-çi.";
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+                texte2Coffre.text = "Ils vous donneront des consignes pour les jeux et vous permettront également de lire les recommandations gagnées.";
+            }else{
+                texte2Coffre.text = "Ils vous donneront des consignes pour les jeux.";
+        }
+        
+        texte1MjInfo.text = "Vous voilà fin prêt à débuter votre aventure !\n\nCliquez sur le bouton “Entrer” et retrouvez-moi dans la salle suivante.";
     }
 
     // Update is called once per frame
@@ -129,7 +126,7 @@ public class MjActionInstructions : MonoBehaviour
         panelRoom.SetActive(true);
         //desactive le deplacement
         DisableGameplayInput();
-        textMjRoom.text = "Dirige toi à présent vers la porte pour débuter l'aventure !";
+        textMjRoom.text = "Dirigez-vous à présent vers la porte\npour débuter l'aventure !";
         MainGameManager.Instance.tutoCompteur = 1;
         
     }

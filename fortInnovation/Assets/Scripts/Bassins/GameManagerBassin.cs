@@ -10,6 +10,17 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class GameManagerBassin : MonoBehaviour
 {
+    // ajout v2
+    public Image imageScore;
+    public GameObject panelComplémentReponse;
+    public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI textComplementBonneReponse;
+    public TextMeshProUGUI textComplementReponse;
+    
+    public TextMeshProUGUI boutonTextReponse;
+    private string nomDoc;
+    //fin ajout v2
+
     public GameObject wall;
     public GameObject panelBassinHead;
     public Sprite[] headCharacter;
@@ -59,6 +70,8 @@ public class GameManagerBassin : MonoBehaviour
         public string question;
         public string[] propositions;
         public string reponseCorrecte;
+        public string complementReponse;
+
     }
 
     [System.Serializable]
@@ -96,6 +109,13 @@ public class GameManagerBassin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
+        
         wall.SetActive(false);
         switch (MainGameManager.Instance.selectedCharacter) {
             case 0: 
@@ -128,8 +148,13 @@ public class GameManagerBassin : MonoBehaviour
 
     //fonction qui charge les questions depuis local
     IEnumerator LoadJsonFromLocal(){
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("BassinQuestions");
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            nomDoc = "BassinQuestions";
+        }else{
+            nomDoc = "BassinQuestionsFacile";//Mode facile
+        }
+        // Charger le fichier JSON Normal
+        TextAsset jsonFile = Resources.Load<TextAsset>(nomDoc);
         // Désérialiser les données JSON
         listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
         yield return null;
@@ -179,7 +204,7 @@ public class GameManagerBassin : MonoBehaviour
             
             //tour du MJ  
             panelInfoMJ.SetActive(true);
-            MJText.text = "Maître du jeu : J'ai gagné aux dés, je dépose une bille dans votre verre";
+            MJText.text = "le Maître du jeu a gagné aux dés, il dépose une bille dans votre verre";
             tourJoueur = false;
             TourDuMj();
         } 
@@ -220,6 +245,26 @@ public class GameManagerBassin : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+
+        //ajout v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            questionTextReponse.text = question.question;
+             //on recolor juste la réponse juste
+            switch (question.reponseCorrecte)
+            {
+                case "A":
+                    textComplementBonneReponse.text = question.propositions[0];
+                    break;
+                case "B":
+                    textComplementBonneReponse.text = question.propositions[1];
+                    break;
+                case "C":
+                    textComplementBonneReponse.text = question.propositions[2];
+                    break;
+            }
+            
+            textComplementReponse.text = question.complementReponse;
+        }
 
         //met le fond des boutons en noir
         buttonA.image.sprite = imagesButton[0]; // "black"
@@ -284,14 +329,31 @@ public class GameManagerBassin : MonoBehaviour
             }
             
         }
-        // affiche le bouton fermer
+        // affiche le bouton fermer & v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            boutonTextReponse.text = "Suivant";
+        }
         buttonFermer.SetActive(true);
         
     }
-     //action du bouton fermer
-    public void clicBoutonFermer(){
+
+    //action du bouton fermer v2
+    public void clicBoutonPanelReponse(){
+        panelComplémentReponse.SetActive(false);
         panelBassinHead.SetActive(true);
         RetraitPanneauQuestions(aJuste);
+        
+    }
+
+     //action du bouton fermer
+    public void clicBoutonPanelQuestion(){
+        //si on a choisi le mode Facile
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            panelComplémentReponse.SetActive(true);
+        }else {
+            panelBassinHead.SetActive(true);
+            RetraitPanneauQuestions(aJuste);
+        }
     }
 
     //retrait panneau Question
@@ -299,13 +361,13 @@ public class GameManagerBassin : MonoBehaviour
         panelQuestions.SetActive(false);
         panelInfoMJ.SetActive(true);
         if(reponseJuste){
-            MJText.text = "Vous avez bien répondu ! \nVous pouvez donc déplacer une bille, jusqu'à ce qu'elle devienne verte, dans mon verre.";
+            MJText.text = "Vous avez bien répondu ! \nVous pouvez donc déplacer une bille, jusqu'à ce qu'elle devienne verte, dans son verre.";
             tourJoueur = true;
             TourDuJoueur();
             
         } 
         else {
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de placer un bille dans votre verre.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nLe Maître du jeu va placer une bille dans votre verre.";
             tourJoueur = false;
             TourDuMj();
         }
@@ -472,18 +534,27 @@ public class GameManagerBassin : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+            //ajout v2
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Bravo vous avez remporté une recommandation";
+            }else{
+                MJText.text = "Bravo vous avez remporté le duel";
+            }
             //envoi vers le Main Game Manager le scoreClou 
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecobassin+= 1);
                 StartCoroutine(ShowAndHideGagneText());
         }
         else {
-            MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Vous avez échoué, je détruis une recommandation";
+            }else{
+                MJText.text = "Vous avez échoué ce duel";
+            }
             StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartieBassinJoue += 1;
         
-        if(MainGameManager.Instance.nbPartieBassinJoue > 3 ){
+        if(MainGameManager.Instance.nbPartieBassinJoue > MainGameManager.Instance.nbPartieBassin ){
             MainGameManager.Instance.gameBassinFait = true;
             StartCoroutine(LoadSceneAfterDelay("SalleBassins", 4f));
         }

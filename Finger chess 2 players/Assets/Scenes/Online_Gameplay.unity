@@ -156,9 +156,19 @@ MonoBehaviour:
   buttonRightWhite: {fileID: 609523514}
   buttonLeftBlack: {fileID: 955585276}
   buttonRightBlack: {fileID: 368710697}
+  mainDroiteWhiteImage: {fileID: 1632300060}
+  mainGaucheWhiteImage: {fileID: 1920472800}
+  mainDroiteBlackImage: {fileID: 1163449195}
+  mainGaucheBlackImage: {fileID: 612920757}
   backgroundWhite: {fileID: 1570469562}
   backgroundBlack: {fileID: 1283200977}
   textInfo: {fileID: 1842712109}
+  spritesDoigts:
+  - {fileID: 21300000, guid: b8bcbf7100934d54b8bcfc3ea0ccf04e, type: 3}
+  - {fileID: 21300000, guid: 144efb85278ee264ab8ab39344c7829d, type: 3}
+  - {fileID: 21300000, guid: 1b2df9541da1b63499088852c8a8928a, type: 3}
+  - {fileID: 21300000, guid: 731425894f4acf94ea156eed46235590, type: 3}
+  - {fileID: 21300000, guid: 10f53e4f199eb4e4f8b583dc58086ac1, type: 3}
 --- !u!4 &75891814
 Transform:
   m_ObjectHideFlags: 0

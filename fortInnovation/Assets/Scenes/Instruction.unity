@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 419183785}
   - component: {fileID: 419183784}
   m_Layer: 5
-  m_Name: textInstructions1 (1)
+  m_Name: textInstructions2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Visiter toutes les \nsalles"
+  m_text: "Visiter toutes les \ncellules"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
   m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
@@ -1388,6 +1388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueButton: {fileID: 1160805230}
+  imageScore: {fileID: 898374428}
+  texteObjectif: {fileID: 1011134869}
 --- !u!1 &980058180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,7 +2115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 320.77307, y: 190.08792}
+  m_AnchoredPosition: {x: 282, y: 190.08792}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1715779805

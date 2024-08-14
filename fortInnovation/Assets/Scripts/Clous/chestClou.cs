@@ -7,6 +7,8 @@ using TMPro;
 public class chestClou : MonoBehaviour
 {
     public GameObject panelReco;
+    public GameObject panelModeSimple;
+    public TextMeshProUGUI textModeSimple;
     public GameObject panelReco1;
     public GameObject panelReco2;
     public GameObject panelReco3;
@@ -48,21 +50,38 @@ public class chestClou : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Player")){
-                panelReco.SetActive(true);
+        //ajout de la condition en fonction du choix du niveau
+        if(MainGameManager.Instance.niveauSelect == "Normal"){
+            if (other.gameObject.CompareTag("Player")){
                 
-                
-                
+                panelReco.SetActive(true);           
+            }
+        }//sinon c'est le mode Facile        
+        else {
+            if (other.gameObject.CompareTag("Player")){
+                nbReco =  MainGameManager.Instance.scoreRecoClou;
+                panelModeSimple.SetActive(true);  
+                if (MainGameManager.Instance.scoreRecoClou > 0) {
+                    textModeSimple.text = "Bravo vous avez remporté cette épreuve !\n\nVous pouvais désormais quitter cette cellule.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
+                }else {
+                    textModeSimple.text = "Vous n'avez pas remporté cette épreuve.\n\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
+                }               
+            }
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (panelReco.activeSelf){
-            panelReco.SetActive(false);
-            
-            
-            
-        }
+        //ajout de la condition en fonction du choix du niveau
+        if(MainGameManager.Instance.niveauSelect == "Normal"){
+            if (panelReco.activeSelf){
+                panelReco.SetActive(false);
+             }
+        }//sinon c'est le mode normal
+        else {
+             if (panelReco.activeSelf){
+                panelModeSimple.SetActive(false);
+             }
+        } 
     }
 
     private void ActivateButton(int score){

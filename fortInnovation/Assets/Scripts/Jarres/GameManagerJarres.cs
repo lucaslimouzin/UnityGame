@@ -12,6 +12,16 @@ public class GameManagerPaires : MonoBehaviour
 {
  
 
+    // ajout v2
+    public Image imageScore;
+    public GameObject panelComplémentReponse;
+    public TextMeshProUGUI questionTextReponse;
+    public TextMeshProUGUI textComplementBonneReponse;
+    public TextMeshProUGUI textComplementReponse;
+    
+    public TextMeshProUGUI boutonTextReponse;
+    private string nomDoc;
+    //fin ajout v2
 
     public GameObject panelJarreHead;
     public Sprite[] headCharacter;
@@ -61,6 +71,7 @@ public class GameManagerPaires : MonoBehaviour
     public TextMeshProUGUI trueWrongText;
     public int scoreMj = 0;
     public int scorePlayer = 0;
+    
 
     [System.Serializable]
     public class QuestionData
@@ -69,6 +80,7 @@ public class GameManagerPaires : MonoBehaviour
         public string question;
         public string[] propositions;
         public string reponseCorrecte;
+        public string complementReponse;
     }
 
     [System.Serializable]
@@ -106,6 +118,12 @@ public class GameManagerPaires : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
         switch (MainGameManager.Instance.selectedCharacter) {
             case 0: 
                 headAffiche.sprite = headCharacter[0];
@@ -144,8 +162,14 @@ public class GameManagerPaires : MonoBehaviour
 
     //fonction qui charge les questions depuis local
     IEnumerator LoadJsonFromLocal(){
-        // Charger le fichier JSON (assurez-vous de placer le fichier dans le dossier Resources)
-        TextAsset jsonFile = Resources.Load<TextAsset>("PaireQuestions");
+        //ajout v2
+        if(MainGameManager.Instance.niveauSelect =="Normal"){
+            nomDoc = "PaireQuestions";
+        }else{
+            nomDoc = "PaireQuestionsFacile";//Mode facile
+        }
+        // Charger le fichier JSON Normal
+        TextAsset jsonFile = Resources.Load<TextAsset>(nomDoc);
         // Désérialiser les données JSON
         listQuestions = JsonUtility.FromJson<Questions>(jsonFile.ToString());
         yield return null;
@@ -198,7 +222,7 @@ public class GameManagerPaires : MonoBehaviour
             panelInfoMJ.SetActive(true);
            // tourJoueur = false;
            tourJoueur = true;
-            MJText.text = "Maître du jeu : Je commence à jouer !";
+            MJText.text = "Le Maître du jeu commence à jouer !";
             TourDuMj();
         } 
     }
@@ -243,6 +267,26 @@ public class GameManagerPaires : MonoBehaviour
         propositionAtext.text = question.propositions[0];
         propositionBtext.text = question.propositions[1];
         propositionCtext.text = question.propositions[2];
+
+        //ajout v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            questionTextReponse.text = question.question;
+             //on recolor juste la réponse juste
+            switch (question.reponseCorrecte)
+            {
+                case "A":
+                    textComplementBonneReponse.text = question.propositions[0];
+                    break;
+                case "B":
+                    textComplementBonneReponse.text = question.propositions[1];
+                    break;
+                case "C":
+                    textComplementBonneReponse.text = question.propositions[2];
+                    break;
+            }
+            
+            textComplementReponse.text = question.complementReponse;
+        }
         
         //met le fond des boutons en noir
         buttonA.image.sprite = imagesButton[0]; // "black"
@@ -313,15 +357,32 @@ public class GameManagerPaires : MonoBehaviour
             }
             
         }
-        // affiche le bouton fermer
+        // affiche le bouton fermer & v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            boutonTextReponse.text = "Suivant";
+        }
         buttonFermer.SetActive(true);
+        
+        
+    }
+    //action du bouton fermer v2
+    public void clicBoutonPanelReponse(){
+        panelComplémentReponse.SetActive(false);
+        panelJarreHead.SetActive(true);
+        RetraitPanneauQuestions(aJuste);
         
     }
 
     //action du bouton fermer
-    public void clicBoutonFermer(){
-        panelJarreHead.SetActive(true);
-        RetraitPanneauQuestions(aJuste);
+    public void clicBoutonPanelQuestion(){
+        //si on a choisi le mode Facile v2
+        if (MainGameManager.Instance.niveauSelect == "Facile"){
+            panelComplémentReponse.SetActive(true);
+        }else {
+            panelJarreHead.SetActive(true);
+            RetraitPanneauQuestions(aJuste);
+        }
+        
     }
    
     //retrait panneau Question
@@ -337,7 +398,7 @@ public class GameManagerPaires : MonoBehaviour
         } 
         else {
             tourJoueur = false;
-            MJText.text = "Vous n'avez pas donné la bonne réponse...\nC'est donc à moi de retourner deux cartes.";
+            MJText.text = "Vous n'avez pas donné la bonne réponse...\nLe Maître du jeu va retourner deux cartes.";
             TourDuMj();
         }
         
@@ -666,21 +727,38 @@ public class GameManagerPaires : MonoBehaviour
         finDuJeu = true;
         //si c'est tourJoueur = false alors le player a gagné
         if (tourJoueur) {
-            MJText.text = "Maître du jeu : Bravo vous avez remporté une recommandation";
+            //ajout v2
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Bravo vous avez remporté une recommandation";
+            }else{
+                MJText.text = "Bravo vous avez remporté le duel";
+            }
+            
             //envoi vers le Main Game Manager le scorePaires
-            MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 2);
+
+            //ajout v2 choix mode de jeu
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 2);
+            }else{
+                MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires+= 1);
+            } 
+            
             if (MainGameManager.Instance.scoreRecoPaires == 6) {
                 MainGameManager.Instance.UpdateScore(MainGameManager.Instance.scoreRecoPaires-= 1);
             }
             StartCoroutine(ShowAndHideGagneText());
         }
         else {
-            MJText.text = "Maître du jeu : Vous avez échoué, je détruis une recommandation";
+            if(MainGameManager.Instance.niveauSelect =="Normal"){
+                MJText.text = "Vous avez échoué, je détruis une recommandation";
+            }else{
+                MJText.text = "Vous avez échoué ce duel";
+            }
             StartCoroutine(ShowAndHidePerduText());
         }
         MainGameManager.Instance.nbPartiePairesJoue += 1;
         
-        if(MainGameManager.Instance.nbPartiePairesJoue > 3 ){
+        if(MainGameManager.Instance.nbPartiePairesJoue > MainGameManager.Instance.nbPartiePaires ){
             MainGameManager.Instance.gamePairesFait = true;
             StartCoroutine(LoadSceneAfterDelay("SallePaires", 4f));
         }

@@ -65,11 +65,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lancez le d\xE9 pour d\xE9terminer le joueur qui d\xE9butera la partie,
+  m_text: "Lancez le d\xE9 pour d\xE9terminer le joueur qui d\xE9butera la partie,\n
     le score le plus haut l'emporte.\nEn Cas d'\xE9galit\xE9, relancez les d\xE9s."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
+  m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

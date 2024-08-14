@@ -1,0 +1,103 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quel est l'impact des tendances technologiques émergentes, comme l'intelligence artificielle et l'Internet des objets, sur l'innovation ?",
+      "propositions": [
+        "Elles créent de nouvelles opportunités pour des produits et services innovants, tout en transformant les modèles d'affaires existants.",
+        "Elles rendent l'innovation plus difficile.",
+        "Elles ne concernent que les entreprises technologiques."
+      ],
+      "reponseCorrecte": "A",
+      "complementReponse": "L'impact des tendances technologiques émergentes telles que l'intelligence artificielle et l'Internet des objets sur l'innovation est significatif. Ces avancées ouvrent de nouvelles opportunités pour développer des produits et services innovants qui étaient auparavant impossibles ou difficiles à réaliser. En même temps elles modifient profondément les modèles d'affaires existants en permettant une connectivité accrue, une automatisation des processus et une personnalisation des services basée sur les données."
+    },
+    {
+      "id": 2,
+      "question": "Comment la pensée systémique peut-elle être appliquée à l'innovation ?",
+      "propositions": [
+        "En examinant les interrelations et les dynamiques entre les différents composants d'un système pour comprendre les effets de levier et les points d'optimisation.",
+        "En éliminant la complexité des systèmes pour les simplifier au maximum et en considérant uniquement les éléments isolés du problème.",
+        "En se concentrant uniquement sur les aspects financiers du problème."
+      ],
+      "reponseCorrecte": "A",
+      "complementReponse": "La pensée systémique est une approche qui considère les éléments d'un système comme interconnectés et interdépendants. Lorsqu'elle est appliquée à l'innovation, elle implique d'analyser non seulement les parties individuelles d'un problème ou d'une situation, mais aussi les relations et les interactions entre ces parties. Cela permet de mieux comprendre comment chaque composant influence les autres et comment des changements dans un domaine peuvent avoir des répercussions sur l'ensemble du système."
+    },
+    {
+      "id": 3,
+      "question": "Quelle est la différence entre une stratégie d'innovation et un modèle économique d'innovation ?",
+      "propositions": [
+        "Une stratégie d'innovation se concentre sur les techniques de fabrication, tandis qu'un modèle économique d'innovation se concentre sur la vente.",
+        "Une stratégie d'innovation décrit les approches globales pour innover, tandis qu'un modèle économique d'innovation décrit comment l'innovation génère des revenus.",
+        "Une stratégie d'innovation est utilisée uniquement par les startups, tandis qu'un modèle économique d'innovation est utilisé par les grandes entreprises."
+      ],
+      "reponseCorrecte": "B",
+      "complementReponse": "Une stratégie d'innovation se concentre sur les méthodes et les priorités pour stimuler l'innovation au sein d'une organisation. En revanche un modèle économique d'innovation se concentre sur la manière dont une innovation spécifique crée, capture et délivre de la valeur économique."
+    },
+    {
+      "id": 4,
+      "question": "Qu'est-ce qu'un cycle de vie de produit ?",
+      "propositions": [
+        "Le temps que prend un produit pour être fabriqué.",
+        "La période pendant laquelle un produit est sous garantie.",
+        "Les étapes par lesquelles passe un produit depuis son introduction jusqu'à son retrait du marché."
+      ],
+      "reponseCorrecte": "C",
+      "complementReponse": "Le cycle de vie d'un produit comprend les phases de développement, de lancement, de croissance, de maturité et de déclin, décrivant l'évolution des ventes et de la demande pour un produit au fil du temps."
+    },
+    {
+      "id": 5,
+      "question": "Quelle méthodologie d'innovation utilise les phases d’immersion, d’idéation, de prototype, et de test ?",
+      "propositions": [
+        "Six Sigma",
+        "Design Thinking",
+        "Lean Startup"
+      ],
+      "reponseCorrecte": "B",
+      "complementReponse": "Le Design Thinking est une méthodologie d'innovation qui suit les phases d'immersion (compréhension des utilisateurs), d’idéation (génération d'idées), de prototypage (création de modèles) et de test (évaluation des solutions), centrée sur l'utilisateur et la résolution créative de problèmes."
+    },
+    {
+      "id": 6,
+      "question": "Qu'est-ce que le Design Thinking ?",
+      "propositions": [
+        "Une approche centrée sur l'utilisateur pour résoudre des problèmes.",
+        "Une méthode de production.",
+        "Une stratégie de marketing."
+      ],
+      "reponseCorrecte": "A",
+      "complementReponse": "Le Design Thinking est une méthode de résolution de problèmes qui se concentre sur la compréhension des besoins des utilisateurs et la création de solutions innovantes, en mettant l'accent sur l'empathie, la collaboration et l'expérimentation."
+    },
+    {
+      "id": 7,
+      "question": "Quel est un exemple d'innovation historique ?",
+      "propositions": [
+        "La production en série des automobiles par Henry Ford.",
+        "L'introduction de l’iPhone par Apple.",
+        "Les deux."
+      ],
+      "reponseCorrecte": "C",
+      "complementReponse": "La production en série des automobiles par Henry Ford a révolutionné l'industrie manufacturière en rendant les voitures accessibles au grand public grâce à des méthodes de production plus efficaces et moins coûteuses. L'introduction de l'iPhone par Apple a transformé la technologie mobile et l'industrie des télécommunications en combinant un téléphone, un lecteur de musique, et un accès à Internet dans un appareil ergonomique et design, redéfinissant ainsi les attentes des consommateurs et les fonctionnalités des smartphones."
+    },
+    {
+      "id": 8,
+      "question": "Quel terme décrit l'introduction d'un nouveau produit ou service sur le marché ?",
+      "propositions": [
+        "Diversification",
+        "Standardisation",
+        "Innovation"
+      ],
+      "reponseCorrecte": "C",
+      "complementReponse": "L'innovation désigne le processus de développement et d'introduction de nouveaux produits ou services sur le marché, visant à répondre à des besoins existants ou émergents de manière novatrice et améliorée."
+    },
+    {
+      "id": 9,
+      "question": "Qu'est-ce qu'un prototype ?",
+      "propositions": [
+        "Un produit fini prêt à être commercialisé.",
+        "Un modèle initial utilisé pour tester un concept ou un processus.",
+        "Un produit obsolète."
+      ],
+      "reponseCorrecte": "B",
+      "complementReponse": "Un prototype est une version préliminaire d'un produit ou d'un système créé pour évaluer sa faisabilité, identifier les améliorations nécessaires et valider les concepts avant la production finale."
+    }
+  ]
+}

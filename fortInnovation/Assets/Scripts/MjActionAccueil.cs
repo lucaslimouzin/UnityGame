@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MjActionAccueil : MonoBehaviour
 {
@@ -18,10 +19,17 @@ public class MjActionAccueil : MonoBehaviour
     public GameObject[] doorGameObjects;
     public GameObject buttonFermer;
     public GameObject buttonTeleportation;
+    public Image imageScore;
 
     // Start is called before the first frame update
     void Start()
     {   
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+        }
          // Trouver le script ThirdPersonController automatiquement au démarrage
         thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
         buttonFermer.SetActive(true);
@@ -42,14 +50,14 @@ public class MjActionAccueil : MonoBehaviour
            
         } else if (MainGameManager.Instance.tutoCompteur == 2) {
                 panelQuest.SetActive(false);
-                textMjRoom.text = "Bienvenue dans Fort Innovation. \nApproche-toi et viens en apprendre davantage sur ton aventure !";
+                textMjRoom.text = "Bienvenue dans Fort Innovation. \nJe suis le Maître du temps !\nApprochez-vous et venez en apprendre davantage sur votre aventure !";
         }
         else {
             //change le message du panel Room
             Bulle.SetActive(false);
             pointExclamation.SetActive(false);
             panelQuest.SetActive(true);
-            textMjRoom.text = "Continue d'explorer les autres salles \nAvance vers la voie de l'innovation...";
+            textMjRoom.text = "Continue d'explorer les autres salles \nAvancez vers la voie de l'innovation...";
         }
         MettreAJourChecklist();
        
@@ -65,7 +73,7 @@ public class MjActionAccueil : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
          if (MainGameManager.Instance.gamePairesFait && MainGameManager.Instance.gameBatonFait && MainGameManager.Instance.gameBassinFait && MainGameManager.Instance.gameClouFait && MainGameManager.Instance.gameEnigmesFait){
            panelRoom.SetActive(true);
-           textMjRoom.text = "Bravo vous avez fini toutes les épreuves !\nOn se retrouve dans la dernière cellule !"; 
+           textMjRoom.text = "Bravo vous avez fini toutes les épreuves !\nOn se retrouve dans la salle des récompenses !"; 
            buttonFermer.SetActive(false);
            buttonTeleportation.SetActive(true);
         } else if (MainGameManager.Instance.tutoCompteur == 2){
@@ -74,7 +82,7 @@ public class MjActionAccueil : MonoBehaviour
                 panelRoom.SetActive(false);
                 panelMjInfo.SetActive(true);
                 pointExclamation.SetActive(false);
-                textMjInfo.text = "Pour terminer ta quête, tu devras visiter les 5 cellules du Fort qui se trouvent derière moi et affronter le Maître du jeu. \n\nAu cours de ton aventure, un panneau t'indique les cellules qu'il te reste à visiter. \n\nBonne chance à toi aventurier de l'innovation !";
+                textMjInfo.text = "Pour terminer votre quête, vous devrez visiter les 5 cellules du Fort qui se trouvent derrière moi et affronter les Maîtres du jeu. \n\nAu cours de votre aventure, un panneau vous indiquera les cellules qu'il vous restera à visiter. \n\nBonne chance à vous aventurier de l'innovation !";
                 
                 
                 
@@ -85,7 +93,7 @@ public class MjActionAccueil : MonoBehaviour
         else {
             panelRoom.SetActive(true);
             pointExclamation.SetActive(false);
-            textMjRoom.text = "Continue d'explorer les autres salles.\nAvance vers la voie de l'innovation...";
+            textMjRoom.text = "Continuez d'explorer les autres cellules.\nAvancez vers la voie de l'innovation...";
             panelMjInfo.SetActive(false);
         }
         
@@ -113,7 +121,7 @@ public class MjActionAccueil : MonoBehaviour
         panelRoom.SetActive(true);
         pointExclamation.SetActive(false);
         panelQuest.SetActive(true);
-        textMjRoom.text = "Dirige toi vers une cellule \nPour commencer ton aventure...";
+        textMjRoom.text = "Dirigez-vous vers une cellule \nPour commencer votre aventure...";
         MainGameManager.Instance.tutoCompteur = 3;
         panelMjInfo.SetActive(false);
         

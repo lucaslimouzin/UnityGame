@@ -1,0 +1,103 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Comment le \"Design Thinking\" peut-il aider à résoudre des problèmes complexes ?",
+      "propositions": [
+        "En utilisant uniquement des données quantitatives.",
+        "En adoptant une approche centrée sur l'utilisateur pour comprendre les besoins et créer des solutions innovantes.",
+        "En se concentrant uniquement sur les aspects techniques du problème."
+      ],
+      "reponseCorrecte": "B",
+      "complementReponse": "Le \"Design Thinking\" est une méthode de résolution de problèmes qui met l'accent sur une compréhension approfondie des besoins des utilisateurs finaux. En intégrant cette approche centrée sur l'utilisateur, les équipes peuvent mieux identifier et définir les problèmes complexes."
+    },
+    {
+      "id": 2,
+      "question": "Quel outil est utilisé pour analyser les opportunités et les menaces dans l'innovation ?",
+      "propositions": [
+        "SWOT",
+        "Design Thinking",
+        "PESTEL"
+      ],
+      "reponseCorrecte": "A",
+      "complementReponse": "L'analyse SWOT est un outil de gestion stratégique qui permet d'évaluer les Forces (Strengths), les Faiblesses (Weaknesses), les Opportunités (Opportunities) et les Menaces (Threats) d'une entreprise ou d'un projet. Elle est utilisée pour identifier les avantages concurrentiels, les points faibles à améliorer, ainsi que les opportunités et les menaces externes susceptibles d'affecter la réussite d'une initiative d'innovation."
+    },
+    {
+      "id": 3,
+      "question": "Qu'est-ce que l'innovation disruptive ?",
+      "propositions": [
+        "Une innovation qui améliore légèrement un produit existant.",
+        "Une innovation qui crée un nouveau marché et perturbe un marché existant.",
+        "Une innovation qui est facile à mettre en œuvre."
+      ],
+      "reponseCorrecte": "B",
+      "complementReponse": "L'innovation disruptive désigne une forme d'innovation qui introduit un nouveau produit ou service sur le marché, souvent moins sophistiqué mais plus abordable. Cette innovation perturbe souvent les acteurs établis en changeant les règles du jeu économique et en forçant les entreprises traditionnelles à s'adapter ou à risquer l'obsolescence."
+    },
+    {
+      "id": 4,
+      "question": "Comment une entreprise peut-elle utiliser l'innovation pour se différencier sur un marché saturé ?",
+      "propositions": [
+        "En réduisant uniquement ses prix.",
+        "En copiant les produits de ses concurrents.",
+        "En développant des produits ou services uniques qui répondent à des besoins non satisfaits."
+      ],
+      "reponseCorrecte": "C",
+      "complementReponse": "Face à un marché saturé, une entreprise peut se démarquer en introduisant des innovations qui offrent quelque chose de nouveau et de différent. Cela implique souvent l'identification de besoins non encore pleinement satisfaits par les offres existantes sur le marché. En développant des produits ou services uniques, l'entreprise peut attirer l'attention des consommateurs et créer une proposition de valeur qui la distingue de la concurrence."
+    },
+    {
+      "id": 5,
+      "question": "Comment l'innovation peut-elle être intégrée dans la culture d'entreprise ?",
+      "propositions": [
+        "En encourageant la prise de risque calculée, en valorisant les échecs comme des opportunités d'apprentissage, et en favorisant la collaboration et la créativité.",
+        "En évitant toute forme de changement.",
+        "En concentrant l'innovation uniquement dans un département spécifique et en y imposant des règles strictes pour toutes les équipes."
+      ],
+      "reponseCorrecte": "A",
+      "complementReponse": "Pour intégrer l'innovation dans la culture d'entreprise, il est essentiel d'encourager la prise de risque calculée, de valoriser les échecs comme des occasions d'apprentissage, et de favoriser la collaboration et la créativité parmi les employés. Cela crée un environnement où les nouvelles idées sont encouragées, testées et développées efficacement."
+    },
+    {
+      "id": 6,
+      "question": "Qu'est-ce que l'open innovation et quels en sont les principaux avantages ?",
+      "propositions": [
+        "L'open innovation consiste à partager toutes les données internes de l'entreprise avec le public.",
+        "L'open innovation consiste à externaliser entièrement le département R&D.",
+        "L'open innovation implique de collaborer avec des entités externes pour améliorer les processus d'innovation internes, ce qui peut accélérer le développement de nouveaux produits et réduire les coûts."
+      ],
+      "reponseCorrecte": "C",
+      "complementReponse": "L'open innovation est une approche stratégique qui consiste à intégrer des idées, des technologies et des ressources externes dans le processus d'innovation d'une entreprise. Cela permet d'élargir le réservoir d'idées et de compétences disponibles pour innover. En exploitant les avantages de l'open innovation, les entreprises peuvent améliorer leur capacité à répondre aux besoins changeants du marché et à rester compétitives dans un environnement dynamique."
+    },
+    {
+      "id": 7,
+      "question": "Quel rôle joue la gestion du changement dans l'innovation ?",
+      "propositions": [
+        "Aider à identifier de nouvelles opportunités de marché.",
+        "Faciliter l'acceptation et la mise en œuvre de nouvelles idées et processus au sein d'une organisation.",
+        "Accélérer le développement de produits."
+      ],
+      "reponseCorrecte": "B",
+      "complementReponse": "La gestion du changement est essentielle pour l'innovation car elle permet de gérer efficacement les transitions nécessaires à l'adoption de nouvelles idées, technologies ou processus au sein d'une organisation. Elle vise à minimiser la résistance au changement en impliquant les employés, en communiquant clairement les objectifs et les avantages des nouvelles initiatives."
+    },
+    {
+      "id": 8,
+      "question": "Quelle est la différence entre l'innovation incrémentale et l'innovation disruptive ?",
+      "propositions": [
+        "L'innovation incrémentale introduit des changements mineurs, tandis que l'innovation disruptive transforme radicalement le marché.",
+        "L'innovation disruptive est plus lente que l'innovation incrémentale.",
+        "L'innovation incrémentale nécessite plus de ressources que l'innovation disruptive."
+      ],
+      "reponseCorrecte": "A",
+      "complementReponse": "L'innovation incrémentale se caractérise par des améliorations progressives et évolutives apportées à des produits ou processus existants visant à optimiser les performances. En revanche, l'innovation disruptive introduit des changements radicaux qui peuvent bouleverser complètement les modèles économiques et transformer l'industrie en proposant de nouvelles solutions souvent moins chères ou plus accessibles, captant ainsi de nouveaux segments de marché."
+    },
+    {
+      "id": 9,
+      "question": "Quel est l'objectif principal de l'innovation ?",
+      "propositions": [
+        "Réduire les coûts",
+        "Créer de la valeur et répondre à de nouvelles exigences",
+        "Maintenir le statu quo"
+      ],
+      "reponseCorrecte": "B",
+      "complementReponse": "L'innovation vise principalement à créer de la valeur en proposant des solutions novatrices qui répondent aux besoins émergents des utilisateurs, améliorant ainsi leur expérience et apportant des avantages compétitifs aux entreprises."
+    }
+  ]
+}

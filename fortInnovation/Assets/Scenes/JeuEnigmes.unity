@@ -1404,12 +1404,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2474b8511adfb4f9b38e64a1540e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageScore: {fileID: 442081485}
   panelInstruction: {fileID: 1566164946}
   panelInfoMJ: {fileID: 1611861899}
   panelEnigmes: {fileID: 230284473}
   buttonTextEnigmes: {fileID: 45022281}
   MJText: {fileID: 1611861898}
   textEnigmeInfo: {fileID: 965714790}
+  textEnigme: {fileID: 569936062}
+  textInstruction: {fileID: 1566164947}
   allLetterButtons:
   - {fileID: 1850071546}
   - {fileID: 724539438}
@@ -1892,6 +1895,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 442081483}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &442081485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7622861838475153917, guid: 364cc89a7d63c81498bfa4f3941933f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 442081483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &489383081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,7 +2279,7 @@ GameObject:
   - component: {fileID: 569936063}
   - component: {fileID: 569936062}
   m_Layer: 5
-  m_Name: TexteMaitreDuJeu (1)
+  m_Name: TexteIndice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2320,8 +2335,8 @@ MonoBehaviour:
     Il peut \xEAtre interne ou externe et fait contribuer des parties prenantes qui
     ne sont normalement pas associ\xE9es."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b00ef1d7034dd5447aa751921656c3d8, type: 2}
-  m_sharedMaterial: {fileID: -6384614870648985647, guid: b00ef1d7034dd5447aa751921656c3d8,
+  m_fontAsset: {fileID: 11400000, guid: 3bff782ec779118478fb5ab5839f7059, type: 2}
+  m_sharedMaterial: {fileID: -434759474268948592, guid: 3bff782ec779118478fb5ab5839f7059,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2346,13 +2361,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -6103,7 +6118,7 @@ GameObject:
   - component: {fileID: 1496942985}
   - component: {fileID: 1496942984}
   m_Layer: 5
-  m_Name: U
+  m_Name: T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7016,9 +7031,9 @@ PrefabInstance:
     - target: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
       propertyPath: m_text
-      value: "R\xE8gles du jeu : \\nTentez de r\xE9soudre une charade pour d\xE9couvrir
-        le mot myst\xE8re.\\nLorsque vous pensez avoir d\xE9couvert le mot myst\xE8re,
-        inscrivez le sur le damier \xE0 droit de l'\xE9cran en cliquant sur les lettres."
+      value: "R\xE8gles du jeu : \\n\\nTentez de r\xE9soudre une charade pour d\xE9couvrir
+        le mot myst\xE8re.\\n\\nLorsque vous pensez avoir d\xE9couvert le mot myst\xE8re,\\n\\nInscrivez
+        le sur le damier \xE0 droit de l'\xE9cran en cliquant sur les lettres."
       objectReference: {fileID: 0}
     - target: {fileID: 7504648372669050673, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
@@ -7057,6 +7072,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1566164944}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1566164947 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6457552705334170323, guid: 4088c2b37a05c194b84cb39d7506bd77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566164944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575671964
 GameObject:
   m_ObjectHideFlags: 0
@@ -7669,7 +7696,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "Une fois que vous avez le mot, \ncliquez sur les lettres pour les s\xE9lectionner.
-        \nValider votre proposition en appuyant sur le bouton \nci-dessous, vous
+        \nValidez votre proposition en appuyant sur le bouton \nci-dessous, vous
         avez 3 essais !"
       objectReference: {fileID: 0}
     m_RemovedComponents: []

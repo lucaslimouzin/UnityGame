@@ -1,70 +1,69 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine.Networking;
+using UnityEngine.UI;
+
 
 public class MainGameManager : MonoBehaviour
 {
     public static MainGameManager Instance;
     private TextMeshProUGUI scoreTextReco;
     public int scoreReco = 0;
+    public Sprite[] imageScore;
 
-    // variables pour jeu des Paires/paires
-    public int scoreRecoPaires = 0;
-    public int nbPartiePairesJoue = 1;
-    public int nbPartiePaires = 3;
-    public bool gamePairesFait = false;
+    // Variables de jeu
+    public int nbPartiePaires;
+    public int nbPartieBaton;
+    public int nbPartieClou;
+    public int nbPartieBassin;
+    public int nbPartieEnigmes;
+    public int scoreRecoPaires;
+    public int nbPartiePairesJoue;
+    public bool gamePairesFait;
     public List<int> questionsPairesPosees = new List<int>();
 
-    // variables pour jeu du baton
-    public int scoreRecoBaton = 0;
-    public int nbPartieBatonJoue = 1;
-    public int nbPartieBaton = 4;
-    public bool gameBatonFait = false;
+    public int scoreRecoBaton;
+    public int nbPartieBatonJoue;
+    public bool gameBatonFait;
     public List<int> questionsBatonPosees = new List<int>();
 
-    // variables pour jeu du clou
-    public int scoreRecoClou = 0;
-    public int nbPartieClouJoue = 1;
-    public int nbPartieClou = 3;
-    public bool gameClouFait = false;
+    public int scoreRecoClou;
+    public int nbPartieClouJoue;
+    public bool gameClouFait;
     public List<int> questionsClouPosees = new List<int>();
 
-    // variables pour jeu du Bassin
-    public int scoreRecobassin = 0;
-    public int nbPartieBassinJoue = 1;
-    public int nbPartieBassin = 3;
-    public bool gameBassinFait = false;
+    public int scoreRecobassin;
+    public int nbPartieBassinJoue;
+    public bool gameBassinFait;
     public List<int> questionsBassinPosees = new List<int>();
 
-    // variables pour jeu des Enigmes
-    public int scoreRecoEnigmes = 0;
-    public int nbPartieEnigmesJoue = 1;
-    public int nbPartieEnigmes = 1;
-    public bool gameEnigmesFait = false;
+    public int scoreRecoEnigmes;
+    public int nbPartieEnigmesJoue;
+    public bool gameEnigmesFait;
     public List<int> questionsEnigmesPosees = new List<int>();
 
-    //variables pour les dés afin de déterminer qui commence
-    public bool checkFaitDesMj = true;
-    public bool checkFaitDesPlayer = true;
+    public bool checkFaitDesMj;
+    public bool checkFaitDesPlayer;
     public int scoreDesMj;
     public int scoreDesPlayer;
     public string quiCommence;
-    //--------------------------------
     public string jeuEnCours;
     public string cinematiqueEnCours;
-
-    //variable du choix du personnage
     public int selectedCharacter;
-
-    //variable activation panelUiMobile;
-    public bool panelUiMobile =false;
+    public bool panelUiMobile;
     public int tutoCompteur;
+    public string nbRecoMax;
+    public string niveauSelect;
 
+    
     // Définir un événement pour signaler les mises à jour du score
     public delegate void ScoreUpdated(int newScorePaires, int newScoreBaton, int newScoreClou, int newScoreBassin, int newScoreEnigmes);
     public static event ScoreUpdated OnScoreUpdated;
+    public bool settingsLoaded = false;
 
     private void Awake()
     {
@@ -76,7 +75,6 @@ public class MainGameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    
 
     private void Start()
     {
@@ -98,7 +96,7 @@ public class MainGameManager : MonoBehaviour
         // Mettre à jour le texte si le composant a été trouvé
         UpdateScoreText();
     }
-    
+
     private void FindScoreTextObject()
     {
         GameObject scoreTextObject = GameObject.Find("scoreTextReco");
@@ -109,7 +107,7 @@ public class MainGameManager : MonoBehaviour
         }
         else
         {
-            //debug.LogError("GameObject avec le nom 'scoreTextReco' non trouvé.");
+            //Debug.LogError("GameObject avec le nom 'scoreTextReco' non trouvé.");
         }
     }
 
@@ -117,12 +115,11 @@ public class MainGameManager : MonoBehaviour
     {
         if (scoreTextReco != null)
         {
-            
-            scoreTextReco.text = scoreReco.ToString() + "/17";
+            scoreTextReco.text = scoreReco.ToString() + nbRecoMax;
         }
         else
         {
-            //debug.LogError("TextMeshProUGUI non trouvé. Assurez-vous que le GameObject 'scoreTextReco' a un composant TextMeshProUGUI.");
+            //Debug.LogError("TextMeshProUGUI non trouvé. Assurez-vous que le GameObject 'scoreTextReco' a un composant TextMeshProUGUI.");
         }
     }
 
@@ -132,10 +129,138 @@ public class MainGameManager : MonoBehaviour
         //scoreReco = newScore;
 
         // Déclencher l'événement OnScoreUpdated
-        OnScoreUpdated?.Invoke(scoreRecoPaires,scoreRecoBaton, scoreRecoClou, scoreRecobassin, scoreRecoEnigmes);
+        OnScoreUpdated?.Invoke(scoreRecoPaires, scoreRecoBaton, scoreRecoClou, scoreRecobassin, scoreRecoEnigmes);
     }
 
-    public void ActivationUiMobile(){
+    public void ActivationUiMobile()
+    {
         panelUiMobile = !panelUiMobile; // Basculer l'état de panelUiMobile
     }
+
+    public IEnumerator LoadSettings(string difficulty)
+    {
+            yield return StartCoroutine(LoadSettingsCoroutine(difficulty));
+            settingsLoaded = true;
+    }
+
+    private IEnumerator LoadSettingsCoroutine(string difficulty)
+    {
+        string path = Path.Combine(Application.streamingAssetsPath, difficulty);
+
+    #if UNITY_WEBGL && !UNITY_EDITOR
+        path = Application.streamingAssetsPath + "/" + difficulty;
+    #endif
+
+        UnityWebRequest request = UnityWebRequest.Get(path);
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            string json = request.downloadHandler.text;
+            LoadJson(json);
+        }
+        else
+        {
+            Debug.LogError("Failed to load settings file: " + request.error);
+        }
+    }
+
+
+    private void LoadJson(string json)
+    {
+        var settings = JsonUtility.FromJson<Settings>(json);
+
+        // Assign loaded settings to respective variables
+        nbPartiePaires = settings.reglagesJeux.nbPartiePaires;
+        nbPartieBaton = settings.reglagesJeux.nbPartieBaton;
+        nbPartieClou = settings.reglagesJeux.nbPartieClou;
+        nbPartieBassin = settings.reglagesJeux.nbPartieBassin;
+        nbPartieEnigmes = settings.reglagesJeux.nbPartieEnigmes;
+
+        scoreRecoPaires = settings.reglagesJeux.scoreRecoPaires;
+        nbPartiePairesJoue = settings.reglagesJeux.nbPartiePairesJoue;
+        gamePairesFait = settings.reglagesJeux.gamePairesFait;
+        questionsPairesPosees = settings.reglagesJeux.questionsPairesPosees;
+
+        scoreRecoBaton = settings.reglagesJeux.scoreRecoBaton;
+        nbPartieBatonJoue = settings.reglagesJeux.nbPartieBatonJoue;
+        gameBatonFait = settings.reglagesJeux.gameBatonFait;
+        questionsBatonPosees = settings.reglagesJeux.questionsBatonPosees;
+
+        scoreRecoClou = settings.reglagesJeux.scoreRecoClou;
+        nbPartieClouJoue = settings.reglagesJeux.nbPartieClouJoue;
+        gameClouFait = settings.reglagesJeux.gameClouFait;
+        questionsClouPosees = settings.reglagesJeux.questionsClouPosees;
+
+        scoreRecobassin = settings.reglagesJeux.scoreRecobassin;
+        nbPartieBassinJoue = settings.reglagesJeux.nbPartieBassinJoue;
+        gameBassinFait = settings.reglagesJeux.gameBassinFait;
+        questionsBassinPosees = settings.reglagesJeux.questionsBassinPosees;
+
+        scoreRecoEnigmes = settings.reglagesJeux.scoreRecoEnigmes;
+        nbPartieEnigmesJoue = settings.reglagesJeux.nbPartieEnigmesJoue;
+        gameEnigmesFait = settings.reglagesJeux.gameEnigmesFait;
+        questionsEnigmesPosees = settings.reglagesJeux.questionsEnigmesPosees;
+
+        checkFaitDesMj = settings.reglagesJeux.checkFaitDesMj;
+        checkFaitDesPlayer = settings.reglagesJeux.checkFaitDesPlayer;
+        scoreDesMj = settings.reglagesJeux.scoreDesMj;
+        scoreDesPlayer = settings.reglagesJeux.scoreDesPlayer;
+        quiCommence = settings.reglagesJeux.quiCommence;
+
+        jeuEnCours = settings.reglagesJeux.jeuEnCours;
+        cinematiqueEnCours = settings.reglagesJeux.cinematiqueEnCours;
+
+        //selectedCharacter = settings.reglagesJeux.selectedCharacter;
+        panelUiMobile = settings.reglagesJeux.panelUiMobile;
+        tutoCompteur = settings.reglagesJeux.tutoCompteur;
+        nbRecoMax = settings.reglagesJeux.nbRecoMax;
+    }
+
+    [System.Serializable]
+    public class ReglagesJeux
+    {
+        public int nbPartiePaires;
+        public int nbPartieBaton;
+        public int nbPartieClou;
+        public int nbPartieBassin;
+        public int nbPartieEnigmes;
+        public int scoreRecoPaires;
+        public int nbPartiePairesJoue;
+        public bool gamePairesFait;
+        public List<int> questionsPairesPosees;
+        public int scoreRecoBaton;
+        public int nbPartieBatonJoue;
+        public bool gameBatonFait;
+        public List<int> questionsBatonPosees;
+        public int scoreRecoClou;
+        public int nbPartieClouJoue;
+        public bool gameClouFait;
+        public List<int> questionsClouPosees;
+        public int scoreRecobassin;
+        public int nbPartieBassinJoue;
+        public bool gameBassinFait;
+        public List<int> questionsBassinPosees;
+        public int scoreRecoEnigmes;
+        public int nbPartieEnigmesJoue;
+        public bool gameEnigmesFait;
+        public List<int> questionsEnigmesPosees;
+        public bool checkFaitDesMj;
+        public bool checkFaitDesPlayer;
+        public int scoreDesMj;
+        public int scoreDesPlayer;
+        public string quiCommence;
+        public string jeuEnCours;
+        public string cinematiqueEnCours;
+        //public int selectedCharacter;
+        public bool panelUiMobile;
+        public int tutoCompteur;
+        public string nbRecoMax;
+    }
+[System.Serializable]
+public class Settings
+{
+    public ReglagesJeux reglagesJeux;
+}
 }

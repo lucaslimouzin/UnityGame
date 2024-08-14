@@ -2,16 +2,25 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Instruction : MonoBehaviour
 {
     private AsyncOperation asyncOperation;
     public GameObject continueButton; // Assurez-vous de lier ce bouton dans l'inspecteur
-
+    public Image imageScore;
+    public TextMeshProUGUI texteObjectif;
     void Start()
     {
         continueButton.SetActive(false); // Masquer le bouton au démarrage
         StartCoroutine(PreloadScene("SalleInstructions"));
+        //ajout v2
+         if(MainGameManager.Instance.niveauSelect =="Normal"){
+            imageScore.sprite= MainGameManager.Instance.imageScore[0];
+        }else{
+            imageScore.sprite= MainGameManager.Instance.imageScore[1];
+            texteObjectif.text ="Gagner tous les duels";
+        }
     }
 
     private IEnumerator PreloadScene(string sceneName)
@@ -33,7 +42,6 @@ public class Instruction : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("j'ai appuyé");
         // Réduire l'opacité du bouton
         Image buttonImage = continueButton.GetComponent<Image>();
         if (buttonImage != null)
@@ -48,12 +56,10 @@ public class Instruction : MonoBehaviour
         {
             asyncOperation.allowSceneActivation = true;
             SceneManager.LoadScene("SalleInstructions");
-            Debug.Log("j'ai appuyé là");
         }
         else
         {
             SceneManager.LoadScene("SalleInstructions");
-            Debug.Log("j'ai appuyé ici");
         }
     }
 }

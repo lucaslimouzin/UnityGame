@@ -1,0 +1,42 @@
+{
+    "reglagesJeux": {
+      "nbPartiePaires": 3,
+      "nbPartieBaton": 4,
+      "nbPartieClou": 3,
+      "nbPartieBassin": 3,
+      "nbPartieEnigmes": 1,
+      
+      "scoreRecoPaires": 0,
+      "nbPartiePairesJoue": 1,
+      "gamePairesFait": false,
+
+      "scoreRecoBaton": 0,
+      "nbPartieBatonJoue": 1,
+      "gameBatonFait": false,
+
+      "scoreRecoClou": 0,
+      "nbPartieClouJoue": 1,
+      "gameClouFait": false,
+
+      "scoreRecobassin": 0,
+      "nbPartieBassinJoue": 1,
+      "gameBassinFait": false,
+
+      "scoreRecoEnigmes": 0,
+      "nbPartieEnigmesJoue": 1,
+      "gameEnigmesFait": false,
+
+      "checkFaitDesMj": true,
+      "checkFaitDesPlayer": true,
+      "scoreDesMj": 0,
+      "scoreDesPlayer": 0,
+      "quiCommence": "",
+      
+      "jeuEnCours": "Instruction",
+      "cinematiqueEnCours": "Introduction",
+      "selectedCharacter": 0,
+      "panelUiMobile": false,
+      "tutoCompteur": 0,
+      "nbRecoMax": "/17"
+    }
+}
