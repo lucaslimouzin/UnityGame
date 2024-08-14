@@ -20,7 +20,7 @@
         "Elle peut encourager ou freiner l'innovation en fonction de ses valeurs et de ses pratiques."
       ],
       "reponseCorrecte": "C",
-      "complementReponse": "La culture d'entreprise influe significativement sur l'innovation en créant un environnement qui encourage ou entrave la créativité la prise de risque et la collaboration. Les entreprises qui valorisent l'innovation dans leurs valeurs et pratiques tendent à favoriser un climat propice à la génération d'idées nouvelles et à leur mise en œuvre.\n"
+      "complementReponse": "La culture d'entreprise influe significativement sur l'innovation en créant un environnement qui encourage ou entrave la créativité, la prise de risque et la collaboration. Les entreprises qui valorisent l'innovation dans leurs valeurs et pratiques tendent à favoriser un climat propice à la génération d'idées nouvelles et à leur mise en œuvre.\n"
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
         "En observant les réactions des concurrents."
       ],
       "reponseCorrecte": "B",
-      "complementReponse": "L'évaluation de l'impact des innovations sur le marché repose sur la mesure de plusieurs indicateurs clés de performance (KPI). La part de marché permet de mesurer la performance relative d'un produit par rapport à ses concurrents. Le retour sur investissement (ROI) évalue l'efficacité des investissements réalisés dans l'innovation. La satisfaction des clients reflète la réaction et l'acceptation des nouveaux produits ou services par le marché cible. Ensemble ces KPI fournissent une vue d'ensemble sur la réussite et l'impact des innovations sur le marché.\n"
+      "complementReponse": "L'évaluation de l'impact des innovations sur le marché repose sur la mesure de plusieurs indicateurs clés de performance (KPI). La part de marché permet de mesurer la performance relative d'un produit par rapport à ses concurrents. Le retour sur investissement (ROI) évalue l'efficacité des investissements réalisés dans l'innovation. La satisfaction des clients reflète la réaction et l'acceptation des nouveaux produits ou services par le marché cible. Ensemble, ces KPI fournissent une vue d'ensemble sur la réussite et l'impact des innovations sur le marché.\n"
     },
     {
       "id": 4,
@@ -59,12 +59,12 @@
       "id": 6,
       "question": "Quelle est la différence entre l'innovation radicale et l'innovation incrémentale ?",
       "propositions": [
-        "L'innovation radicale introduit des changements fondamentaux qui transforment un marché tandis que l'innovation incrémentale améliore progressivement les produits ou services existants.",
+        "L'innovation radicale introduit des changements fondamentaux qui transforment un marché, tandis que l'innovation incrémentale améliore progressivement les produits ou services existants.",
         "L'innovation incrémentale est plus risquée que l'innovation radicale.",
         "L'innovation incrémentale ne nécessite aucune recherche."
       ],
       "reponseCorrecte": "A",
-      "complementReponse": "L'innovation radicale implique des transformations majeures. Elle peut introduire de nouvelles technologies de nouveaux modèles économiques ou de nouveaux concepts qui changent radicalement la manière dont les produits ou services sont perçus et utilisés. En revanche, l'innovation incrémentale consiste à apporter des améliorations graduelles à des produits ou services existants. Elle vise à optimiser les fonctionnalités à révolutionner le marché.\n"
+      "complementReponse": "L'innovation radicale implique des transformations majeures. Elle peut introduire de nouvelles technologies, de nouveaux modèles économiques ou de nouveaux concepts qui changent radicalement la manière dont les produits ou services sont perçus et utilisés. En revanche, l'innovation incrémentale consiste à apporter des améliorations graduelles à des produits ou services existants. Elle vise à optimiser les fonctionnalités, à révolutionner le marché.\n"
     },
     {
       "id": 7,
