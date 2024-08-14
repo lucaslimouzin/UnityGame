@@ -6918,6 +6918,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 761741604}
     m_Modifications:
+    - target: {fileID: 985160851088010534, guid: 4088c2b37a05c194b84cb39d7506bd77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2641117456171304347, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7032,8 +7037,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "R\xE8gles du jeu : \\n\\nTentez de r\xE9soudre une charade pour d\xE9couvrir
-        le mot myst\xE8re.\\n\\nLorsque vous pensez avoir d\xE9couvert le mot myst\xE8re,\\n\\nInscrivez
-        le sur le damier \xE0 droit de l'\xE9cran en cliquant sur les lettres."
+        le mot myst\xE8re.\\n\\nLorsque vous pensez avoir d\xE9couvert le mot myst\xE8re,
+        inscrivez le sur le damier \xE0 droit de l'\xE9cran en cliquant sur les lettres."
       objectReference: {fileID: 0}
     - target: {fileID: 7504648372669050673, guid: 4088c2b37a05c194b84cb39d7506bd77,
         type: 3}
