@@ -242,10 +242,10 @@ public class GameManagerMarteau : MonoBehaviour
             }
             
             if (up){
-                playerForce += 2f;
+                playerForce += 5f;
             }
             else {
-                playerForce -= 2f;
+                playerForce -= 5f;
             }
             Slider();
         

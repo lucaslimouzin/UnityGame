@@ -75,9 +75,9 @@ public class DesGameManager : MonoBehaviour
                 textTitre.text = "Le jeu des bâtonnets";
                 //ajout v2
                 if(MainGameManager.Instance.niveauSelect =="Normal"){
-                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier batonnet. \n\nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation participative. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\n\nSi le Maître du jeu retire le dernier batonnet, vous remportez la manche et gagnez une recommandation.";
+                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier bâtonnet. \n\nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation participative. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\n\nSi le Maître du jeu retire le dernier bâtonnet, vous remportez la manche et gagnez une recommandation.";
                 }else{
-                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier batonnet. \n\nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\n\nSi le Maître du jeu retire le dernier bâtonnet, vous remportez le duel.";
+                    textConsignes.text = "Règles du jeu :\n\nDes bâtonnets sont disposés au centre du plateau, votre mission est de ne pas retirer le dernier bâtonnet. \n\nPour retirer 1, 2 ou 3 bâtonnets, répondez correctement à une question sur l'innovation. En cas de mauvaise réponse, c'est au Maître du jeu de choisir le nombre de bâtonnets qu'il souhaite retirer.\n\nSi le Maître du jeu retire le dernier bâtonnet, vous remportez le duel.";
                     textNbParties.gameObject.SetActive(false);
                     RectTransform rectTransform = boutonCommencer.GetComponent<RectTransform>();
                     rectTransform.anchoredPosition = new Vector2(0, -330);

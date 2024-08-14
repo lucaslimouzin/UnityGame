@@ -66,7 +66,7 @@ public class chestBaton : MonoBehaviour
                 nbReco =  MainGameManager.Instance.scoreRecoBaton;
                 panelModeSimple.SetActive(true);
                 if (MainGameManager.Instance.scoreRecoBaton > 0) {
-                    textModeSimple.text = "Bravo vous avez remporté cette épreuve,\n\nvous pouvais désormais quitter cette cellule.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
+                    textModeSimple.text = "Bravo vous avez remporté cette épreuve !\n\nVous pouvais désormais quitter cette cellule.\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
                 }else {
                     textModeSimple.text = "Vous n'avez pas remporté cette épreuve.\n\nRendez-vous à la prochaine épreuve pour affronter un autre maitre.\nBon courage...";
                 }                 
